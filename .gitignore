@@ -1,0 +1,50 @@
+# Local credentials and environment configuration; keep sanitized templates.
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.template
+*.local
+*.local.*
+secrets/
+.secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local tools and private notes. Store reviewed development evidence in docs/prompts/.
+.codex/
+.agents/
+.idea/
+.vscode/
+private/
+docs/private/
+
+# Dependencies, generated output and caches.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.next/
+dist/
+build/
+coverage/
+.cache/
+
+# Temporary files and operating-system metadata.
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+~$*
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+Desktop.ini
