@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="默认三人两天及日期有效" time="0.003730" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="1人1天边界" time="0.000251" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="6人3天边界" time="0.000171" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法人数 0" time="0.000189" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法人数 7" time="0.000144" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法人数 true" time="0.000124" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法人数 3" time="0.000091" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法人数 2.5" time="0.000094" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝0天" time="0.000141" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝4天" time="0.001244" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="人数成员数不符" time="0.000140" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非连续日期" time="0.000108" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝无效日期" time="0.000085" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法结束时间 08:00" time="0.000063" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法结束时间 09:00" time="0.000047" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法结束时间 25:00" time="0.000044" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="拒绝非法结束时间 " time="0.000039" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 -1" time="0.000057" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 NaN" time="0.000036" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 Infinity" time="0.000033" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 null" time="0.000038" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 true" time="0.000037" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 " time="0.000036" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="预算拒绝类型/非有限值 600" time="0.000049" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="数字转换拒绝空、布尔、科学计数及负数" time="0.000076" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="步行拒绝非法数值与覆盖缺失" time="0.000133" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="标识重复与必填字段" time="0.000123" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="逐人独立且往返约束保留" time="0.000054" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="保存恢复逐项一致" time="0.000420" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="无存档返回null" time="0.000049" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="损坏/版本/结构存档不能静默覆盖 broken" time="0.000463" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="损坏/版本/结构存档不能静默覆盖 {&amp;quot;version&amp;quot;:99}" time="0.000202" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="损坏/版本/结构存档不能静默覆盖 {&amp;quot;version&amp;quot;:1,&amp;quot;request&amp;quot;:{}}" time="0.000183" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="非法输入保存不能破坏旧存档" time="0.000167" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="存储配额/权限错误上抛供UI提示" time="0.000577" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="坏JSON/空值不会恢复" time="0.000426" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\core.test.mjs"/>
+	<testcase name="默认API能力显示未授权，不能以参数或请求字段开启真实调用" time="0.049003" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="API阻止异源、跨站与伪造Host，接口不能充当开放代理" time="0.028173" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="JSON类型、格式和请求大小限制在进入测试规划之前生效" time="0.029621" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="候选与静态响应不下发凭据或服务端代码，CSP仅开放本机连接" time="0.062941" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="显式测试服务运行当前日期人数天数，输出替身标记且真实调用全0" time="0.015540" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="HTTP模型错误脱敏且保留失败状态，未假报草案成功" time="0.004281" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="HTTP并发重复点击只启动一次替身" time="0.005415" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning-server.test.mjs"/>
+	<testcase name="预算与步行上限按分/米保守精确转换，不因浮点误差或四舍五入放宽" time="0.000979" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="候选字段保留来源、估计和未知；目录副本不能污染源" time="0.000450" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="服务端重新校验坏输入和文本体积，不只依赖浏览器" time="0.002736" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="模型交接不带显示名、持久成员ID或请求附加字段" time="0.000478" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="坏JSON、未知ID、额外坐标/票价、日期错位、重复候选及超区间均拒绝" time="0.002097" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="各日必须保留出发/相邻/午餐/返回路段，不跨过未知午餐连线" time="0.003305" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="缺营业/交通/餐费不能变成0或通过；遗漏传入路段也保留未知" time="0.000418" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="每人每日独立判步行，不用其他人的额度抵销" time="0.000709" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="逐人预算：有未知仍能证明已知部分超支；公交不按人数均分" time="0.000747" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="每日已知游玩下界超可用时间即冲突，即使交通未知" time="0.000577" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="已知当日开放窗与入场限时冲突被程序指出，常规参考不升级为当日事实" time="0.000487" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="重叠街区内部步行不能直接相加导致假冲突" time="0.000314" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="默认服务即使注入替身也禁止运行，不读凭据、不调用适配器" time="0.000351" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="模型超时后终止、无交通调用或自动重试" time="0.020224" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="错误JSON或上游异常不继续路段、不泄露原始错误" time="0.000792" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="重复运行并发被拦截，结束后允许新的离线测试" time="0.000663" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="道路失败或非法交通方式停止后续查询，已完成部分不冒充全路线" time="0.000669" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="超大匿名输入在适配器前被保守token上限拦截" time="0.000289" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\planning.test.mjs"/>
+	<testcase name="本地服务只暴露前端白名单，禁止配置/仓库访问" time="0.130240" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\server.test.mjs"/>
+	<testcase name="上游适配默认关闭，配置存在也不会执行send；配额拒绝也不执行" time="0.001386" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="模型固定上游/JSON输出/2000输出上限，截断或非200不可当成功" time="0.000433" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="并发调用也不能越过模型1次上限；失败URL与凭据不回传" time="0.000224" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="地理编码歧义/外市拒绝，唯一结果也不自动认定入口已核实" time="0.000308" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="道路只准步行公交；未确认入口不查询；秒转分钟向上且不补直线" time="0.001292" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="公交只计总接驳步行一次，逐人票价缺失不置零，拒绝铁路" time="0.000237" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="JS代理合同固定主机/路径并由服务端补安全密钥；拒绝任意URL、重复参数、回调和客户端安全密钥" time="0.000480" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="地图渲染离线SDK替身验证：只画已有道路段，保留缺口、切日清理、列表定位与点击交接" time="0.000549" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<testcase name="地图拒绝把替身道路、空几何和未核实活动当作完整结果" time="0.000141" classname="test" file="C:\Users\lenovo\Desktop\传智\tests\upstream-contract.test.mjs"/>
+	<!-- tests 71 -->
+	<!-- suites 0 -->
+	<!-- pass 71 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 327.5586 -->
+</testsuites>
