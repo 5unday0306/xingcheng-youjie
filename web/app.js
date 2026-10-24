@@ -1,24 +1,343 @@
-import {defaultDraft,toRequest,validateRequest,dateAt,BUDGET,GAPS,save,restore} from './core.js';
-let draft=defaultDraft();let corrupt=false;const $=id=>document.getElementById(id);
-const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-function status(message){$('storageStatus').textContent=message;}
-function invalidate(){ $('checkStatus').textContent='输入已更改，请重新检查';$('summary').replaceChildren(el('p','摘要待更新，不代表当前输入','hint'));$('errors').replaceChildren();}
-function field(label,value,kind,onInput,id){const box=el('label',label);const input=el(kind==='textarea'?'textarea':'input');if(kind!=='textarea')input.type=kind;if(kind==='number'){input.min='0';input.step='any';}input.id=id;input.value=value;input.addEventListener('input',()=>{onInput(input.value);invalidate();});box.append(input);return box;}
-function render(){for(const k of ['city','people','startDate','dayCount'])$(k).value=draft[k];
- $('days').replaceChildren(...draft.days.map((day,i)=>{const row=el('div',undefined,'dayRow');row.append(el('strong',`第${i+1}天 · ${dateAt(draft.startDate,i)||'日期待填写'}`),field('出发时间',day.start,'time',v=>day.start=v,`day-${i}-start`),field('返回时间',day.end,'time',v=>day.end=v,`day-${i}-end`));return row;}));
- $('members').replaceChildren(...draft.members.map((m,i)=>{const card=el('article',undefined,'member');const h=el('h3',`${String(i+1).padStart(2,'0')} · ${m.name||'匿名同行者'}`);const id=el('small',`稳定标识：${m.id}`,'hint');const grid=el('div',undefined,'grid');grid.append(field('匿名显示名',m.name,'text',v=>{m.name=v;h.textContent=`${i+1} · ${v||'匿名同行者'}`;},`member-${i}-name`),field('个人全程预算（元）',m.budget,'number',v=>m.budget=v,`member-${i}-budget`));const pref=field('兴趣与个人需求',m.preference,'textarea',v=>m.preference=v,`member-${i}-preference`);const walking=el('div',undefined,'grid');m.walking.forEach((v,j)=>walking.append(field(`第${j+1}天步行上限（公里）`,v,'number',x=>m.walking[j]=x,`member-${i}-walk-${j}`)));card.append(h,id,grid,pref,walking,el('small','步行包含交通接驳与场馆内部步行；此处是上限，不是实际距离。','hint'));return card;}));}
-function confirmChange(text,yes,no){$('confirmText').textContent=text;$('confirmDialog').showModal();$('acceptChange').onclick=()=>{$('confirmDialog').close();yes();};$('cancelChange').onclick=()=>{$('confirmDialog').close();no();};$('confirmDialog').oncancel=()=>no();}
-function fieldName(path){const parts=path.split('.');if(parts[0]==='members'&&parts.length>1){const labels={id:'标识',name:'显示名',preference:'偏好',budget:'个人预算',walking:'步行上限'};return `同行者${Number(parts[1])+1} · ${labels[parts[2]]||'资料'}${parts[3]!==undefined?` · 第${Number(parts[3])+1}天`:''}`;}if(parts[0]==='days'&&parts.length>1)return `第${Number(parts[1])+1}天 · 日期/时段`;return {city:'城市',people:'人数',days:'天数',members:'同行者人数',endpoint:'起终点'}[parts[0]]||'需求';}
-function check(){const r=toRequest(draft);const errors=validateRequest(r);$('errors').replaceChildren();if(errors.length){const list=el('ul');errors.forEach(e=>list.append(el('li',`${fieldName(e.field)}：${e.message}`)));$('errors').append(el('strong','请修正以下输入，内容已保留'),list);$('checkStatus').textContent='输入检查未通过';$('summary').replaceChildren(el('p','请先修正输入','hint'));$('errors').focus();return false;}
- $('checkStatus').textContent='输入检查通过 · 仅结构与格式';const nodes=[el('p',`太原市 · ${r.people}人 · ${r.days.length}天`),el('p',BUDGET,'hint')];for(const d of r.days)nodes.push(el('p',`${d.date}　${d.start}～${d.end}（含出发与返回交通）`));nodes.push(el('p',`每天往返：${r.endpoint.name}`),el('p',`${r.endpoint.address}；公共测试点，落点未人工核对。`,'hint'));r.members.forEach(m=>{const card=el('div',undefined,'summaryMember');card.append(el('h3',m.name),el('p',`偏好：${m.preference}`),el('p',`个人全程预算上限：${m.budget}元`));r.days.forEach((d,j)=>card.append(el('p',`${d.date}：总步行上限${m.walking[j]}公里`)));nodes.push(card);});const details=el('details');details.append(el('summary','查看结构化需求 JSON'),el('pre',JSON.stringify(r,null,2)));nodes.push(details);$('summary').replaceChildren(...nodes);return true;}
-for(let i=1;i<=6;i++)$('people').append(new Option(`${i}人`,i));for(let i=1;i<=3;i++)$('dayCount').append(new Option(`${i}天`,i));
-$('city').onchange=()=>{draft.city=$('city').value;invalidate();};
-$('startDate').oninput=()=>{draft.startDate=$('startDate').value;render();invalidate();};
-$('people').onchange=()=>{const n=Number($('people').value);const apply=()=>{if(n<draft.people)draft.members=draft.members.slice(0,n);while(draft.members.length<n){draft.members.push({id:crypto.randomUUID(),name:`同行者${draft.members.length+1}`,preference:'',budget:'600',walking:Array(draft.dayCount).fill('6')});}draft.people=n;render();invalidate();};if(n<draft.people)confirmChange(`将移除末尾${draft.people-n}位同行者的偏好和限制。已有本地存档不会自动改变。`,apply,render);else apply();};
-$('dayCount').onchange=()=>{const n=Number($('dayCount').value);const apply=()=>{draft.days=draft.days.slice(0,n);while(draft.days.length<n)draft.days.push({start:'09:00',end:'18:00'});draft.members.forEach(m=>{m.walking=m.walking.slice(0,n);while(m.walking.length<n)m.walking.push('6');});draft.dayCount=n;render();invalidate();};if(n<draft.dayCount)confirmChange('将移除末尾日期的时段及每人的当日步行设置，个人全程预算保持原值，请按新天数自行检查。',apply,render);else apply();};
-$('form').onsubmit=e=>{e.preventDefault();check();};
-function doSave(replaceInvalid=false){if(!check())return;try{save(localStorage,draft,{replaceInvalid});corrupt=false;$('replace').hidden=true;status('已保存到当前浏览器。刷新或重新打开同一地址可恢复。');}catch(e){status(`保存失败：${e.message}。当前输入未丢失。`);if(corrupt)$('replace').hidden=false;}}
-$('save').onclick=()=>doSave();$('replace').onclick=()=>confirmChange('将覆盖无法恢复的旧存档。当前表单会先校验；确认后旧存档无法由本页面找回。',()=>doSave(true),()=>{});
-function doRestore(auto=false){try{const data=restore(localStorage);if(data){draft=data;corrupt=false;$('replace').hidden=true;render();invalidate();status('已恢复上次保存的需求，请重新检查当前输入。');}else status(auto?'尚无存档，已预填固定测试需求。':'没有找到本浏览器存档，当前输入未改变。');}catch(e){corrupt=true;$('replace').hidden=false;status(`恢复失败：${e.message}（当前输入和原存档均保留）`);}}
-$('restore').onclick=()=>confirmChange('恢复会替换当前未保存输入，是否继续？',()=>doRestore(),()=>{});
-$('budgetScope').textContent=BUDGET;$('gaps').replaceChildren(...GAPS.map(s=>el('li',s)));render();doRestore(true);
+import {
+  defaultDraft, toRequest, validateRequest, dateAt, BUDGET, GAPS,
+  save, restore, STORAGE_KEY,
+} from './core.js';
+
+const $ = id => document.getElementById(id);
+const node = (tag, text, className) => {
+  const result = document.createElement(tag);
+  if (text !== undefined) result.textContent = text;
+  if (className) result.className = className;
+  return result;
+};
+let draft = defaultDraft();
+let savedSignature = null;
+let corrupt = false;
+let validationStarted = false;
+let activeDay = 0;
+let currentDisplay = 'route';
+const signature = () => JSON.stringify(toRequest(draft));
+
+function storageStatus(text, kind = '') {
+  $('storageStatus').textContent = text;
+  $('storageStatus').dataset.kind = kind;
+}
+function updateDirty() {
+  if (savedSignature === signature()) storageStatus('当前需求与上次保存一致', 'saved');
+  else storageStatus('有未保存修改，刷新不会保留本次修改', 'dirty');
+}
+function showView(view, focus = false) {
+  if (view !== 'edit') currentDisplay = view;
+  $('workbench').dataset.view = view;
+  $('routeView').hidden = currentDisplay !== 'route';
+  $('summaryView').hidden = currentDisplay !== 'summary';
+  for (const [id, target] of [['navEdit','edit'],['navSummary','summary'],['navRoute','route']]) {
+    $(id).setAttribute('aria-pressed', String(view === target));
+  }
+  $('tabRoute').setAttribute('aria-pressed', String(currentDisplay === 'route'));
+  $('tabSummary').setAttribute('aria-pressed', String(currentDisplay === 'summary'));
+  if (focus) {
+    const title = $(view === 'edit' ? 'editorTitle' : view === 'summary' ? 'summaryTitle' : 'routeTitle');
+    title.focus({ preventScroll: true });
+    title.scrollIntoView({ block: 'nearest' });
+  }
+}
+function confirmAction({ title, text, accept, cancel = '取消' }) {
+  $('confirmTitle').textContent = title;
+  $('confirmText').textContent = text;
+  $('acceptChange').textContent = accept;
+  $('cancelChange').textContent = cancel;
+  const dialog = $('confirmDialog');
+  // Resolve from the actual action, not a later close event. A queued close
+  // event from an earlier dialog must never settle a newly opened dialog.
+  const result = new Promise(resolve => {
+    const finish = accepted => {
+      dialog.oncancel = null;
+      dialog.close(accepted ? 'accept' : 'cancel');
+      resolve(accepted);
+    };
+    $('acceptChange').onclick = () => finish(true);
+    $('cancelChange').onclick = () => finish(false);
+    dialog.oncancel = event => { event.preventDefault(); finish(false); };
+  });
+  dialog.showModal();
+  return result;
+}
+function errorTarget(field) {
+  const p = field.split('.');
+  if (p[0] === 'members' && p.length > 2) {
+    if (p[2] === 'walking') return `member-${p[1]}-walk-${p[3] || 0}`;
+    return `member-${p[1]}-${p[2]}`;
+  }
+  if (p[0] === 'days') {
+    if (p[2] === 'date') return 'startDate';
+    const start = draft.days[Number(p[1])]?.start;
+    return `day-${p[1]}-${/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(start || '') ? 'end' : 'start'}`;
+  }
+  return {city:'city', people:'people', members:'people', days:'dayCount'}[field] || 'startDate';
+}
+function fieldLabel(path) {
+  const p = path.split('.');
+  if (p[0] === 'members') {
+    const labels = {name:'显示名', preference:'偏好', budget:'个人预算', walking:'步行上限', id:'成员标识'};
+    return `同行者${Number(p[1]) + 1}的${labels[p[2]] || '资料'}${p[3] !== undefined ? `（第${Number(p[3]) + 1}天）` : ''}`;
+  }
+  if (p[0] === 'days' && p.length > 1) return `第${Number(p[1]) + 1}天时段或日期`;
+  return {city:'城市', people:'人数', members:'同行者人数', days:'天数'}[path] || '需求';
+}
+function focusField(id) {
+  showView('edit');
+  const target = $(id);
+  if (!target) return;
+  const card = target.closest('details');
+  if (card) card.open = true;
+  target.focus({ preventScroll: true });
+  target.scrollIntoView({ block: 'center' });
+}
+function paintErrors(errors) {
+  document.querySelectorAll('[aria-invalid]').forEach(input => {
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+  });
+  document.querySelectorAll('.fieldError').forEach(e => e.remove());
+  $('errors').replaceChildren();
+  if (!errors.length) return;
+  const list = node('ul');
+  errors.forEach((error, i) => {
+    const targetId = errorTarget(error.field);
+    const item = node('li');
+    const link = node('a', `${fieldLabel(error.field)}：${error.message}`);
+    link.href = `#${targetId}`;
+    link.onclick = event => { event.preventDefault(); focusField(targetId); };
+    item.append(link);
+    list.append(item);
+    const input = $(targetId);
+    if (input) {
+      const msg = node('span', error.message, 'fieldError');
+      msg.id = `error-${i}`;
+      input.parentElement.append(msg);
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', [input.getAttribute('aria-describedby'),msg.id].filter(Boolean).join(' '));
+      const card = input.closest('details');
+      if (card) card.open = true;
+    }
+  });
+  $('errors').append(node('strong', `还有${errors.length}项输入需要调整`), list);
+}
+function edited() {
+  $('checkStatus').textContent = '输入已修改，请重新检查';
+  $('summary').replaceChildren(node('p', '当前需求尚未重新检查。回到编辑区检查后，再核对完整摘要。', 'summaryEmpty'));
+  updateDirty();
+  paintRoute();
+  if (validationStarted) paintErrors(validateRequest(toRequest(draft)));
+}
+function field(label, value, type, update, id) {
+  const box = node('label', label);
+  const input = node(type === 'textarea' ? 'textarea' : 'input');
+  if (type !== 'textarea') input.type = type;
+  if (type === 'number') { input.min = '0'; input.step = 'any'; }
+  input.id = id;
+  input.value = value;
+  input.addEventListener('input', () => { update(input.value); edited(); });
+  box.append(input);
+  return box;
+}
+function memberHeadline(m, summary) {
+  summary.replaceChildren(node('strong',m.name || '匿名同行者'), node('span',m.preference || '尚未填写个人需求','memberPreference'),
+    node('small',`全程${m.budget || '—'}元 · 每日步行 ${m.walking.map(v => v || '—').join(' / ')} 公里`));
+}
+function renderDays() {
+  $('days').replaceChildren(...draft.days.map((day, i) => {
+    const row = node('div', undefined, 'dayRow');
+    row.append(node('strong',`第${i + 1}天　${dateAt(draft.startDate,i) || '日期待填写'}`),
+      field('出发',day.start,'time',v => day.start=v,`day-${i}-start`),
+      field('返回',day.end,'time',v => day.end=v,`day-${i}-end`));
+    return row;
+  }));
+}
+function renderMembers() {
+  const openIds = new Set([...document.querySelectorAll('.member[open]')].map(e => e.dataset.id));
+  const firstRender = !$('members').children.length;
+  $('members').replaceChildren(...draft.members.map((m, i) => {
+    const card = node('details', undefined, 'member');
+    card.dataset.id = m.id;
+    card.open = openIds.has(m.id) || (firstRender && i === 0);
+    const summary = node('summary');
+    memberHeadline(m, summary);
+    const body = node('div',undefined,'memberBody');
+    const grid = node('div',undefined,'grid');
+    grid.append(field('匿名显示名',m.name,'text',v => {m.name=v;memberHeadline(m,summary);},`member-${i}-name`),
+      field('个人全程预算（元）',m.budget,'number',v => {m.budget=v;memberHeadline(m,summary);},`member-${i}-budget`));
+    body.append(grid, field('兴趣与需求原话',m.preference,'textarea',v => {m.preference=v;memberHeadline(m,summary);},`member-${i}-preference`));
+    const walk = node('div',undefined,'grid');
+    m.walking.forEach((v,j) => walk.append(field(`第${j+1}天步行上限（公里）`,v,'number',x => {m.walking[j]=x;memberHeadline(m,summary);},`member-${i}-walk-${j}`)));
+    body.append(walk);
+    if (draft.dayCount > 1) {
+      const copy = node('button','将本人第1天步行上限应用到其余天','copyWalking');
+      copy.type = 'button';
+      copy.onclick = async () => {
+        const first = m.walking[0];
+        if (!/^\d+(?:\.\d+)?$/.test(first.trim()) || !Number.isFinite(Number(first))) {
+          validationStarted = true;
+          paintErrors(validateRequest(toRequest(draft)));
+          focusField(`member-${i}-walk-0`);
+          return;
+        }
+        if (m.walking.slice(1).some(v => v !== first)) {
+          const confirmed = await confirmAction({title:'覆盖本人的其余天步行上限？',
+            text:`${m.name}的其余天将改为${first}公里。原值为${m.walking.slice(1).join('、')}公里，不影响其他同行者。`,accept:'确认应用',cancel:'保留原值'});
+          if (!confirmed) return;
+        }
+        m.walking = m.walking.map(() => first);
+        renderMembers();
+        edited();
+      };
+      body.append(copy);
+    }
+    body.append(node('p','步行包含交通接驳与场馆内部步行；这是上限，不是实际距离。','hint'));
+    const dev = node('details',undefined,'developerDetails');
+    dev.append(node('summary','开发详情'),node('code',`稳定ID：${m.id}`));
+    body.append(dev);
+    card.append(summary,body);
+    return card;
+  }));
+  $('memberCount').textContent = `${draft.members.length}位同行者`;
+}
+function render() {
+  for (const k of ['city','people','startDate','dayCount']) $(k).value = draft[k];
+  renderDays();
+  renderMembers();
+  paintRoute();
+}
+function paintRoute() {
+  activeDay = Math.min(activeDay,draft.dayCount - 1);
+  $('tripOverview').textContent = `太原 · ${draft.people}人 · ${draft.dayCount}天`;
+  $('dayTabs').replaceChildren(...draft.days.map((day,i) => {
+    const button = node('button',`第${i+1}天　${dateAt(draft.startDate,i) || '日期待填'}`);
+    button.type = 'button';
+    button.setAttribute('aria-pressed',String(i === activeDay));
+    button.onclick = () => {activeDay=i;paintRoute();$('dayTabs').children[i].focus();};
+    return button;
+  }));
+  const day = draft.days[activeDay];
+  $('activeDayTitle').textContent = `第${activeDay+1}天的出行条件`;
+  const ul = node('ul',undefined,'walkingBrief');
+  draft.members.forEach(m => ul.append(node('li',`${m.name || '匿名同行者'}：${m.walking[activeDay] || '待填'}公里上限`)));
+  $('activeDay').replaceChildren(node('p',dateAt(draft.startDate,activeDay) || '日期待填写','dayDate'),
+    node('p',`${day.start || '待填'}～${day.end || '待填'}（含往返交通）`),
+    node('small','每天同一公共测试点往返','hint'),node('p','山西博物院东门外','meetingPoint'),ul,
+    node('small','来自当前输入，尚未检查实际距离。','hint'));
+}
+function summaryContent(r) {
+  const intro = node('section',undefined,'summaryTrip');
+  intro.append(node('h4',`太原市 · ${r.people}人 · ${r.days.length}天`),node('p',BUDGET,'hint'));
+  r.days.forEach(day => intro.append(node('p',`${day.date}　${day.start}～${day.end}（含出发与返回交通）`)));
+  intro.append(node('p',`每天往返：${r.endpoint.name}`),node('p',`${r.endpoint.address}；公共测试点，落点未人工核对。`,'hint'));
+  const members = node('div',undefined,'summaryMembers');
+  r.members.forEach(m => {
+    const section = node('section',undefined,'summaryMember');
+    section.append(node('h4',m.name),node('p',`需求原话：${m.preference}`),node('p',`个人全程预算上限：${m.budget}元`));
+    r.days.forEach((d,j) => section.append(node('p',`${d.date}：总步行上限${m.walking[j]}公里`)));
+    members.append(section);
+  });
+  const dev = node('details',undefined,'developerDetails');
+  dev.append(node('summary','开发详情：结构化需求与稳定ID'),node('pre',JSON.stringify(r,null,2)));
+  $('summary').replaceChildren(intro,members,dev);
+}
+function check({navigate=true} = {}) {
+  validationStarted = true;
+  const r = toRequest(draft), errors = validateRequest(r);
+  paintErrors(errors);
+  if (errors.length) {
+    $('checkStatus').textContent = '输入检查未通过';
+    $('summary').replaceChildren(node('p','输入仍有错误，请返回编辑区修正。','summaryEmpty'));
+    focusField(errorTarget(errors[0].field));
+    return false;
+  }
+  $('checkStatus').textContent = '输入检查通过 · 仅结构与格式';
+  summaryContent(r);
+  if (navigate) showView('summary',true);
+  return true;
+}
+function restoreDraft(auto=false) {
+  try {
+    const data = restore(localStorage);
+    if (!data) {
+      storageStatus(auto ? '固定测试需求，尚未保存' : '没有找到存档，当前输入未改变');
+      return;
+    }
+    draft = data;
+    savedSignature = signature();
+    corrupt = false;
+    validationStarted = false;
+    $('replace').hidden = true;
+    render();
+    paintErrors([]);
+    $('checkStatus').textContent = '已恢复需求，请重新检查';
+    $('summary').replaceChildren(node('p','已恢复上次保存，请重新检查后查看摘要。','summaryEmpty'));
+    storageStatus('已恢复上次保存，尚未重新检查','saved');
+  } catch (error) {
+    corrupt = true;
+    savedSignature = null;
+    $('replace').hidden = false;
+    storageStatus(`恢复失败：${error.message} 当前输入和原存档均保留。`,'error');
+  }
+}
+function saveDraft(replaceInvalid=false) {
+  if (!check({navigate:false})) {
+    storageStatus('保存失败：请先修正输入，旧存档未改变','error');
+    return;
+  }
+  try {
+    save(localStorage,draft,{replaceInvalid});
+    savedSignature = signature();
+    corrupt = false;
+    $('replace').hidden = true;
+    storageStatus(`已保存需求（${new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})}），可在本浏览器恢复`,'saved');
+  } catch (error) {
+    // A damaged archive may have appeared since the page was opened.
+    try { restore(localStorage); } catch { corrupt=true; }
+    if (corrupt) savedSignature = null;
+    $('replace').hidden = !corrupt;
+    storageStatus(`保存失败：${error.message} 当前输入保留。`,'error');
+  }
+}
+
+for (let i=1;i<=6;i++) $('people').append(new Option(`${i}人`,i));
+for (let i=1;i<=3;i++) $('dayCount').append(new Option(`${i}天`,i));
+$('city').onchange = () => {draft.city=$('city').value;edited();};
+$('startDate').oninput = () => {draft.startDate=$('startDate').value;renderDays();edited();};
+$('people').onchange = async () => {
+  const n=Number($('people').value);
+  if (n<draft.people && !await confirmAction({title:'减少同行人数？',text:`将移除末尾${draft.people-n}位同行者的需求和限制。上次保存不会自动改变。`,accept:'确认减少',cancel:'保留原人数'})) {
+    $('people').value=draft.people;return;
+  }
+  draft.members=draft.members.slice(0,n);
+  while(draft.members.length<n) draft.members.push({id:crypto.randomUUID(),name:`同行者${draft.members.length+1}`,preference:'',budget:'600',walking:Array(draft.dayCount).fill('6')});
+  draft.people=n;render();edited();
+};
+$('dayCount').onchange = async () => {
+  const n=Number($('dayCount').value);
+  if (n<draft.dayCount && !await confirmAction({title:'减少游玩天数？',text:'将移除末尾日期的时段和步行设置。个人全程预算保留，请自行按新天数核对。',accept:'确认减少',cancel:'保留原天数'})) {
+    $('dayCount').value=draft.dayCount;return;
+  }
+  draft.days=draft.days.slice(0,n);
+  while(draft.days.length<n) draft.days.push({start:'09:00',end:'18:00'});
+  draft.members.forEach(m=>{m.walking=m.walking.slice(0,n);while(m.walking.length<n)m.walking.push('6');});
+  draft.dayCount=n;render();edited();
+};
+$('form').onsubmit = event => {event.preventDefault();check();};
+$('save').onclick = () => saveDraft();
+$('restore').onclick = async () => {
+  if (await confirmAction({title:'恢复上次保存的需求？',text:'将替换当前未保存输入。取消或按Esc保留当前内容。',accept:'确认恢复',cancel:'保留当前输入'})) restoreDraft();
+};
+$('replace').onclick = async () => {
+  if (await confirmAction({title:'覆盖无法恢复的旧存档？',text:'旧存档将被当前有效需求替换，无法由本页面找回。确认后仍会先检查输入。',accept:'确认覆盖',cancel:'保留旧存档'})) saveDraft(true);
+};
+for(const [id,view] of [['navEdit','edit'],['navSummary','summary'],['navRoute','route'],['tabRoute','route'],['tabSummary','summary'],['backEdit','edit']]) $(id).onclick=()=>showView(view,true);
+$('budgetScope').textContent=BUDGET;
+$('gaps').replaceChildren(...GAPS.map(text=>node('li',text)));
+$('summary').append(node('p','先在编辑区检查需求，再查看逐人摘要。','summaryEmpty'));
+render();
+restoreDraft(true);
+showView(matchMedia('(max-width: 700px)').matches?'edit':'route');

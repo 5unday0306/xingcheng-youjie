@@ -1,0 +1,26 @@
+{
+  "executedAt": "2026-10-24T07:32:54.039Z",
+  "browser": "Microsoft Edge, Playwright 1.62.1 headless",
+  "assertions": 102,
+  "passed": true,
+  "viewports": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "pageErrors": [],
+  "externalRequests": 0,
+  "reducedMotion": true,
+  "groups": [
+    "default, route empty state, date linkage and summary navigation",
+    "save600-edit450-refresh600, save450-refresh450, independent state",
+    "restore dialog visible wording, cancel, Escape, actual restore",
+    "persistent field errors, aria association, error links, first-error focus",
+    "explicit walking copy, differing-value warning, Escape and other-member isolation",
+    "reduction wording and cancellation, 1/1 and 6/3 boundaries",
+    "v1 compatibility, invalid-archive save protection, overwrite wording/cancel/Escape, unknown version",
+    "6/3 at 375/390/768/1024/1440, visible actions, mobile navigation, keyboard focus"
+  ]
+}

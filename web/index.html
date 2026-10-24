@@ -1,1 +1,93 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>行程有解 · 需求准备</title><link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script></head><body><header><a href="/" class="brand">行程<span>有解</span><small>一起出发，先说好需求。</small></a><span class="badge">需求准备 · 本地测试</span></header><main><section class="intro"><p class="eyebrow">01 / TRIP BRIEF</p><h1>让每个人的期待，<br>都有自己的位置。</h1><p>先整理旅行条件与各自的限制。本轮只检查输入，不生成行程。</p><div class="notice">固定测试需求预填 · 太原三人两天<br>可调整为1～6人、1～3天；目前仅太原可测试。</div></section><div class="workspace"><div><form id="form" novalidate><section class="panel"><h2><b>01</b> 这次怎么出发</h2><div class="grid"><label>目的地<select id="city"><option value="taiyuan">太原市 · 可测试</option></select></label><label>同行人数<select id="people"></select></label><label>出发日期<input id="startDate" type="date"></label><label>游玩天数<select id="dayCount"></select></label></div><p class="hint">日期仅由出发日期与天数计算，不另设结束日期。</p><div id="days"></div><div class="endpoint"><strong>每天出发并返回同一公共集合点</strong><p>山西博物院东门外公共集合点</p><small>太原市滨河西路北段13号（东门地址线索）<br>不是酒店；实际落点与现场通行待人工核对。</small></div></section><section class="panel"><h2><b>02</b> 每个人都算数</h2><p class="hint">只填匿名需求，不需要联系方式或真实住宿资料。</p><p class="hint" id="budgetScope"></p><div id="members"></div></section><div id="errors" role="alert" tabindex="-1"></div><div class="actions"><button type="submit" class="primary">检查输入并查看摘要 <span>→</span></button><button type="button" id="save">保存到本浏览器</button><button type="button" id="restore">恢复上次保存</button></div></form><p id="storageStatus" role="status" aria-live="polite"></p><p class="hint">仅手动保存。修改后请再次保存；同一浏览器、同一地址可恢复。无痕模式或清理浏览器数据可能丢失存档。</p><button type="button" class="textButton" id="replace" hidden>确认覆盖损坏或不兼容的旧存档</button></div><aside><section class="panel summary"><p class="eyebrow">YOUR BRIEF</p><h2>需求摘要</h2><p id="checkStatus" role="status">尚未检查当前输入</p><p class="warning">旅行可行性未验证</p><div id="summary"><p class="hint">完成输入检查后，这里会逐人展示偏好、预算和每天的步行限制。</p></div></section><section class="panel gaps"><h2>下一步仍需核实</h2><ul id="gaps"></ul><p class="hint">未来：先生成方案，再由你锁定第二天午餐并将步行上限改为4公里。本轮没有午餐活动或锁定项，初始值仍为6公里。</p></section></aside></div></main><footer>行程有解 / 先把需求说清楚。<span>本页面不调用模型或地图接口</span></footer><dialog id="confirmDialog"><h2>减少后会移除已填内容</h2><p id="confirmText"></p><div class="actions"><button id="cancelChange">保留原设置</button><button id="acceptChange" class="primary">确认减少</button></div></dialog></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>行程有解 · 太原旅行工作台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="appHeader">
+    <a class="brand" href="/" aria-label="行程有解首页"><span class="brandMark" aria-hidden="true">行</span>行程有解</a>
+    <div class="tripTitle"><strong>太原旅行工作台</strong><span>固定测试需求起步</span></div>
+    <span class="localBadge">仅本机保存</span>
+  </header>
+  <nav class="viewNav" aria-label="工作台视图">
+    <button id="navEdit" type="button" aria-pressed="true">编辑需求</button>
+    <button id="navSummary" type="button" aria-pressed="false">需求摘要</button>
+    <button id="navRoute" type="button" aria-pressed="false">每日路线</button>
+  </nav>
+  <main class="workbench" data-view="route" id="workbench">
+    <section class="editor" aria-labelledby="editorTitle">
+      <div class="editorHeading"><div><h1 id="editorTitle" tabindex="-1">这趟旅行，先说好</h1><p>1～6人同行，1～3天共同游玩</p></div><span class="phaseBadge">需求准备</span></div>
+      <form id="form" novalidate>
+        <div class="editorScroll" id="editorScroll">
+          <div id="errors" role="alert" aria-live="polite"></div>
+          <section class="formSection" aria-labelledby="conditionsTitle">
+            <h2 id="conditionsTitle">出游条件</h2>
+            <div class="grid">
+              <label>目的地<select id="city"><option value="taiyuan">太原市 · 可测试</option></select></label>
+              <label>同行人数<select id="people"></select></label>
+              <label>出发日期<input id="startDate" type="date"></label>
+              <label>游玩天数<select id="dayCount"></select></label>
+            </div>
+            <p class="hint">按出发日期连续计算。当前只开放太原测试。</p>
+            <div id="days"></div>
+            <details class="endpointDetails"><summary>每天从哪里出发、返回？</summary><p>山西博物院东门外公共集合点</p><p class="hint">太原市滨河西路北段13号（东门地址线索）。不是酒店，实际落点与通行待人工核对。</p></details>
+          </section>
+          <section class="formSection" aria-labelledby="membersTitle">
+            <div class="sectionHeading"><h2 id="membersTitle">同行者的需求</h2><span id="memberCount"></span></div>
+            <p class="hint">保留每个人的原话与限制，不填真实个人资料。</p>
+            <div id="members"></div>
+            <details class="budgetDetails"><summary>预算与步行怎样计算？</summary><p id="budgetScope" class="hint"></p><p class="hint">步行上限包含交通接驳和场馆内部步行。这里填写的是个人限制，不是已计算的实际费用或距离。</p></details>
+          </section>
+        </div>
+        <div class="editorActions">
+          <button type="submit" class="primary" id="check">检查需求并查看摘要</button>
+          <div class="secondaryActions"><button type="button" id="save">保存需求</button><button type="button" id="restore">恢复上次保存</button></div>
+          <p id="storageStatus" role="status" aria-live="polite"></p>
+          <button type="button" id="replace" class="dangerButton" hidden>处理无法恢复的旧存档</button>
+        </div>
+      </form>
+    </section>
+    <section class="display" aria-label="旅行需求与路线工作区">
+      <div class="displayHeading"><div><p class="sectionKicker">共同出行计划</p><h2 id="tripOverview">太原 · 3人 · 2天</h2></div><span class="unverified">旅行可行性未验证</span></div>
+      <div class="displayTabs" role="group" aria-label="展示内容">
+        <button type="button" id="tabRoute" aria-pressed="true">每日路线</button>
+        <button type="button" id="tabSummary" aria-pressed="false">需求摘要</button>
+        <span id="checkStatus" role="status" aria-live="polite">当前需求尚未检查</span>
+      </div>
+      <div class="displayScroll" id="displayScroll">
+        <section id="routeView" aria-labelledby="routeTitle">
+          <div class="routeToolbar"><h3 id="routeTitle" tabindex="-1">每日路线准备</h3><span>尚未生成本次行程</span></div>
+          <div id="dayTabs" class="dayTabs" role="group" aria-label="选择旅行日期"></div>
+          <div class="routeStage">
+            <div class="mapPlaceholder" role="region" aria-label="地图准备，未接入地图">
+              <span class="mapLabel">地图准备区</span>
+              <div class="emptyMap">
+                <svg viewBox="0 0 96 80" width="96" height="80" aria-hidden="true"><path d="M14 21 35 13 61 21 82 13V60L61 68 35 60 14 68Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M35 13V60M61 21V68" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <h3>你的路线，还没有生成</h3><p>先整理同行需求，检查后可在摘要中确认。<br>后续接入真实行程与道路数据，再呈现在这里。</p>
+                <span class="emptyBadge">未加载地图 · 无路线数据</span>
+              </div>
+              <p class="mapDisclaimer">此区域不是地图，不含地理底图、活动地点或模拟路线。</p>
+            </div>
+            <aside class="dayBrief"><h3 id="activeDayTitle">第1天的出行条件</h3><div id="activeDay"></div><div class="pendingActivities"><strong>活动与交通</strong><p>尚无活动顺序或路段</p><span class="hint">交通方式、预计耗时和地点编号将在真实生成后展示。</span></div></aside>
+          </div>
+          <section class="gaps"><div><h3>路线生成前，还缺这些依据</h3><p>历史接口连通记录不能代替本次旅行的数据核查。</p></div><ul id="gaps"></ul></section>
+        </section>
+        <section id="summaryView" aria-labelledby="summaryTitle" hidden>
+          <div class="summaryHeading"><div><p class="sectionKicker">核对每个人的限制</p><h3 id="summaryTitle" tabindex="-1">需求摘要</h3></div><button type="button" id="backEdit">返回编辑</button></div>
+          <p class="warning">这里只检查输入格式与结构，旅行可行性未验证。</p>
+          <div id="summary"></div>
+        </section>
+      </div>
+      <footer class="displayFooter"><span>共同测试起终点：山西博物院东门外</span><span>本页面不调用模型或地图</span></footer>
+    </section>
+  </main>
+  <dialog id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText">
+    <h2 id="confirmTitle"></h2><p id="confirmText"></p>
+    <div class="dialogActions"><button id="cancelChange" type="button"></button><button id="acceptChange" type="button" class="primary"></button></div>
+  </dialog>
+</body>
+</html>
