@@ -1,0 +1,9 @@
+{
+  "executedAt": "2026-10-24T06:48:29.760Z",
+  "browser": "Microsoft Edge via Playwright, headless",
+  "checks": 38,
+  "passed": true,
+  "externalRequests": 0,
+  "pageErrors": 0,
+  "scope": "default, isolated members, 1/1 and 6/3, reduction cancellation, invalid time/empty amount, refresh restore, damaged/version storage protection, explicit overwrite, mobile overflow, private paths 404"
+}

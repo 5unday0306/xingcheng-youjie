@@ -1,0 +1,25 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {defaultDraft,toRequest,validateRequest,dateAt,decimal,encodeDraft,decodeDraft,save,restore,STORAGE_KEY} from '../web/core.js';
+const valid=()=>toRequest(defaultDraft());
+const bad=(edit)=>{const r=valid();edit(r);assert.ok(validateRequest(r).length);};
+test('默认三人两天及日期有效',()=>{const r=valid();assert.deepEqual(validateRequest(r),[]);assert.equal(r.days[1].date,'2026-11-08');assert.equal(r.members[2].walking[1],6);});
+for(const [people,days] of [[1,1],[6,3]])test(`${people}人${days}天边界`,()=>{const r=valid();r.people=people;r.days=Array.from({length:days},(_,i)=>({date:dateAt('2026-11-07',i),start:'09:00',end:'18:00'}));r.members=Array.from({length:people},(_,i)=>({id:`p${i}`,name:`同行者${i}`,preference:'历史',budget:600,walking:Array(days).fill(6)}));assert.deepEqual(validateRequest(r),[]);});
+for(const value of [0,7,true,'3',2.5])test(`拒绝非法人数 ${value}`,()=>bad(r=>r.people=value));
+for(const count of [0,4])test(`拒绝${count}天`,()=>bad(r=>r.days=Array.from({length:count},(_,i)=>({date:dateAt('2026-11-07',i),start:'09:00',end:'18:00'}))));
+test('人数成员数不符',()=>bad(r=>r.members.pop()));
+test('拒绝非连续日期',()=>bad(r=>r.days[1].date='2026-11-10'));
+test('拒绝无效日期',()=>{bad(r=>r.days[0].date='2026-02-30');assert.equal(dateAt('2026-02-30',0),'');assert.equal(dateAt('2026-12-31',1),'2027-01-01');});
+for(const end of ['08:00','09:00','25:00',''])test(`拒绝非法结束时间 ${end}`,()=>bad(r=>r.days[0].end=end));
+for(const value of [-1,NaN,Infinity,null,true,'', '600'])test(`预算拒绝类型/非有限值 ${String(value)}`,()=>bad(r=>r.members[0].budget=value));
+test('数字转换拒绝空、布尔、科学计数及负数',()=>{for(const v of ['', ' ',null,true,'Infinity','1e3','-1'])assert.ok(Number.isNaN(decimal(v)));assert.equal(decimal('0'),0);assert.equal(decimal('6.5'),6.5);});
+test('步行拒绝非法数值与覆盖缺失',()=>{bad(r=>r.members[0].walking[0]=false);bad(r=>r.members[0].walking[0]=Infinity);bad(r=>r.members[0].walking.pop());});
+test('标识重复与必填字段',()=>{bad(r=>r.members[1].id=r.members[0].id);bad(r=>r.members[0].name=' ');bad(r=>r.members[0].preference='');bad(r=>r.city='datong');});
+test('逐人独立且往返约束保留',()=>{const d=defaultDraft();d.members[0].budget='450';d.members[0].preference='古建';const r=toRequest(d);assert.equal(r.members[1].budget,600);assert.equal(r.members[1].preference,'风景拍照');assert.equal(r.endpoint.verified,false);});
+function memory(){const m=new Map();return {getItem:k=>m.has(k)?m.get(k):null,setItem:(k,v)=>m.set(k,v)};}
+test('保存恢复逐项一致',()=>{const s=memory(),d=defaultDraft();d.members[0].budget='451.5';save(s,d);assert.deepEqual(restore(s),d);assert.equal(JSON.parse(s.getItem(STORAGE_KEY)).version,1);});
+test('无存档返回null',()=>assert.equal(restore(memory()),null));
+for(const raw of ['broken','{"version":99}',JSON.stringify({version:1,request:{}})])test(`损坏/版本/结构存档不能静默覆盖 ${raw}`,()=>{const s=memory();s.setItem(STORAGE_KEY,raw);const d=defaultDraft(),before=structuredClone(d);assert.throws(()=>restore(s));assert.throws(()=>save(s,d));assert.equal(s.getItem(STORAGE_KEY),raw);assert.deepEqual(d,before);save(s,d,{replaceInvalid:true});assert.deepEqual(restore(s),d);});
+test('非法输入保存不能破坏旧存档',()=>{const s=memory();save(s,defaultDraft());const old=s.getItem(STORAGE_KEY);const d=defaultDraft();d.members[0].budget='';assert.throws(()=>save(s,d));assert.equal(s.getItem(STORAGE_KEY),old);});
+test('存储配额/权限错误上抛供UI提示',()=>{const d=defaultDraft();assert.throws(()=>save({getItem:()=>null,setItem:()=>{throw Error('QuotaExceededError');}},d),/Quota/);});
+test('坏JSON/空值不会恢复',()=>{assert.throws(()=>decodeDraft('null'));assert.throws(()=>decodeDraft('[]'));assert.deepEqual(decodeDraft(encodeDraft(defaultDraft())),defaultDraft());});
