@@ -28,3 +28,6 @@ export function encodeDraft(d){const r=toRequest(d);const errors=validateRequest
 export function decodeDraft(raw){let data;try{data=JSON.parse(raw);}catch{throw Error('本地存档损坏，当前输入未改变。请保留原存档或明确覆盖后再保存。');}if(!record(data)||data.version!==1)throw Error('本地存档版本不兼容，当前输入未改变。');if(validateRequest(data.request).length)throw Error('本地存档内容无效，当前输入未改变。');return fromRequest(data.request);}
 export function restore(storage){const raw=storage.getItem(STORAGE_KEY);return raw===null?null:decodeDraft(raw);}
 export function save(storage,draft,{replaceInvalid=false}={}){const encoded=encodeDraft(draft);const raw=storage.getItem(STORAGE_KEY);if(raw!==null&&!replaceInvalid)decodeDraft(raw);storage.setItem(STORAGE_KEY,encoded);}
+
+// UI metadata only: adding a region here does not bypass supported-city validation.
+export const CITY_CONFIG = Object.freeze({ taiyuan: Object.freeze({ name: '太原', fullName: '太原市', pilot: '首个试点', illustration: 'taiyuan-imagery' }) });

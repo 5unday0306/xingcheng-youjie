@@ -1,6 +1,6 @@
 import {
   defaultDraft, toRequest, validateRequest, dateAt, BUDGET, GAPS,
-  save, restore, STORAGE_KEY,
+  save, restore, STORAGE_KEY, CITY_CONFIG,
 } from './core.js';
 
 const $ = id => document.getElementById(id);
@@ -142,9 +142,42 @@ function field(label, value, type, update, id) {
   box.append(input);
   return box;
 }
+function avatar(index) {
+  const badge = node('span', String(index + 1), 'avatar');
+  badge.setAttribute('aria-hidden', 'true');
+  badge.dataset.person = String(index % 3);
+  return badge;
+}
+function walkingTags(m, selected = false) {
+  const tags = node('div', undefined, 'walkingTags');
+  m.walking.forEach((value, day) => {
+    const tag = node('span', `第${day + 1}天 ${value || '待填'}公里`);
+    if (selected && day === activeDay) tag.className = 'selectedDay';
+    tags.append(tag);
+  });
+  return tags;
+}
 function memberHeadline(m, summary) {
-  summary.replaceChildren(node('strong',m.name || '匿名同行者'), node('span',m.preference || '尚未填写个人需求','memberPreference'),
-    node('small',`全程${m.budget || '—'}元 · 每日步行 ${m.walking.map(v => v || '—').join(' / ')} 公里`));
+  const text = node('span', undefined, 'memberHeadlineText');
+  text.append(node('strong', m.name || '匿名同行者'), node('span', m.preference || '尚未填写个人需求', 'memberPreference'),
+    node('span', `个人全程 ${m.budget || '待填'}元`, 'memberBudget'), walkingTags(m));
+  summary.replaceChildren(avatar(draft.members.indexOf(m)), text);
+}
+function paintCompanions() {
+  $('companionCount').textContent = `${draft.members.length}位同行者`;
+  $('companionOverview').replaceChildren(...draft.members.map((m, i) => {
+    const card = node('article', undefined, 'companionCard');
+    const head = node('div', undefined, 'companionHeading');
+    head.append(avatar(i), node('h4', m.name || '匿名同行者'));
+    const quote = node('p', m.preference || '还没有填写需求', 'companionQuote');
+    const editButton = node('button', '编辑', 'textAction');
+    editButton.type = 'button';
+    editButton.setAttribute('aria-label', `编辑${m.name || `同行者${i + 1}`}的需求`);
+    editButton.onclick = () => focusField(`member-${i}-preference`);
+    head.append(editButton);
+    card.append(head, quote, node('p', `个人全程 ${m.budget || '待填'}元`, 'companionBudget'), walkingTags(m, true));
+    return card;
+  }));
 }
 function renderDays() {
   $('days').replaceChildren(...draft.days.map((day, i) => {
@@ -168,10 +201,10 @@ function renderMembers() {
     const grid = node('div',undefined,'grid');
     grid.append(field('匿名显示名',m.name,'text',v => {m.name=v;memberHeadline(m,summary);},`member-${i}-name`),
       field('个人全程预算（元）',m.budget,'number',v => {m.budget=v;memberHeadline(m,summary);},`member-${i}-budget`));
-    body.append(grid, field('兴趣与需求原话',m.preference,'textarea',v => {m.preference=v;memberHeadline(m,summary);},`member-${i}-preference`));
+    body.append(node('h4','基本信息','fieldGroupTitle'), grid, node('h4','兴趣与需求','fieldGroupTitle'), field('兴趣与需求原话',m.preference,'textarea',v => {m.preference=v;memberHeadline(m,summary);},`member-${i}-preference`));
     const walk = node('div',undefined,'grid');
     m.walking.forEach((v,j) => walk.append(field(`第${j+1}天步行上限（公里）`,v,'number',x => {m.walking[j]=x;memberHeadline(m,summary);},`member-${i}-walk-${j}`)));
-    body.append(walk);
+    body.append(node('h4','每天步行限制','fieldGroupTitle'), walk);
     if (draft.dayCount > 1) {
       const copy = node('button','将本人第1天步行上限应用到其余天','copyWalking');
       copy.type = 'button';
@@ -211,7 +244,15 @@ function render() {
 }
 function paintRoute() {
   activeDay = Math.min(activeDay,draft.dayCount - 1);
-  $('tripOverview').textContent = `太原 · ${draft.people}人 · ${draft.dayCount}天`;
+  const city = CITY_CONFIG[draft.city];
+  $('destinationName').textContent = city?.name || '目的地待确认';
+  $('pilotStamp').textContent = city?.pilot || '暂不支持';
+  $('pilotTag').textContent = city ? `${city.name}试点` : '目的地待确认';
+  document.querySelectorAll('[data-city-art]').forEach(art => { art.hidden = art.dataset.cityArt !== city?.illustration; });
+  const first = dateAt(draft.startDate, 0), last = dateAt(draft.startDate, draft.dayCount - 1);
+  $('tripDates').textContent = first ? (draft.dayCount === 1 ? first : `${first} — ${last}`) : '出发日期待填写';
+  $('tripOverview').textContent = `${draft.people}位同行者 / ${draft.dayCount}天共同游玩`;
+  paintCompanions();
   $('dayTabs').replaceChildren(...draft.days.map((day,i) => {
     const button = node('button',`第${i+1}天　${dateAt(draft.startDate,i) || '日期待填'}`);
     button.type = 'button';
@@ -221,28 +262,32 @@ function paintRoute() {
   }));
   const day = draft.days[activeDay];
   $('activeDayTitle').textContent = `第${activeDay+1}天的出行条件`;
-  const ul = node('ul',undefined,'walkingBrief');
-  draft.members.forEach(m => ul.append(node('li',`${m.name || '匿名同行者'}：${m.walking[activeDay] || '待填'}公里上限`)));
+  const endpoint = toRequest(draft).endpoint;
   $('activeDay').replaceChildren(node('p',dateAt(draft.startDate,activeDay) || '日期待填写','dayDate'),
     node('p',`${day.start || '待填'}～${day.end || '待填'}（含往返交通）`),
-    node('small','每天同一公共测试点往返','hint'),node('p','山西博物院东门外','meetingPoint'),ul,
-    node('small','来自当前输入，尚未检查实际距离。','hint'));
+    node('p',endpoint.name,'meetingPoint'), node('small','公共测试点，现场落点仍待核对。步行上限见下方同行者。','hint'));
 }
 function summaryContent(r) {
-  const intro = node('section',undefined,'summaryTrip');
-  intro.append(node('h4',`太原市 · ${r.people}人 · ${r.days.length}天`),node('p',BUDGET,'hint'));
-  r.days.forEach(day => intro.append(node('p',`${day.date}　${day.start}～${day.end}（含出发与返回交通）`)));
-  intro.append(node('p',`每天往返：${r.endpoint.name}`),node('p',`${r.endpoint.address}；公共测试点，落点未人工核对。`,'hint'));
-  const members = node('div',undefined,'summaryMembers');
-  r.members.forEach(m => {
-    const section = node('section',undefined,'summaryMember');
-    section.append(node('h4',m.name),node('p',`需求原话：${m.preference}`),node('p',`个人全程预算上限：${m.budget}元`));
-    r.days.forEach((d,j) => section.append(node('p',`${d.date}：总步行上限${m.walking[j]}公里`)));
+  const intro = node('section', undefined, 'summaryTrip');
+  intro.append(node('h4', `${CITY_CONFIG[r.city]?.fullName || '目的地'} · ${r.people}人 · ${r.days.length}天`));
+  const schedule = node('div', undefined, 'summarySchedule');
+  r.days.forEach(day => schedule.append(node('p', `${day.date}　${day.start}～${day.end}（含出发与返回交通）`)));
+  intro.append(schedule, node('p', `每天往返：${r.endpoint.name}`), node('p', `${r.endpoint.address}；公共测试点，落点未人工核对。`, 'hint'));
+  const scope = node('details', undefined, 'budgetDetails');
+  scope.append(node('summary', '查看预算包含与排除范围'), node('p', BUDGET, 'hint'));
+  intro.append(scope);
+  const members = node('div', undefined, 'summaryMembers');
+  r.members.forEach((m, index) => {
+    const section = node('section', undefined, 'summaryMember');
+    const content = node('div');
+    content.append(node('h4', m.name), node('p', `需求原话：${m.preference}`, 'originalWords'), node('p', `个人全程预算上限：${m.budget}元`));
+    r.days.forEach((d, j) => content.append(node('p', `${d.date}：总步行上限${m.walking[j]}公里`, 'summaryWalking')));
+    section.append(avatar(index), content);
     members.append(section);
   });
-  const dev = node('details',undefined,'developerDetails');
-  dev.append(node('summary','开发详情：结构化需求与稳定ID'),node('pre',JSON.stringify(r,null,2)));
-  $('summary').replaceChildren(intro,members,dev);
+  const dev = node('details', undefined, 'developerDetails');
+  dev.append(node('summary', '开发详情：结构化需求与稳定ID'), node('pre', JSON.stringify(r, null, 2)));
+  $('summary').replaceChildren(intro, members, dev);
 }
 function check({navigate=true} = {}) {
   validationStarted = true;
@@ -303,6 +348,7 @@ function saveDraft(replaceInvalid=false) {
   }
 }
 
+for (const [id,city] of Object.entries(CITY_CONFIG)) $('city').append(new Option(`${city.fullName} · 可测试`,id));
 for (let i=1;i<=6;i++) $('people').append(new Option(`${i}人`,i));
 for (let i=1;i<=3;i++) $('dayCount').append(new Option(`${i}天`,i));
 $('city').onchange = () => {draft.city=$('city').value;edited();};
@@ -326,6 +372,9 @@ $('dayCount').onchange = async () => {
   draft.members.forEach(m=>{m.walking=m.walking.slice(0,n);while(m.walking.length<n)m.walking.push('6');});
   draft.dayCount=n;render();edited();
 };
+$('brand').onclick = () => showView('edit',true);
+$('jumpMembers').onclick = () => { $('membersTitle').focus({preventScroll:true}); $('membersTitle').scrollIntoView({block:'start'}); };
+$('quickCheck').onclick = () => check();
 $('form').onsubmit = event => {event.preventDefault();check();};
 $('save').onclick = () => saveDraft();
 $('restore').onclick = async () => {
@@ -340,4 +389,4 @@ $('gaps').replaceChildren(...GAPS.map(text=>node('li',text)));
 $('summary').append(node('p','先在编辑区检查需求，再查看逐人摘要。','summaryEmpty'));
 render();
 restoreDraft(true);
-showView(matchMedia('(max-width: 700px)').matches?'edit':'route');
+showView(matchMedia('(max-width: 1050px)').matches?'edit':'route');

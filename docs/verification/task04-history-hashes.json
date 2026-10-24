@@ -1,0 +1,17 @@
+{
+  "docs\\verification\\api-probe-2026-10-24.json": "c066419cdcf2ad33893294dd2ff9ea25f96b2e8f456b2179a890c2e25e583c03",
+  "docs\\verification\\task02-browser.json": "eb4dd660818b1d565590ddfc55d0d00719c20dff9d9f794a6a613dc2b6209ee9",
+  "docs\\verification\\task02-desktop.png": "8098a06812422544f368e76f1a4a82cb1c79377b2261d1a582b2a78fb1518418",
+  "docs\\verification\\task02-mobile.png": "649c8aa1f5dd6da44b7775ccb52924b2ad662afaa14271e391bfb106086c930f",
+  "docs\\verification\\task02-review-restore-dialog.png": "6c74bfad237024cb186ba899fab9d49ac43e5a2de45652c2fcee99ad758f7e18",
+  "docs\\verification\\task02-review-summary.png": "cab3773f74a054f22e13e41db2a379472209c7402770eeb1cd1c8715fff3a12a",
+  "docs\\verification\\task03-after-1440.png": "cfa9062b7425df6b66605235bd977bf5ca94a0b0a45a489b9a50d3c73b15e18b",
+  "docs\\verification\\task03-after-390.png": "3daf58267bffb02bb9f8fea7d38e29c0078471f9b049b40abc1afd8863f650f4",
+  "docs\\verification\\task03-before-1440.png": "7e848f84394db1019b620431d9646cc9b1848b8ba1be6b3d7139747c2b789b07",
+  "docs\\verification\\task03-before-390.png": "873eb0886aad6abeb33dfacdfa199cb30dc05cf6ac558c025c3ec02e883bb868",
+  "docs\\verification\\task03-browser.json": "c7dfd43e87f22c9e3ee52a778a0875cfd4085076dd950878ae436c335547ebce",
+  "docs\\verification\\task03-restore-dialog.png": "0cbbc0ac947dccc81dde9e8d9bbfc93beb17a1c80de9bba5f23351d7655a1a7b",
+  "docs\\verification\\task03-review-current.png": "04e8361693a048a546f65b3dec7b38795c6a75c317d8981cc5ec8f8658155611",
+  "docs\\verification\\task03-route-390.png": "d5fd77d817d8ed4e6c7cdafbba466839784f86f01352d49d9430f504370e76af",
+  "docs\\verification\\task03-summary-1440.png": "d4a0e982d2362d534e41645b1fa842b8dfcb931e998a3a6a7fc8d23788ea9799"
+}

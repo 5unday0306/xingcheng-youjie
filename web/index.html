@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>行程有解 · 太原旅行工作台</title>
+  <title>行程有解 · 旅行准备</title>
   <link rel="stylesheet" href="/styles.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
   <header class="appHeader">
-    <a class="brand" href="/" aria-label="行程有解首页"><span class="brandMark" aria-hidden="true">行</span>行程有解</a>
-    <div class="tripTitle"><strong>太原旅行工作台</strong><span>固定测试需求起步</span></div>
-    <span class="localBadge">仅本机保存</span>
+    <button class="brand" id="brand" type="button" title="回到编辑需求，保留当前内容"><span class="brandMark" aria-hidden="true">行</span>行程有解</button>
+    <span class="preparationLabel">旅行准备</span>
+    <span class="localBadge" id="pilotTag">太原试点</span>
   </header>
   <nav class="viewNav" aria-label="工作台视图">
     <button id="navEdit" type="button" aria-pressed="true">编辑需求</button>
     <button id="navSummary" type="button" aria-pressed="false">需求摘要</button>
-    <button id="navRoute" type="button" aria-pressed="false">每日路线</button>
+    <button id="navRoute" type="button" aria-pressed="false">路线准备</button>
   </nav>
   <main class="workbench" data-view="route" id="workbench">
     <section class="editor" aria-labelledby="editorTitle">
-      <div class="editorHeading"><div><h1 id="editorTitle" tabindex="-1">这趟旅行，先说好</h1><p>1～6人同行，1～3天共同游玩</p></div><span class="phaseBadge">需求准备</span></div>
+      <div class="editorHeading"><div><h1 id="editorTitle" tabindex="-1">一起出发，先说好需求</h1><p>填写条件，保留每个人的期待</p></div><span class="phaseBadge">需求准备</span></div>
       <form id="form" novalidate>
         <div class="editorScroll" id="editorScroll">
           <div id="errors" role="alert" aria-live="polite"></div>
           <section class="formSection" aria-labelledby="conditionsTitle">
-            <h2 id="conditionsTitle">出游条件</h2>
+            <div class="sectionHeading"><h2 id="conditionsTitle">出游条件</h2><button type="button" id="jumpMembers" class="textAction">编辑同行者</button></div>
             <div class="grid">
-              <label>目的地<select id="city"><option value="taiyuan">太原市 · 可测试</option></select></label>
+              <label>目的地<select id="city"></select></label>
               <label>同行人数<select id="people"></select></label>
               <label>出发日期<input id="startDate" type="date"></label>
               <label>游玩天数<select id="dayCount"></select></label>
@@ -37,14 +37,14 @@
             <details class="endpointDetails"><summary>每天从哪里出发、返回？</summary><p>山西博物院东门外公共集合点</p><p class="hint">太原市滨河西路北段13号（东门地址线索）。不是酒店，实际落点与通行待人工核对。</p></details>
           </section>
           <section class="formSection" aria-labelledby="membersTitle">
-            <div class="sectionHeading"><h2 id="membersTitle">同行者的需求</h2><span id="memberCount"></span></div>
+            <div class="sectionHeading"><h2 id="membersTitle" tabindex="-1">同行者的需求</h2><span id="memberCount"></span></div>
             <p class="hint">保留每个人的原话与限制，不填真实个人资料。</p>
             <div id="members"></div>
             <details class="budgetDetails"><summary>预算与步行怎样计算？</summary><p id="budgetScope" class="hint"></p><p class="hint">步行上限包含交通接驳和场馆内部步行。这里填写的是个人限制，不是已计算的实际费用或距离。</p></details>
           </section>
         </div>
         <div class="editorActions">
-          <button type="submit" class="primary" id="check">检查需求并查看摘要</button>
+          <button type="submit" class="primary" id="check">检查并确认需求</button>
           <div class="secondaryActions"><button type="button" id="save">保存需求</button><button type="button" id="restore">恢复上次保存</button></div>
           <p id="storageStatus" role="status" aria-live="polite"></p>
           <button type="button" id="replace" class="dangerButton" hidden>处理无法恢复的旧存档</button>
@@ -52,37 +52,51 @@
       </form>
     </section>
     <section class="display" aria-label="旅行需求与路线工作区">
-      <div class="displayHeading"><div><p class="sectionKicker">共同出行计划</p><h2 id="tripOverview">太原 · 3人 · 2天</h2></div><span class="unverified">旅行可行性未验证</span></div>
+      <section class="destinationBanner" aria-labelledby="destinationName">
+        <div class="destinationText"><span class="pilotStamp" id="pilotStamp">首个试点</span><h2 id="destinationName">目的地</h2><p id="tripDates">日期待填写</p><p id="tripOverview"></p></div>
+        <figure class="cityArtwork" data-city-art="taiyuan-imagery">
+          <svg viewBox="0 0 480 190" role="img" aria-label="原创山形、屋檐与双塔城市意象，非地理地图">
+            <circle cx="355" cy="47" r="27" fill="#E7B963"/>
+            <path d="M0 142 68 72 130 122 194 66 267 132 325 90 415 152 480 114V190H0Z" fill="#BED5C5"/>
+            <path d="M0 172 101 127 190 161 271 120 373 165 480 143V190H0Z" fill="#9DBCAC"/>
+            <g fill="#FBFCF6" stroke="#416F5B" stroke-width="2" stroke-linejoin="round">
+              <path d="M157 161V61H181V161ZM157 61 169 45 181 61Z"/>
+              <path d="M219 161V45H243V161ZM219 45 231 28 243 45Z"/>
+              <path d="M149 148H189L181 140H157ZM149 131H189L181 123H157ZM149 114H189L181 106H157ZM149 97H189L181 89H157ZM149 80H189L181 72H157Z" fill="#6E9881"/>
+              <path d="M211 148H251L243 140H219ZM211 131H251L243 123H219ZM211 114H251L243 106H219ZM211 97H251L243 89H219ZM211 80H251L243 72H219ZM211 63H251L243 55H219Z" fill="#6E9881"/>
+              <path d="M305 168V139H389V168ZM290 141Q317 130 347 113Q366 132 403 141Z" fill="#ECF2E5"/>
+              <path d="M290 141Q317 130 347 113Q366 132 403 141" fill="none" stroke-width="5"/>
+              <path d="M330 168V146H344V168M354 168V146H368V168"/>
+            </g>
+            <path d="M34 171H118M280 179H429" stroke="#466F5E" stroke-width="2"/>
+            <path d="M80 166V136M67 146Q81 117 96 146M410 172V143M398 151Q409 126 424 151" stroke="#416F5B" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          <figcaption>城市意象插画 · 非地图与实景</figcaption>
+        </figure>
+      </section>
       <div class="displayTabs" role="group" aria-label="展示内容">
-        <button type="button" id="tabRoute" aria-pressed="true">每日路线</button>
+        <button type="button" id="tabRoute" aria-pressed="true">路线准备</button>
         <button type="button" id="tabSummary" aria-pressed="false">需求摘要</button>
         <span id="checkStatus" role="status" aria-live="polite">当前需求尚未检查</span>
       </div>
       <div class="displayScroll" id="displayScroll">
         <section id="routeView" aria-labelledby="routeTitle">
-          <div class="routeToolbar"><h3 id="routeTitle" tabindex="-1">每日路线准备</h3><span>尚未生成本次行程</span></div>
+          <div class="routeToolbar"><h3 id="routeTitle" tabindex="-1">按天核对准备</h3><span>显示当前填写的条件</span></div>
           <div id="dayTabs" class="dayTabs" role="group" aria-label="选择旅行日期"></div>
           <div class="routeStage">
-            <div class="mapPlaceholder" role="region" aria-label="地图准备，未接入地图">
-              <span class="mapLabel">地图准备区</span>
-              <div class="emptyMap">
-                <svg viewBox="0 0 96 80" width="96" height="80" aria-hidden="true"><path d="M14 21 35 13 61 21 82 13V60L61 68 35 60 14 68Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M35 13V60M61 21V68" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                <h3>你的路线，还没有生成</h3><p>先整理同行需求，检查后可在摘要中确认。<br>后续接入真实行程与道路数据，再呈现在这里。</p>
-                <span class="emptyBadge">未加载地图 · 无路线数据</span>
-              </div>
-              <p class="mapDisclaimer">此区域不是地图，不含地理底图、活动地点或模拟路线。</p>
-            </div>
-            <aside class="dayBrief"><h3 id="activeDayTitle">第1天的出行条件</h3><div id="activeDay"></div><div class="pendingActivities"><strong>活动与交通</strong><p>尚无活动顺序或路段</p><span class="hint">交通方式、预计耗时和地点编号将在真实生成后展示。</span></div></aside>
+            <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>当前可以先确认同行需求。真实行程与地图留待后续接入。</p><button type="button" id="quickCheck" class="textAction">检查并确认需求</button></section>
+            <aside class="dayBrief"><h3 id="activeDayTitle">当天出行条件</h3><div id="activeDay"></div></aside>
           </div>
-          <section class="gaps"><div><h3>路线生成前，还缺这些依据</h3><p>历史接口连通记录不能代替本次旅行的数据核查。</p></div><ul id="gaps"></ul></section>
+          <section class="companions" aria-labelledby="companionsTitle"><div class="sectionHeading"><div><h3 id="companionsTitle">这次，和谁一起？</h3><p class="hint">每个人的期待，都单独保留。</p></div><span id="companionCount"></span></div><div id="companionOverview" class="companionOverview"></div></section>
+          <details class="gaps"><summary>规划之前，仍需核实的资料</summary><ul id="gaps"></ul></details>
         </section>
         <section id="summaryView" aria-labelledby="summaryTitle" hidden>
-          <div class="summaryHeading"><div><p class="sectionKicker">核对每个人的限制</p><h3 id="summaryTitle" tabindex="-1">需求摘要</h3></div><button type="button" id="backEdit">返回编辑</button></div>
-          <p class="warning">这里只检查输入格式与结构，旅行可行性未验证。</p>
+          <div class="summaryHeading"><div><p class="sectionKicker">核对每个人的限制</p><h3 id="summaryTitle" tabindex="-1">需求摘要</h3></div><button type="button" id="backEdit">修改需求</button></div>
+          <p class="warning">需求格式已检查，行程尚未生成，旅行可行性未验证。</p>
           <div id="summary"></div>
         </section>
       </div>
-      <footer class="displayFooter"><span>共同测试起终点：山西博物院东门外</span><span>本页面不调用模型或地图</span></footer>
+      <footer class="displayFooter"><span>仅保存于当前浏览器，不会自动保存修改。</span><span>固定测试需求起步</span></footer>
     </section>
   </main>
   <dialog id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText">
