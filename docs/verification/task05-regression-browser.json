@@ -1,0 +1,81 @@
+{
+  "executedAt": "2026-10-24T11:35:54.852Z",
+  "browser": "Microsoft Edge, Playwright 1.62.1 headless",
+  "assertions": 146,
+  "passed": true,
+  "viewports": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "pageErrors": [],
+  "externalRequests": 0,
+  "reducedMotion": true,
+  "zoom200": "Equivalent browser context 720x450 CSS, DPR2; native Ctrl+plus not tested",
+  "contrasts": [
+    {
+      "selector": ".destinationText h2",
+      "foreground": "rgb(24, 61, 53)",
+      "background": "rgb(220, 234, 225)",
+      "fontSize": "34px",
+      "ratio": 9.61
+    },
+    {
+      "selector": ".destinationText #tripDates",
+      "foreground": "rgb(24, 61, 53)",
+      "background": "rgb(220, 234, 225)",
+      "fontSize": "15px",
+      "ratio": 9.61
+    },
+    {
+      "selector": "#check",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(34, 106, 84)",
+      "fontSize": "14px",
+      "ratio": 6.45
+    },
+    {
+      "selector": ".editorHeading h1",
+      "foreground": "rgb(24, 61, 53)",
+      "background": "rgb(255, 255, 255)",
+      "fontSize": "20px",
+      "ratio": 11.95
+    },
+    {
+      "selector": ".hint",
+      "foreground": "rgb(100, 116, 108)",
+      "background": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "ratio": 4.93
+    },
+    {
+      "selector": "label",
+      "foreground": "rgb(53, 79, 68)",
+      "background": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "ratio": 8.92
+    },
+    {
+      "selector": ".companionQuote",
+      "foreground": "rgb(61, 89, 73)",
+      "background": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "ratio": 7.71
+    }
+  ],
+  "groups": [
+    "default, route empty state, date linkage and summary navigation",
+    "save600-edit450-refresh600, save450-refresh450, independent state",
+    "restore dialog visible wording, cancel, Escape, actual restore",
+    "persistent field errors, aria association, error links, first-error focus",
+    "explicit walking copy, differing-value warning, Escape and other-member isolation",
+    "reduction wording and cancellation, 1/1 and 6/3 boundaries",
+    "v1 compatibility, invalid-archive save protection, overwrite wording/cancel/Escape, unknown version",
+    "6/3 at 375/390/768/1024/1440, visible actions, mobile navigation, keyboard focus",
+    "UI05 retained dynamic city/date/people, original illustration, companion editing, raw words, full-width summary",
+    "200% equivalent reflow 720x450 CSS / DPR2, media query and editing/navigation checked (not Ctrl+plus test)",
+    "computed color contrast sampled on actual page, each >=4.5:1; not a full accessibility audit"
+  ]
+}

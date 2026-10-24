@@ -102,6 +102,21 @@ summary { cursor: pointer; }
 .displayTabs > button[aria-pressed="true"] { border-color: var(--action); color: var(--action); font-weight: 600; }
 #checkStatus { margin-left: auto; padding: 4px 0 4px 10px; color: var(--muted); font-size: 12px; }
 .displayScroll { overflow-y: auto; min-height: 0; flex: 1; padding: 16px 0; scroll-padding: 16px; }
+.displayScroll { overflow-anchor: none; }
+.generationPanel { padding: 16px; margin-bottom: 16px; border: 1px solid var(--line); border-radius: 10px; background: white; font-size: 14px; overflow-wrap: anywhere; }
+.generationPanel .sectionHeading { flex-wrap: wrap; }
+.generationPanel button { margin: 12px 0; }
+.generationPanel button:disabled { opacity: .7; cursor: not-allowed; }
+.generationPanel details { margin: 12px 0; }
+.generationPanel li { margin: 10px 0; }
+.generationPanel ul,.generationPanel ol { padding-left: 22px; }
+.generationPanel a { display: block; margin-top: 6px; }
+#planResult:not(:empty) { border-top: 1px solid var(--line); padding-top: 16px; }
+#planResult h3 { font-size: 19px; margin-bottom: 12px; }
+.planMembers { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); gap: 12px; margin: 16px 0; }
+.planMetric { padding: 12px; background: #f3f6f2; margin-top: 8px; }
+.planMetric[data-status="conflict"] { background: #fff0eb; border-left: 3px solid #ac3f30; }
+.planItems { margin: 12px 0; }
 .routeToolbar { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
 .routeToolbar h3 { font-size: 18px; }
 .routeToolbar > span { color: var(--muted); font-size: 12px; }

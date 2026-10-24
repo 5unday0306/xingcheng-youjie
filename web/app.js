@@ -2,6 +2,7 @@ import {
   defaultDraft, toRequest, validateRequest, dateAt, BUDGET, GAPS,
   save, restore, STORAGE_KEY, CITY_CONFIG,
 } from './core.js';
+import {createPlanPanel} from './planning.js';
 
 const $ = id => document.getElementById(id);
 const node = (tag, text, className) => {
@@ -16,6 +17,8 @@ let corrupt = false;
 let validationStarted = false;
 let activeDay = 0;
 let currentDisplay = 'route';
+let planPanel=null;
+let focusRevision=0;
 const signature = () => JSON.stringify(toRequest(draft));
 
 function storageStatus(text, kind = '') {
@@ -27,6 +30,7 @@ function updateDirty() {
   else storageStatus('有未保存修改，刷新不会保留本次修改', 'dirty');
 }
 function showView(view, focus = false) {
+  const focusId=++focusRevision;
   if (view !== 'edit') currentDisplay = view;
   $('workbench').dataset.view = view;
   $('routeView').hidden = currentDisplay !== 'route';
@@ -40,6 +44,11 @@ function showView(view, focus = false) {
     const title = $(view === 'edit' ? 'editorTitle' : view === 'summary' ? 'summaryTitle' : 'routeTitle');
     title.focus({ preventScroll: true });
     title.scrollIntoView({ block: 'nearest' });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(focusId!==focusRevision||document.activeElement!==title)return;
+      if(view!=='edit')$('displayScroll').scrollTop=0;
+      title.focus({preventScroll:true});title.scrollIntoView({block:'nearest'});
+    }));
   }
 }
 function confirmAction({ title, text, accept, cancel = '取消' }) {
@@ -125,6 +134,7 @@ function paintErrors(errors) {
   $('errors').append(node('strong', `还有${errors.length}项输入需要调整`), list);
 }
 function edited() {
+  planPanel?.invalidate();
   $('checkStatus').textContent = '输入已修改，请重新检查';
   $('summary').replaceChildren(node('p', '当前需求尚未重新检查。回到编辑区检查后，再核对完整摘要。', 'summaryEmpty'));
   updateDirty();
@@ -253,6 +263,7 @@ function paintRoute() {
   $('tripDates').textContent = first ? (draft.dayCount === 1 ? first : `${first} — ${last}`) : '出发日期待填写';
   $('tripOverview').textContent = `${draft.people}位同行者 / ${draft.dayCount}天共同游玩`;
   paintCompanions();
+  planPanel?.selectDay(activeDay);
   $('dayTabs').replaceChildren(...draft.days.map((day,i) => {
     const button = node('button',`第${i+1}天　${dateAt(draft.startDate,i) || '日期待填'}`);
     button.type = 'button';
@@ -312,6 +323,7 @@ function restoreDraft(auto=false) {
       return;
     }
     draft = data;
+    planPanel?.invalidate();
     savedSignature = signature();
     corrupt = false;
     validationStarted = false;
@@ -390,3 +402,4 @@ $('summary').append(node('p','先在编辑区检查需求，再查看逐人摘�
 render();
 restoreDraft(true);
 showView(matchMedia('(max-width: 1050px)').matches?'edit':'route');
+planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false})});

@@ -1,0 +1,25 @@
+{
+  "executedAt": "2026-10-24T11:36:00.135Z",
+  "mode": "offline-test, test adapters only",
+  "browser": "Edge headless / Playwright",
+  "assertions": 41,
+  "passed": true,
+  "externalRequests": 0,
+  "pageErrors": [],
+  "localPlanPosts": 6,
+  "realCalls": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 0
+  },
+  "checks": [
+    "default disabled; candidates available",
+    "default 3/2, 1/1, 6/3",
+    "unknown values, personal budget conflict",
+    "day switch no new post",
+    "stale result discarded during edit",
+    "375/390/768/1024/1440, error correction then summary title inside viewport",
+    "no map SDK or geometry"
+  ]
+}

@@ -83,6 +83,13 @@
         <section id="routeView" aria-labelledby="routeTitle">
           <div class="routeToolbar"><h3 id="routeTitle" tabindex="-1">按天核对准备</h3><span>显示当前填写的条件</span></div>
           <div id="dayTabs" class="dayTabs" role="group" aria-label="选择旅行日期"></div>
+          <section class="generationPanel" aria-labelledby="generationTitle">
+            <div class="sectionHeading"><h3 id="generationTitle">最小草案与核查</h3><span id="generationMode">正在检查本地能力</span></div>
+            <p id="generationStatus" role="status" aria-live="polite">仅访问本机准备接口，不加载地图或模型。</p>
+            <button type="button" id="offlineRun" disabled>真实生成未启用</button>
+            <details><summary>本批候选、估计与来源（4项）</summary><ul id="candidateList"></ul></details>
+            <div id="planResult" aria-live="polite"></div>
+          </section>
           <div class="routeStage">
             <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>当前可以先确认同行需求。真实行程与地图留待后续接入。</p><button type="button" id="quickCheck" class="textAction">检查并确认需求</button></section>
             <aside class="dayBrief"><h3 id="activeDayTitle">当天出行条件</h3><div id="activeDay"></div></aside>

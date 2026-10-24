@@ -2,11 +2,14 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {catalog} from '../data/taiyuan.mjs';
 import {defaultDraft,toRequest} from '../web/core.js';
-import {validateInput,modelInput,parsePlan,requiredLegs,reviewPlan,createPlanningService} from '../lib/planning.mjs';
+import {validateInput,modelInput,parsePlan,requiredLegs,reviewPlan,createPlanningService,scaledLimit} from '../lib/planning.mjs';
 const input=()=>toRequest(defaultDraft());
 const planFor=r=>({version:1,days:r.days.map((d,i)=>({date:d.date,items:[{type:'visit',candidateId:i===0?'TY01':i===1?'TY04':'TY05',durationMinutes:i===0?150:45,reason:'离线测试选择，不代表优化结果'},{type:'meal',reason:'门店待选'}]}))});
 const service=(options={})=>createPlanningService({mode:'offline-test',planner:async p=>JSON.stringify(planFor(p)),...options});
 const rejects=(promise,code)=>assert.rejects(promise,e=>e.code===code);
+test('预算与步行上限按分/米保守精确转换，不因浮点误差或四舍五入放宽',()=>{
+  assert.equal(scaledLimit(1.001,1000),1001);assert.equal(scaledLimit(1.005,100),100);assert.equal(scaledLimit(1e-7,1000),0);assert.equal(scaledLimit(0,100),0);
+});
 test('候选字段保留来源、估计和未知；目录副本不能污染源',()=>{
   const d=catalog();assert.equal(d.candidates.length,4);assert.equal(d.candidates[0].ticketCents.value,null);
   assert.equal(d.candidates[0].opening.status,'unknown');assert.equal(d.candidates[0].internalMeters.status,'estimate');
