@@ -1,0 +1,62 @@
+{
+  "kind": "live_api_probe",
+  "authorized_budget_cny": 1,
+  "limits": {
+    "geocodes": 2,
+    "walking": 1,
+    "model": 1,
+    "retries": 0
+  },
+  "billing_note": "No billing receipt; estimate only; maps raw data not persisted.",
+  "map": {
+    "state": "finished",
+    "geocodes": [
+      {
+        "at_utc": "2026-10-24T06:32:54.936982+00:00",
+        "attempts": 1,
+        "http_status": 200,
+        "elapsed_seconds": 0.313,
+        "operation": "geocode",
+        "business_code": "10000",
+        "api_success": true,
+        "unique_result": true,
+        "gate_text_match": true
+      },
+      {
+        "at_utc": "2026-10-24T06:32:55.257594+00:00",
+        "attempts": 1,
+        "http_status": 200,
+        "elapsed_seconds": 0.188,
+        "operation": "geocode",
+        "business_code": "10000",
+        "api_success": true,
+        "unique_result": true,
+        "gate_text_match": true
+      }
+    ],
+    "walking": {
+      "at_utc": "2026-10-24T06:32:55.457678+00:00",
+      "attempts": 1,
+      "http_status": 200,
+      "elapsed_seconds": 0.203,
+      "state": "called",
+      "api_success": true,
+      "numeric_distance_and_duration": true
+    }
+  },
+  "model": {
+    "state": "finished",
+    "at_utc": "2026-10-24T06:33:08.359649+00:00",
+    "attempts": 1,
+    "http_status": 200,
+    "elapsed_seconds": 1.406,
+    "json_parse": true,
+    "schema_and_id_check": true,
+    "usage": {
+      "prompt_tokens": 274,
+      "completion_tokens": 95,
+      "total_tokens": 369
+    },
+    "estimated_cny_peak_uncached": 0.001308
+  }
+}
