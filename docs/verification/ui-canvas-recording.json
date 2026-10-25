@@ -1,0 +1,69 @@
+{
+  "executedAt": "2026-10-25T07:29:52.780Z",
+  "method": "Actual Edge viewport CDP screencast + browser MediaRecorder; no fabricated application frames",
+  "wallSeconds": 33.01,
+  "width": 1440,
+  "height": 900,
+  "mime": "video/webm;codecs=vp9",
+  "frames": 143,
+  "bytes": 3614718,
+  "actions": [
+    {
+      "atSeconds": 0.12,
+      "action": "打开独立设计预览"
+    },
+    {
+      "atSeconds": 3.05,
+      "action": "选择同行者2"
+    },
+    {
+      "atSeconds": 5.04,
+      "action": "展开同行者2编辑面板"
+    },
+    {
+      "atSeconds": 8.03,
+      "action": "编辑需求原话"
+    },
+    {
+      "atSeconds": 10.51,
+      "action": "修改本人预算为520元"
+    },
+    {
+      "atSeconds": 12.73,
+      "action": "应用并关闭编辑"
+    },
+    {
+      "atSeconds": 15.04,
+      "action": "查看固定离线活动"
+    },
+    {
+      "atSeconds": 18.03,
+      "action": "切换第2天"
+    },
+    {
+      "atSeconds": 20.53,
+      "action": "切回第1天"
+    },
+    {
+      "atSeconds": 23.02,
+      "action": "返回预览需求概览"
+    },
+    {
+      "atSeconds": 25.03,
+      "action": "实际检查需求并转换摘要"
+    },
+    {
+      "atSeconds": 28.03,
+      "action": "暂存本次预览并显示真实反馈"
+    },
+    {
+      "atSeconds": 33.01,
+      "action": "结束视口录制"
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": 0,
+  "realBusinessCalls": 0,
+  "audio": false,
+  "cursorCaptured": false
+}

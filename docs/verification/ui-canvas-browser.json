@@ -1,0 +1,53 @@
+{
+  "executedAt": "2026-10-25T07:36:03.557Z",
+  "assertions": 153,
+  "passed": true,
+  "viewports": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "externalRequests": 0,
+  "businessRequests": 0,
+  "storageAccesses": 0,
+  "pageErrors": [],
+  "unchangedFiles": 76,
+  "contrast": [
+    {
+      "selector": ".top-labels strong",
+      "ratio": 10.59
+    },
+    {
+      "selector": ".scene-copy h1",
+      "ratio": 11.43
+    },
+    {
+      "selector": ".scene-facts strong",
+      "ratio": 10.77
+    },
+    {
+      "selector": ".art-caption",
+      "ratio": 10.83
+    },
+    {
+      "selector": ".person-text>small",
+      "ratio": 5.52
+    },
+    {
+      "selector": ".offline-warning",
+      "ratio": 6.15
+    },
+    {
+      "selector": ".activity small",
+      "ratio": 5.38
+    },
+    {
+      "selector": ".primary",
+      "ratio": 12.1
+    }
+  ],
+  "motion": "Finite entrance, operation transitions tested; reduced-motion has no animations",
+  "zoom": "720x450 CSS equivalent reflow only; native 200% and real phone not tested"
+}

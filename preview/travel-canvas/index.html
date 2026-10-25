@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>行程有解 · 沉浸式旅行画布预览</title><link rel="stylesheet" href="./canvas.css"><script type="module" src="./canvas.js"></script></head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">行</span><strong>行程有解</strong><span class="brand-caption">把期待，放进旅程</span></div><div class="top-labels"><span>太原试点</span><strong>设计预览</strong></div></header>
+  <main>
+    <section class="travel-scene" aria-labelledby="scene-title">
+      <svg class="scenery" viewBox="0 0 1440 440" preserveAspectRatio="xMidYMid slice" role="img" aria-label="原创山形与城市建筑艺术意象，非实景、地图或道路">
+        <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0B4655"/><stop offset="1" stop-color="#247383"/></linearGradient><linearGradient id="peak" x2="0" y2="1"><stop stop-color="#8DC9CC"/><stop offset="1" stop-color="#57999F"/></linearGradient></defs>
+        <path fill="url(#sky)" d="M0 0h1440v440H0Z"/>
+        <g class="far-layer"><circle cx="1128" cy="94" r="39" fill="#EEA06B"/><path d="M500 290 637 133 750 247 896 84 1054 264 1184 142 1440 338V440H500Z" fill="#3F7F8C"/><path d="m637 133 113 114-43-10-33-38-25 10-30-48Z" fill="#91C7C9"/><path d="m896 84 89 102-50-16-28-30-32 17-24-14Z" fill="#B6DEDC"/><path d="M680 360 823 210 952 318 1107 201 1248 320 1440 233V440H680Z" fill="url(#peak)"/></g>
+        <g class="city-layer" fill="#235D6B" stroke="#A9DCD7" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M851 368V222h24v146M851 222l12-19 12 19M913 368V199h27v169M913 199l14-22 13 22"/>
+          <path d="M841 345h44l-10-9h-24ZM841 319h44l-10-9h-24ZM841 293h44l-10-9h-24ZM841 267h44l-10-9h-24ZM841 241h44l-10-9h-24ZM902 345h49l-11-9h-27ZM902 317h49l-11-9h-27ZM902 289h49l-11-9h-27ZM902 261h49l-11-9h-27ZM902 233h49l-11-9h-27Z" fill="#B5DFD5"/>
+          <path d="M1020 380v-72h150v72ZM1000 311q58-18 95-48 37 31 96 48ZM1043 267h104l-52-35Z" fill="#377781"/>
+          <path d="M1050 380v-46h22v46M1084 380v-46h22v46M1118 380v-46h22v46" fill="#A2CBC7"/>
+          <path d="M1250 392v-53h105v53ZM1234 341l68-35 70 35Z" fill="#4A9296"/>
+        </g>
+        <g class="near-layer"><path d="M420 440q155-90 301-50t314-13 405-29v92Z" fill="#0B4755"/><path d="M720 440q186-33 337-11t383-20v31Z" fill="#073642"/><path d="M1245 392v-46m-19 19q20-40 40 0M1312 388v-60m-28 24q29-48 55 0" fill="none" stroke="#0B4755" stroke-width="5" stroke-linecap="round"/></g>
+      </svg>
+      <div class="scene-copy"><span class="scene-location">山西 · 太原</span><h1 id="scene-title">太原，<br>让期待同行。</h1><p>看一座城，也照顾每个人的节奏。</p><div class="scene-facts"><strong id="scene-dates"></strong><span id="scene-party"></span></div><button type="button" class="scene-edit" id="edit-trip">编辑旅行条件 <span aria-hidden="true">↗</span></button></div>
+      <aside class="travel-ticket" aria-label="当前旅行票签"><div class="ticket-top"><span>结伴旅行</span><strong>太原</strong></div><div class="ticket-date"><b id="ticket-date">11.07</b><span>出发 · 连续两天</span></div><div class="ticket-bottom"><span>3人 / 2天</span><span>公共测试点往返</span></div><div class="ticket-perforation" aria-hidden="true"></div></aside>
+      <p class="art-caption">原创城市意象 · 非实景与地图</p>
+    </section>
+    <section class="crew-section" aria-labelledby="crew-title"><div class="section-heading"><h2 id="crew-title">这一次，和谁同行？</h2><span id="crew-context">分别保留每个人的期待</span></div><div class="crew-grid" id="crew"></div><div class="selected-note" id="selected-note" role="status"></div></section>
+    <section class="work-area" aria-labelledby="work-title">
+      <div class="work-heading"><div><h2 id="work-title" tabindex="-1">旅行需求概览</h2><p id="view-caption">设计预览，编辑仅在本次打开期间保留</p></div><div class="actions"><button type="button" id="save-preview" class="secondary">暂存本页</button><button type="button" id="check-preview" class="primary">检查需求</button></div></div>
+      <div class="view-nav" role="group" aria-label="选择画布内容"><button id="view-overview" type="button" aria-pressed="true">需求概览</button><button id="view-summary" type="button" aria-pressed="false">需求摘要</button><button id="view-offline" type="button" aria-pressed="false">固定离线活动</button><span id="memory-state">仅预览，尚未暂存</span></div>
+      <div id="view-content"></div>
+    </section>
+    <footer class="page-footer"><span>独立设计预览 · 等待视觉验收</span><span>无模型、地点、道路或地图调用</span></footer>
+  </main>
+  <dialog id="editor" aria-labelledby="editor-title" aria-describedby="editor-note"><div class="editor-shell"><header class="editor-header"><div><span class="editor-kicker">展开编辑</span><h2 id="editor-title">同行者需求</h2></div><button type="button" id="close-editor" class="icon-button" aria-label="关闭编辑面板">×</button></header><p id="editor-note">仅修改本页预览，不影响正式需求和存档。</p><form id="editor-form" novalidate><div class="editor-scroll"><div id="editor-errors" role="alert"></div><div id="editor-fields"></div></div><footer class="editor-actions"><button type="button" id="cancel-editor" class="secondary">关闭面板</button><button type="submit" class="primary">应用并关闭</button></footer></form></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body></html>

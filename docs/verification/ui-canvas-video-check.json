@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-25T07:29:56.000Z",
+  "decoded": true,
+  "width": 1440,
+  "height": 900,
+  "duration": null,
+  "decodedFrameSeconds": [
+    2,
+    8,
+    19,
+    26,
+    30
+  ],
+  "notice": "Frames decoded from actual operation recording; no application states synthesized. Container duration may be unspecified for MediaRecorder WebM; wall-clock duration recorded separately."
+}
