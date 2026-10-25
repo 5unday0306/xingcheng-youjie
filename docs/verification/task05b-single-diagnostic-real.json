@@ -1,0 +1,62 @@
+{
+  "executedAt": "2026-10-25T09:24:39.669Z",
+  "mode": "single-real-diagnostic",
+  "authorization": "用户明确仅恢复1次同条件诊断查询，不启动下游",
+  "query": {
+    "api": "GET /v3/place/text",
+    "keywords": "山西博物院(东门)",
+    "city": "140100",
+    "citylimit": true,
+    "offset": 25,
+    "page": 1,
+    "extensions": "base"
+  },
+  "httpStatus": 200,
+  "result": {
+    "mode": "diagnostic-only",
+    "target": "ENDPOINT",
+    "statistics": {
+      "serviceStatus": "success",
+      "infocode": "10000",
+      "countFieldType": "string",
+      "declaredCount": 53,
+      "returned": 25,
+      "exactNameMatches": 0,
+      "validation": {
+        "passed": false,
+        "code": "UPSTREAM_DATA",
+        "reason": "incomplete-results",
+        "message": "搜索结果不完整或数量字段无效，不能证明唯一，不自动翻页"
+      }
+    },
+    "notice": "本次单次诊断结束，已停止；不确认落点，不启动下游"
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 0
+  },
+  "reservedCents": 5,
+  "actualCharge": "待供应商账单核对；预留非实扣",
+  "stopped": {
+    "code": "DIAGNOSTIC_COMPLETE",
+    "at": "2026-10-25T09:24:39.654Z",
+    "diagnostic": {
+      "serviceStatus": "success",
+      "infocode": "10000",
+      "countFieldType": "string",
+      "declaredCount": 53,
+      "returned": 25,
+      "exactNameMatches": 0,
+      "validation": {
+        "passed": false,
+        "code": "UPSTREAM_DATA",
+        "reason": "incomplete-results",
+        "message": "搜索结果不完整或数量字段无效，不能证明唯一，不自动翻页"
+      }
+    }
+  },
+  "automaticRetries": 0,
+  "rawResponsePersisted": false
+}

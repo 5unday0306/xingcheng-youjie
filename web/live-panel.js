@@ -51,7 +51,7 @@ export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}})
   });
   const ledger=el('pre');const count=button('查看本轮次数与费用预留',async()=>{if(lease)await post('/api/live/sdk-event',{event:'resource-count',counts:resourceCounts()});ledger.textContent=JSON.stringify(await post('/api/live/ledger',{}),null,2);});
   section.append(road,proofList,load,tools,legend,mapBox,legInfo,accept,count,ledger);root.append(section);
-  if(!capabilities.canPrepare)message(capabilities.haltReason?`本轮已停止（${capabilities.haltReason}）。所有真实入口关闭；请先复核失败原因，不自动重试。`:'新授权尚未就绪，所有真实入口关闭；配置密钥不会自动授权。');
+  if(!capabilities.canPrepare)message(capabilities.haltReason==='DIAGNOSTIC_COMPLETE'?'单次诊断已结束，未确认落点、未启动下游。真实入口保持关闭，等待明确后续范围。':capabilities.haltReason?`本轮已停止（${capabilities.haltReason}）。所有真实入口关闭；请先复核失败原因，不自动重试。`:'新授权尚未就绪，所有真实入口关闭；配置密钥不会自动授权。');
   if(capabilities.haltReason)post('/api/live/ledger',{}).then(record=>ledger.textContent=JSON.stringify(record,null,2)).catch(()=>message('本轮已停止，调用记录暂时无法读取；不发起真实请求。'));
   return {mode:()=>mode.value,showDay,focusActivity:id=>map?.focusActivity(id),invalidate(){if(map){map.clear();mapBox.hidden=true;message('需求已修改，旧草案及地图覆盖物失效；不会自动重新规划。');}}};
 }
