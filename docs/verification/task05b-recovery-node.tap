@@ -2,585 +2,591 @@ TAP version 13
 # Subtest: 默认三人两天及日期有效
 ok 1 - 默认三人两天及日期有效
   ---
-  duration_ms: 4.5089
+  duration_ms: 3.3295
   type: 'test'
   ...
 # Subtest: 1人1天边界
 ok 2 - 1人1天边界
   ---
-  duration_ms: 0.2439
+  duration_ms: 0.3164
   type: 'test'
   ...
 # Subtest: 6人3天边界
 ok 3 - 6人3天边界
   ---
-  duration_ms: 0.1679
+  duration_ms: 0.1755
   type: 'test'
   ...
 # Subtest: 拒绝非法人数 0
 ok 4 - 拒绝非法人数 0
   ---
-  duration_ms: 0.2267
+  duration_ms: 0.1891
   type: 'test'
   ...
 # Subtest: 拒绝非法人数 7
 ok 5 - 拒绝非法人数 7
   ---
-  duration_ms: 0.1174
+  duration_ms: 0.1127
   type: 'test'
   ...
 # Subtest: 拒绝非法人数 true
 ok 6 - 拒绝非法人数 true
   ---
-  duration_ms: 0.1032
+  duration_ms: 0.1027
   type: 'test'
   ...
 # Subtest: 拒绝非法人数 3
 ok 7 - 拒绝非法人数 3
   ---
-  duration_ms: 0.0783
+  duration_ms: 0.0877
   type: 'test'
   ...
 # Subtest: 拒绝非法人数 2.5
 ok 8 - 拒绝非法人数 2.5
   ---
-  duration_ms: 0.0752
+  duration_ms: 0.2426
   type: 'test'
   ...
 # Subtest: 拒绝0天
 ok 9 - 拒绝0天
   ---
-  duration_ms: 0.2128
+  duration_ms: 0.2815
   type: 'test'
   ...
 # Subtest: 拒绝4天
 ok 10 - 拒绝4天
   ---
-  duration_ms: 1.2386
+  duration_ms: 1.1104
   type: 'test'
   ...
 # Subtest: 人数成员数不符
 ok 11 - 人数成员数不符
   ---
-  duration_ms: 0.1597
+  duration_ms: 0.1682
   type: 'test'
   ...
 # Subtest: 拒绝非连续日期
 ok 12 - 拒绝非连续日期
   ---
-  duration_ms: 0.1358
+  duration_ms: 0.1068
   type: 'test'
   ...
 # Subtest: 拒绝无效日期
 ok 13 - 拒绝无效日期
   ---
-  duration_ms: 0.0887
+  duration_ms: 0.0942
   type: 'test'
   ...
 # Subtest: 拒绝非法结束时间 08:00
 ok 14 - 拒绝非法结束时间 08:00
   ---
-  duration_ms: 0.0593
+  duration_ms: 0.0707
   type: 'test'
   ...
 # Subtest: 拒绝非法结束时间 09:00
 ok 15 - 拒绝非法结束时间 09:00
   ---
-  duration_ms: 0.0422
+  duration_ms: 0.055
   type: 'test'
   ...
 # Subtest: 拒绝非法结束时间 25:00
 ok 16 - 拒绝非法结束时间 25:00
   ---
-  duration_ms: 0.053
+  duration_ms: 0.1086
   type: 'test'
   ...
 # Subtest: 拒绝非法结束时间 
 ok 17 - 拒绝非法结束时间 
   ---
-  duration_ms: 0.0374
+  duration_ms: 0.0632
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 -1
 ok 18 - 预算拒绝类型/非有限值 -1
   ---
-  duration_ms: 0.0961
+  duration_ms: 0.1267
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 NaN
 ok 19 - 预算拒绝类型/非有限值 NaN
   ---
-  duration_ms: 0.0406
+  duration_ms: 0.057
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 Infinity
 ok 20 - 预算拒绝类型/非有限值 Infinity
   ---
-  duration_ms: 0.034
+  duration_ms: 0.0506
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 null
 ok 21 - 预算拒绝类型/非有限值 null
   ---
-  duration_ms: 0.0332
+  duration_ms: 0.0471
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 true
 ok 22 - 预算拒绝类型/非有限值 true
   ---
-  duration_ms: 0.0357
+  duration_ms: 0.0484
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 
 ok 23 - 预算拒绝类型/非有限值 
   ---
-  duration_ms: 0.0408
+  duration_ms: 0.0487
   type: 'test'
   ...
 # Subtest: 预算拒绝类型/非有限值 600
 ok 24 - 预算拒绝类型/非有限值 600
   ---
-  duration_ms: 0.0376
+  duration_ms: 0.0571
   type: 'test'
   ...
 # Subtest: 数字转换拒绝空、布尔、科学计数及负数
 ok 25 - 数字转换拒绝空、布尔、科学计数及负数
   ---
-  duration_ms: 0.1098
+  duration_ms: 0.1207
   type: 'test'
   ...
 # Subtest: 步行拒绝非法数值与覆盖缺失
 ok 26 - 步行拒绝非法数值与覆盖缺失
   ---
-  duration_ms: 0.1316
+  duration_ms: 0.1807
   type: 'test'
   ...
 # Subtest: 标识重复与必填字段
 ok 27 - 标识重复与必填字段
   ---
-  duration_ms: 0.1343
+  duration_ms: 0.1524
   type: 'test'
   ...
 # Subtest: 逐人独立且往返约束保留
 ok 28 - 逐人独立且往返约束保留
   ---
-  duration_ms: 0.0797
+  duration_ms: 0.0908
   type: 'test'
   ...
 # Subtest: 保存恢复逐项一致
 ok 29 - 保存恢复逐项一致
   ---
-  duration_ms: 0.8107
+  duration_ms: 0.5346
   type: 'test'
   ...
 # Subtest: 无存档返回null
 ok 30 - 无存档返回null
   ---
-  duration_ms: 0.0726
+  duration_ms: 0.0801
   type: 'test'
   ...
 # Subtest: 损坏/版本/结构存档不能静默覆盖 broken
 ok 31 - 损坏/版本/结构存档不能静默覆盖 broken
   ---
-  duration_ms: 0.4262
+  duration_ms: 0.503
   type: 'test'
   ...
 # Subtest: 损坏/版本/结构存档不能静默覆盖 {"version":99}
 ok 32 - 损坏/版本/结构存档不能静默覆盖 {"version":99}
   ---
-  duration_ms: 0.186
+  duration_ms: 0.2083
   type: 'test'
   ...
 # Subtest: 损坏/版本/结构存档不能静默覆盖 {"version":1,"request":{}}
 ok 33 - 损坏/版本/结构存档不能静默覆盖 {"version":1,"request":{}}
   ---
-  duration_ms: 0.1663
+  duration_ms: 0.2031
   type: 'test'
   ...
 # Subtest: 非法输入保存不能破坏旧存档
 ok 34 - 非法输入保存不能破坏旧存档
   ---
-  duration_ms: 0.1657
+  duration_ms: 0.1813
   type: 'test'
   ...
 # Subtest: 存储配额/权限错误上抛供UI提示
 ok 35 - 存储配额/权限错误上抛供UI提示
   ---
-  duration_ms: 0.299
+  duration_ms: 0.3077
   type: 'test'
   ...
 # Subtest: 坏JSON/空值不会恢复
 ok 36 - 坏JSON/空值不会恢复
   ---
-  duration_ms: 0.2018
+  duration_ms: 0.1927
   type: 'test'
   ...
 # Subtest: 默认API能力显示未授权，不能以参数或请求字段开启真实调用
 ok 37 - 默认API能力显示未授权，不能以参数或请求字段开启真实调用
   ---
-  duration_ms: 59.0682
+  duration_ms: 52.4904
   type: 'test'
   ...
 # Subtest: API阻止异源、跨站与伪造Host，接口不能充当开放代理
 ok 38 - API阻止异源、跨站与伪造Host，接口不能充当开放代理
   ---
-  duration_ms: 40.152
+  duration_ms: 42.0265
   type: 'test'
   ...
 # Subtest: JSON类型、格式和请求大小限制在进入测试规划之前生效
 ok 39 - JSON类型、格式和请求大小限制在进入测试规划之前生效
   ---
-  duration_ms: 29.0093
+  duration_ms: 34.7961
   type: 'test'
   ...
 # Subtest: 候选与静态响应不下发凭据或服务端代码，CSP仅开放本机连接
 ok 40 - 候选与静态响应不下发凭据或服务端代码，CSP仅开放本机连接
   ---
-  duration_ms: 59.5754
+  duration_ms: 78.996
   type: 'test'
   ...
 # Subtest: 显式测试服务运行当前日期人数天数，输出替身标记且真实调用全0
 ok 41 - 显式测试服务运行当前日期人数天数，输出替身标记且真实调用全0
   ---
-  duration_ms: 18.8454
+  duration_ms: 15.8687
   type: 'test'
   ...
 # Subtest: HTTP模型错误脱敏且保留失败状态，未假报草案成功
 ok 42 - HTTP模型错误脱敏且保留失败状态，未假报草案成功
   ---
-  duration_ms: 5.0535
+  duration_ms: 3.7953
   type: 'test'
   ...
 # Subtest: HTTP并发重复点击只启动一次替身
 ok 43 - HTTP并发重复点击只启动一次替身
   ---
-  duration_ms: 5.184
+  duration_ms: 4.7011
   type: 'test'
   ...
 # Subtest: 预算与步行上限按分/米保守精确转换，不因浮点误差或四舍五入放宽
 ok 44 - 预算与步行上限按分/米保守精确转换，不因浮点误差或四舍五入放宽
   ---
-  duration_ms: 1.195
+  duration_ms: 0.845
   type: 'test'
   ...
 # Subtest: 候选字段保留来源、估计和未知；目录副本不能污染源
 ok 45 - 候选字段保留来源、估计和未知；目录副本不能污染源
   ---
-  duration_ms: 0.63
+  duration_ms: 0.3563
   type: 'test'
   ...
 # Subtest: 服务端重新校验坏输入和文本体积，不只依赖浏览器
 ok 46 - 服务端重新校验坏输入和文本体积，不只依赖浏览器
   ---
-  duration_ms: 4.572
+  duration_ms: 5.4737
   type: 'test'
   ...
 # Subtest: 模型交接不带显示名、持久成员ID或请求附加字段
 ok 47 - 模型交接不带显示名、持久成员ID或请求附加字段
   ---
-  duration_ms: 0.3784
+  duration_ms: 0.7613
   type: 'test'
   ...
 # Subtest: 坏JSON、未知ID、额外坐标/票价、日期错位、重复候选及超区间均拒绝
 ok 48 - 坏JSON、未知ID、额外坐标/票价、日期错位、重复候选及超区间均拒绝
   ---
-  duration_ms: 2.0447
+  duration_ms: 2.5288
   type: 'test'
   ...
 # Subtest: 各日必须保留出发/相邻/午餐/返回路段，不跨过未知午餐连线
 ok 49 - 各日必须保留出发/相邻/午餐/返回路段，不跨过未知午餐连线
   ---
-  duration_ms: 2.3459
+  duration_ms: 2.2715
   type: 'test'
   ...
 # Subtest: 缺营业/交通/餐费不能变成0或通过；遗漏传入路段也保留未知
 ok 50 - 缺营业/交通/餐费不能变成0或通过；遗漏传入路段也保留未知
   ---
-  duration_ms: 0.4554
+  duration_ms: 0.4675
   type: 'test'
   ...
 # Subtest: 每人每日独立判步行，不用其他人的额度抵销
 ok 51 - 每人每日独立判步行，不用其他人的额度抵销
   ---
-  duration_ms: 0.6803
+  duration_ms: 0.744
   type: 'test'
   ...
 # Subtest: 逐人预算：有未知仍能证明已知部分超支；公交不按人数均分
 ok 52 - 逐人预算：有未知仍能证明已知部分超支；公交不按人数均分
   ---
-  duration_ms: 0.6982
+  duration_ms: 0.7595
   type: 'test'
   ...
 # Subtest: 每日已知游玩下界超可用时间即冲突，即使交通未知
 ok 53 - 每日已知游玩下界超可用时间即冲突，即使交通未知
   ---
-  duration_ms: 0.5911
+  duration_ms: 0.6582
   type: 'test'
   ...
 # Subtest: 已知当日开放窗与入场限时冲突被程序指出，常规参考不升级为当日事实
 ok 54 - 已知当日开放窗与入场限时冲突被程序指出，常规参考不升级为当日事实
   ---
-  duration_ms: 0.4466
+  duration_ms: 0.5531
   type: 'test'
   ...
 # Subtest: 重叠街区内部步行不能直接相加导致假冲突
 ok 55 - 重叠街区内部步行不能直接相加导致假冲突
   ---
-  duration_ms: 0.3281
+  duration_ms: 0.3718
   type: 'test'
   ...
 # Subtest: 默认服务即使注入替身也禁止运行，不读凭据、不调用适配器
 ok 56 - 默认服务即使注入替身也禁止运行，不读凭据、不调用适配器
   ---
-  duration_ms: 0.3641
+  duration_ms: 0.3906
   type: 'test'
   ...
 # Subtest: 模型超时后终止、无交通调用或自动重试
 ok 57 - 模型超时后终止、无交通调用或自动重试
   ---
-  duration_ms: 20.1973
+  duration_ms: 27.6777
   type: 'test'
   ...
 # Subtest: 错误JSON或上游异常不继续路段、不泄露原始错误
 ok 58 - 错误JSON或上游异常不继续路段、不泄露原始错误
   ---
-  duration_ms: 0.9301
+  duration_ms: 0.8531
   type: 'test'
   ...
 # Subtest: 重复运行并发被拦截，结束后允许新的离线测试
 ok 59 - 重复运行并发被拦截，结束后允许新的离线测试
   ---
-  duration_ms: 0.7295
+  duration_ms: 0.7391
   type: 'test'
   ...
 # Subtest: 道路失败或非法交通方式停止后续查询，已完成部分不冒充全路线
 ok 60 - 道路失败或非法交通方式停止后续查询，已完成部分不冒充全路线
   ---
-  duration_ms: 0.7207
+  duration_ms: 0.6444
   type: 'test'
   ...
 # Subtest: 超大匿名输入在适配器前被保守token上限拦截
 ok 61 - 超大匿名输入在适配器前被保守token上限拦截
   ---
-  duration_ms: 0.3099
+  duration_ms: 0.2883
   type: 'test'
   ...
 # Subtest: 恢复准备：检索合同仅POI ID，无备注、原地址或网页坐标；保留来源差异
 ok 62 - 恢复准备：检索合同仅POI ID，无备注、原地址或网页坐标；保留来源差异
   ---
-  duration_ms: 1.4827
+  duration_ms: 1.5345
   type: 'test'
   ...
 # Subtest: 恢复准备：POI响应严格核对ID/行政区/名称/数量/坐标，不自动认定入口
 ok 63 - 恢复准备：POI响应严格核对ID/行政区/名称/数量/坐标，不自动认定入口
   ---
-  duration_ms: 2.9284
+  duration_ms: 3.0858
   type: 'test'
   ...
 # Subtest: 恢复准备：固定详情接口，只传id/key/output，每次计入地点额度，无搜索/地理编码回退
 ok 64 - 恢复准备：固定详情接口，只传id/key/output，每次计入地点额度，无搜索/地理编码回退
   ---
-  duration_ms: 0.6865
+  duration_ms: 0.6672
   type: 'test'
   ...
 # Subtest: 恢复准备：同一门口查询可内存复用，集合点/场馆仍分别人工确认
 ok 65 - 恢复准备：同一门口查询可内存复用，集合点/场馆仍分别人工确认
   ---
-  duration_ms: 1.3988
+  duration_ms: 1.4949
   type: 'test'
   ...
 # Subtest: 恢复准备：未批准恢复不得改账本；批准仅追加授权记录，2次/2分不清零
 ok 66 - 恢复准备：未批准恢复不得改账本；批准仅追加授权记录，2次/2分不清零
   ---
-  duration_ms: 49.7239
+  duration_ms: 40.2867
   type: 'test'
   ...
 # Subtest: 恢复准备：地图序号可见、步行虚线/公交实线、双向选择/切日/适配缩放均不请求
 ok 67 - 恢复准备：地图序号可见、步行虚线/公交实线、双向选择/切日/适配缩放均不请求
   ---
-  duration_ms: 1.1941
+  duration_ms: 0.9855
   type: 'test'
   ...
 # Subtest: 恢复备选：名称搜索只接受完整结果中的唯一精确门名，不选机构中心或近似项
 ok 68 - 恢复备选：名称搜索只接受完整结果中的唯一精确门名，不选机构中心或近似项
   ---
-  duration_ms: 0.6519
+  duration_ms: 0.6623
   type: 'test'
   ...
 # Subtest: 恢复备选：只有明确poi-search合同才调用名称接口，不自动从详情失败切换
 ok 69 - 恢复备选：只有明确poi-search合同才调用名称接口，不自动从详情失败切换
   ---
-  duration_ms: 0.6233
+  duration_ms: 0.3617
+  type: 'test'
+  ...
+# Subtest: 恢复备选：不完整结果诊断记录脱敏数量，数组/缺失count不能隐式变0
+ok 70 - 恢复备选：不完整结果诊断记录脱敏数量，数组/缺失count不能隐式变0
+  ---
+  duration_ms: 0.3031
   type: 'test'
   ...
 # Subtest: 05B 配置只返回存在性；普通模块不自动读取文件
-ok 70 - 05B 配置只返回存在性；普通模块不自动读取文件
+ok 71 - 05B 配置只返回存在性；普通模块不自动读取文件
   ---
-  duration_ms: 14.3792
+  duration_ms: 10.2193
   type: 'test'
   ...
 # Subtest: 05B 新授权缺失/到期/未确认费用边界均关闭
-ok 71 - 05B 新授权缺失/到期/未确认费用边界均关闭
+ok 72 - 05B 新授权缺失/到期/未确认费用边界均关闭
   ---
-  duration_ms: 3.2979
+  duration_ms: 2.5969
   type: 'test'
   ...
 # Subtest: 05B 持久费用/次数预留跨重建保留，失败不退额，敏感值不写记录
-ok 72 - 05B 持久费用/次数预留跨重建保留，失败不退额，敏感值不写记录
+ok 73 - 05B 持久费用/次数预留跨重建保留，失败不退额，敏感值不写记录
   ---
-  duration_ms: 23.1297
+  duration_ms: 20.9145
   type: 'test'
   ...
 # Subtest: 05B 费用不足在发请求前停止；授权变更不重置旧次数
-ok 73 - 05B 费用不足在发请求前停止；授权变更不重置旧次数
+ok 74 - 05B 费用不足在发请求前停止；授权变更不重置旧次数
   ---
-  duration_ms: 11.5632
+  duration_ms: 13.2798
   type: 'test'
   ...
 # Subtest: 05B 记录损坏失败关闭
-ok 74 - 05B 记录损坏失败关闭
+ok 75 - 05B 记录损坏失败关闭
   ---
-  duration_ms: 4.6966
+  duration_ms: 4.3997
   type: 'test'
   ...
 # Subtest: 05B 受控HTTP固定地址、禁止跳转、限制字节、不输出错误秘密
-ok 75 - 05B 受控HTTP固定地址、禁止跳转、限制字节、不输出错误秘密
+ok 76 - 05B 受控HTTP固定地址、禁止跳转、限制字节、不输出错误秘密
   ---
-  duration_ms: 3.757
+  duration_ms: 3.5395
   type: 'test'
   ...
 # Subtest: 05B HTTP超时取消且不自动重试
-ok 76 - 05B HTTP超时取消且不自动重试
+ok 77 - 05B HTTP超时取消且不自动重试
   ---
-  duration_ms: 20.1326
+  duration_ms: 13.4466
   type: 'test'
   ...
 # Subtest: 05B 入口未确认不得道路；地点歧义停止且不补造
-ok 77 - 05B 入口未确认不得道路；地点歧义停止且不补造
+ok 78 - 05B 入口未确认不得道路；地点歧义停止且不补造
   ---
-  duration_ms: 10.5029
+  duration_ms: 11.0677
   type: 'test'
   ...
 # Subtest: 05B 歧义响应不提供确认令牌或道路
-ok 78 - 05B 歧义响应不提供确认令牌或道路
+ok 79 - 05B 歧义响应不提供确认令牌或道路
   ---
-  duration_ms: 10.5523
+  duration_ms: 12.8292
   type: 'test'
   ...
 # Subtest: 05B 缺模型配置不扣模型额度；单路段确认前不调用模型
-ok 79 - 05B 缺模型配置不扣模型额度；单路段确认前不调用模型
+ok 80 - 05B 缺模型配置不扣模型额度；单路段确认前不调用模型
   ---
-  duration_ms: 29.8004
+  duration_ms: 29.7532
   type: 'test'
   ...
 # Subtest: 05B 替身走完整真实接线，几何保留/个人核查/午餐断段/模型仅一次
-ok 80 - 05B 替身走完整真实接线，几何保留/个人核查/午餐断段/模型仅一次
+ok 81 - 05B 替身走完整真实接线，几何保留/个人核查/午餐断段/模型仅一次
   ---
-  duration_ms: 53.8176
+  duration_ms: 50.6891
   type: 'test'
   ...
 # Subtest: 05B 模型坏格式不得调用后续道路
-ok 81 - 05B 模型坏格式不得调用后续道路
+ok 82 - 05B 模型坏格式不得调用后续道路
   ---
-  duration_ms: 38.3307
+  duration_ms: 41.7103
   type: 'test'
   ...
 # Subtest: 05B 本机HTTP拒绝外站/私有路径/未授权，配置状态不泄露
-ok 82 - 05B 本机HTTP拒绝外站/私有路径/未授权，配置状态不泄露
+ok 83 - 05B 本机HTTP拒绝外站/私有路径/未授权，配置状态不泄露
   ---
-  duration_ms: 69.3879
+  duration_ms: 69.3088
   type: 'test'
   ...
 # Subtest: 05B 调用记录锁存在时禁止并发写入
-ok 83 - 05B 调用记录锁存在时禁止并发写入
+ok 84 - 05B 调用记录锁存在时禁止并发写入
   ---
-  duration_ms: 9.5109
+  duration_ms: 8.5345
   type: 'test'
   ...
 # Subtest: 05B 道路失败停止所有后续道路，不自动切换交通
-ok 84 - 05B 道路失败停止所有后续道路，不自动切换交通
+ok 85 - 05B 道路失败停止所有后续道路，不自动切换交通
   ---
-  duration_ms: 54.1018
+  duration_ms: 57.7156
   type: 'test'
   ...
 # Subtest: 05B 代理缺许可拒绝；SDK不能越过持久额度发起道路查询
-ok 85 - 05B 代理缺许可拒绝；SDK不能越过持久额度发起道路查询
+ok 86 - 05B 代理缺许可拒绝；SDK不能越过持久额度发起道路查询
   ---
-  duration_ms: 22.9305
+  duration_ms: 25.7669
   type: 'test'
   ...
 # Subtest: 05B 上游失败停止状态跨重启保留，不能靠重开服务再发请求
-ok 86 - 05B 上游失败停止状态跨重启保留，不能靠重开服务再发请求
+ok 87 - 05B 上游失败停止状态跨重启保留，不能靠重开服务再发请求
   ---
-  duration_ms: 15.3946
+  duration_ms: 11.0316
   type: 'test'
   ...
 # Subtest: 本地服务只暴露前端白名单，禁止配置/仓库访问
-ok 87 - 本地服务只暴露前端白名单，禁止配置/仓库访问
+ok 88 - 本地服务只暴露前端白名单，禁止配置/仓库访问
   ---
-  duration_ms: 130.6084
+  duration_ms: 134.4602
   type: 'test'
   ...
 # Subtest: 上游适配默认关闭，配置存在也不会执行send；配额拒绝也不执行
-ok 88 - 上游适配默认关闭，配置存在也不会执行send；配额拒绝也不执行
+ok 89 - 上游适配默认关闭，配置存在也不会执行send；配额拒绝也不执行
   ---
-  duration_ms: 1.4723
+  duration_ms: 1.3576
   type: 'test'
   ...
 # Subtest: 模型固定上游/JSON输出/2000输出上限，截断或非200不可当成功
-ok 89 - 模型固定上游/JSON输出/2000输出上限，截断或非200不可当成功
+ok 90 - 模型固定上游/JSON输出/2000输出上限，截断或非200不可当成功
   ---
-  duration_ms: 0.5331
+  duration_ms: 0.4217
   type: 'test'
   ...
 # Subtest: 并发调用也不能越过模型1次上限；失败URL与凭据不回传
-ok 90 - 并发调用也不能越过模型1次上限；失败URL与凭据不回传
+ok 91 - 并发调用也不能越过模型1次上限；失败URL与凭据不回传
   ---
-  duration_ms: 0.2838
+  duration_ms: 0.2298
   type: 'test'
   ...
 # Subtest: 地理编码歧义/外市拒绝，唯一结果也不自动认定入口已核实
-ok 91 - 地理编码歧义/外市拒绝，唯一结果也不自动认定入口已核实
+ok 92 - 地理编码歧义/外市拒绝，唯一结果也不自动认定入口已核实
   ---
-  duration_ms: 0.4452
+  duration_ms: 0.3237
   type: 'test'
   ...
 # Subtest: 道路只准步行公交；未确认入口不查询；秒转分钟向上且不补直线
-ok 92 - 道路只准步行公交；未确认入口不查询；秒转分钟向上且不补直线
+ok 93 - 道路只准步行公交；未确认入口不查询；秒转分钟向上且不补直线
   ---
-  duration_ms: 1.49
+  duration_ms: 1.1456
   type: 'test'
   ...
 # Subtest: 公交只计总接驳步行一次，逐人票价缺失不置零，拒绝铁路
-ok 93 - 公交只计总接驳步行一次，逐人票价缺失不置零，拒绝铁路
+ok 94 - 公交只计总接驳步行一次，逐人票价缺失不置零，拒绝铁路
   ---
-  duration_ms: 0.3171
+  duration_ms: 0.2488
   type: 'test'
   ...
 # Subtest: JS代理合同固定主机/路径并由服务端补安全密钥；拒绝任意URL、重复参数、回调和客户端安全密钥
-ok 94 - JS代理合同固定主机/路径并由服务端补安全密钥；拒绝任意URL、重复参数、回调和客户端安全密钥
+ok 95 - JS代理合同固定主机/路径并由服务端补安全密钥；拒绝任意URL、重复参数、回调和客户端安全密钥
   ---
-  duration_ms: 0.5407
+  duration_ms: 0.4298
   type: 'test'
   ...
 # Subtest: 地图渲染离线SDK替身验证：只画已有道路段，保留缺口、切日清理、列表定位与点击交接
-ok 95 - 地图渲染离线SDK替身验证：只画已有道路段，保留缺口、切日清理、列表定位与点击交接
+ok 96 - 地图渲染离线SDK替身验证：只画已有道路段，保留缺口、切日清理、列表定位与点击交接
   ---
-  duration_ms: 0.8663
+  duration_ms: 0.6721
   type: 'test'
   ...
 # Subtest: 地图拒绝把替身道路、空几何和未核实活动当作完整结果
-ok 96 - 地图拒绝把替身道路、空几何和未核实活动当作完整结果
+ok 97 - 地图拒绝把替身道路、空几何和未核实活动当作完整结果
   ---
-  duration_ms: 1.6274
+  duration_ms: 0.8352
   type: 'test'
   ...
-1..96
-# tests 96
+1..97
+# tests 97
 # suites 0
-# pass 96
+# pass 97
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 578.297
+# duration_ms 554.6257

@@ -1,0 +1,44 @@
+{
+  "executedAt": "2026-10-25T09:15:05.281Z",
+  "recoveryPlan": "R2",
+  "status": "failed-and-stopped",
+  "calls": {
+    "model": 0,
+    "location": 4,
+    "route": 0,
+    "map": 0
+  },
+  "reservedCents": 4,
+  "actualCharge": "待供应商账单核对",
+  "attempts": [
+    {
+      "target": "ENDPOINT",
+      "api": "GET /v3/place/text",
+      "keywords": "山西博物院(东门)",
+      "city": "140100",
+      "citylimit": true,
+      "offset": 25,
+      "page": 1,
+      "localHttpStatus": 502,
+      "code": "UPSTREAM_DATA",
+      "diagnostic": {
+        "stage": "poi-search",
+        "reason": "incomplete-results"
+      },
+      "diagnosticGap": "本次未记录声明总数与返回条数，不能确定分页截断还是数量字段无效；后续已加分类统计，未重试补造本次数据"
+    }
+  ],
+  "stopped": {
+    "code": "UPSTREAM_DATA",
+    "at": "2026-10-25T09:12:54.542Z",
+    "diagnostic": {
+      "stage": "poi-search",
+      "reason": "incomplete-results"
+    }
+  },
+  "automaticRetries": 0,
+  "rawResponsePersisted": false,
+  "SDKLoaded": false,
+  "realMapAcceptance": false,
+  "realModelAcceptance": false
+}
