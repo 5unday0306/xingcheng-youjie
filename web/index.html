@@ -18,8 +18,26 @@
     <button id="navSummary" type="button" aria-pressed="false">需求摘要</button>
     <button id="navRoute" type="button" aria-pressed="false">路线准备</button>
   </nav>
-  <main class="workbench" data-view="route" id="workbench">
-    <section class="editor" aria-labelledby="editorTitle">
+  <main class="workbench" data-view="route" id="workbench">    <section class="travel-scene" aria-labelledby="scene-title">
+      <svg class="scenery" viewBox="0 0 1440 440" preserveAspectRatio="xMidYMid slice" role="img" aria-label="原创山形与城市建筑艺术意象，非实景、地图或道路">
+        <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0B4655"/><stop offset="1" stop-color="#247383"/></linearGradient><linearGradient id="peak" x2="0" y2="1"><stop stop-color="#8DC9CC"/><stop offset="1" stop-color="#57999F"/></linearGradient></defs>
+        <path fill="url(#sky)" d="M0 0h1440v440H0Z"/>
+        <g class="far-layer"><circle cx="1128" cy="94" r="39" fill="#EEA06B"/><path d="M500 290 637 133 750 247 896 84 1054 264 1184 142 1440 338V440H500Z" fill="#3F7F8C"/><path d="m637 133 113 114-43-10-33-38-25 10-30-48Z" fill="#91C7C9"/><path d="m896 84 89 102-50-16-28-30-32 17-24-14Z" fill="#B6DEDC"/><path d="M680 360 823 210 952 318 1107 201 1248 320 1440 233V440H680Z" fill="url(#peak)"/></g>
+        <g class="city-layer" fill="#235D6B" stroke="#A9DCD7" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M851 368V222h24v146M851 222l12-19 12 19M913 368V199h27v169M913 199l14-22 13 22"/>
+          <path d="M841 345h44l-10-9h-24ZM841 319h44l-10-9h-24ZM841 293h44l-10-9h-24ZM841 267h44l-10-9h-24ZM841 241h44l-10-9h-24ZM902 345h49l-11-9h-27ZM902 317h49l-11-9h-27ZM902 289h49l-11-9h-27ZM902 261h49l-11-9h-27ZM902 233h49l-11-9h-27Z" fill="#B5DFD5"/>
+          <path d="M1020 380v-72h150v72ZM1000 311q58-18 95-48 37 31 96 48ZM1043 267h104l-52-35Z" fill="#377781"/>
+          <path d="M1050 380v-46h22v46M1084 380v-46h22v46M1118 380v-46h22v46" fill="#A2CBC7"/>
+          <path d="M1250 392v-53h105v53ZM1234 341l68-35 70 35Z" fill="#4A9296"/>
+        </g>
+        <g class="near-layer"><path d="M420 440q155-90 301-50t314-13 405-29v92Z" fill="#0B4755"/><path d="M720 440q186-33 337-11t383-20v31Z" fill="#073642"/><path d="M1245 392v-46m-19 19q20-40 40 0M1312 388v-60m-28 24q29-48 55 0" fill="none" stroke="#0B4755" stroke-width="5" stroke-linecap="round"/></g>
+      </svg>
+      <div class="scene-copy"><span class="scene-location">山西 · 太原</span><h1 id="scene-title">太原，<br>让期待同行。</h1><p>看一座城，也照顾每个人的节奏。</p><div class="scene-facts"><strong id="tripDates"></strong><span id="tripOverview"></span></div><button type="button" class="scene-edit" id="editTrip">编辑旅行条件 <span aria-hidden="true">↗</span></button></div>
+      <aside class="travel-ticket" aria-label="当前旅行票签"><div class="ticket-top"><span>结伴旅行</span><strong>太原</strong></div><div class="ticket-date"><b id="ticketDate">11.07</b><span><span id="ticketDays">出发</span></span></div><div class="ticket-bottom"><span id="ticketParty"></span><span>公共测试点往返</span></div><div class="ticket-perforation" aria-hidden="true"></div></aside>
+      <p class="art-caption">原创城市意象 · 非实景与地图</p>
+    </section>
+<section class="companions"><div class="sectionHeading"><h2>这一次，和谁同行？</h2><span id="companionCount"></span></div><div id="companionOverview" class="companionOverview"></div></section>
+    <dialog id="editDialog" aria-labelledby="editorTitle"><section class="editor"><button type="button" id="closeEditor" aria-label="关闭需求编辑">×</button>
       <div class="editorHeading"><div><h1 id="editorTitle" tabindex="-1">一起出发，先说好需求</h1><p>填写条件，保留每个人的期待</p></div><span class="phaseBadge">需求准备</span></div>
       <form id="form" novalidate>
         <div class="editorScroll" id="editorScroll">
@@ -50,30 +68,8 @@
           <button type="button" id="replace" class="dangerButton" hidden>处理无法恢复的旧存档</button>
         </div>
       </form>
-    </section>
+    </section></dialog>
     <section class="display" aria-label="旅行需求与路线工作区">
-      <section class="destinationBanner" aria-labelledby="destinationName">
-        <div class="destinationText"><span class="pilotStamp" id="pilotStamp">首个试点</span><h2 id="destinationName">目的地</h2><p id="tripDates">日期待填写</p><p id="tripOverview"></p></div>
-        <figure class="cityArtwork" data-city-art="taiyuan-imagery">
-          <svg viewBox="0 0 480 190" role="img" aria-label="原创山形、屋檐与双塔城市意象，非地理地图">
-            <circle cx="355" cy="47" r="27" fill="#E7B963"/>
-            <path d="M0 142 68 72 130 122 194 66 267 132 325 90 415 152 480 114V190H0Z" fill="#BED5C5"/>
-            <path d="M0 172 101 127 190 161 271 120 373 165 480 143V190H0Z" fill="#9DBCAC"/>
-            <g fill="#FBFCF6" stroke="#416F5B" stroke-width="2" stroke-linejoin="round">
-              <path d="M157 161V61H181V161ZM157 61 169 45 181 61Z"/>
-              <path d="M219 161V45H243V161ZM219 45 231 28 243 45Z"/>
-              <path d="M149 148H189L181 140H157ZM149 131H189L181 123H157ZM149 114H189L181 106H157ZM149 97H189L181 89H157ZM149 80H189L181 72H157Z" fill="#6E9881"/>
-              <path d="M211 148H251L243 140H219ZM211 131H251L243 123H219ZM211 114H251L243 106H219ZM211 97H251L243 89H219ZM211 80H251L243 72H219ZM211 63H251L243 55H219Z" fill="#6E9881"/>
-              <path d="M305 168V139H389V168ZM290 141Q317 130 347 113Q366 132 403 141Z" fill="#ECF2E5"/>
-              <path d="M290 141Q317 130 347 113Q366 132 403 141" fill="none" stroke-width="5"/>
-              <path d="M330 168V146H344V168M354 168V146H368V168"/>
-            </g>
-            <path d="M34 171H118M280 179H429" stroke="#466F5E" stroke-width="2"/>
-            <path d="M80 166V136M67 146Q81 117 96 146M410 172V143M398 151Q409 126 424 151" stroke="#416F5B" stroke-width="3" fill="none" stroke-linecap="round"/>
-          </svg>
-          <figcaption>城市意象插画 · 非地图与实景</figcaption>
-        </figure>
-      </section>
       <div class="displayTabs" role="group" aria-label="展示内容">
         <button type="button" id="tabRoute" aria-pressed="true">路线准备</button>
         <button type="button" id="tabSummary" aria-pressed="false">需求摘要</button>
@@ -91,10 +87,9 @@
             <div id="planResult" aria-live="polite"></div>
           </section>
           <div class="routeStage">
-            <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>当前可以先确认同行需求。真实行程与地图留待后续接入。</p><button type="button" id="quickCheck" class="textAction">检查并确认需求</button></section>
+            <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>先检查需求，再运行已启用的草案入口。地图仅显示已核实落点之间查询成功的路段。</p><button type="button" id="quickCheck" class="textAction">检查并确认需求</button></section>
             <aside class="dayBrief"><h3 id="activeDayTitle">当天出行条件</h3><div id="activeDay"></div></aside>
           </div>
-          <section class="companions" aria-labelledby="companionsTitle"><div class="sectionHeading"><div><h3 id="companionsTitle">这次，和谁一起？</h3><p class="hint">每个人的期待，都单独保留。</p></div><span id="companionCount"></span></div><div id="companionOverview" class="companionOverview"></div></section>
           <details class="gaps"><summary>规划之前，仍需核实的资料</summary><ul id="gaps"></ul></details>
         </section>
         <section id="summaryView" aria-labelledby="summaryTitle" hidden>
@@ -103,7 +98,7 @@
           <div id="summary"></div>
         </section>
       </div>
-      <footer class="displayFooter"><span>仅保存于当前浏览器，不会自动保存修改。</span><span>固定测试需求起步</span></footer>
+      <footer class="displayFooter"><span id="destinationName" hidden></span><span id="pilotStamp" hidden></span><span>仅保存于当前浏览器，不会自动保存修改。</span><span>固定测试需求起步</span></footer>
     </section>
   </main>
   <dialog id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText">

@@ -31,6 +31,10 @@ function updateDirty() {
 }
 function showView(view, focus = false) {
   const focusId=++focusRevision;
+  const editor=$('editDialog');
+  if(view==='edit'&&!editor.open)editor.showModal();
+  if(view!=='edit'&&editor.open)editor.close();
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) $(view==='edit'?'editDialog':'displayScroll').animate([{opacity:.45,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:220});
   if (view !== 'edit') currentDisplay = view;
   $('workbench').dataset.view = view;
   $('routeView').hidden = currentDisplay !== 'route';
@@ -262,6 +266,9 @@ function paintRoute() {
   const first = dateAt(draft.startDate, 0), last = dateAt(draft.startDate, draft.dayCount - 1);
   $('tripDates').textContent = first ? (draft.dayCount === 1 ? first : `${first} — ${last}`) : '出发日期待填写';
   $('tripOverview').textContent = `${draft.people}位同行者 / ${draft.dayCount}天共同游玩`;
+  $('ticketDate').textContent=first?first.slice(5).replace('-','.'):'待填写';
+  $('ticketDays').textContent=`出发 · 连续${draft.dayCount}天`;
+  $('ticketParty').textContent=`${draft.people}人 / ${draft.dayCount}天`;
   paintCompanions();
   planPanel?.selectDay(activeDay);
   $('dayTabs').replaceChildren(...draft.days.map((day,i) => {
@@ -401,5 +408,8 @@ $('gaps').replaceChildren(...GAPS.map(text=>node('li',text)));
 $('summary').append(node('p','先在编辑区检查需求，再查看逐人摘要。','summaryEmpty'));
 render();
 restoreDraft(true);
-showView(matchMedia('(max-width: 1050px)').matches?'edit':'route');
+showView('route');
+$('editTrip').onclick=()=>showView('edit',true);
+$('closeEditor').onclick=()=>{$('editDialog').close();$('editTrip').focus();};
+$('editDialog').addEventListener('cancel',()=>requestAnimationFrame(()=>$('editTrip').focus()));
 planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false})});
