@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light"><title>行程有解 · 旅行策划台设计预览</title>
+  <link rel="stylesheet" href="./styles.css"><script type="module" src="./preview.js"></script>
+</head>
+<body data-mode="edit" data-panel="needs">
+  <header class="brand-bar">
+    <div class="wordmark"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M6 3h20l4 6v25l-4 4H6l-4-4V9Z"/><path d="M10 3V1h12v2M10 16h12M10 23h12M10 30h7"/></svg><strong>行程有解</strong><span>旅行策划台</span></div>
+    <span class="design-label">设计预览</span>
+  </header>
+  <main class="desk">
+    <section class="trip-heading" aria-label="当前旅行条件">
+      <div class="destination"><div class="city-line"><h1>太原</h1><span class="pilot">首个试点</span></div><p id="trip-caption">三个人的期待，放在同一份计划里。</p></div>
+      <div class="trip-facts"><p id="header-dates"></p><p><strong>3位同行者</strong><span>2天共同游玩</span><span>步行＋公交地铁</span></p></div>
+      <div class="view-switch" role="group" aria-label="选择设计预览状态"><button type="button" id="mode-edit" aria-pressed="true">需求编辑</button><button type="button" id="mode-sample" aria-pressed="false">固定离线样例</button></div>
+    </section>
+    <div class="preview-notice"><span class="status-dot" aria-hidden="true"></span><p id="preview-notice">仅预览布局与交互，编辑不保存；正式需求和存档不受影响。</p></div>
+    <nav class="mobile-panels" aria-label="选择工作区域"><button type="button" id="panel-needs" aria-pressed="true">需求清单</button><button type="button" id="panel-plan" aria-pressed="false">每日安排</button><button type="button" id="panel-checks" aria-pressed="false">核查信息</button></nav>
+    <div class="workspace">
+      <aside class="needs-pane" aria-labelledby="needs-title">
+        <div class="pane-heading"><div><h2 id="needs-title" tabindex="-1">需求清单</h2><p id="needs-subtitle">先说好，怎样一起出发</p></div></div>
+        <div class="needs-scroll" id="needs-scroll">
+          <div id="editable-needs">
+            <details class="travel-conditions"><summary>旅行条件<span>太原 / 2天</span></summary><div class="condition-fields"><label>出发日期<input id="departure-date" type="date" value="2026-11-07"></label><div class="two-fields"><label>每天出发<input id="departure-time" type="time" value="09:00"></label><label>每天返回<input id="return-time" type="time" value="18:00"></label></div><p class="field-hint">含出发及返回交通，不代表活动到离时间。</p></div></details>
+            <div class="subheading"><h3>同行者</h3><span>每个人单独保留</span></div>
+            <div id="member-editors"></div>
+          </div>
+          <div id="sample-needs" hidden></div>
+          <details class="endpoint"><summary>共同起终点</summary><p>山西博物院东门外公共集合点</p><p class="field-hint">滨河西路北段13号。公共测试点，不是住宿；实际入口与通行仍待人工核对。</p></details>
+          <details class="scope"><summary>预算口径</summary><p class="field-hint">每人全程预算，含餐饮、门票及市内交通；不含住宿和往返太原大交通。步行包含接驳及场馆内部。</p></details>
+        </div>
+        <div class="needs-actions"><button class="primary" id="preview-action" type="button">查看固定离线样例</button><button class="quiet-button" id="reset-preview" type="button">还原预览内容</button><p>本页不保存，不生成真实行程</p></div>
+      </aside>
+      <div class="content-scroll" id="content-scroll">
+        <section class="arrangement" aria-labelledby="plan-title">
+          <div class="pane-heading"><div><h2 id="plan-title" tabindex="-1">出发前的准备单</h2><p id="plan-subtitle">整理期待，再核对限制</p></div><span id="plan-badge" class="neutral-badge">需求准备</span></div>
+          <div id="preparation-view"></div>
+          <div id="sample-view" hidden>
+            <div class="day-tabs" role="group" aria-label="选择样例日期"><button type="button" id="day-0" aria-pressed="true"><strong>第1天</strong><span>11月7日 周六</span></button><button type="button" id="day-1" aria-pressed="false"><strong>第2天</strong><span>11月8日 周日</span></button></div>
+            <p class="sequence-note">以下仅表示活动顺序，到离时间与道路均未知。</p>
+            <div class="meeting-bookend"><span class="bookend-symbol" aria-hidden="true">始</span><div><strong>从公共集合点出发</strong><p>山西博物院东门外 · 交通待核实</p></div></div>
+            <ol class="activities" id="activities"></ol>
+            <div class="meeting-bookend return-point"><span class="bookend-symbol" aria-hidden="true">返</span><div><strong>返回同一公共集合点</strong><p>返程距离、时长未知，尚未计入完整结果。</p></div></div>
+            <details class="evidence"><summary>查看样例依据与边界</summary><p>使用任务05候选：山西博物院、迎泽公园、钟楼街、食品街。样例按候选顺序分配，非个性化模型结果。</p><p>停留与内部步行为开发估计；当日开放、预约、票价、用餐及道路资料未齐。未加载地图、未调用接口。</p><p>内部编号：第1天TY01、TY04；第2天TY05、TY06。原资料索引位于项目的太原资料核查记录。</p></details>
+          </div>
+        </section>
+        <aside class="checks-pane" aria-labelledby="checks-title"><div class="pane-heading"><div><h2 id="checks-title" tabindex="-1">核查信息</h2><p>区分已知、估计与未知</p></div></div><div id="checks-content"></div></aside>
+      </div>
+    </div>
+    <footer class="desk-footer"><span>设计预览，等待视觉方向确认</span><span>不保存本页编辑 · 无模型或地图调用</span></footer>
+  </main>
+</body>
+</html>

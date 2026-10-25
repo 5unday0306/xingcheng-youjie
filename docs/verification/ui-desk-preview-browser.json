@@ -1,0 +1,54 @@
+{
+  "executedAt": "2026-10-25T07:00:03.538Z",
+  "passed": true,
+  "assertions": 141,
+  "browser": "Edge headless / Playwright 1.62.1",
+  "viewports": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "externalRequests": 0,
+  "businessRequests": 0,
+  "pageErrors": [],
+  "storageAccesses": 0,
+  "unchangedBaselineFiles": 63,
+  "contrast": [
+    {
+      "selector": ".wordmark strong",
+      "ratio": 13.26
+    },
+    {
+      "selector": ".design-label",
+      "ratio": 13.26
+    },
+    {
+      "selector": ".pilot",
+      "ratio": 5.41
+    },
+    {
+      "selector": ".field-hint",
+      "ratio": 6.09
+    },
+    {
+      "selector": ".view-switch button[aria-pressed=true]",
+      "ratio": 13.26
+    },
+    {
+      "selector": ".review-signal p",
+      "ratio": 6.26
+    },
+    {
+      "selector": ".activity-caption",
+      "ratio": 5.77
+    },
+    {
+      "selector": ".sample-badge",
+      "ratio": 5.78
+    }
+  ],
+  "zoom": "720x450 CSS equivalent reflow only; no native 200% zoom or real-phone test",
+  "scope": "Independent visual preview only; formal application not integrated or functionally re-tested"
+}
