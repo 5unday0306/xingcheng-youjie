@@ -11,10 +11,15 @@ export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}})
   const button=(text,fn)=>{const b=el('button',text);b.type='button';b.disabled=!capabilities.canPrepare;b.onclick=()=>action(fn);return b;};
   for(const entry of capabilities.entrances||[]) {
     const row=el('section'),output=el('p');row.dataset.entryId=entry.id;row.append(el('strong',entry.name),el('p',entry.address));
-    const query=button('查询此地址',async()=>{
-      const found=await post('/api/live/locate',{id:entry.id});output.replaceChildren(el('p',`${found.formattedAddress}；高德坐标 ${found.location.join(',')}。地址唯一匹配仍不等于入口正确。`));
+    function showFound(found){
+      output.replaceChildren(el('p',`${found.formattedAddress}；高德坐标 ${found.location.join(',')}。地址唯一匹配仍不等于入口正确。`));
       const confirm=button('已人工核对实际入口，确认此落点',async()=>{await post('/api/live/confirm',{token:found.token,confirmed:true});output.append(el('p','已人工确认；仅本次服务有效，不代表营业或预约已核实。'));confirm.remove();});output.append(confirm);query.remove();message('请对照实际入口核对坐标，不能只因返回了地址就确认。');
-    });row.append(query,output);places.append(row);
+    }
+    const query=button('查询此地址',async()=>showFound(await post('/api/live/locate',{id:entry.id})));
+    row.append(query,output);places.append(row);
+    const found=capabilities.pending?.find(p=>p.id===entry.id);if(found)showFound(found);
+    if(capabilities.confirmed?.includes(entry.id)){query.remove();output.append(el('p','已人工确认；仅本次服务有效，不代表营业或预约已核实。'));}
+
   }
   const from=el('select'),to=el('select'),mode=el('select');
   for(const p of capabilities.entrances||[]){from.append(new Option(p.name,p.id));to.append(new Option(p.name,p.id));}to.value='TY04';mode.append(new Option('请选择道路方式',''),new Option('步行','walk'),new Option('公交地铁','transit'));
@@ -39,6 +44,7 @@ export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}})
   });
   const ledger=el('pre');const count=button('查看本轮次数与费用预留',async()=>{ledger.textContent=JSON.stringify(await post('/api/live/ledger',{}),null,2);});
   section.append(road,proofList,load,mapBox,accept,count,ledger);root.append(section);
-  if(!capabilities.canPrepare)message('新授权尚未就绪，所有真实入口关闭；配置密钥不会自动授权。');
+  if(!capabilities.canPrepare)message(capabilities.haltReason?`本轮已停止（${capabilities.haltReason}）。所有真实入口关闭；请先复核失败原因，不自动重试。`:'新授权尚未就绪，所有真实入口关闭；配置密钥不会自动授权。');
+  if(capabilities.haltReason)post('/api/live/ledger',{}).then(record=>ledger.textContent=JSON.stringify(record,null,2)).catch(()=>message('本轮已停止，调用记录暂时无法读取；不发起真实请求。'));
   return {mode:()=>mode.value,showDay,focusActivity:id=>map?.focusActivity(id),invalidate(){if(map)showDay({activities:[],legs:[]});}};
 }

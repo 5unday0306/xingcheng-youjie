@@ -1,6 +1,6 @@
 {
-  "executedAt": "2026-10-25T08:21:12.068Z",
-  "assertions": 23,
+  "executedAt": "2026-10-25T08:28:39.434Z",
+  "assertions": 24,
   "passed": true,
   "mode": "全部上游与SDK均为替身，临时测试服务，不是真实联调",
   "syntheticAdapterCalls": [

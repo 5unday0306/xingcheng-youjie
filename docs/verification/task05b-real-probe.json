@@ -1,0 +1,51 @@
+{
+  "executedAt": "2026-10-25T08:30:08.502Z",
+  "mode": "真实Web服务探测，失败后持久停止",
+  "newAuthorization": {
+    "budgetCents": 100,
+    "caps": {
+      "model": 1,
+      "location": 5,
+      "route": 12,
+      "map": 1
+    },
+    "accountTermsAndCostBoundary": "用户已明确确认"
+  },
+  "configurationPresence": {
+    "webKey": true,
+    "modelKey": true,
+    "jsKey": true,
+    "jsSecurityCode": true
+  },
+  "calls": {
+    "model": 0,
+    "location": 2,
+    "route": 0,
+    "map": 0
+  },
+  "reservedCents": 2,
+  "actualCharge": "尚未核对供应商账单；不能把2分预留当实扣",
+  "results": [
+    {
+      "id": "ENDPOINT",
+      "httpStatus": 200,
+      "status": "唯一地址匹配通过；非人工入口确认",
+      "persistedRawMapData": false
+    },
+    {
+      "id": "TY04",
+      "httpStatus": 502,
+      "code": "UPSTREAM_DATA",
+      "status": "地点响应合同校验失败；具体字段/匹配数量未记录，不能推断歧义原因",
+      "automaticRetries": 0
+    }
+  ],
+  "stopped": {
+    "code": "UPSTREAM_DATA",
+    "at": "2026-10-25T08:28:00.034Z"
+  },
+  "realRoadOrMapAccepted": false,
+  "realModelDraftAccepted": false,
+  "capabilitiesCanPrepare": false,
+  "stopPageExternalRequests": 0
+}

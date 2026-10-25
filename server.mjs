@@ -62,7 +62,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     const {credentials,status}=await loadCredentials(new URL('./.env',import.meta.url));
     let approval=null;try{approval=await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url));}catch(e){console.log(e.message);}
     const ledger=approval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),approval):null;
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,send:createHttpSender()});
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const port=realPrep?4177:testMode?4174:4173;
