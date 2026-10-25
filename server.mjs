@@ -42,7 +42,7 @@ export function createServer({planning=createPlanningService(),live=null}={}) {
         try {const result=await (path==='/api/plan'?planning.run(await readBody(req),{signal:controller.signal}):live?live.action(path,await readBody(req)):Promise.reject(new PlanningError('OFFLINE_ONLY','真实调用未启用',403)));
           if(path==='/api/live/map-lease')res.setHeader('Set-Cookie',`mapLease=${result.lease}; HttpOnly; SameSite=Strict; Path=/_AMapService; Max-Age=600`);
           return json(res,200,result);}
-        catch(error) {return json(res,error instanceof PlanningError?error.status:500,{code:error instanceof PlanningError?error.code:'INTERNAL',message:error instanceof PlanningError?error.message:'本地处理失败，输入保留'});}
+        catch(error) {return json(res,error instanceof PlanningError?error.status:500,{code:error instanceof PlanningError?error.code:'INTERNAL',message:error instanceof PlanningError?error.message:'本地处理失败，输入保留',...(error instanceof PlanningError&&error.diagnostic?{diagnostic:error.diagnostic}:{})});}
       }
       return json(res,404,{code:'NOT_FOUND',message:'接口不存在'});
     }
