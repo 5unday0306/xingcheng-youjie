@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "replace-after-new-authorization",
+  "enabled": false,
+  "expiresAt": "填写授权截止的ISO日期时间",
+  "termsConfirmed": false,
+  "accountCostBoundConfirmed": false,
+  "model": "deepseek-flash",
+  "budgetCents": 100,
+  "caps": {"model": 1, "location": 5, "route": 12, "map": 1},
+  "reserveCents": {"model": 10, "location": 1, "route": 1, "map": 5}
+}

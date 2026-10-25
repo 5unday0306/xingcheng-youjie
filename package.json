@@ -12,6 +12,8 @@
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",
     "test:browser:04": "node tests/browser04.mjs",
-    "test:browser:05": "node tests/browser05-regression.mjs && node tests/browser05.mjs"
+    "test:browser:05": "node tests/browser05-regression.mjs && node tests/browser05.mjs",
+    "start:real-preparation": "node server.mjs --real-preparation",
+    "test:browser:05b": "node tests/browser05b-ui.mjs && node tests/browser05b-wiring.mjs"
   }
 }

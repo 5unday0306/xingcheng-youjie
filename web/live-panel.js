@@ -1,0 +1,44 @@
+import {createMapView} from './map-view.js';
+const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
+export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}}) {
+  let busy=false,proof=null,lease=null,map=null,expired=false;
+  const status=el('p','按顺序核对入口与单路段。每次查询都消耗本轮授权额度；失败不自动重试。');status.setAttribute('role','status');
+  const section=el('details');section.open=true;section.append(el('summary','真实接入准备与单路段验收'),status);
+  const places=el('div');section.append(places);
+  const message=text=>status.textContent=text;
+  async function post(path,body){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(185000)});const b=await r.json();if(!r.ok)throw Error(b.message);return b;}
+  async function action(fn){if(busy)return;busy=true;section.setAttribute('aria-busy','true');section.querySelectorAll('button').forEach(b=>b.disabled=true);try{await fn();}catch(e){message(e.message||'未完成；无自动重试');}finally{busy=false;section.removeAttribute('aria-busy');section.querySelectorAll('button').forEach(b=>b.disabled=!capabilities.canPrepare||expired);}}
+  const button=(text,fn)=>{const b=el('button',text);b.type='button';b.disabled=!capabilities.canPrepare;b.onclick=()=>action(fn);return b;};
+  for(const entry of capabilities.entrances||[]) {
+    const row=el('section'),output=el('p');row.dataset.entryId=entry.id;row.append(el('strong',entry.name),el('p',entry.address));
+    const query=button('查询此地址',async()=>{
+      const found=await post('/api/live/locate',{id:entry.id});output.replaceChildren(el('p',`${found.formattedAddress}；高德坐标 ${found.location.join(',')}。地址唯一匹配仍不等于入口正确。`));
+      const confirm=button('已人工核对实际入口，确认此落点',async()=>{await post('/api/live/confirm',{token:found.token,confirmed:true});output.append(el('p','已人工确认；仅本次服务有效，不代表营业或预约已核实。'));confirm.remove();});output.append(confirm);query.remove();message('请对照实际入口核对坐标，不能只因返回了地址就确认。');
+    });row.append(query,output);places.append(row);
+  }
+  const from=el('select'),to=el('select'),mode=el('select');
+  for(const p of capabilities.entrances||[]){from.append(new Option(p.name,p.id));to.append(new Option(p.name,p.id));}to.value='TY04';mode.append(new Option('请选择道路方式',''),new Option('步行','walk'),new Option('公交地铁','transit'));
+  for(const [name,input] of [['测试起点',from],['测试终点',to],['本次草案道路方式（不自动切换）',mode]]){const label=el('label',name);input.setAttribute('aria-label',name);label.append(input);section.append(label);}
+  mode.onchange=()=>onModeChange();
+  const proofList=el('div'),mapBox=el('div');mapBox.id='realMap';mapBox.hidden=true;mapBox.setAttribute('aria-label','高德地图，仅显示已查询成功的路段');
+  const showDay=day=>{if(!map)return;const state=map.showDay(day);message(`地图已显示已查询几何；缺段/落点${state.gaps}处，不代表行程可行。`);};
+  const road=button('查询一条已确认路段',async()=>{
+    if(!mode.value)throw Error('请选择道路方式');proof=await post('/api/live/road-test',{from:from.value,to:to.value,mode:mode.value});proofList.replaceChildren(el('p','真实单路段结果，仅当前查询，不是两天行程。'));
+    for(const p of proof.day.activities){const b=el('button',p.name);b.type='button';b.dataset.activityId=p.id;b.onclick=()=>map?.focusActivity(p.id);proofList.append(b);}message('单路段查询成功。下一步明确加载地图并核对联动。');if(map)showDay(proof.day);
+  });
+  const load=button('加载一次真实地图（会联网）',async()=>{
+    if(!proof)throw Error('请先查询一条有真实几何的路段');if(map||lease)throw Error('已经领取地图加载许可，不自动重新初始化');
+    lease=await post('/api/live/map-lease',{});window._AMapSecurityConfig={serviceHost:location.origin+'/_AMapService'};
+    await new Promise((resolve,reject)=>{const script=document.createElement('script');const timer=setTimeout(()=>{script.remove();reject(Error('SDK加载超时，停止，不自动重试'));},15000);script.src=`https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(lease.jsKey)}`;script.onload=()=>{clearTimeout(timer);resolve();};script.onerror=()=>{clearTimeout(timer);reject(Error('SDK加载失败，请核对权限和域名；不自动重试'));};document.head.append(script);});
+    if(Date.now()>=lease.expiresAt)throw Error('本次地图许可已过期');mapBox.hidden=false;
+    map=createMapView({AMap:window.AMap,container:mapBox,onSelect:id=>{document.querySelectorAll('[data-activity-id]').forEach(n=>n.setAttribute('aria-pressed',String(n.dataset.activityId===id)));}});showDay(proof.day);
+    setTimeout(()=>{expired=true;map?.destroy();map=null;mapBox.hidden=true;message('地图会话已到期，已销毁；不自动重新请求。');},Math.max(0,lease.expiresAt-Date.now()));
+  });
+  const accept=button('已核对地图显示与列表联动',async()=>{
+    if(!map||!proof||!lease)throw Error('请先加载地图并人工核对单路段');await post('/api/live/accept-proof',{lease:lease.lease,proofId:proof.id,visibleConfirmed:true});onReady(mode.value);message('单路段由用户确认；可运行一次真实模型草案，仍不代表两天可行。');
+  });
+  const ledger=el('pre');const count=button('查看本轮次数与费用预留',async()=>{ledger.textContent=JSON.stringify(await post('/api/live/ledger',{}),null,2);});
+  section.append(road,proofList,load,mapBox,accept,count,ledger);root.append(section);
+  if(!capabilities.canPrepare)message('新授权尚未就绪，所有真实入口关闭；配置密钥不会自动授权。');
+  return {mode:()=>mode.value,showDay,focusActivity:id=>map?.focusActivity(id),invalidate(){if(map)showDay({activities:[],legs:[]});}};
+}

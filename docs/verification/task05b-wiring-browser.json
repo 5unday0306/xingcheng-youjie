@@ -1,0 +1,33 @@
+{
+  "executedAt": "2026-10-25T08:21:12.068Z",
+  "assertions": 23,
+  "passed": true,
+  "mode": "全部上游与SDK均为替身，临时测试服务，不是真实联调",
+  "syntheticAdapterCalls": [
+    "/v3/geocode/geo",
+    "/v3/geocode/geo",
+    "/v3/direction/walking",
+    "/chat/completions",
+    "/v3/direction/walking"
+  ],
+  "sdkSubstitutions": 1,
+  "realCalls": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 0
+  },
+  "unexpectedExternal": [],
+  "pageErrors": [],
+  "checks": [
+    "默认无业务请求",
+    "人工落点确认",
+    "单路段先于地图",
+    "SDK替身仅一次",
+    "列表定位",
+    "人工确认先于模型",
+    "逐人核查与缺口",
+    "切日刷新不自动请求",
+    "修改旧结果失效"
+  ]
+}

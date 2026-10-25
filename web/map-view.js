@@ -1,5 +1,5 @@
-// No SDK loader. Only a caller with an explicitly loaded SDK and actual road data
-// may construct this view. The offline app never imports or serves this module.
+// Pure renderer: SDK loading lives in the explicit, authorized live panel.
+// Ordinary/offline pages may import this module but never construct a map.
 export function createMapView({AMap,container,onSelect=()=>{}}) {
   if(!AMap?.Map||!AMap?.Polyline||!AMap?.Marker)throw Error('地图SDK未就绪');
   const map=new AMap.Map(container,{zoom:12}),overlays=[],markers=new Map();
