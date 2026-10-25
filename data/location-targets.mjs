@@ -10,5 +10,5 @@ const targets=[
   target('TY05','钟楼街','B0H01BOHQP',['太原市钟楼街步行街'],'街区条目不是已核实入口；不能替代原柴市巷交叉口，须确认实际下车与进入位置。'),
   target('TY06','食品街','B015F0I9AO',['食品街'],'街区条目不是餐馆。新地址线索钟楼街129号与原帽儿巷资料保留差异，落点须人工核对。'),
 ];
-export const locationTargets=()=>structuredClone(targets);
-export const querySignature=q=>`${q.kind}:${q.poiId}`;
+export const locationTargets=(lookup='poi-detail')=>structuredClone(targets).map(t=>lookup==='poi-search'?{...t,query:{kind:'poi-search',keywords:t.query.expectedNames[0],expectedNames:t.query.expectedNames,cityAdcode:'140100'}}:t);
+export const querySignature=q=>q.kind==='poi-search'?`${q.kind}:${q.keywords}:${q.cityAdcode}`:`${q.kind}:${q.poiId}`;

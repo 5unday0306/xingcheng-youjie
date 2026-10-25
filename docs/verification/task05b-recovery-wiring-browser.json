@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-25T09:02:16.808Z",
+  "executedAt": "2026-10-25T09:10:49.591Z",
   "assertions": 24,
   "passed": true,
   "mode": "全部上游与SDK均为替身，临时测试服务，不是真实联调",

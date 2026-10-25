@@ -11,7 +11,7 @@ export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}})
   async function action(fn){if(busy)return;busy=true;section.setAttribute('aria-busy','true');section.querySelectorAll('button').forEach(b=>b.disabled=true);try{await fn();}catch(e){if(lease&&!map){try{await post('/api/live/sdk-event',{event:'sdk-failed'});}catch{}expired=true;mapBox.hidden=true;}message(e.message||'未完成；无自动重试');}finally{busy=false;section.removeAttribute('aria-busy');section.querySelectorAll('button').forEach(b=>b.disabled=!capabilities.canPrepare||expired);}}
   const button=(text,fn)=>{const b=el('button',text);b.type='button';b.disabled=!capabilities.canPrepare;b.onclick=()=>action(fn);return b;};
   for(const entry of capabilities.entrances||[]) {
-    const row=el('section'),output=el('p');row.dataset.entryId=entry.id;row.append(el('strong',entry.name),el('p',entry.note||''),el('p',`检索：${entry.query.kind} / ${entry.query.poiId}`));
+    const row=el('section'),output=el('p');row.dataset.entryId=entry.id;row.append(el('strong',entry.name),el('p',entry.note||''),el('p',`检索：${entry.query.kind} / ${entry.query.poiId||entry.query.keywords}`));
     function showFound(found){
       output.replaceChildren(el('p',`${found.formattedAddress}；高德坐标 ${found.location.join(',')}。POI匹配仍不等于入口或未来通行已确认。`));
       const confirm=button('已人工核对实际入口，确认此落点',async()=>{await post('/api/live/confirm',{token:found.token,confirmed:true});output.append(el('p','已人工确认；仅本次服务有效，不代表营业或预约已核实。'));confirm.remove();});output.append(confirm);query.remove();message('请对照实际入口核对坐标，不能只因返回了地址就确认。');

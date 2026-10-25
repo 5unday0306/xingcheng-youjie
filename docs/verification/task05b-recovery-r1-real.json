@@ -1,0 +1,46 @@
+{
+  "executedAt": "2026-10-25T09:09:14.141Z",
+  "recoveryPlan": "R1",
+  "status": "failed-and-stopped",
+  "previousCalls": {
+    "location": 2,
+    "reservedCents": 2
+  },
+  "calls": {
+    "model": 0,
+    "location": 3,
+    "route": 0,
+    "map": 0
+  },
+  "reservedCents": 3,
+  "actualCharge": "待供应商账单核对",
+  "attempts": [
+    {
+      "target": "ENDPOINT",
+      "api": "GET /v3/place/detail",
+      "poiId": "B0FFHNOWTU",
+      "localHttpStatus": 502,
+      "code": "UPSTREAM_DATA",
+      "diagnostic": {
+        "stage": "poi-detail",
+        "reason": "match-count",
+        "matches": 0
+      }
+    }
+  ],
+  "stopped": {
+    "code": "UPSTREAM_DATA",
+    "at": "2026-10-25T09:04:54.601Z",
+    "diagnostic": {
+      "stage": "poi-detail",
+      "reason": "match-count",
+      "matches": 0
+    }
+  },
+  "automaticRetries": 0,
+  "rawResponsePersisted": false,
+  "SDKLoaded": false,
+  "realMapAcceptance": false,
+  "realModelAcceptance": false,
+  "next": "备选R2只准备未执行；等待恢复范围决定"
+}
