@@ -29,6 +29,7 @@ test('M3仅在独立底图范围允许第三次；底图就绪仍拒绝选点/�
 test('SDK诊断：不保留查询、fragment、用户名密码、javascript正文或长标识符',()=>{
   assert.deepEqual(safeLocation('https://name:secret@jsapi-service.amap.com/mapsplugincdn?key=CANARY_SECRET&jscode=CANARY_OTHER#token'),{origin:'https://jsapi-service.amap.com',path:'/mapsplugincdn'});
   assert.deepEqual(safeLocation('javascript:CANARY_SECRET'),{origin:'javascript:',path:''});
+  for(const special of ['inline','eval','wasm-eval'])assert.deepEqual(safeLocation(special),{origin:special,path:''});
   const record=diagnosticRecord({kind:'csp',directive:'script-src-elem',url:'https://example.invalid/a?key=CANARY_SECRET',source:'http://localhost/sdk.js?jscode=CANARY_OTHER',line:12,column:9,resourceType:'script',status:404});
   assert.equal(record.status,404);assert.equal(record.initiator.line,12);assert.ok(!JSON.stringify(record).includes('CANARY'));
   assert.equal(safeLocation('https://example.invalid/0123456789abcdef0123456789abcdef').path,'/[redacted]');

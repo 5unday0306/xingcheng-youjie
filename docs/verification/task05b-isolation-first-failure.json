@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-26",
+  "kind": "本地隔离浏览器检查首次失败，依据实际终端输出补记，非自动采集",
+  "assertion": "伪造消息后预期选中TY04，实际ENDPOINT",
+  "location": "tests/browser05b-map-isolation.mjs:30",
+  "diagnosis": "代码按已导航URL数组取最后frame，存在新sibling尚未导航时取到原可信frame的时序缺口，可能使攻击用例来自可信窗口；首次失败未记录frameId，不能补写确证。改为按sibling元素取得精确窗口并等待导航，后续结果另记。",
+  "realCalls": 0
+}

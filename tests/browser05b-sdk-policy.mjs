@@ -1,3 +1,4 @@
+const evidencePath=p=>process.env.MAP_ISOLATION_REGRESSION==='1'?p.replace('task05b-sdk-policy','task05b-isolation-regression-policy'):p;
 // Real browser CSP enforcement; every external request is locally intercepted.
 // No credentials, approval, ledger or real SDK is loaded.
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {writeFile} from 'node:fs/promises';
@@ -12,7 +13,7 @@ async function setup(real=true,scenario='policy'){
  const context=await browser.newContext(),page=await context.newPage(),seen=[];let sdk=0;
  const network=await observeResourceFailures(await context.newCDPSession(page),base);
  await context.route('**/*',async route=>{const u=new URL(route.request().url());
-  if(u.origin===base){if(u.pathname==='/sdk-policy-fixture.js')return route.fulfill({contentType:'text/javascript',body:`const a=document.createElement('a');a.href='javascript:window.__forbiddenRan=true';document.body.append(a);a.click();const img=new Image();img.src='/controlled-missing-image.png?key=CANARY_SECRET';document.body.append(img);fetch('/controlled-missing-image.png?key=CANARY_OTHER');const forbidden=document.createElement('script');forbidden.src='https://not-allowed.invalid/from-fixture.js?key=CANARY_OTHER';document.head.append(forbidden);`});return route.continue();}
+  if(u.origin===base){if(u.pathname==='/sdk-policy-fixture.js')return route.fulfill({contentType:'text/javascript',body:`const a=document.createElement('a');a.href='javascript:window.__forbiddenRan=true';document.body.append(a);a.click();const img=new Image();img.src='/controlled-missing-image.png?key=CANARY_SECRET';document.body.append(img);fetch('/controlled-missing-image.png?key=CANARY_OTHER');const forbidden=document.createElement('script');forbidden.src='https://not-allowed.invalid/from-fixture.js?key=CANARY_OTHER';document.head.append(forbidden);try{eval('1+1');}catch{}WebAssembly.compile(new Uint8Array([0,97,115,109,1,0,0,0])).catch(()=>{});`});return route.continue();}
   // Interception prevents all real external traffic, including accidental calls.
   seen.push({origin:u.origin,path:u.pathname});externalFulfilled++;
   if(u.origin==='https://webapi.amap.com'){sdk++;if(scenario==='error')return route.abort();if(scenario==='timeout')await new Promise(r=>setTimeout(r,250));
@@ -32,9 +33,9 @@ try{
   eq(s.seen.some(u=>u.origin==='https://not-allowed.invalid'),false);if(!real)eq(s.seen.length,0);
   // Exercise native policy violation and HTTP 404 diagnostics without guessing M2's 404.
   await page.evaluate(()=>{const script=document.createElement('script');script.src='/sdk-policy-fixture.js?key=CANARY_OTHER';document.head.append(script);});
-  await page.waitForFunction(()=>__sdkDiagnostics.snapshot().some(r=>r.kind==='http-error'&&r.status===404&&r.resourceType==='fetch'));
+  await page.waitForFunction(()=>__sdkDiagnostics.snapshot().some(r=>r.kind==='http-error'&&r.status===404&&r.resourceType==='fetch'));await page.waitForFunction(()=>__sdkDiagnostics.snapshot().some(r=>r.origin==='wasm-eval'));
   const diagnostics=await page.evaluate(()=>__sdkDiagnostics.snapshot());eq(JSON.stringify(diagnostics).includes('CANARY'),false);eq(diagnostics.some(r=>r.path==='/controlled-missing-image.png'&&r.status===404),true);eq(await page.evaluate(()=>!!window.__forbiddenRan),false);
-  const network=s.network.snapshot();await writeFile('docs/verification/task05b-sdk-policy-diagnostic-probe.json',JSON.stringify({mode:'offline synthetic diagnostic probe',diagnostics,network},null,2)+'\n');eq(JSON.stringify(network).includes('CANARY'),false);eq(network.some(r=>r.status===404&&r.path==='/controlled-missing-image.png'&&r.initiator.path==='/sdk-policy-fixture.js'),true);
+  eq(diagnostics.some(r=>r.origin==='wasm-eval'&&r.path===''),true);eq(diagnostics.some(r=>r.origin==='eval'&&r.path===''),true);const network=s.network.snapshot();await writeFile(evidencePath('docs/verification/task05b-sdk-policy-diagnostic-probe.json'),JSON.stringify({mode:'offline synthetic diagnostic probe',diagnostics,network},null,2)+'\n');eq(JSON.stringify(network).includes('CANARY'),false);eq(network.some(r=>r.status===404&&r.path==='/controlled-missing-image.png'&&r.initiator.path==='/sdk-policy-fixture.js'),true);
   eq(diagnostics.some(r=>r.kind==='csp'&&r.initiator.path==='/sdk-policy-fixture.js'),true);
   reports.push({scenario:real?'real-mode-policy-synthetic':'ordinary-mode-policy',diagnostics,network,intercepted:s.seen});await s.context.close();
  }
@@ -48,7 +49,7 @@ try{
     return r.fulfill({contentType:'application/json',body:JSON.stringify(b)});
    });
    await page.evaluate(async displayOnly=>{const {createPickPanel}=await import('/pick-panel.js');const root=document.createElement('div');document.body.replaceChildren(root);window.__panel=createPickPanel({root,capabilities:{canPrepare:true,mapPicking:true,mapDisplayOnly:displayOnly,map:'未加载'}});},scenario==='panel-display-only');
-   await page.locator('#pickLoad').click();await page.waitForFunction(()=>!!window.__fakeMap);
+   await page.locator('#pickLoad').click();await page.waitForFunction(()=>!!window.__fakeMap);eq((await page.locator('#pickStatus').textContent()).includes('正在加载'),true);
    // Duplicate real DOM clicks while pending must not issue another lease.
    await page.evaluate(()=>document.getElementById('pickLoad').click());
    if(scenario==='panel-display-only'){
@@ -79,5 +80,5 @@ try{
   await context.close();
  }
  const report={at:new Date().toISOString(),mode:'离线受控替身，非真实高德兼容验收',assertions,externalRequestsFulfilledLocally:externalFulfilled,realExternalRequests:0,reports};
- await writeFile('docs/verification/task05b-sdk-policy-browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({assertions,scenarios:reports.length,realExternalRequests:0}));
+ await writeFile(evidencePath('docs/verification/task05b-sdk-policy-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({assertions,scenarios:reports.length,realExternalRequests:0}));
 }finally{await browser.close();for(const s of servers)await new Promise(r=>s.close(r));}

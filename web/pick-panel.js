@@ -51,6 +51,7 @@ export function createPickPanel({root,capabilities}) {
   function enqueue(fn){pending++;renderControls();const job=queue.then(fn).catch(async e=>{status.textContent=e.message;if(['UPSTREAM_FAILED','UPSTREAM_DATA','CALL_LIMIT','RECOVERY_LIMIT','AUTH_REQUIRED','RUN_STOPPED','SDK_NOT_READY'].includes(e.code)){failed=true;view?.destroy();view=null;mapBox.hidden=true;}return null;}).finally(()=>{pending--;renderControls();});queue=job;return job;}
   const selected=(id,location)=>{const apply=async()=>{state=await post('pick/set',{id,location,revision:state.revision});render();status.textContent='位置已调整且取消该点确认，旧路线失效；不会自动查询。';};if(querying){state.route=null;render();pending++;renderControls();apply().catch(e=>status.textContent=e.message).finally(()=>{pending--;renderControls();});return;}return enqueue(apply);};
   async function loadMap(){if(lease||failed||disposed)return;const epoch=++loadEpoch;loadAbort=new AbortController();
+    status.textContent='正在加载真实地图，尚未取得可见底图；不会自动重试。';
     const current=()=>!disposed&&!failed&&epoch===loadEpoch&&(!lease||Date.now()<lease.expiresAt);
     const check=()=>{if(!current())throw Error('地图加载会话已停止，迟到结果不采用');};
     try{lease=await post('map-lease');check();sessionTimer=setTimeout(()=>{failed=true;destroyMap();status.textContent='本次地图会话已到期，已停止；不自动加载。';renderControls();},Math.max(0,lease.expiresAt-Date.now()));

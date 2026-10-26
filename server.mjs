@@ -49,6 +49,8 @@ export function createServer({planning=createPlanningService(),live=null}={}) {
       return json(res,404,{code:'NOT_FOUND',message:'接口不存在'});
     }
     const entry=files.get(path);
+    // Browser icon fallback is separate from map initialization and business APIs.
+    if(path==='/favicon.ico'&&['GET','HEAD'].includes(req.method)){res.writeHead(204,{'Cache-Control':'no-store'});res.end();return;}
     if(!entry||!['GET','HEAD'].includes(req.method)){res.writeHead(404);res.end('Not found');return;}
     try {const body=await readFile(new URL(`./web/${entry[0]}`,import.meta.url));res.writeHead(200,{'Content-Type':`${entry[1]}; charset=utf-8`,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':live?realMapCsp:localCsp});res.end(req.method==='HEAD'?undefined:body);}
     catch {res.writeHead(500);res.end('无法读取页面文件');}

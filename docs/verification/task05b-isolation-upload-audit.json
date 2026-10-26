@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-26T12:36:10.621248+00:00",
+  "baseCommit": "018a5ff6370da748b377dd2348caf6a887ce34b6",
+  "textFilesChecked": 21,
+  "findings": [
+    {
+      "scope": "staged-isolation",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "Reviewed synthetic URL fixture for sanitizer; not actual credentials or contact",
+      "resolved": true
+    },
+    {
+      "scope": "staged-isolation",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "Reviewed synthetic URL fixture for sanitizer; not actual credentials or contact",
+      "resolved": true
+    }
+  ],
+  "unresolvedFindings": 0,
+  "media": [
+    "docs/verification/task05b-isolation-lab.png"
+  ],
+  "limits": [
+    "heuristics only; no absolute guarantee",
+    "no real .env or credential values read",
+    "private authorization ledger and original chats excluded",
+    "offline lab screenshot visually reviewed; not a real map"
+  ]
+}

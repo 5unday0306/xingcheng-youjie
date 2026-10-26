@@ -2,7 +2,7 @@
 // fragments, console messages, script samples, request headers or response bodies.
 export function safeLocation(value,base='http://localhost/') {
   if(!value)return {origin:'unknown',path:''};
-  if(['inline','eval'].includes(value))return {origin:value,path:''};
+  if(['inline','eval','wasm-eval','trusted-types-policy','trusted-types-sink'].includes(value))return {origin:value,path:''};
   try {const u=new URL(value,base);
     if(!['http:','https:'].includes(u.protocol))return {origin:u.protocol,path:''};
     return {origin:u.origin,path:u.pathname.split('/').map(p=>p.length>80||/[a-f\d]{24,}/i.test(p)?'[redacted]':p).join('/').slice(0,300)};
