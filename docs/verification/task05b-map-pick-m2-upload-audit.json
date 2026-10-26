@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-26T10:21:05.355229+00:00",
+  "textFilesChecked": 21,
+  "findings": [
+    {
+      "scope": "unpublished-169f458",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "人工复核：配置名称到内部属性名的映射，不是凭据值，无需改写历史"
+    },
+    {
+      "scope": "unpublished-169f458",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "人工复核：配置名称到内部属性名的映射，不是凭据值，无需改写历史"
+    }
+  ],
+  "mediaClassified": [
+    "docs/verification/task05b-map-pick-real-desktop.png",
+    "docs/verification/task05b-map-pick-real-operation.webm",
+    "docs/verification/task05b-map-pick-sdk-failed-frame-12.png",
+    "docs/verification/task05b-map-pick-sdk-failed-frame-2.png",
+    "docs/verification/task05b-map-pick-sdk-failed-frame-25.png",
+    "docs/verification/task05b-map-pick-m2-real-desktop.png",
+    "docs/verification/task05b-map-pick-m2-real-operation.webm"
+  ],
+  "limits": [
+    "heuristic only; no credential values read",
+    "M2 screenshot viewed; video not reviewed frame by frame",
+    "prior unpublished history audit retained in earlier report"
+  ],
+  "unresolvedFindings": 0
+}

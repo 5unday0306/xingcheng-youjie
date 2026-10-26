@@ -1,0 +1,77 @@
+{
+  "executedAt": "2026-10-26T10:19:04.490Z",
+  "mode": "真实SDK/用户点选会话记录（是否通过按各字段）",
+  "operator": "SDK加载由授权助手触发；本次失败，没有用户选点或查路",
+  "mapReady": false,
+  "userPointSelectionPerformed": false,
+  "roadExecuted": false,
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": null,
+      "TY04": null
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 2
+  },
+  "reservedCents": 15,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": {
+    "code": "SDK_FAILED",
+    "at": "2026-10-26T10:19:04.249Z"
+  },
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 20,
+    "other": 8
+  },
+  "events": [
+    {
+      "at": "2026-10-26T10:18:48.712Z",
+      "action": "pickLoad"
+    },
+    {
+      "at": "2026-10-26T10:19:04.454Z",
+      "action": "pick-tool-1"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src 'self' https://webapi.amap.com'./?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://jsapi-service.amap.com/mapsplugincdn?[omitted] violates the following Content Security Policy directive: \"script-src 'self' https://webapi.amap.com\"./?[omitted] Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false
+}
