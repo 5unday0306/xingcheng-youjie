@@ -7,7 +7,7 @@ import {createPlanningService,PlanningError} from './lib/planning.mjs';
 import {loadCredentials,readApproval,createLedger,createHttpSender} from './lib/runtime05b.mjs';
 import {createLivePlanning} from './lib/live-planning.mjs';
 import {offlinePlanner} from './lib/offline-fixture.mjs';
-const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']]]);
+const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']]]);
 const csp="default-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'";
 function json(res,status,data) {res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data));}
 function readBody(req) {
@@ -61,7 +61,8 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   if(realPrep){
     const {credentials,status}=await loadCredentials(new URL('./.env',import.meta.url));
     let approval=null;try{approval=await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url));}catch(e){console.log(e.message);}
-    const ledger=approval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),approval):null;
+    const historyApproval=approval||await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url),{allowExpired:true}).catch(()=>null);
+    const ledger=historyApproval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),historyApproval):null;
     live=createLivePlanning({credentials,configuration:status,approval,ledger,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});

@@ -1,0 +1,16 @@
+{
+  "executedAt": "2026-10-26T09:47:32.272Z",
+  "mode": "真实本机停止页，无SDK加载",
+  "canPrepare": false,
+  "canGenerate": false,
+  "counts": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 0
+  },
+  "reservedCents": 5,
+  "stopped": "DIAGNOSTIC_COMPLETE",
+  "externalRequests": 0,
+  "credentialValuesPrinted": false
+}

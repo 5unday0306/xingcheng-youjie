@@ -15,6 +15,7 @@
     "test:browser:05": "node tests/browser05-regression.mjs && node tests/browser05.mjs",
     "start:real-preparation": "node server.mjs --real-preparation",
     "test:browser:05b": "node tests/browser05b-ui.mjs && node tests/browser05b-wiring.mjs",
-    "test:browser:05b:recovery": "node tests/browser05b-recovery-ui.mjs && node tests/browser05b-recovery-wiring.mjs"
+    "test:browser:05b:recovery": "node tests/browser05b-recovery-ui.mjs && node tests/browser05b-recovery-wiring.mjs",
+    "test:browser:05b:map-pick": "node tests/browser05b-map-pick-ui.mjs && node tests/browser05b-map-pick.mjs"
   }
 }

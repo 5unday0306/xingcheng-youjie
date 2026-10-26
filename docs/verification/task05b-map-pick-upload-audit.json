@@ -1,0 +1,13 @@
+{
+  "executedAt": "2026-10-26T09:55:04.335Z",
+  "scope": "origin/main之后全部未推送唯一blob及本轮逐项暂存",
+  "unpushedCommits": 12,
+  "uniqueHistoricalBlobs": 157,
+  "stagedFiles": 29,
+  "textVersionsChecked": 156,
+  "binaryVersionsListed": 30,
+  "findings": [],
+  "credentialsRead": false,
+  "credentialValuesPrinted": false,
+  "limitations": "启发式格式与路径扫描，不保证绝无秘密或个人资料；二进制按历史界面与本轮截图人工复核，未重新逐帧审查旧录屏。私有原始聊天/.env不在Git范围。未发现仓库内自动部署配置或pre-push钩子；外部Webhook未核实。首次审查因未先跳过旧录屏而超出缓冲，修正为先按媒体扩展名分类后重跑。"
+}

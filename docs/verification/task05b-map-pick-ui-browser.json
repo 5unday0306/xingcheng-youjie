@@ -1,0 +1,17 @@
+{
+  "executedAt": "2026-10-26T09:45:02.336Z",
+  "assertions": 53,
+  "passed": true,
+  "posts": 2,
+  "externalRequests": 0,
+  "pageErrors": [],
+  "realCalls": 0,
+  "widths": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "scope": "正式画布集成、需求v1保存恢复、损坏保护、1/1与6/3、逐人隔离、取消Esc、输入节点、错误定位、切日不重复请求"
+}

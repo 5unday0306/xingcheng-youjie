@@ -1,3 +1,4 @@
+import {loadAMapSdk} from './amap-loader.js';
 import {createMapView} from './map-view.js';
 const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}}) {
@@ -34,8 +35,7 @@ export function createLivePanel({root,capabilities,onReady,onModeChange=()=>{}})
   });
   const load=button('加载一次真实地图（会联网）',async()=>{
     if(!proof)throw Error('请先查询一条有真实几何的路段');if(map||lease)throw Error('已经领取地图加载许可，不自动重新初始化');
-    lease=await post('/api/live/map-lease',{});window._AMapSecurityConfig={serviceHost:location.origin+'/_AMapService'};
-    await new Promise((resolve,reject)=>{const script=document.createElement('script');const timer=setTimeout(()=>{script.remove();reject(Error('SDK加载超时，停止，不自动重试'));},15000);script.src=`https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(lease.jsKey)}`;script.onload=()=>{clearTimeout(timer);resolve();};script.onerror=()=>{clearTimeout(timer);reject(Error('SDK加载失败，请核对权限和域名；不自动重试'));};document.head.append(script);});
+    lease=await post('/api/live/map-lease',{});await loadAMapSdk({jsKey:lease.jsKey,serviceHost:location.origin+'/_AMapService'});
     await post('/api/live/sdk-event',{event:'script-loaded'});
     if(Date.now()>=lease.expiresAt)throw Error('本次地图许可已过期');mapBox.hidden=false;
     map=createMapView({AMap:window.AMap,container:mapBox,onLeg:showLeg,onSelect:(id,{origin}={})=>{document.querySelectorAll('[data-activity-id]').forEach(n=>n.setAttribute('aria-pressed',String(n.dataset.activityId===id)));document.querySelectorAll('[data-activity-row-id]').forEach(n=>{n.dataset.active=String(n.dataset.activityRowId===id);if(origin==='map'&&n.dataset.active==='true'){n.focus({preventScroll:true});n.scrollIntoView({block:'nearest',behavior:'auto'});}});if(origin==='map'&&!document.querySelector(`[data-activity-row-id="${id}"]`))proofList.querySelector(`[data-activity-id="${id}"]`)?.focus({preventScroll:true});}});showDay(proof.day);try{await map.whenReady();await post('/api/live/sdk-event',{event:'map-ready'});}catch(e){map.destroy();map=null;throw e;}

@@ -1,0 +1,67 @@
+{
+  "executedAt": "2026-10-26T09:56:04.014Z",
+  "mode": "合成SDK及合成道路；不是实际地图验收",
+  "assertions": 80,
+  "passed": true,
+  "realCalls": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 0
+  },
+  "reports": [
+    {
+      "name": "success",
+      "calls": [
+        "/v3/direction/walking",
+        "/v3/direction/transit/integrated"
+      ],
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 2,
+        "map": 1
+      }
+    },
+    {
+      "name": "pending-change",
+      "calls": [
+        "/v3/direction/walking"
+      ],
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 1,
+        "map": 1
+      }
+    },
+    {
+      "name": "sdk-failure",
+      "calls": [],
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 0,
+        "map": 1
+      }
+    },
+    {
+      "name": "road-failure",
+      "calls": [
+        "/v3/direction/walking"
+      ],
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 1,
+        "map": 1
+      }
+    }
+  ],
+  "pageErrors": [],
+  "unexpectedExternal": []
+}
