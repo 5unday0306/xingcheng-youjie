@@ -1,0 +1,367 @@
+TAP version 13
+# Subtest: 默认三人两天及日期有效
+ok 1 - 默认三人两天及日期有效
+  ---
+  duration_ms: 17.0074
+  type: 'test'
+  ...
+# Subtest: 1人1天边界
+ok 2 - 1人1天边界
+  ---
+  duration_ms: 0.535
+  type: 'test'
+  ...
+# Subtest: 6人3天边界
+ok 3 - 6人3天边界
+  ---
+  duration_ms: 0.283
+  type: 'test'
+  ...
+# Subtest: 拒绝非法人数 0
+ok 4 - 拒绝非法人数 0
+  ---
+  duration_ms: 0.2384
+  type: 'test'
+  ...
+# Subtest: 拒绝非法人数 7
+ok 5 - 拒绝非法人数 7
+  ---
+  duration_ms: 0.1564
+  type: 'test'
+  ...
+# Subtest: 拒绝非法人数 true
+ok 6 - 拒绝非法人数 true
+  ---
+  duration_ms: 0.1137
+  type: 'test'
+  ...
+# Subtest: 拒绝非法人数 3
+ok 7 - 拒绝非法人数 3
+  ---
+  duration_ms: 0.1113
+  type: 'test'
+  ...
+# Subtest: 拒绝非法人数 2.5
+ok 8 - 拒绝非法人数 2.5
+  ---
+  duration_ms: 0.0961
+  type: 'test'
+  ...
+# Subtest: 拒绝0天
+ok 9 - 拒绝0天
+  ---
+  duration_ms: 0.1632
+  type: 'test'
+  ...
+# Subtest: 拒绝4天
+ok 10 - 拒绝4天
+  ---
+  duration_ms: 0.9948
+  type: 'test'
+  ...
+# Subtest: 人数成员数不符
+ok 11 - 人数成员数不符
+  ---
+  duration_ms: 0.113
+  type: 'test'
+  ...
+# Subtest: 拒绝非连续日期
+ok 12 - 拒绝非连续日期
+  ---
+  duration_ms: 0.127
+  type: 'test'
+  ...
+# Subtest: 拒绝无效日期
+ok 13 - 拒绝无效日期
+  ---
+  duration_ms: 0.0954
+  type: 'test'
+  ...
+# Subtest: 拒绝非法结束时间 08:00
+ok 14 - 拒绝非法结束时间 08:00
+  ---
+  duration_ms: 0.057
+  type: 'test'
+  ...
+# Subtest: 拒绝非法结束时间 09:00
+ok 15 - 拒绝非法结束时间 09:00
+  ---
+  duration_ms: 0.0518
+  type: 'test'
+  ...
+# Subtest: 拒绝非法结束时间 25:00
+ok 16 - 拒绝非法结束时间 25:00
+  ---
+  duration_ms: 0.0858
+  type: 'test'
+  ...
+# Subtest: 拒绝非法结束时间 
+ok 17 - 拒绝非法结束时间 
+  ---
+  duration_ms: 0.0368
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 -1
+ok 18 - 预算拒绝类型/非有限值 -1
+  ---
+  duration_ms: 0.0567
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 NaN
+ok 19 - 预算拒绝类型/非有限值 NaN
+  ---
+  duration_ms: 0.0411
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 Infinity
+ok 20 - 预算拒绝类型/非有限值 Infinity
+  ---
+  duration_ms: 0.0439
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 null
+ok 21 - 预算拒绝类型/非有限值 null
+  ---
+  duration_ms: 0.0494
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 true
+ok 22 - 预算拒绝类型/非有限值 true
+  ---
+  duration_ms: 0.0527
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 
+ok 23 - 预算拒绝类型/非有限值 
+  ---
+  duration_ms: 0.0384
+  type: 'test'
+  ...
+# Subtest: 预算拒绝类型/非有限值 600
+ok 24 - 预算拒绝类型/非有限值 600
+  ---
+  duration_ms: 0.0335
+  type: 'test'
+  ...
+# Subtest: 数字转换拒绝空、布尔、科学计数及负数
+ok 25 - 数字转换拒绝空、布尔、科学计数及负数
+  ---
+  duration_ms: 0.0595
+  type: 'test'
+  ...
+# Subtest: 步行拒绝非法数值与覆盖缺失
+ok 26 - 步行拒绝非法数值与覆盖缺失
+  ---
+  duration_ms: 0.1018
+  type: 'test'
+  ...
+# Subtest: 标识重复与必填字段
+ok 27 - 标识重复与必填字段
+  ---
+  duration_ms: 0.1108
+  type: 'test'
+  ...
+# Subtest: 逐人独立且往返约束保留
+ok 28 - 逐人独立且往返约束保留
+  ---
+  duration_ms: 0.0615
+  type: 'test'
+  ...
+# Subtest: 保存恢复逐项一致
+ok 29 - 保存恢复逐项一致
+  ---
+  duration_ms: 1.4206
+  type: 'test'
+  ...
+# Subtest: 无存档返回null
+ok 30 - 无存档返回null
+  ---
+  duration_ms: 0.0979
+  type: 'test'
+  ...
+# Subtest: 损坏/版本/结构存档不能静默覆盖 broken
+ok 31 - 损坏/版本/结构存档不能静默覆盖 broken
+  ---
+  duration_ms: 1.5213
+  type: 'test'
+  ...
+# Subtest: 损坏/版本/结构存档不能静默覆盖 {"version":99}
+ok 32 - 损坏/版本/结构存档不能静默覆盖 {"version":99}
+  ---
+  duration_ms: 0.2154
+  type: 'test'
+  ...
+# Subtest: 损坏/版本/结构存档不能静默覆盖 {"version":1,"request":{}}
+ok 33 - 损坏/版本/结构存档不能静默覆盖 {"version":1,"request":{}}
+  ---
+  duration_ms: 0.1674
+  type: 'test'
+  ...
+# Subtest: 非法输入保存不能破坏旧存档
+ok 34 - 非法输入保存不能破坏旧存档
+  ---
+  duration_ms: 0.1571
+  type: 'test'
+  ...
+# Subtest: 存储配额/权限错误上抛供UI提示
+ok 35 - 存储配额/权限错误上抛供UI提示
+  ---
+  duration_ms: 0.3135
+  type: 'test'
+  ...
+# Subtest: 坏JSON/空值不会恢复
+ok 36 - 坏JSON/空值不会恢复
+  ---
+  duration_ms: 0.1731
+  type: 'test'
+  ...
+# Subtest: 地图选点：初始为空，选点/调整/确认不调用道路；分别确认后仍须选方式
+ok 37 - 地图选点：初始为空，选点/调整/确认不调用道路；分别确认后仍须选方式
+  ---
+  duration_ms: 7.3222
+  type: 'test'
+  ...
+# Subtest: 地图选点：不允许未确认、同点、范围外、版本过期或未知ID，不发道路
+ok 38 - 地图选点：不允许未确认、同点、范围外、版本过期或未知ID，不发道路
+  ---
+  duration_ms: 0.7626
+  type: 'test'
+  ...
+# Subtest: 地图选点：修改/撤销/取消不会恢复旧路线，不影响另一点确认
+ok 39 - 地图选点：修改/撤销/取消不会恢复旧路线，不影响另一点确认
+  ---
+  duration_ms: 2.4379
+  type: 'test'
+  ...
+# Subtest: 地图选点：初次点选取消回到空，不误恢复原确认
+ok 40 - 地图选点：初次点选取消回到空，不误恢复原确认
+  ---
+  duration_ms: 0.2637
+  type: 'test'
+  ...
+# Subtest: 地图选点：方式修改清旧路线，定位重复读取不再请求，道路几何不补直线
+ok 41 - 地图选点：方式修改清旧路线，定位重复读取不再请求，道路几何不补直线
+  ---
+  duration_ms: 0.4993
+  type: 'test'
+  ...
+# Subtest: 地图选点：运行期间改点，取消旧请求且丢弃旧结果，已发次数不抹掉
+ok 42 - 地图选点：运行期间改点，取消旧请求且丢弃旧结果，已发次数不抹掉
+  ---
+  duration_ms: 0.5428
+  type: 'test'
+  ...
+# Subtest: 地图选点：用户接受测试点可查路但不伪称官方入口；未接受则拒绝
+ok 43 - 地图选点：用户接受测试点可查路但不伪称官方入口；未接受则拒绝
+  ---
+  duration_ms: 1.9427
+  type: 'test'
+  ...
+# Subtest: 地图选点集成：无搜索/模型，SDK可先加载一次；选点不耗地点，明确查路才计道路
+not ok 44 - 地图选点集成：无搜索/模型，SDK可先加载一次；选点不耗地点，明确查路才计道路
+  ---
+  duration_ms: 21.0212
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\map-picking.test.mjs:16:1'
+  failureType: 'testCodeFailure'
+  error: "EPERM: operation not permitted, rename 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-bMh6Wr\\ledger.json.89fb22bc-637f-4f0a-894b-c69d349ad49a.tmp' -> 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-bMh6Wr\\ledger.json'"
+  code: 'EPERM'
+  stack: |-
+    async rename (node:internal/fs/promises:842:10)
+    async performTransaction (file:///C:/Users/lenovo/Desktop/%E4%BC%A0%E6%99%BA/lib/runtime05b.mjs:40:160)
+  ...
+# Subtest: 地图选点集成：道路失败停止，不自动重试或换方式
+not ok 45 - 地图选点集成：道路失败停止，不自动重试或换方式
+  ---
+  duration_ms: 10.4142
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\map-picking.test.mjs:17:1'
+  failureType: 'testCodeFailure'
+  error: "EPERM: operation not permitted, rename 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-9CUW3D\\ledger.json.0b1dcdc0-5fa2-46a3-83ef-c2bdccc6a680.tmp' -> 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-9CUW3D\\ledger.json'"
+  code: 'EPERM'
+  stack: |-
+    async rename (node:internal/fs/promises:842:10)
+    async performTransaction (file:///C:/Users/lenovo/Desktop/%E4%BC%A0%E6%99%BA/lib/runtime05b.mjs:40:160)
+  ...
+# Subtest: 地图选点集成：SDK失败停止且没有道路；SDK未就绪不能选点
+not ok 46 - 地图选点集成：SDK失败停止且没有道路；SDK未就绪不能选点
+  ---
+  duration_ms: 8.5047
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\map-picking.test.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: "EPERM: operation not permitted, rename 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-oCoixb\\ledger.json.d94a9313-b9d3-4cc7-8b9b-8bd43cf49861.tmp' -> 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-scope-test-oCoixb\\ledger.json'"
+  code: 'EPERM'
+  stack: |-
+    async rename (node:internal/fs/promises:842:10)
+    async performTransaction (file:///C:/Users/lenovo/Desktop/%E4%BC%A0%E6%99%BA/lib/runtime05b.mjs:40:160)
+  ...
+# Subtest: 过期授权只允许读历史账本，不续期或允许发请求
+not ok 47 - 过期授权只允许读历史账本，不续期或允许发请求
+  ---
+  duration_ms: 9.173
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\map-picking.test.mjs:19:1'
+  failureType: 'testCodeFailure'
+  error: "EPERM: operation not permitted, rename 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-expiry-test-u6mTOh\\ledger.json.3b443778-52b1-46cf-b16d-012b231b5fdc.tmp' -> 'C:\\Users\\lenovo\\AppData\\Local\\Packages\\sandbox.{7a4b32db-45ab-4ec7-8ba5-3f635138dd87}\\AC\\Temp\\pick-expiry-test-u6mTOh\\ledger.json'"
+  code: 'EPERM'
+  stack: |-
+    async rename (node:internal/fs/promises:842:10)
+    async performTransaction (file:///C:/Users/lenovo/Desktop/%E4%BC%A0%E6%99%BA/lib/runtime05b.mjs:40:160)
+  ...
+# Subtest: 默认API能力显示未授权，不能以参数或请求字段开启真实调用
+not ok 48 - 默认API能力显示未授权，不能以参数或请求字段开启真实调用
+  ---
+  duration_ms: 34.6678
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\planning-server.test.mjs:14:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: API阻止异源、跨站与伪造Host，接口不能充当开放代理
+not ok 49 - API阻止异源、跨站与伪造Host，接口不能充当开放代理
+  ---
+  duration_ms: 5.037
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\planning-server.test.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: JSON类型、格式和请求大小限制在进入测试规划之前生效
+not ok 50 - JSON类型、格式和请求大小限制在进入测试规划之前生效
+  ---
+  duration_ms: 6.2982
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\planning-server.test.mjs:25:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: 候选与静态响应不下发凭据或服务端代码，CSP仅开放本机连接
+not ok 51 - 候选与静态响应不下发凭据或服务端代码，CSP仅开放本机连接
+  ---
+  duration_ms: 3.8909
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\planning-server.test.mjs:30:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: 显式测试服务运行当前日期人数天数，输出替身标记且真实调用全0
+not ok 52 - 显式测试服务运行当前日期人数天数，输出替身标记且真实调用全0
+  ---
+  duration_ms: 5.7576
+  type: 'test'
+  location: 'C:\\Users\\lenovo\\Desktop\\传智\\tests\\planning-server.test.mjs:36:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: HTTP模型错误脱敏且保留失败状态，未假报�

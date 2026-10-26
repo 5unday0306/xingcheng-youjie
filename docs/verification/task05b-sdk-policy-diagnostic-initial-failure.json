@@ -1,0 +1,124 @@
+{
+  "mode": "offline synthetic diagnostic probe",
+  "diagnostics": [
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 1,
+        "column": 210
+      },
+      "at": "2026-10-26T11:27:02.693Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-26T11:27:02.693Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "inline",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "http://127.0.0.1:60264",
+        "path": "/sdk-policy-fixture.js",
+        "line": 1,
+        "column": 110
+      },
+      "at": "2026-10-26T11:27:02.767Z"
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:60264",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "img",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-26T11:27:02.770Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:60264",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "img",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-26T11:27:02.770Z"
+    }
+  ],
+  "network": [
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:60264",
+      "path": "/favicon.ico",
+      "resourceType": "Other",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      }
+    },
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "Script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 0,
+        "column": 209
+      }
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:60264",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "Image",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      }
+    }
+  ]
+}

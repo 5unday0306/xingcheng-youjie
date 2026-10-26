@@ -1,0 +1,83 @@
+{
+  "executedAt": "2026-10-26T11:33:09.168Z",
+  "mode": "合成SDK及合成道路；不是实际地图验收",
+  "assertions": 87,
+  "passed": true,
+  "realCalls": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 0
+  },
+  "reports": [
+    {
+      "name": "success",
+      "calls": [
+        "/v3/direction/walking",
+        "/v3/direction/transit/integrated"
+      ],
+      "sdkInitProxyCalls": 0,
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 2,
+        "map": 1
+      }
+    },
+    {
+      "name": "jsonp-protocol",
+      "calls": [],
+      "sdkInitProxyCalls": 1,
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 0,
+        "map": 1
+      }
+    },
+    {
+      "name": "pending-change",
+      "calls": [
+        "/v3/direction/walking"
+      ],
+      "sdkInitProxyCalls": 0,
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 1,
+        "map": 1
+      }
+    },
+    {
+      "name": "sdk-failure",
+      "calls": [],
+      "sdkInitProxyCalls": 0,
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 0,
+        "map": 1
+      }
+    },
+    {
+      "name": "road-failure",
+      "calls": [
+        "/v3/direction/walking"
+      ],
+      "sdkInitProxyCalls": 0,
+      "sdkSubstitutions": 1,
+      "counts": {
+        "model": 0,
+        "location": 0,
+        "route": 1,
+        "map": 1
+      }
+    }
+  ],
+  "pageErrors": [],
+  "unexpectedExternal": []
+}

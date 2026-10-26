@@ -1,3 +1,4 @@
+const evidencePath=path=>process.env.SDK_POLICY_REGRESSION==='1'?path.replace('task05b-map-pick','task05b-sdk-policy-regression'):path;
 // Temporary app, synthetic upstream and synthetic SDK. Never a real map acceptance.
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {mkdtemp,rm,writeFile} from 'node:fs/promises';import {join} from 'node:path';import {tmpdir} from 'node:os';
 import {createServer} from '../server.mjs';import {createLivePlanning} from '../lib/live-planning.mjs';import {createLedger} from '../lib/runtime05b.mjs';
@@ -15,7 +16,7 @@ async function scenario(name,{failSdk=false,failRoad=false,sdkWithInit=false}={}
  const confirm=async id=>{await page.locator('#pick-confirm-'+id).click();await waitText('pick-confirmation-'+id,'已确认');};
  const prepare=async()=>{await choose('ENDPOINT',[112.53,37.86]);await confirm('ENDPOINT');await choose('TY04',[112.56,37.85]);await confirm('TY04');await page.locator('#pickMode').selectOption('walk');await page.locator('#pickRoute:not([disabled])').waitFor();};
  try{await page.goto(base);await page.locator('#pickLoad:not([disabled])').waitFor();eq(calls.length,0);eq(sdkLoads,0);eq(await page.locator('#pickRoute').isDisabled(),true);await page.locator('#pickLoad').click();if(!failSdk)await waitText('pickStatus','真实地图已加载');await fn({page,calls,ledger,waitText,choose,confirm,prepare,initCalls:()=>initCalls,sdkLoads:()=>sdkLoads});reports.push({name,calls:[...calls],sdkInitProxyCalls:initCalls,sdkSubstitutions:sdkLoads,counts:(await ledger.summary()).counts});}
- catch(e){const failure={executedAt:new Date().toISOString(),name,error:e.message,status:await page.locator('#pickStatus').textContent().catch(()=>''),errors,record:await ledger.summary()};await writeFile('docs/verification/task05b-map-pick-sdk-browser-failure.json',JSON.stringify(failure,null,2));console.log({name,status:failure.status,errors});throw e;}
+ catch(e){const failure={executedAt:new Date().toISOString(),name,error:e.message,status:await page.locator('#pickStatus').textContent().catch(()=>''),errors,record:await ledger.summary()};await writeFile(evidencePath('docs/verification/task05b-map-pick-sdk-browser-failure.json'),JSON.stringify(failure,null,2));console.log({name,status:failure.status,errors});throw e;}
  finally{await context.close();await new Promise(r=>server.close(r));}
 }
 try{
@@ -40,5 +41,5 @@ try{
  await scenario('sdk-failure',{failSdk:true},async({page,calls,ledger,waitText})=>{await waitText('pickStatus','SDK加载失败');eq((await ledger.summary()).stopped.code,'SDK_FAILED');eq(calls.length,0);eq(await page.locator('#pickRoute').isDisabled(),true);});
  await scenario('road-failure',{failRoad:true},async({page,calls,ledger,waitText,prepare})=>{await prepare();await page.locator('#pickRoute').click();await waitText('pickStatus','上游请求失败');eq(calls.length,1);eq((await ledger.summary()).stopped.code,'UPSTREAM_FAILED');eq(await page.locator('#pickRoute').isDisabled(),true);eq(await page.evaluate(()=>__maps[0].items.filter(i=>i.options?.path).length),0);});
  assert.deepEqual(errors,[]);assertions++;assert.deepEqual(external,[]);assertions++;
- const report={executedAt:new Date().toISOString(),mode:'合成SDK及合成道路；不是实际地图验收',assertions,passed:true,realCalls:{model:0,location:0,route:0,map:0},reports,pageErrors:errors,unexpectedExternal:external};await writeFile('docs/verification/task05b-map-pick-sdk-fix-browser.json',JSON.stringify(report,null,2)+'\n');console.log(report);
+ const report={executedAt:new Date().toISOString(),mode:'合成SDK及合成道路；不是实际地图验收',assertions,passed:true,realCalls:{model:0,location:0,route:0,map:0},reports,pageErrors:errors,unexpectedExternal:external};await writeFile(evidencePath('docs/verification/task05b-map-pick-sdk-fix-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(report);
 }finally{await browser.close();await rm(dir,{recursive:true,force:true});}

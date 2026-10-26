@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-26T11:38:30.912615+00:00",
+  "baseCommit": "cc5a2126080859247199ff39637fdef7c3262ab6",
+  "scope": "all staged files; no older unpublished commits at start",
+  "textFiles": 28,
+  "media": [
+    "docs/verification/task05b-sdk-policy-regression-editor-390.png",
+    "docs/verification/task05b-sdk-policy-regression-ui-1440.png",
+    "docs/verification/task05b-sdk-policy-regression-ui-390.png"
+  ],
+  "findings": [
+    {
+      "scope": "staged",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "人工复核为脱敏函数测试的合成URL用户名/密码字面量；不是账号、真实凭据或联系方式",
+      "resolved": true
+    },
+    {
+      "scope": "staged",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 28,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "人工复核为脱敏函数测试的合成URL用户名/密码字面量；不是账号、真实凭据或联系方式",
+      "resolved": true
+    }
+  ],
+  "limits": [
+    "heuristics only; not a guarantee of no sensitive material",
+    "no real .env read",
+    "three new screenshots visually inspected",
+    "private ledger/approval and raw conversations excluded"
+  ],
+  "unresolvedFindings": 0,
+  "rawLogWhitespace": "TAP保留真实输出中的空测试参数尾空格；非日志文件diff检查通过"
+}

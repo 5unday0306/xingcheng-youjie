@@ -1,3 +1,5 @@
+import {installSdkDiagnostics} from './sdk-diagnostics.js';
+installSdkDiagnostics();
 import {
   defaultDraft, toRequest, validateRequest, dateAt, BUDGET, GAPS,
   save, restore, STORAGE_KEY, CITY_CONFIG,

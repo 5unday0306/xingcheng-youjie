@@ -7,8 +7,8 @@ import {createPlanningService,PlanningError} from './lib/planning.mjs';
 import {loadCredentials,readApproval,createLedger,createHttpSender} from './lib/runtime05b.mjs';
 import {createLivePlanning} from './lib/live-planning.mjs';
 import {offlinePlanner} from './lib/offline-fixture.mjs';
-const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']]]);
-const csp="default-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'";
+import {localCsp,realMapCsp} from './lib/content-security-policy.mjs';
+const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']]]);
 function json(res,status,data) {res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data));}
 function readBody(req) {
   return new Promise((resolve,reject)=>{
@@ -50,7 +50,7 @@ export function createServer({planning=createPlanningService(),live=null}={}) {
     }
     const entry=files.get(path);
     if(!entry||!['GET','HEAD'].includes(req.method)){res.writeHead(404);res.end('Not found');return;}
-    try {const body=await readFile(new URL(`./web/${entry[0]}`,import.meta.url));res.writeHead(200,{'Content-Type':`${entry[1]}; charset=utf-8`,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':live?csp.replace("connect-src 'self'; ",'')+"; script-src 'self' https://webapi.amap.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.amap.com https://*.autonavi.com; connect-src 'self' https://*.amap.com https://*.autonavi.com; worker-src 'self' blob:":csp});res.end(req.method==='HEAD'?undefined:body);}
+    try {const body=await readFile(new URL(`./web/${entry[0]}`,import.meta.url));res.writeHead(200,{'Content-Type':`${entry[1]}; charset=utf-8`,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':live?realMapCsp:localCsp});res.end(req.method==='HEAD'?undefined:body);}
     catch {res.writeHead(500);res.end('无法读取页面文件');}
   });
   server.requestTimeout=15000;server.headersTimeout=10000;

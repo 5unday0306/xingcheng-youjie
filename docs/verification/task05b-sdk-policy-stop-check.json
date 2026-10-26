@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-26T11:31:12.848252+00:00",
+  "counts": {
+    "location": 5,
+    "map": 2,
+    "route": 0,
+    "model": 0
+  },
+  "reservedCents": 15,
+  "stopped": {
+    "code": "SDK_FAILED",
+    "at": "2026-10-26T10:19:04.249Z"
+  },
+  "authorizationExpiresAt": "2026-10-26T12:00:29.504Z",
+  "sdkCumulativeCap": 2,
+  "authorizationAmendedThisRound": false,
+  "credentialsReadThisRound": false
+}
