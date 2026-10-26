@@ -30,7 +30,9 @@ export function createServer({planning=createPlanningService(),live=null}={}) {
       if(!allowed.has(host)||req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==`http://${host}`))return json(res,403,{code:'ORIGIN',message:'只允许本机同源请求'});
       if(path.startsWith('/_AMapService')) {
         if(!live||req.method!=='GET')return json(res,403,{code:'OFFLINE_ONLY',message:'安全代理未启用'});
-        try {const u=new URL(req.url,'http://localhost');const lease=/mapLease=([a-zA-Z0-9-]+)/.exec(req.headers.cookie||'')?.[1];u.searchParams.delete('lease');return json(res,200,await live.proxy(path.slice('/_AMapService'.length),u.searchParams,lease));}
+        try {const u=new URL(req.url,'http://localhost');const lease=/mapLease=([a-zA-Z0-9-]+)/.exec(req.headers.cookie||'')?.[1];u.searchParams.delete('lease');const reply=await live.proxy(path.slice('/_AMapService'.length),u.searchParams,lease);
+          if(reply?.kind==='sdk-script'){res.writeHead(200,{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(reply.body);return;}
+          return json(res,200,reply?.kind==='sdk-json'?reply.data:reply);}
         catch(e){return json(res,e instanceof PlanningError?e.status:502,{code:e instanceof PlanningError?e.code:'PROXY_FAILED',message:e instanceof PlanningError?e.message:'安全代理失败'});}
       }
       if(req.method==='GET'&&path==='/api/capabilities')return json(res,200,planning.capabilities());

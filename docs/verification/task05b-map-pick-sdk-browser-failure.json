@@ -1,0 +1,43 @@
+{
+  "executedAt": "2026-10-26T10:10:21.009Z",
+  "name": "jsonp-protocol",
+  "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+  "status": "调用记录被占用或上次异常中止，请人工复核；未调用",
+  "errors": [],
+  "record": {
+    "counts": {
+      "model": 0,
+      "location": 0,
+      "route": 0,
+      "map": 1
+    },
+    "reservedCents": 5,
+    "budgetCents": 100,
+    "actualCharge": "待供应商账单核对；预留不等于实扣",
+    "stopped": {
+      "code": "SDK_FAILED",
+      "at": "2026-10-26T10:09:51.022Z"
+    },
+    "entries": [
+      {
+        "id": "7efc8942-7bb1-44a7-8c3e-43bdd0a0c34e",
+        "kind": "map",
+        "reservedCents": 5,
+        "status": "reserved",
+        "at": "2026-10-26T10:09:51.001Z"
+      }
+    ],
+    "resources": [
+      {
+        "kind": "sdk-init-proxy",
+        "status": "requested",
+        "at": "2026-10-26T10:09:51.016Z"
+      },
+      {
+        "kind": "map",
+        "status": "failed",
+        "at": "2026-10-26T10:09:51.020Z"
+      }
+    ]
+  }
+}

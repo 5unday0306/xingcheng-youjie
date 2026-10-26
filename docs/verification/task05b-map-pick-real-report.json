@@ -1,0 +1,87 @@
+{
+  "executedAt": "2026-10-26T10:03:19.992Z",
+  "mode": "真实SDK初始化失败记录；未选点、未查询道路",
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": null,
+      "TY04": null
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 1
+  },
+  "reservedCents": 10,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": {
+    "code": "SDK_PROXY_FAILED",
+    "at": "2026-10-26T10:02:50.393Z",
+    "diagnostic": {
+      "reason": "PROXY_DENIED",
+      "parameterNames": [
+        "eventId",
+        "s",
+        "product",
+        "platform",
+        "logversion",
+        "t",
+        "csid",
+        "appname",
+        "resolution",
+        "mob",
+        "vt",
+        "dpr",
+        "sdkversion",
+        "key",
+        "scale",
+        "callback"
+      ]
+    }
+  },
+  "resources": [],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 0,
+    "other": 0
+  },
+  "events": [
+    {
+      "at": "2026-10-26T10:02:49.870Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "console",
+      "message": "Refused to execute script from 'http://127.0.0.1:4177/_AMapService/v3/log/init?[omitted] because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled."
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false,
+  "sdkScriptRequested": true,
+  "mapReady": false,
+  "userPointSelectionPerformed": false,
+  "roadExecuted": false,
+  "failureStage": "SDK初始化代理参数与JSONP响应兼容性"
+}
