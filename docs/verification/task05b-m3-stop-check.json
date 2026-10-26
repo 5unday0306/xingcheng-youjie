@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-26T11:53:01.8801252Z",
+  "counts": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 3
+  },
+  "reservedCents": 20,
+  "stopped": {
+    "code": "SDK_FAILED",
+    "at": "2026-10-26T11:47:08.762Z"
+  },
+  "canPrepare": false,
+  "canGenerate": false,
+  "mapDisplayOnly": true
+}

@@ -1,0 +1,172 @@
+{
+  "executedAt": "2026-10-26T11:47:08.914Z",
+  "mode": "M3真实底图单次验证：失败",
+  "operator": "获授权的助手触发一次SDK加载；没有用户选点、道路查询或缩放拖动验收",
+  "mapReady": false,
+  "visibleBasemap": "失败：截图及2/8/14秒帧仅空白容器与高德标识，未见可验收底图",
+  "userPointSelectionPerformed": false,
+  "roadExecuted": false,
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": null,
+      "TY04": null
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 3
+  },
+  "reservedCents": 20,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": {
+    "code": "SDK_FAILED",
+    "at": "2026-10-26T11:47:08.762Z"
+  },
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T11:46:53.717Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T11:46:53.732Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T11:47:08.758Z"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 14,
+    "other": 8
+  },
+  "events": [
+    {
+      "at": "2026-10-26T11:46:53.137Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com'./?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "page",
+      "message": "Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com\"./?[omitted]\n"
+    },
+    {
+      "type": "page",
+      "message": "U.Module.WebGLRender is not a constructor"
+    }
+  ],
+  "networkDiagnostics": [
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:4177",
+      "path": "/favicon.ico",
+      "resourceType": "Other",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      }
+    }
+  ],
+  "pageDiagnostics": [
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:4177",
+      "path": "/favicon.ico",
+      "resourceType": "other",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-26T11:46:52.836Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src",
+      "origin": "http://127.0.0.1:4177",
+      "path": "/wasm-eval",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "https://webapi.amap.com",
+        "path": "/maps",
+        "line": 1,
+        "column": 1400
+      },
+      "at": "2026-10-26T11:46:53.720Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "inline",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "https://webapi.amap.com",
+        "path": "/maps",
+        "line": 1,
+        "column": 536555
+      },
+      "at": "2026-10-26T11:46:53.754Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src",
+      "origin": "eval",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "https://webapi.amap.com",
+        "path": "/maps",
+        "line": 1,
+        "column": 203381
+      },
+      "at": "2026-10-26T11:46:54.173Z"
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false,
+  "diagnosticInterpretation": "/wasm-eval为采集器对特殊CSP值的路径化结果，不当作实际请求；原始诊断字段保留。CSP status=200是文档状态。"
+}

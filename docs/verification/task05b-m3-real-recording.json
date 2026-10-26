@@ -1,0 +1,31 @@
+{
+  "executedAt": "2026-10-26T11:47:08.831Z",
+  "wallDurationSeconds": 16.23,
+  "frames": 24,
+  "bytes": 1258727,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-26T11:46:53.137Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com'./?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "page",
+      "message": "Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com\"./?[omitted]\n"
+    },
+    {
+      "type": "page",
+      "message": "U.Module.WebGLRender is not a constructor"
+    }
+  ]
+}

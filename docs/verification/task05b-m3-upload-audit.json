@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-26T11:51:45.776326+00:00",
+  "baseCommit": "068fe4bb18c49f5353d94ed5ad010a198c279e7d",
+  "textFilesChecked": 11,
+  "mediaClassified": [
+    "docs/verification/task05b-m3-real-desktop.png",
+    "docs/verification/task05b-m3-real-frame-14.png",
+    "docs/verification/task05b-m3-real-frame-2.png",
+    "docs/verification/task05b-m3-real-frame-8.png",
+    "docs/verification/task05b-m3-real-operation.webm"
+  ],
+  "findings": [
+    {
+      "scope": "staged-M3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "人工复核：环境变量名到内部字段名映射，不是真实凭据",
+      "resolved": true
+    },
+    {
+      "scope": "staged-M3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "人工复核：环境变量名到内部字段名映射，不是真实凭据",
+      "resolved": true
+    },
+    {
+      "scope": "staged-M3",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "人工复核：脱敏测试中合成URL用户名密码，不是真实账号或联系方式",
+      "resolved": true
+    },
+    {
+      "scope": "staged-M3",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "人工复核：脱敏测试中合成URL用户名密码，不是真实账号或联系方式",
+      "resolved": true
+    }
+  ],
+  "unresolvedFindings": 0,
+  "limits": [
+    "heuristics only; no guarantee of absence",
+    "private authorization/ledger/raw transcripts excluded",
+    "runtime loads credentials only for approved SDK; audit never reads credential values",
+    "M3 screenshot and 2/8/14-second video frames visually checked; not all video frames"
+  ]
+}

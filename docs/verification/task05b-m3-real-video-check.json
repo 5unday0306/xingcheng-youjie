@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-26T11:48:59.944Z",
+  "decoded": true,
+  "width": 1440,
+  "height": 900,
+  "frameSeconds": [
+    2,
+    8,
+    14
+  ],
+  "bytes": 1258727,
+  "scope": "真实录屏离线解码，未重新加载应用或SDK；取帧不代表全部视频逐帧复核"
+}
