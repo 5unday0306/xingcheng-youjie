@@ -14,6 +14,16 @@ const credentials={webKey:'TEST_WEB_CANARY',modelKey:'TEST_MODEL_CANARY',jsKey:'
 const poiResponse=r=>{const id=new URL(r.url).searchParams.get('id'),q=locationTargets().find(p=>p.query.poiId===id)?.query;return {status:200,body:{status:'1',pois:[{id,name:q.expectedNames[0],adcode:'140100',location:`${112.5+locationTargets().findIndex(p=>p.query.poiId===id)*.01},37.8`,pname:'测试省',cityname:'测试市',adname:'测试区',address:'合成测试入口'}]}};};
 const approval=()=>({version:1,id:'TEST_ONLY',enabled:true,expiresAt:new Date(Date.now()+3600000).toISOString(),termsConfirmed:true,accountCostBoundConfirmed:true,model:'deepseek-flash',budgetCents:100,caps:{model:1,location:5,route:12,map:1},reserveCents:{model:10,location:1,route:1,map:5}});
 const code=x=>e=>e.code===x;
+test('持续05B授权取消费用上限但保留次数保护及旧停止历史',async()=>{
+ const d=await mkdtemp(join(tmpdir(),'product-policy-'));try{
+ const old=approval(),p=join(d,'ledger.json'),ledger=createLedger(p,old);await ledger.reserve('map');await ledger.stop('SDK_FAILED');
+ const next={...old,policy:'development-05b',flow:'product-05b',budgetCents:null,caps:{model:8,location:40,route:160,map:16}};
+ await ledger.amend(next,{approved:true,reference:'SYNTHETIC standing authorization'});const active=createLedger(p,next);
+ await active.reserve('map');assert.equal((await active.summary()).counts.map,2);assert.equal((await active.summary()).reservedCents,10);
+ const raw=JSON.parse(await readFile(p,'utf8'));assert.equal(raw.authorizations[0].previousStop.code,'SDK_FAILED');
+ assert.throws(()=>validateApproval({...next,caps:{...next.caps,map:17}}));
+ }finally{await rm(d,{recursive:true,force:true});}
+});
 async function setup(fn,options={}){const dir=await mkdtemp(join(tmpdir(),'xingcheng-05b-test-'));const a=approval(),ledger=createLedger(join(dir,'ledger.json'),a),calls=[];let req;
  const send=async r=>{calls.push(new URL(r.url).pathname);if(options.send)return options.send(r);if(r.url.includes('/place/detail'))return poiResponse(r);if(r.url.includes('/log/init'))return {status:200,body:{status:'1'}};if(r.url.includes('geocode'))return {status:200,body:{status:'1',geocodes:[{adcode:'140100',location:'112.5,37.8',formatted_address:'合成测试入口'}]}};if(r.url.includes('direction'))return {status:200,body:{status:'1',route:{paths:[{duration:'61',distance:'100',steps:[{polyline:'112.5,37.8;112.51,37.81'}]}]}}};req=JSON.parse(r.body.messages[1].content);return {status:200,body:{choices:[{finish_reason:'stop',message:{content:await offlinePlanner(req)}}],usage:{prompt_tokens:100,completion_tokens:50,total_tokens:150}}};};
  const live=createLivePlanning({credentials,configuration:{webKey:true,modelKey:true,jsKey:true,jsSecurityCode:true},approval:a,ledger,send});
