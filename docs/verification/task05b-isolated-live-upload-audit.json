@@ -1,0 +1,306 @@
+{
+  "executedAt": "2026-10-27T11:21:31.441011+00:00",
+  "head": "cb4a2de9c84e8fde75c64e8c886fc3e502d3e0d6",
+  "commits": 39,
+  "uniqueHistoryBlobs": 442,
+  "workingFiles": 299,
+  "skippedSensitiveNamedBlobs": 0,
+  "commitIdentityEntries": 1,
+  "findings": [
+    {
+      "scope": "history-blob:4cfa261deda0002695a6958a5e90883687ea1535",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "configuration-instructions: empty assignment markers, not credential value"
+    },
+    {
+      "scope": "history-blob:e3d3a4960561c0f7cd98ee7c2d32d96dabb3fee3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:e3d3a4960561c0f7cd98ee7c2d32d96dabb3fee3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:7fd819f22a2ee62a3eeb1b1be9e615a817794250",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 23,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "synthetic-test-value"
+    },
+    {
+      "scope": "history-blob:041e8e18e0f09d3ff62b928d9400845d82ac6672",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:041e8e18e0f09d3ff62b928d9400845d82ac6672",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:c310afa2ca1c249753859f662f012d8b7bcdee24",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:c310afa2ca1c249753859f662f012d8b7bcdee24",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:ab5a3379773d7bd851cf19972bb1f849e5b1955d",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:ab5a3379773d7bd851cf19972bb1f849e5b1955d",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:125886049879817f38222d8f9bae7401bc70a2c1",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:125886049879817f38222d8f9bae7401bc70a2c1",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 28,
+      "type": "email-in-text",
+      "severity": "review",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "history-blob:6322f9b5d33fff1ed4841dde9607f98bff717d0b",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:6322f9b5d33fff1ed4841dde9607f98bff717d0b",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:667c07820e5a084fe428173164010e72b48352c5",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:667c07820e5a084fe428173164010e72b48352c5",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:3bb8bfabda9c3987ad7ea060c4bd155216bb5960",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:3bb8bfabda9c3987ad7ea060c4bd155216bb5960",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:046dc69ba78b510329a6d335566e03322987dc7a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:046dc69ba78b510329a6d335566e03322987dc7a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:f708b5821b76a4a333daa333db5bfb9261fb59d9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:f708b5821b76a4a333daa333db5bfb9261fb59d9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:860dc6c6ca42fd866690de7f3164854b9927786a",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 21,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "synthetic-test-value"
+    },
+    {
+      "scope": "history-blob:08f4f51ded5e0a5c14af83d5e3738ad89d09531b",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "configuration-instructions: empty assignment markers, not credential value"
+    },
+    {
+      "scope": "history-blob:ae95c28acf975dd2decb8a6b2fb6ee3c18c8b7e3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:ae95c28acf975dd2decb8a6b2fb6ee3c18c8b7e3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "history-blob:5294edb25278b8e9df815c07ba75d30362dbf73d",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 21,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "synthetic-test-value"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "configuration-instructions: empty assignment markers, not credential value"
+    },
+    {
+      "scope": "worktree",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "worktree",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "field-name-mapping"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 23,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "reviewResolution": "synthetic-test-value"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "reviewResolution": "synthetic-URL-parser-fixture: reviewed static unit test with CANARY values"
+    }
+  ],
+  "limits": [
+    "heuristics only; no proof of absence",
+    "no .env values read",
+    "binary text patterns only; no OCR",
+    "Git author identity travels with unchanged history",
+    "private session corpus excluded from Git audit and push"
+  ],
+  "reviewScope": "All 39 reachable commits / 442 unique blobs and 299 nonignored working files; no .env/private read. Binary patterns only, no OCR; new screenshots visually reviewed.",
+  "findingsReviewed": true,
+  "status": "review-complete-no-real-secret-found",
+  "finalStagedFilesChecked": 44,
+  "stagedFindings": [
+    {
+      "scope": "staged",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review"
+    },
+    {
+      "scope": "staged",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review"
+    },
+    {
+      "scope": "staged",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 23,
+      "type": "literal-credential-assignment",
+      "severity": "review"
+    }
+  ],
+  "stagedReview": "Only unchanged credential field mapping and synthetic TEST values in runtime tests; no private files staged."
+}

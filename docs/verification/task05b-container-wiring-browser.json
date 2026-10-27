@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-27T11:17:57.449Z",
+  "assertions": 19,
+  "scope": "正式工作台容器集成，合成停止记录；不是SDK/底图验收",
+  "externalRequests": 0,
+  "forbiddenActions": 0,
+  "containerRequests": 2,
+  "realSdkCalls": 0,
+  "permission": "仅子页unsafe-eval；无inline、通配来源、bootstrap或代理"
+}

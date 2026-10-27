@@ -1,0 +1,10 @@
+{
+  "recordedDate": "2026-10-27",
+  "scope": "本地合成SDK接线，非真实高德",
+  "attemptsObserved": 2,
+  "result": "容器READY等待30秒超时，尚未点击加载按钮",
+  "location": "tests/browser05b-isolated-live.mjs:15",
+  "repair": "去掉建立INIT监听前的诊断模块顶层await，避免iframe load与消息监听竞态",
+  "subsequentResult": "24项浏览器断言通过",
+  "realBusinessCalls": 0
+}

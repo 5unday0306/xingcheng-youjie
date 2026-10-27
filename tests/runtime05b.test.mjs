@@ -21,6 +21,27 @@ async function setup(fn,options={}){const dir=await mkdtemp(join(tmpdir(),'xingc
 async function confirm(live,id){const p=await live.action('/api/live/locate',{id});assert.equal(p.entranceVerified,false);await live.action('/api/live/confirm',{token:p.token,confirmed:true});}
 async function proof(live){await confirm(live,'ENDPOINT');await confirm(live,'TY04');const p=await live.action('/api/live/road-test',{from:'ENDPOINT',to:'TY04',mode:'walk'});const lease=await live.action('/api/live/map-lease',{});await live.action('/api/live/accept-proof',{lease:lease.lease,proofId:p.id,visibleConfirmed:true});return {p,lease};}
 test('05B 配置只返回存在性；普通模块不自动读取文件',async()=>{const d=await mkdtemp(join(tmpdir(),'config-05b-'));try{const p=join(d,'.env');await writeFile(p,'AMAP_WEB_SERVICE_KEY="TEST_SECRET"\nDEEPSEEK_API_KEY=\nUNRELATED=ignored');const c=await loadCredentials(p,{});assert.equal(c.credentials.webKey,'TEST_SECRET');assert.deepEqual(c.status,{webKey:true,modelKey:false,jsKey:false,jsSecurityCode:false});assert.ok(!JSON.stringify(c.status).includes('TEST_SECRET'));}finally{await rm(d,{recursive:true,force:true});}});
+
+test('隔离容器配置领取标记跨账本重建保留，停止后不领取，标记不另计调用',()=>setup(async({ledger,dir,a})=>{
+ await assert.rejects(ledger.claimMapBootstrap(),code('MAP_LEASE'));
+ await ledger.reserve('map');await ledger.claimMapBootstrap();
+ const restarted=createLedger(join(dir,'ledger.json'),a);
+ await assert.rejects(restarted.claimMapBootstrap(),code('MAP_BOOTSTRAP_USED'));
+ const s=await restarted.summary();assert.equal(s.counts.map,1);assert.equal(s.reservedCents,5);
+ await restarted.stop('SDK_FAILED');await assert.rejects(restarted.claimMapBootstrap(),code('RUN_STOPPED'));
+}));
+
+test('隔离接线实际live适配器只发公开配置，初始化固定上游且停止不可恢复',()=>setup(async({a,ledger,send,calls})=>{
+ const live=createLivePlanning({credentials,approval:{...a,flow:'map-pick',sdkOnly:true},ledger,send});
+ await live.frameCheck();await live.action('/api/live/map-lease',{});
+ const config=await live.frameBootstrap();assert.equal(config.jsKey,credentials.jsKey);
+ for(const k of ['webKey','modelKey','jsSecurityCode'])assert.ok(!JSON.stringify(config).includes(credentials[k]));
+ await assert.rejects(live.frameBootstrap(),code('MAP_BOOTSTRAP_USED'));
+ await live.frameProxy('/v3/log/init',new URLSearchParams({key:credentials.jsKey,callback:'AMap.synthetic'}));assert.equal(calls.at(-1),'/v3/log/init');
+ await assert.rejects(live.frameProxy('/v3/direction/walking',new URLSearchParams()),code('PROXY_SCOPE'));
+ await live.frameStop();assert.equal((await ledger.summary()).stopped.code,'SDK_FAILED');await assert.rejects(live.frameCheck());
+ assert.equal((await ledger.summary()).counts.map,1);assert.equal((await ledger.summary()).counts.route,0);
+}));
 test('05B 新授权缺失/到期/未确认费用边界均关闭',async()=>{for(const value of [null,{...approval(),enabled:false},{...approval(),expiresAt:'2000-01-01'},{...approval(),accountCostBoundConfirmed:false},{...approval(),caps:{model:2}}])assert.throws(()=>validateApproval(value));const live=createLivePlanning({credentials});assert.equal(live.capabilities().canPrepare,false);await assert.rejects(live.action('/api/live/locate',{id:'ENDPOINT'}),code('AUTH_REQUIRED'));});
 test('05B 持久费用/次数预留跨重建保留，失败不退额，敏感值不写记录',()=>setup(async({ledger,dir,a})=>{const id=await ledger.reserve('model');await ledger.finish(id,'failed-or-unknown');const restart=createLedger(join(dir,'ledger.json'),a);await assert.rejects(restart.reserve('model'),code('CALL_LIMIT'));assert.equal((await restart.summary()).counts.model,1);const text=await readFile(join(dir,'ledger.json'),'utf8');for(const v of Object.values(credentials))assert.ok(!text.includes(v));}));
 test('05B 费用不足在发请求前停止；授权变更不重置旧次数',()=>setup(async({dir,a})=>{const l=createLedger(join(dir,'small.json'),{...a,budgetCents:1});await assert.rejects(l.reserve('model'),code('CALL_LIMIT'));await l.reserve('location');await assert.rejects(l.reserve('location'),code('CALL_LIMIT'));await assert.rejects(createLedger(join(dir,'small.json'),a).summary(),code('LEDGER_MISMATCH'));}));

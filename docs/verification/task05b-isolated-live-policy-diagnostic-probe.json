@@ -1,0 +1,271 @@
+{
+  "mode": "offline synthetic diagnostic probe",
+  "diagnostics": [
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 1,
+        "column": 210
+      },
+      "at": "2026-10-27T11:18:36.174Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 1,
+        "column": 210
+      },
+      "at": "2026-10-27T11:18:36.176Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "resourceType": "script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.176Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.176Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "inline",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 1,
+        "column": 110
+      },
+      "at": "2026-10-27T11:18:36.194Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src-elem",
+      "origin": "https://not-allowed.invalid",
+      "path": "/from-fixture.js",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 1,
+        "column": 420
+      },
+      "at": "2026-10-27T11:18:36.194Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src",
+      "origin": "eval",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 1,
+        "column": 442
+      },
+      "at": "2026-10-27T11:18:36.194Z"
+    },
+    {
+      "kind": "csp",
+      "directive": "script-src",
+      "origin": "wasm-eval",
+      "path": "",
+      "resourceType": "script",
+      "status": 200,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 1,
+        "column": 474
+      },
+      "at": "2026-10-27T11:18:36.194Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/from-fixture.js",
+      "resourceType": "script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.194Z"
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "img",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.199Z"
+    },
+    {
+      "kind": "resource-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "img",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.199Z"
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "fetch",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      },
+      "at": "2026-10-27T11:18:36.251Z"
+    }
+  ],
+  "network": [
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/favicon.ico",
+      "resourceType": "Other",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      }
+    },
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "resourceType": "Script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 0,
+        "column": 209
+      }
+    },
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/attack.js",
+      "resourceType": "Script",
+      "status": null,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": 0,
+        "column": 209
+      }
+    },
+    {
+      "kind": "network-failure",
+      "directive": "unknown",
+      "origin": "https://not-allowed.invalid",
+      "path": "/from-fixture.js",
+      "resourceType": "Script",
+      "status": null,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 0,
+        "column": 419
+      }
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "Fetch",
+      "status": 404,
+      "initiator": {
+        "origin": "http://127.0.0.1:65339",
+        "path": "/sdk-policy-fixture.js",
+        "line": 0,
+        "column": 223
+      }
+    },
+    {
+      "kind": "http-error",
+      "directive": "unknown",
+      "origin": "http://127.0.0.1:65339",
+      "path": "/controlled-missing-image.png",
+      "resourceType": "Image",
+      "status": 404,
+      "initiator": {
+        "origin": "unknown",
+        "path": "",
+        "line": null,
+        "column": null
+      }
+    }
+  ]
+}

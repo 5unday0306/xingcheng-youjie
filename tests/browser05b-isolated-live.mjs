@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {writeFile} from 'node:fs/promises';
+import {createServer} from '../server.mjs';import {createMapContainerServer} from '../lib/map-container-server.mjs';import {createFrameMapSession} from '../lib/frame-map-session.mjs';
+const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');let assertions=0,leases=0,claims=0,external=0,sdkRequests=0,stopped=false;const eq=(a,b)=>{assert.equal(a,b);assertions++;};
+const live={capabilities:()=>({mode:'real-preparation',mapPicking:true,mapDisplayOnly:true,map:'未加载',canPrepare:!stopped,canGenerate:false}),frameCheck:async()=>{if(stopped)throw Error('synthetic stopped');},frameBootstrap:async()=>{claims++;return {jsKey:'SYNTHETIC_PUBLIC',expiresAt:Date.now()+60000};},frameStop:async()=>{stopped=true;},frameProxy:async()=>{throw Error('no upstream sender');},action:async p=>{
+ if(p.endsWith('/map-lease')){leases++;return {expiresAt:Date.now()+60000};}
+ if(p.endsWith('/sdk-event'))return {};
+ if(p.endsWith('/pick/state'))return {revision:0,points:{ENDPOINT:null,TY04:null},mode:'',route:null};
+ if(p.endsWith('/ledger'))return {counts:{map:leases,location:0,route:0,model:0},stopped:stopped?{code:'SDK_FAILED'}:null};throw Error('forbidden');}};
+const origins={},session=createFrameMapSession({live}),main=createServer({planning:live,live,mapFrameOrigin:()=>origins.mapOrigin,mapFrameSession:session}),child=createMapContainerServer({getOrigins:()=>origins,mapSession:session});
+await new Promise(r=>main.listen(0,'127.0.0.1',r));await new Promise(r=>child.listen(0,'127.0.0.2',r));origins.parentOrigin='http://127.0.0.1:'+main.address().port;origins.mapOrigin='http://127.0.0.2:'+child.address().port;
+const browser=await chromium.launch({channel:'msedge',headless:true}),ctx=await browser.newContext({viewport:{width:1440,height:900}}),page=await ctx.newPage();
+await ctx.route('**/*',async r=>{const u=new URL(r.request().url());if(Object.values(origins).includes(u.origin))return r.continue();if(u.origin==='https://webapi.amap.com'&&u.pathname==='/maps'){sdkRequests++;return r.fulfill({contentType:'text/javascript',body:`window.AMap={Map:class{constructor(el){this.el=el;el.textContent='本地SDK替身：不是高德底图';window.syntheticZoom=0;}on(t,f){if(t==='complete')setTimeout(f,40);}zoomIn(){window.syntheticZoom++;}zoomOut(){window.syntheticZoom--;}destroy(){window.syntheticDestroyed=true;}remove(){}},Marker:class{},Polyline:class{}};`});}external++;return r.abort();});
+try{
+ await page.goto(origins.parentOrigin);await page.locator('#pickInspectContainer').waitFor();eq(leases,0);eq(sdkRequests,0);
+ await page.locator('#pickInspectContainer').click();await page.waitForFunction(()=>document.getElementById('pickStatus').textContent.includes('容器已就绪'));eq(leases,0);eq(sdkRequests,0);
+ await page.locator('#pickLoad').click();try{await page.waitForFunction(()=>document.getElementById('pick-tool-0')?.disabled===false,null,{timeout:10000});}catch(e){console.log({status:await page.locator('#pickStatus').textContent(),leases,claims,sdkRequests,child:await Promise.all(page.frames().filter(f=>f.url().startsWith(origins.mapOrigin)).map(f=>f.locator('body').innerText()))});throw e;}
+ const frame=await page.locator('#pickMap iframe').contentFrame();eq(leases,1);eq(claims,1);eq(sdkRequests,1);eq(await page.evaluate(()=>typeof AMap),'undefined');eq(await page.evaluate(()=>typeof _AMapSecurityConfig),'undefined');
+ eq(await frame.locator('#mapView').textContent(),'本地SDK替身：不是高德底图');
+ await frame.locator('body').evaluate(()=>{window.policyBlocks=[];addEventListener('securitypolicyviolation',e=>policyBlocks.push(e.effectiveDirective));const foreign=document.createElement('script');foreign.src='https://not-allowed.invalid/blocked.js';document.head.append(foreign);const inline=document.createElement('script');inline.textContent='window.forbiddenInline=true';document.head.append(inline);});
+ await frame.locator('body').evaluate(()=>new Promise(resolve=>setTimeout(resolve,100)));
+ eq(await frame.locator('body').evaluate(()=>window.forbiddenInline===true),false);eq(await frame.locator('body').evaluate(()=>window.policyBlocks.filter(x=>x==='script-src-elem').length>=2),true);eq(external,0);
+ await page.locator('#pick-tool-0').click();eq(await frame.locator('body').evaluate(()=>window.syntheticZoom),1);
+ const duplicate=await frame.locator('body').evaluate(async()=>{const r=await fetch('/frame/bootstrap',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({runId:location.hash.slice(1)})});return r.status;});eq(duplicate,409);eq(claims,1);
+ const originDenied=await ctx.request.post(origins.mapOrigin+'/frame/bootstrap',{headers:{Origin:origins.parentOrigin,'Sec-Fetch-Site':'cross-site'},data:{runId:'12345678-1234-1234-1234-123456789abc'}});eq(originDenied.status(),403);
+ eq((await ctx.request.get(origins.parentOrigin)).headers()['content-security-policy'].includes('unsafe-eval'),false);
+ await page.locator('#pickCloseContainer').click();await page.waitForTimeout(100);eq(stopped,true);eq(await page.locator('#pickMap iframe').count(),0);eq(leases,1);
+ await page.reload();await page.locator('#pickInspectContainer').waitFor();eq(await page.locator('#pickLoad').isDisabled(),true);eq(sdkRequests,1);eq(external,0);
+ await writeFile('docs/verification/task05b-isolated-live-browser.json',JSON.stringify({at:new Date().toISOString(),assertions,scope:'正式工作台跨来源接线；全部SDK与授权为合成，不是真实高德验证',leases,claims,syntheticSdkRequests:sdkRequests,unexpectedExternalRequests:external,realBusinessCalls:0},null,2)+'\n');console.log({assertions,leases,claims,sdkRequests,external});
+}finally{await ctx.close();await browser.close();main.closeAllConnections();child.closeAllConnections();await Promise.all([new Promise(r=>main.close(r)),new Promise(r=>child.close(r))]);}

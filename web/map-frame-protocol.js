@@ -9,8 +9,8 @@ export function validDisplay(p){
   const ids=new Set(p.points.map(n=>n.id));if(ids.size!==p.points.length||!(p.selectedId===null||ids.has(p.selectedId)))return false;
   let total=0;return p.segments.every(s=>own(s,['mode','path'])&&['walk','transit'].includes(s.mode)&&Array.isArray(s.path)&&s.path.length>=2&&(total+=s.path.length)<=10000&&s.path.every(point));
 }
-const fromMain={INIT:empty,DISPLAY:validDisplay,FOCUS:p=>own(p,['id'])&&id(p.id),VIEW:p=>own(p,['action'])&&['zoomIn','zoomOut','fit'].includes(p.action),DESTROY:empty};
-const fromMap={READY:empty,SELECT:p=>own(p,['id'])&&id(p.id),VIEW_CHANGED:p=>own(p,['center','zoom'])&&point(p.center)&&Number.isFinite(p.zoom)&&p.zoom>=3&&p.zoom<=20,CLOSED:empty,ERROR:p=>own(p,['code'])&&['TIMEOUT','DESTROYED','INVALID_DATA'].includes(p.code)};
+const fromMain={INIT:empty,LOAD:empty,DISPLAY:validDisplay,FOCUS:p=>own(p,['id'])&&id(p.id),VIEW:p=>own(p,['action'])&&['zoomIn','zoomOut','fit'].includes(p.action),DESTROY:empty};
+const fromMap={READY:empty,MAP_READY:empty,SELECT:p=>own(p,['id'])&&id(p.id),VIEW_CHANGED:p=>own(p,['center','zoom'])&&point(p.center)&&Number.isFinite(p.zoom)&&p.zoom>=3&&p.zoom<=20,CLOSED:empty,ERROR:p=>own(p,['code'])&&['TIMEOUT','DESTROYED','INVALID_DATA','SDK_FAILED'].includes(p.code)};
 export function validMessage(m,receiver){
   try{return own(m,['v','runId','seq','type','payload'])&&m.v===1&&typeof m.runId==='string'&&/^[a-f0-9-]{36}$/.test(m.runId)&&Number.isSafeInteger(m.seq)&&m.seq>0&&m.seq<=1000000&&Object.hasOwn(receiver==='main'?fromMap:fromMain,m.type)&&(receiver==='main'?fromMap:fromMain)[m.type](m.payload)&&new TextEncoder().encode(JSON.stringify(m)).length<=65536;}catch{return false;}
 }

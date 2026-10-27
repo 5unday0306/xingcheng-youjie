@@ -1,10 +1,12 @@
 import {createMapView} from './map-view.js';
 import {loadAMapSdk} from './amap-loader.js';
+import {attachMapContainer} from './isolated-map-container.js';
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
 const names={ENDPOINT:'博物院东门外公共集合位置',TY04:'迎泽公园北门位置'};
 export function createPickPanel({root,capabilities}) {
   let state={revision:0,points:{ENDPOINT:null,TY04:null},mode:'',route:null},view=null,lease=null,activeId=null,failed=false,queue=Promise.resolve(),pending=0,querying=false;
   let disposed=false,loadEpoch=0,loadAbort=null,sessionTimer;
+  let isolatedContainer=null;
   function destroyMap(){loadEpoch++;loadAbort?.abort();clearTimeout(sessionTimer);view?.destroy();view=null;mapBox.hidden=true;}
   const section=el('section');section.className='pickPanel';section.id='pickPanel';
   const status=el('p',capabilities.canPrepare&&capabilities.mapPicking?'尚未加载地图。点击加载才会联网。':'当前停止或授权已过期；等待地图选点恢复计划确认。');status.id='pickStatus';status.setAttribute('role','status');
@@ -12,6 +14,7 @@ export function createPickPanel({root,capabilities}) {
   async function post(path,input={}) {const r=await fetch('/api/live/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(20000)}),b=await r.json();if(!r.ok){const error=Error(b.message);error.code=b.code;throw error;}return b;}
   const button=(text,id,fn)=>{const b=el('button',text);b.type='button';b.id=id;b.onclick=fn;return b;};
   const load=button('加载真实地图并开始选点','pickLoad',()=>enqueue(loadMap));
+  const inspect=button('检查隔离容器（不加载SDK）','pickInspectContainer',()=>{if(disposed||isolatedContainer)return;mapBox.hidden=false;isolatedContainer=attachMapContainer({container:mapBox,mapOrigin:capabilities.mapFrameOrigin,onStatus:text=>{status.textContent=text;renderControls();},onEnd:runId=>post('frame/end',{runId})});inspect.disabled=true;});
   const mapBox=el('div');mapBox.id='pickMap';mapBox.hidden=true;mapBox.setAttribute('aria-label','高德真实地图，太原初始视野；点击或拖动选择测试位置');
   const cards=el('div');cards.className='pickCards';const controls={};
   for(const id of Object.keys(names)){
@@ -30,7 +33,7 @@ export function createPickPanel({root,capabilities}) {
     if(querying)return;querying=true;renderControls();
     enqueue(async()=>{status.textContent='真实道路查询中，无自动重试。';const started=state.revision;const result=await post('pick/route',{revision:started});if(state.revision!==started){status.textContent='落点已修改，旧道路结果不采用；未自动重查。';return;}state=result;render(true);status.textContent=state.route?.geometry?.length?'已显示实际返回的道路几何；这是首条测试路线，05B整体未完成。':'已取得道路统计，但未取得可画几何，未补直线。';}).finally(()=>{querying=false;renderControls();});
   });
-  const tools=el('div');tools.className='mapTools';for(const [text,fn] of [['放大',()=>view?.zoomIn()],['缩小',()=>view?.zoomOut()],['适配路线与落点',()=>view?.fit()]])tools.append(button(text,'pick-tool-'+tools.children.length,fn));
+  const tools=el('div');tools.className='mapTools';for(const [text,fn] of [['放大',()=>capabilities.mapFrameOrigin?isolatedContainer?.zoomIn():view?.zoomIn()],['缩小',()=>capabilities.mapFrameOrigin?isolatedContainer?.zoomOut():view?.zoomOut()],['适配路线与落点',()=>capabilities.mapFrameOrigin?isolatedContainer?.fit():view?.fit()]])tools.append(button(text,'pick-tool-'+tools.children.length,fn));
   const legend=el('p');legend.className='mapLegend';legend.append(el('span','步行 · 虚线'),el('span','公交地铁 · 实线'));
   const routeInfo=el('p','尚未查询道路。');routeInfo.id='pickRouteInfo';routeInfo.setAttribute('role','status');
   const counts=el('pre');counts.id='pickLedger';const recordBox=el('details'),recordTitle=el('summary','本机调用与SDK资源记录');recordBox.append(recordTitle,counts);
@@ -40,17 +43,21 @@ export function createPickPanel({root,capabilities}) {
   diagnosticBox.addEventListener('toggle',()=>{if(diagnosticBox.open)diagnosticText.textContent=JSON.stringify(window.__sdkDiagnostics?.snapshot()||[],null,2);});
   section.append(load,cards,el('label','交通方式（修改后需手动重新查询）'),mode,query,tools,legend,mapBox,routeInfo,refresh,recordBox);root.append(section);
   section.append(diagnosticBox);
+  if(capabilities.mapFrameOrigin){load.before(inspect);section.append(button('关闭隔离容器','pickCloseContainer',()=>{isolatedContainer?.destroy();isolatedContainer=null;mapBox.hidden=true;inspect.disabled=false;}));}
   if(capabilities.mapDisplayOnly){section.querySelector('h3').textContent='真实底图单次验证';section.children[1].textContent='本次仅验证真实底图可见与基本缩放拖动，不选点、不查路。';load.textContent='加载一次真实底图（仅缩放拖动）';cards.hidden=true;mode.hidden=true;query.hidden=true;legend.hidden=true;section.querySelector('label').hidden=true;routeInfo.textContent='本次不选点、不查路，只验证底图可见及缩放拖动。';mapBox.setAttribute('aria-label','高德真实底图，仅验证太原初始区域与基本缩放拖动');}
+  if(capabilities.mapFrameOrigin){section.querySelector('h3').textContent='独立地图容器接线检查';section.children[1].textContent=capabilities.mapFrameContainerOnly?'本页仅检查独立容器，不加载SDK。服务端配置下发与代理未启用。':'先检查独立容器；只有新的调用授权有效时，才能手动加载一次SDK。';load.textContent='加载一次真实底图（仅缩放拖动）';tools.lastChild.textContent='回到太原初始视野';cards.hidden=true;mode.hidden=true;query.hidden=true;legend.hidden=true;section.querySelector('label').hidden=true;tools.querySelectorAll('button').forEach(b=>b.disabled=true);mapBox.classList.add('isContainerOnly');mapBox.setAttribute('aria-label','独立地图容器，不是真实地图');}
   function resourceCounts(){const r={script:0,tiles:0,other:0};for(const e of performance.getEntriesByType('resource'))try{const u=new URL(e.name);if(!/(^|\.)(amap\.com|autonavi\.com)$/.test(u.hostname))continue;r[u.pathname==='/maps'?'script':/tile|autonavi/.test(u.hostname+u.pathname)?'tiles':'other']++;}catch{}return r;}
-  function renderControls(){const editable=!!view&&!failed;load.disabled=pending>0||!!lease||(capabilities.map&&capabilities.map!=='未加载')||failed||!capabilities.canPrepare||!capabilities.mapPicking;mode.disabled=!editable||pending>0;query.disabled=!editable||pending>0||querying||!state.points.ENDPOINT?.confirmed||!state.points.TY04?.confirmed||!state.mode||!!state.route;for(const id of Object.keys(names)){const c=controls[id],p=state.points[id];c.begin.disabled=!editable||pending>0;c.confirm.disabled=!editable||pending>0||!p||p.confirmed;c.cancel.disabled=!editable||pending>0||activeId!==id;c.remove.disabled=!editable||pending>0||!p;c.focus.disabled=!p||!view;}}
+  function renderControls(){const editable=!!view&&!failed;load.disabled=(capabilities.mapFrameOrigin?(capabilities.mapFrameContainerOnly||!isolatedContainer?.state().ready||isolatedContainer?.state().ended):false)||pending>0||!!lease||(capabilities.map&&capabilities.map!=='未加载')||failed||!capabilities.canPrepare||!capabilities.mapPicking;if(capabilities.mapFrameOrigin)tools.querySelectorAll('button').forEach(b=>b.disabled=!isolatedContainer?.state().mapReady||isolatedContainer?.state().ended);mode.disabled=!editable||pending>0;query.disabled=!editable||pending>0||querying||!state.points.ENDPOINT?.confirmed||!state.points.TY04?.confirmed||!state.mode||!!state.route;for(const id of Object.keys(names)){const c=controls[id],p=state.points[id];c.begin.disabled=!editable||pending>0;c.confirm.disabled=!editable||pending>0||!p||p.confirmed;c.cancel.disabled=!editable||pending>0||activeId!==id;c.remove.disabled=!editable||pending>0||!p;c.focus.disabled=!p||!view;}}
   function render(fit=false){for(const id of Object.keys(names)){const p=state.points[id],c=controls[id];c.position.textContent=p?`高德坐标：${p.location.map(n=>n.toFixed(6)).join(', ')}`:'尚未选择';c.confirmation.textContent=p?.confirmed?'已确认 · 用户确认的测试落点（非官方入口核验）':p?'已选择，尚未确认':'未确认';}mode.value=state.mode;
-    const r=state.route;routeInfo.textContent=capabilities.mapDisplayOnly?'本次不选点、不查路，只验证底图可见及缩放拖动。':r?`${names.ENDPOINT} → ${names.TY04}；${r.mode==='walk'?'步行':'公交地铁'}；${r.distanceMeters?r.distanceMeters.join('～')+'米':'距离未知'}；预计${r.minutes?.join('～')||'未知'}分钟。几何${r.geometryComplete?'完整返回':'存在缺段'}，不代表未来通行或旅行可行。`:'尚无当前有效路线；选点、确认、拖动或修改方式不会自动查路。';
+    const r=state.route;routeInfo.textContent=capabilities.mapFrameOrigin?'容器就绪不代表SDK或底图就绪；停止、额度和旧失败记录保持。':capabilities.mapDisplayOnly?'本次不选点、不查路，只验证底图可见及缩放拖动。':r?`${names.ENDPOINT} → ${names.TY04}；${r.mode==='walk'?'步行':'公交地铁'}；${r.distanceMeters?r.distanceMeters.join('～')+'米':'距离未知'}；预计${r.minutes?.join('～')||'未知'}分钟。几何${r.geometryComplete?'完整返回':'存在缺段'}，不代表未来通行或旅行可行。`:'尚无当前有效路线；选点、确认、拖动或修改方式不会自动查路。';
     if(view){const activities=Object.values(state.points).filter(Boolean).map((p,i)=>({...p,sequence:p.id==='ENDPOINT'?1:2,role:p.id==='ENDPOINT'?'测试起点':'测试终点',editable:true}));view.showDay({activities,legs:r?[r]:[]},{fit});view.setPicking(!!activeId);}
     renderControls();
   }
   function enqueue(fn){pending++;renderControls();const job=queue.then(fn).catch(async e=>{status.textContent=e.message;if(['UPSTREAM_FAILED','UPSTREAM_DATA','CALL_LIMIT','RECOVERY_LIMIT','AUTH_REQUIRED','RUN_STOPPED','SDK_NOT_READY'].includes(e.code)){failed=true;view?.destroy();view=null;mapBox.hidden=true;}return null;}).finally(()=>{pending--;renderControls();});queue=job;return job;}
   const selected=(id,location)=>{const apply=async()=>{state=await post('pick/set',{id,location,revision:state.revision});render();status.textContent='位置已调整且取消该点确认，旧路线失效；不会自动查询。';};if(querying){state.route=null;render();pending++;renderControls();apply().catch(e=>status.textContent=e.message).finally(()=>{pending--;renderControls();});return;}return enqueue(apply);};
-  async function loadMap(){if(lease||failed||disposed)return;const epoch=++loadEpoch;loadAbort=new AbortController();
+  async function loadMap(){if(lease||failed||disposed)return;
+    if(capabilities.mapFrameOrigin){const runId=isolatedContainer?.state().runId;if(!runId||capabilities.mapFrameContainerOnly)throw Error('SDK接线尚未启用');try{lease=await post('frame/start',{runId});isolatedContainer.load(lease);return;}catch(e){failed=true;await post('frame/end',{runId}).catch(()=>{});isolatedContainer?.destroy();throw e;}}
+    const epoch=++loadEpoch;loadAbort=new AbortController();
     status.textContent='正在加载真实地图，尚未取得可见底图；不会自动重试。';
     const current=()=>!disposed&&!failed&&epoch===loadEpoch&&(!lease||Date.now()<lease.expiresAt);
     const check=()=>{if(!current())throw Error('地图加载会话已停止，迟到结果不采用');};
@@ -65,5 +72,5 @@ export function createPickPanel({root,capabilities}) {
   if(capabilities.haltReason)post('ledger').then(showRecord).catch(()=>{});
   if(capabilities.map&&capabilities.map!=='未加载')status.textContent='本轮地图许可已使用，刷新不会重新加载。已确认落点和记录仍在本次服务中；再次初始化需明确恢复范围。';
   renderControls();
-  return {destroy(){disposed=true;failed=true;destroyMap();renderControls();},invalidate(){if(view&&!capabilities.mapDisplayOnly){const apply=async()=>{state=await post('pick/invalidate');render();status.textContent='旅行需求已修改，旧路线失效；未自动查路。';};if(querying){state.route=null;view.clear();apply().catch(e=>status.textContent=e.message);}else enqueue(apply);}},selectDay(){},showDay(){},focusActivity:id=>view?.focusActivity(id)};
+  return {destroy(){disposed=true;failed=true;isolatedContainer?.destroy();destroyMap();renderControls();},invalidate(){if(view&&!capabilities.mapDisplayOnly){const apply=async()=>{state=await post('pick/invalidate');render();status.textContent='旅行需求已修改，旧路线失效；未自动查路。';};if(querying){state.route=null;view.clear();apply().catch(e=>status.textContent=e.message);}else enqueue(apply);}},selectDay(){},showDay(){},focusActivity:id=>view?.focusActivity(id)};
 }

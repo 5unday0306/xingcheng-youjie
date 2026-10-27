@@ -1,4 +1,4 @@
-const evidencePath=p=>process.env.MAP_ISOLATION_REGRESSION==='1'?p.replace('task05b-sdk-policy','task05b-isolation-regression-policy'):p;
+const evidencePath=p=>process.env.ISOLATED_LIVE_REGRESSION==='1'?p.replace('task05b-sdk-policy','task05b-isolated-live-policy'):process.env.MAP_ISOLATION_REGRESSION==='1'?p.replace('task05b-sdk-policy','task05b-isolation-regression-policy'):p;
 // Real browser CSP enforcement; every external request is locally intercepted.
 // No credentials, approval, ledger or real SDK is loaded.
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {writeFile} from 'node:fs/promises';

@@ -44,7 +44,7 @@ export function createMapView({AMap,container,onSelect=()=>{},onLeg=()=>{},initi
     setPicking(enabled){pickingEnabled=enabled;},
     whenReady:()=>ready,
     focusActivity(id){if(destroyed)return false;const marker=markers.get(id);if(!marker)return false;highlight(id);map.setCenter(marker.getPosition());onSelect(id,{origin:'list'});return true;},
-    fit(){if(!destroyed&&overlays.length)map.setFitView(overlays);},
+    fit(){if(destroyed)return;if(overlays.length)map.setFitView(overlays);else if(initialRegion){map.setCenter?.(initialRegion);map.setZoom?.(13);}},
     zoomIn(){if(!destroyed)map.zoomIn?.();},zoomOut(){if(!destroyed)map.zoomOut?.();},
     clear,
     destroy(){if(destroyed)return;destroyed=true;clearTimeout(readyTimer);if(!settled){settled=true;rejectReady?.(Error('地图已销毁，迟到完成事件不采用'));}clear();map.destroy();}

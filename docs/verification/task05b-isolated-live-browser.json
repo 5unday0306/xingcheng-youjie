@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-27T11:18:34.132Z",
+  "assertions": 24,
+  "scope": "正式工作台跨来源接线；全部SDK与授权为合成，不是真实高德验证",
+  "leases": 1,
+  "claims": 1,
+  "syntheticSdkRequests": 1,
+  "unexpectedExternalRequests": 0,
+  "realBusinessCalls": 0
+}

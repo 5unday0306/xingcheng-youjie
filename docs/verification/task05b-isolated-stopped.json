@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-27T11:17:54.250Z",
+  "scope": "实际停止账本只读核对与正式工作台容器检查，未加载SDK",
+  "counts": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 3
+  },
+  "reservedCents": 20,
+  "stopped": "SDK_FAILED",
+  "loadDisabled": true,
+  "horizontalOverflow": false,
+  "externalRequests": 0
+}

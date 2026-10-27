@@ -1,4 +1,4 @@
-const evidencePath=path=>process.env.SDK_POLICY_REGRESSION==='1'?path.replace('task05b-map-pick','task05b-sdk-policy-regression'):path;
+const evidencePath=path=>process.env.ISOLATED_LIVE_REGRESSION==='1'?path.replace('task05b-map-pick','task05b-isolated-live-regression'):process.env.SDK_POLICY_REGRESSION==='1'?path.replace('task05b-map-pick','task05b-sdk-policy-regression'):path;
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {writeFile} from 'node:fs/promises';
