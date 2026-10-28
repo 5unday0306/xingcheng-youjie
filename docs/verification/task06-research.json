@@ -1,0 +1,2654 @@
+{
+  "version": 1,
+  "results": [
+    {
+      "query": {
+        "id": "museum",
+        "keywords": "山西博物院",
+        "purpose": "机构位置参考，集合点/院门/主馆入口必须分别选择"
+      },
+      "obtainedAt": "2026-10-28T08:54:54.925Z",
+      "declaredCount": "100",
+      "returned": 25,
+      "candidates": [
+        {
+          "id": "B015F031GS",
+          "name": "山西博物院",
+          "location": [
+            112.531258,
+            37.865449
+          ],
+          "address": "滨河西路13号",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周一 全天关闭（法定节假日除外），周二至周日 09:00-17:00（16:00停止进入），2026年4月4日至2026年4月6日:09:00-17:00（16:00停止进入）",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F031GS",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG2HH4S",
+          "name": "山西博物院东北停车场",
+          "location": [
+            112.532254,
+            37.866052
+          ],
+          "address": "滨河西路13号山西博物院",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG2HH4S",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFKY2TQI",
+          "name": "山西博物院青铜分馆(山西青铜博物馆)",
+          "location": [
+            112.533475,
+            37.805219
+          ],
+          "address": "广经路13号",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "全年 周二–周日 09:00–17:00开放 最晚进入16:00；全年 周一 全天不开放；劳动节,端午节,中秋节,国庆节 09:00–17:00开放 最晚进入16:00；周一闭馆(国家法定节假日除外)",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFKY2TQI",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFITJ8KC",
+          "name": "山西督军府旧址(晋商博物院)",
+          "location": [
+            112.562713,
+            37.874751
+          ],
+          "address": "鼓楼街道府东街101号(山西省眼科医院对面)",
+          "type": "风景名胜;风景名胜;风景名胜",
+          "costReferenceYuan": null,
+          "openingReference": "1/1-12/31 周二–周日 09:00–18:00开放 最晚售票17:30 最晚进入17:30；1/1-12/31 周一 全天不开放；国庆节 09:00–18:00开放 最晚售票17:30",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFITJ8KC",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LBD5U1NZ",
+          "name": "太原山西博物院美居酒店",
+          "location": [
+            112.530048,
+            37.860599
+          ],
+          "address": "太原理工大学地铁站C口步行270米",
+          "type": "住宿服务;宾馆酒店;宾馆酒店",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LBD5U1NZ",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFHMDRSM",
+          "name": "山西博物院地面停车场(入口)",
+          "location": [
+            112.532461,
+            37.865843
+          ],
+          "address": "山西博物院东北停车场",
+          "type": "交通设施服务;停车场;停车场入口",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFHMDRSM",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KUN5SXR4",
+          "name": "太原滨河西路山西博物院亚朵S酒店",
+          "location": [
+            112.532716,
+            37.870457
+          ],
+          "address": "港澳中心",
+          "type": "购物服务;购物相关场所;购物相关场所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KUN5SXR4",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MB91US8I",
+          "name": "山西博物院-地下停车场",
+          "location": [
+            112.531192,
+            37.865469
+          ],
+          "address": "文兴路与玉门河北沿岸辅路交叉口东北180米",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MB91US8I",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0H3J54DSK",
+          "name": "太原晋祠路山西博物院亚朵酒店",
+          "location": [
+            112.530521,
+            37.845543
+          ],
+          "address": "晋祠路一段纺织街1号",
+          "type": "住宿服务;住宿服务相关;住宿服务相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0H3J54DSK",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L69U25QP",
+          "name": "山西大学博物馆",
+          "location": [
+            112.586415,
+            37.805603
+          ],
+          "address": "坞城路92号山西大学(坞城校区)",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:00-16:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L69U25QP",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFF3653Y",
+          "name": "原山西省博物馆",
+          "location": [
+            112.572211,
+            37.861779
+          ],
+          "address": "汾河公园西岸、滨河西路中段的新址",
+          "type": "科教文化服务;科教文化场所;科教文化场所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFF3653Y",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F0IHTA",
+          "name": "山西自然博物馆(暂停开放)",
+          "location": [
+            112.532166,
+            37.86745
+          ],
+          "address": "兴华街道滨河西路北段17号",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周一 全天关闭；周二至周日 09:00-17:00 最晚进入16:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F0IHTA",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFFVFT82",
+          "name": "山西体育博物馆",
+          "location": [
+            112.562591,
+            37.845026
+          ],
+          "address": "双塔西街40号(近体育西路)",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周二至周日 09:00-12:00,14:00-17:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFFVFT82",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LDLYNO9H",
+          "name": "山西博物馆展馆",
+          "location": [
+            112.531153,
+            37.865453
+          ],
+          "address": "滨河西路北段13号山西博物院内",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周二至周日 09:00-17:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LDLYNO9H",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KGNUZCWD",
+          "name": "山西文学博物馆",
+          "location": [
+            112.57598,
+            37.87336
+          ],
+          "address": "精营东边街10号",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KGNUZCWD",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0HBGREBWH",
+          "name": "山西博物院-会展中心",
+          "location": [
+            112.531812,
+            37.865968
+          ],
+          "address": "滨河西路北段13号山西博物院内",
+          "type": "科教文化服务;科教文化场所;科教文化场所",
+          "costReferenceYuan": null,
+          "openingReference": "周二至周日 09:00-17:00,节假日以官方通知为准",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0HBGREBWH",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG7EBK4",
+          "name": "山西博物院-图书馆",
+          "location": [
+            112.531881,
+            37.86484
+          ],
+          "address": "滨河西路北段13号山西博物院内",
+          "type": "科教文化服务;科教文化场所;科教文化场所",
+          "costReferenceYuan": null,
+          "openingReference": "周二至周日 09:00-17:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG7EBK4",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG0QN5B",
+          "name": "山西博物院停车场(出口)",
+          "location": [
+            112.532438,
+            37.865068
+          ],
+          "address": "滨河西路北段13号山西博物院内",
+          "type": "交通设施服务;停车场;停车场出口",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG0QN5B",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BV09159944",
+          "name": "山西博物院(公交站)",
+          "location": [
+            112.529099,
+            37.866043
+          ],
+          "address": "69路;865路;旅游公交专线1路",
+          "type": "交通设施服务;公交车站;公交车站相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BV09159944",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L6OS8LFQ",
+          "name": "太原山西博物院理工大学美仑酒店",
+          "location": [
+            112.510309,
+            37.864431
+          ],
+          "address": "和平北路23号",
+          "type": "住宿服务;宾馆酒店;宾馆酒店",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L6OS8LFQ",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MGKUKH2A",
+          "name": "山西省艺术博物馆(起凤街)",
+          "location": [
+            112.572368,
+            37.861765
+          ],
+          "address": "纯阳宫南门旁(五一广场地铁站A口步行260米)",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MGKUKH2A",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0HUXAKNJW",
+          "name": "山西考古博物馆",
+          "location": [
+            112.579996,
+            37.864686
+          ],
+          "address": "文庙街道文庙巷3号",
+          "type": "科教文化服务;博物馆;博物馆",
+          "costReferenceYuan": null,
+          "openingReference": "周一,周三至周日 09:00-17:00开放；周二 不开放；2026年7月8日至10月31日 16:30停止入馆；元旦节,清明节,劳动节,端午节,中秋节,国庆节 09:00-17:00开放；具体营业状态以当天开放情况为准",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0HUXAKNJW",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGFSEET",
+          "name": "茶舍书屋(山西博物院店)",
+          "location": [
+            112.531597,
+            37.865459
+          ],
+          "address": "滨河西路北段13号山西博物院F2层",
+          "type": "餐饮服务;茶艺馆;茶艺馆",
+          "costReferenceYuan": 41,
+          "openingReference": "周二至周日 09:00-16:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGFSEET",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG2HF1X",
+          "name": "山西博物院展馆-存包处",
+          "location": [
+            112.53109,
+            37.865433
+          ],
+          "address": "滨河西路13号山西博物院",
+          "type": "科教文化服务;科教文化场所;科教文化场所",
+          "costReferenceYuan": null,
+          "openingReference": "周二至周日 09:00-17:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG2HF1X",
+          "obtainedAt": "2026-10-28T08:54:54.925Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    },
+    {
+      "query": {
+        "id": "park",
+        "keywords": "迎泽公园",
+        "purpose": "公园与入口候选参考"
+      },
+      "obtainedAt": "2026-10-28T08:54:55.231Z",
+      "declaredCount": "93",
+      "returned": 25,
+      "candidates": [
+        {
+          "id": "B015F026WL",
+          "name": "迎泽公园",
+          "location": [
+            112.561309,
+            37.853547
+          ],
+          "address": "迎泽大街218号",
+          "type": "风景名胜;公园广场;公园",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F026WL",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFM53EGX",
+          "name": "迎泽公园-牌坊",
+          "location": [
+            112.562306,
+            37.859239
+          ],
+          "address": "迎泽大街218号迎泽公园内(北侧)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFM53EGX",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6CHUVNY",
+          "name": "迎泽公园地下停车场",
+          "location": [
+            112.564169,
+            37.849903
+          ],
+          "address": "迎泽大街218号迎泽公园(东南角)",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6CHUVNY",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGDQ8EB",
+          "name": "迎泽公园-太原迎泽湖",
+          "location": [
+            112.562627,
+            37.85549
+          ],
+          "address": "迎泽大街218号迎泽公园(东北角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "6月至9月 05:30-23:30, 具体开放时间以现场公示为准；1月至5月,10月至12月 06:00-23:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGDQ8EB",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFKG7U75",
+          "name": "迎泽公园-北入口广场",
+          "location": [
+            112.562162,
+            37.858975
+          ],
+          "address": "迎泽大街218号迎泽公园内(北侧)",
+          "type": "风景名胜;公园广场;城市广场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFKG7U75",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F160Y5",
+          "name": "迎泽公园-湖心岛",
+          "location": [
+            112.561159,
+            37.855952
+          ],
+          "address": "迎泽公园内(大南门地铁站D口步行340米)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F160Y5",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MURRF1UD",
+          "name": "迎泽公园-玫瑰园",
+          "location": [
+            112.561059,
+            37.851447
+          ],
+          "address": "迎泽大街218号迎泽公园内(南侧)",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MURRF1UD",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLEHB4S",
+          "name": "迎泽公园-望景楼",
+          "location": [
+            112.558461,
+            37.84932
+          ],
+          "address": "迎泽大街218号迎泽公园内(西南角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLEHB4S",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFJ1DEXQ",
+          "name": "迎泽公园牡丹芍药园",
+          "location": [
+            112.563347,
+            37.85093
+          ],
+          "address": "迎泽大街218号迎泽公园(东南角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFJ1DEXQ",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLB2EDN",
+          "name": "迎泽公园-喷泉",
+          "location": [
+            112.53146,
+            37.858958
+          ],
+          "address": "迎泽西大街1号青年园(东侧)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLB2EDN",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F16BKD",
+          "name": "迎泽公园-木香院",
+          "location": [
+            112.563195,
+            37.852139
+          ],
+          "address": "迎泽大街218号迎泽公园(东南角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F16BKD",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLIIQ4U",
+          "name": "迎泽公园-办公区",
+          "location": [
+            112.564037,
+            37.849319
+          ],
+          "address": "迎泽大街218号迎泽公园内(东南角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLIIQ4U",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L0SZIMFQ",
+          "name": "迎泽公园黄河剧场",
+          "location": [
+            112.557625,
+            37.856525
+          ],
+          "address": "迎泽大街218号迎泽公园",
+          "type": "体育休闲服务;影剧院;剧场",
+          "costReferenceYuan": 111,
+          "openingReference": "周一至周日 08:00-18:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L0SZIMFQ",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFMHA4OG",
+          "name": "迎泽公园-观景台",
+          "location": [
+            112.559783,
+            37.850922
+          ],
+          "address": "迎泽大街218号迎泽公园内(西南角)",
+          "type": "风景名胜;风景名胜;观景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFMHA4OG",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MUS1EY0L",
+          "name": "迎泽公园-郁金香花田",
+          "location": [
+            112.563675,
+            37.856125
+          ],
+          "address": "迎泽大街218号迎泽公园(东北角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "00:00-24:00, 具体开放时间以现场公示为准",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MUS1EY0L",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F02W58",
+          "name": "迎泽公园-古藏经楼",
+          "location": [
+            112.562603,
+            37.853569
+          ],
+          "address": "迎泽大街218号迎泽公园内(东侧)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F02W58",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KUBRYCGZ",
+          "name": "牡丹园",
+          "location": [
+            112.562632,
+            37.850376
+          ],
+          "address": "迎泽大街218号迎泽公园(东南角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KUBRYCGZ",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0IU2ZLU4Y",
+          "name": "迎泽公园儿童乐园",
+          "location": [
+            112.55835,
+            37.848574
+          ],
+          "address": "体育馆地铁站A2口步行340米",
+          "type": "体育休闲服务;休闲场所;游乐场",
+          "costReferenceYuan": 22,
+          "openingReference": "夏季 09:00-21:00； 冬季 10:00-18:30,2026年2月16日至2月23日 10:00-18:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0IU2ZLU4Y",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0G1Z61U3O",
+          "name": "迎泽公园-吟风",
+          "location": [
+            112.560293,
+            37.858317
+          ],
+          "address": "解放南路与南宫南街交叉口东140米",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "00:00-24:00, 具体开放时间以现场公示为准",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0G1Z61U3O",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0GKN43TTD",
+          "name": "迎泽公园-雕塑",
+          "location": [
+            112.55978,
+            37.856015
+          ],
+          "address": "迎泽大街218号迎泽公园内(西北角)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0GKN43TTD",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLGAN2Z",
+          "name": "迎泽公园-综合展馆",
+          "location": [
+            112.560805,
+            37.858125
+          ],
+          "address": "迎泽大街218号迎泽公园内(北侧)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLGAN2Z",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F0HPKL",
+          "name": "迎泽家园",
+          "location": [
+            112.563965,
+            37.847451
+          ],
+          "address": "双塔西街37号(体育馆地铁站D口步行270米)",
+          "type": "商务住宅;住宅区;住宅小区",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F0HPKL",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLGWWBA",
+          "name": "迎泽公园-保安亭",
+          "location": [
+            112.558716,
+            37.852669
+          ],
+          "address": "迎泽大街218号迎泽公园内(西侧)",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLGWWBA",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F173HI",
+          "name": "迎泽公园-公共厕所",
+          "location": [
+            112.564674,
+            37.857241
+          ],
+          "address": "青年路迎泽公园(东北角)",
+          "type": "公共设施;公共厕所;公共厕所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F173HI",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFFSHWBD",
+          "name": "迎泽公园-公共厕所",
+          "location": [
+            112.563139,
+            37.849992
+          ],
+          "address": "青年路迎泽公园太原晋商博物馆",
+          "type": "公共设施;公共厕所;公共厕所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFFSHWBD",
+          "obtainedAt": "2026-10-28T08:54:55.231Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    },
+    {
+      "query": {
+        "id": "clock",
+        "keywords": "钟楼街",
+        "purpose": "街区位置参考，不是已核实入口"
+      },
+      "obtainedAt": "2026-10-28T08:54:55.555Z",
+      "declaredCount": "98",
+      "returned": 25,
+      "candidates": [
+        {
+          "id": "B0HGTS96YH",
+          "name": "钟楼街",
+          "location": [
+            112.564764,
+            37.867952
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;热点地名;热点地名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0HGTS96YH",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BZCNP10238",
+          "name": "钟楼街",
+          "location": [
+            112.56292,
+            37.867975
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;道路名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BZCNP10238",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0H01BOHQP",
+          "name": "太原市钟楼街步行街",
+          "location": [
+            112.564981,
+            37.868288
+          ],
+          "address": "钟楼街(府西街地铁站C口步行250米)",
+          "type": "购物服务;特色商业街;步行街",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周五 10:00-22:00；周六至周日 10:00-22:30",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0H01BOHQP",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BZCNP1023M",
+          "name": "钟楼街步行街",
+          "location": [
+            112.566813,
+            37.86791
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;道路名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BZCNP1023M",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MRJ98L6I",
+          "name": "柳巷/钟楼街(路口)",
+          "location": [
+            112.567601,
+            37.867878
+          ],
+          "address": "钟楼街与柳巷南路交叉口西南20米",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MRJ98L6I",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MDO1XNWC",
+          "name": "柳巷钟楼街景区",
+          "location": [
+            112.566475,
+            37.864675
+          ],
+          "address": "美莎国际运动城(柳南店)(柳南地铁站D口步行490米)",
+          "type": "风景名胜;风景名胜;风景名胜",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MDO1XNWC",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0I3UAMM0R",
+          "name": "钟楼书院(太原市钟楼街步行街店)",
+          "location": [
+            112.563052,
+            37.867454
+          ],
+          "address": "钟楼街钟楼书院(开化寺街地铁站D口步行380米)",
+          "type": "购物服务;专卖店;书店",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:30-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0I3UAMM0R",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BV09394293",
+          "name": "钟楼街(公交站)",
+          "location": [
+            112.567548,
+            37.867129
+          ],
+          "address": "观光巴士",
+          "type": "交通设施服务;公交车站;公交车站相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BV09394293",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L6SDN2KG",
+          "name": "太原市钟楼街步行街P2地下停车场",
+          "location": [
+            112.565392,
+            37.868838
+          ],
+          "address": "钟楼街步行街",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L6SDN2KG",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BV11437576",
+          "name": "解放路钟楼街口(公交站)",
+          "location": [
+            112.560645,
+            37.86884
+          ],
+          "address": "502路;502路(23点至次日6点);610路;610路支;809路;828路内环;828路外环;863路;87路",
+          "type": "交通设施服务;公交车站;公交车站相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BV11437576",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFHVI75W",
+          "name": "解放路与钟楼街交叉口",
+          "location": [
+            112.560561,
+            37.868056
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;路口名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFHVI75W",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLL1OZM",
+          "name": "羊市街与钟楼街交叉口",
+          "location": [
+            112.560561,
+            37.868056
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;路口名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLL1OZM",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MGZXK3Q2",
+          "name": "钟楼街酒店",
+          "location": [
+            112.565275,
+            37.867893
+          ],
+          "address": "钟楼街与西校尉营交叉口西20米",
+          "type": "住宿服务;宾馆酒店;宾馆酒店",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MGZXK3Q2",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MBPN06S6",
+          "name": "钟楼街停车场",
+          "location": [
+            112.569089,
+            37.86667
+          ],
+          "address": "海子边西街与三圣庵交叉口北40米",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MBPN06S6",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LDYMO0QM",
+          "name": "钟楼街二期",
+          "location": [
+            112.566154,
+            37.86937
+          ],
+          "address": "柳巷街道二市场41号",
+          "type": "购物服务;购物相关场所;购物相关场所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LDYMO0QM",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MRB1CIFH",
+          "name": "钟楼街22号",
+          "location": [
+            112.566375,
+            37.867825
+          ],
+          "address": "钟楼街与二市场交叉口东40米",
+          "type": "商务住宅;住宅区;住宅小区",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MRB1CIFH",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGG8KEH",
+          "name": "柴市巷与钟楼街交叉口",
+          "location": [
+            112.562129,
+            37.867984
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;路口名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGG8KEH",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L6SD4AOT",
+          "name": "太原市钟楼街步行街P1地下停车场(暂停营业)",
+          "location": [
+            112.566429,
+            37.869279
+          ],
+          "address": "钟楼街步行街",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L6SD4AOT",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGGN5T0",
+          "name": "通顺巷与钟楼街交叉口",
+          "location": [
+            112.561426,
+            37.868008
+          ],
+          "address": "迎泽区",
+          "type": "地名地址信息;交通地名;路口名",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGGN5T0",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L0YN5H02",
+          "name": "通顺巷/钟楼街(路口)",
+          "location": [
+            112.561336,
+            37.868098
+          ],
+          "address": "通顺巷与钟楼街交叉口西北20米",
+          "type": "风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L0YN5H02",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0JKGUD2TE",
+          "name": "太原钟楼街游客服务中心",
+          "location": [
+            112.56381,
+            37.868415
+          ],
+          "address": "靴巷16号",
+          "type": "生活服务;生活服务场所;生活服务场所",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 10:00-22:00 10-01至10-07 周一至周日 10:00-22:30",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0JKGUD2TE",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LKU5YKFM",
+          "name": "印象·富士体验中心-太原钟楼街",
+          "location": [
+            112.566488,
+            37.868862
+          ],
+          "address": "酱园巷15号",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 10:00-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LKU5YKFM",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFJLVL6B",
+          "name": "太原名吃街",
+          "location": [
+            112.561605,
+            37.867862
+          ],
+          "address": "食品街钟楼街交叉口西南角108号",
+          "type": "餐饮服务;快餐厅;快餐厅",
+          "costReferenceYuan": 13,
+          "openingReference": "周一至周日 10:00-24:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFJLVL6B",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LG7R47TK",
+          "name": "太原钟楼街物业服务中心",
+          "location": [
+            112.564524,
+            37.868246
+          ],
+          "address": "钟楼街91号",
+          "type": "生活服务;生活服务场所;生活服务场所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LG7R47TK",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L62CSY7Y",
+          "name": "海岩咖啡钟楼街店(暂停营业)",
+          "location": [
+            112.56315,
+            37.868088
+          ],
+          "address": "钟楼街85号",
+          "type": "餐饮服务;咖啡厅;咖啡厅",
+          "costReferenceYuan": 16,
+          "openingReference": "周一至周日 08:00-20:45",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L62CSY7Y",
+          "obtainedAt": "2026-10-28T08:54:55.555Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    },
+    {
+      "query": {
+        "id": "food",
+        "keywords": "食品街",
+        "purpose": "街区位置参考，不是餐馆"
+      },
+      "obtainedAt": "2026-10-28T08:54:55.878Z",
+      "declaredCount": "100",
+      "returned": 25,
+      "candidates": [
+        {
+          "id": "B015F0I9AO",
+          "name": "食品街",
+          "location": [
+            112.562197,
+            37.870023
+          ],
+          "address": "钟楼街129号(府西街地铁站D口步行290米)",
+          "type": "购物服务;特色商业街;特色商业街",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00；具体营业状态以当天开放情况为准",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F0I9AO",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGE0Q4X",
+          "name": "食品街停车场",
+          "location": [
+            112.563593,
+            37.870255
+          ],
+          "address": "钟楼街129号食品街(府西街地铁站C口步行380米)",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGE0Q4X",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0G1PCLBRI",
+          "name": "食品街地面停车场(入口)",
+          "location": [
+            112.563967,
+            37.870908
+          ],
+          "address": "钟楼街129号食品街食品街停车场",
+          "type": "交通设施服务;停车场;停车场入口",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0G1PCLBRI",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KUB7XPMT",
+          "name": "食品街(食品街别有洞天)",
+          "location": [
+            112.56221,
+            37.869786
+          ],
+          "address": "解放路与奶生堂东二巷交叉口东140米",
+          "type": "风景名胜;风景名胜;风景名胜",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KUB7XPMT",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "BV09441545",
+          "name": "食品街(公交站)",
+          "location": [
+            112.560772,
+            37.870009
+          ],
+          "address": "体育博物馆-体育博物馆双层巴士观光线路",
+          "type": "交通设施服务;公交车站;公交车站相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/BV09441545",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MDS6CHKY",
+          "name": "食品街文创市集",
+          "location": [
+            112.562426,
+            37.87017
+          ],
+          "address": "帽儿巷与鼓楼街交叉口南120米",
+          "type": "购物服务;购物相关场所;购物相关场所|风景名胜;风景名胜相关;旅游景点",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MDS6CHKY",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MBPN0KDH",
+          "name": "食品街北区",
+          "location": [
+            112.562586,
+            37.87133
+          ],
+          "address": "帽儿巷与鼓楼街交叉口东北20米",
+          "type": "商务住宅;住宅区;住宅小区",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MBPN0KDH",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F03MUE",
+          "name": "雪山晋乡楼雪山冷饮厅食品街店",
+          "location": [
+            112.562517,
+            37.868661
+          ],
+          "address": "食品街8号(十二生肖背后或猫咖对面)",
+          "type": "餐饮服务;冷饮店;冷饮店",
+          "costReferenceYuan": 18,
+          "openingReference": "周一至周日 10:30-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F03MUE",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0I3SCZDMK",
+          "name": "醋恋(食品街)",
+          "location": [
+            112.56225,
+            37.869601
+          ],
+          "address": "食品街19-2号(府西街地铁站C口步行300米)",
+          "type": "餐饮服务;甜品店;甜品店",
+          "costReferenceYuan": 19,
+          "openingReference": "周一至周日 10:30-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0I3SCZDMK",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0J1YNGSUA",
+          "name": "钟楼街柳巷食品街民宿(大水巷分店)",
+          "location": [
+            112.566475,
+            37.870175
+          ],
+          "address": "大水巷金湾小区",
+          "type": "住宿服务;住宿服务相关;住宿服务相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0J1YNGSUA",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0H6GR3O78",
+          "name": "食品街-游客中心",
+          "location": [
+            112.562514,
+            37.870758
+          ],
+          "address": "食品街(食品街别有洞天)",
+          "type": "生活服务;生活服务场所;生活服务场所",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0H6GR3O78",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F03MZT",
+          "name": "杨记灌肠(食品街店)",
+          "location": [
+            112.562349,
+            37.8708
+          ],
+          "address": "帽儿巷食品街35号(三生记葫芦头北10米)",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 14,
+          "openingReference": "09:00-22:00,2026年春节期间 09:00-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F03MZT",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0H315YOJO",
+          "name": "蔬菜副食品街(蓝海农贸市场店)",
+          "location": [
+            112.581956,
+            37.788147
+          ],
+          "address": "晋阳街123号乐村淘&乡品严选-蓝海农贸店",
+          "type": "购物服务;综合市场;蔬菜市场",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0H315YOJO",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFI5JQEO",
+          "name": "匠铸(食品街帽儿巷店)",
+          "location": [
+            112.562193,
+            37.869448
+          ],
+          "address": "食品街东门西南60米(府西街地铁站C口步行310米)",
+          "type": "购物服务;购物相关场所;购物相关场所",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 10:00-23:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFI5JQEO",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L34CFJ3K",
+          "name": "宁化府(食品街店)",
+          "location": [
+            112.562617,
+            37.872282
+          ],
+          "address": "食品街北口(府西街地铁站D口步行110米)",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": 43,
+          "openingReference": "周一至周日 09:00-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L34CFJ3K",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFLMLCCI",
+          "name": "街电(天下第一面食品街店)",
+          "location": [
+            112.562446,
+            37.869991
+          ],
+          "address": "食品街中段50号(晋绥铁路银行正对面)",
+          "type": "生活服务;共享设备;充电宝",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFLMLCCI",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KKVR5PU9",
+          "name": "一品银饰(食品街)",
+          "location": [
+            112.562336,
+            37.869325
+          ],
+          "address": "食品街36-3号(府西街地铁站C口步行390米)",
+          "type": "购物服务;专卖店;珠宝首饰工艺品",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 10:00-23:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KKVR5PU9",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KRK58QHE",
+          "name": "鸡柳大人(食品街店)",
+          "location": [
+            112.56247,
+            37.872093
+          ],
+          "address": "帽儿巷55号食品街北街(近府西地铁站D口)",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": 18,
+          "openingReference": "周一至周日 10:00-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KRK58QHE",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0K2B79DZU",
+          "name": "百米百糕食品街店",
+          "location": [
+            112.562346,
+            37.869128
+          ],
+          "address": "柳巷街道食品街5号2栋2号商铺",
+          "type": "餐饮服务;糕饼店;糕饼店",
+          "costReferenceYuan": 13,
+          "openingReference": "周一至周日 10:00-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0K2B79DZU",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6SY31GO",
+          "name": "柳巷食品街民宿(柳巷商业区店)",
+          "location": [
+            112.561936,
+            37.86723
+          ],
+          "address": "柴市巷与姑姑庵交叉口北80米",
+          "type": "住宿服务;住宿服务相关;住宿服务相关",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6SY31GO",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFILAPUR",
+          "name": "十里香牛肉丸子面(食品街店)",
+          "location": [
+            112.562458,
+            37.870689
+          ],
+          "address": "食品街28-1号",
+          "type": "餐饮服务;快餐厅;快餐厅",
+          "costReferenceYuan": 15,
+          "openingReference": "周一至周日 10:30-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFILAPUR",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFKFCA47",
+          "name": "正宗太原义井沾串(食品街店)",
+          "location": [
+            112.562567,
+            37.870804
+          ],
+          "address": "食品街40-4号(府西街地铁站C口步行200米)",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 37,
+          "openingReference": "周一至周日 09:30-23:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFKFCA47",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6UUQIAD",
+          "name": "芊禧金包银食品街店",
+          "location": [
+            112.562456,
+            37.870202
+          ],
+          "address": "食品街(府西街地铁站c口出)",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:30-23:30",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6UUQIAD",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFKSQIEV",
+          "name": "街电(星漫酒店太原柳巷食品街店)",
+          "location": [
+            112.561952,
+            37.866826
+          ],
+          "address": "柴市巷3号1-7层",
+          "type": "生活服务;共享设备;充电宝",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 00:00-24:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFKSQIEV",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFL0LL93",
+          "name": "庙东排骨(食品街店)",
+          "location": [
+            112.562348,
+            37.869086
+          ],
+          "address": "食品街5-2-1号(府西街地铁站C口步行320米)",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": 24,
+          "openingReference": "周一至周日 11:00-22:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFL0LL93",
+          "obtainedAt": "2026-10-28T08:54:55.878Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    },
+    {
+      "query": {
+        "id": "lunchA",
+        "keywords": "老太原菜馆",
+        "purpose": "晋菜午餐候选，未接受"
+      },
+      "obtainedAt": "2026-10-28T08:54:56.443Z",
+      "declaredCount": "800",
+      "returned": 25,
+      "candidates": [
+        {
+          "id": "B0I6T5MXGG",
+          "name": "老太原菜馆(钟楼街店)",
+          "location": [
+            112.567413,
+            37.868094
+          ],
+          "address": "柳巷街道钟楼街步行街1号",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 91,
+          "openingReference": "周一至周日 11:00-14:30,17:00-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0I6T5MXGG",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFFGWXV3",
+          "name": "老太原菜馆(府西街店)",
+          "location": [
+            112.553552,
+            37.873922
+          ],
+          "address": "府西街33号1-3层",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 80,
+          "openingReference": "周一至周日 10:00-14:30,17:00-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFFGWXV3",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFI70DWL",
+          "name": "老太原菜馆(中正天街店)",
+          "location": [
+            112.572538,
+            37.851041
+          ],
+          "address": "并州北路168号中正天街1号楼3005号商铺",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 65,
+          "openingReference": "周一至周日 10:30-14:30,17:30-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFI70DWL",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFFFXGN6",
+          "name": "老太原菜馆(南宫店)",
+          "location": [
+            112.558486,
+            37.85873
+          ],
+          "address": "迎泽大街236号(大南门地铁站A口步行210米)",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 72,
+          "openingReference": "周一至周日 06:30-09:30,11:00-14:30,17:30-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFFFXGN6",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFFMNGJA",
+          "name": "老太原菜馆(汾河公园店)",
+          "location": [
+            112.538536,
+            37.812267
+          ],
+          "address": "滨河西路以东、长风桥以南500米处",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 84,
+          "openingReference": "周一至周五 11:00-14:30,17:30-21:30；周六至周日 11:00-15:00,17:30-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFFMNGJA",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0L30RLDE5",
+          "name": "老太原菜馆(北大街店)",
+          "location": [
+            112.581275,
+            37.886575
+          ],
+          "address": "新开南巷25号怡和熙园",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0L30RLDE5",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFI59OGN",
+          "name": "老太原菜馆(晋祠路店)",
+          "location": [
+            112.530945,
+            37.84229
+          ],
+          "address": "晋祠路一段91号紫郡12号楼1020-1023号商铺",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 73,
+          "openingReference": "周一至周日 10:00-14:30,17:00-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFI59OGN",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFHLHB43",
+          "name": "老太原菜馆(万达店)",
+          "location": [
+            112.56037,
+            37.884279
+          ],
+          "address": "解放路175号万达广场三层3017",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 66,
+          "openingReference": "周一至周日 10:30-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFHLHB43",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MR2ZOJST",
+          "name": "老太原山西菜馆",
+          "location": [
+            112.52693,
+            37.868819
+          ],
+          "address": "",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MR2ZOJST",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MGB1V65D",
+          "name": "老太原山西菜馆(迎泽店)",
+          "location": [
+            112.551025,
+            37.851525
+          ],
+          "address": "新建南路53号KD·时光里购物中心",
+          "type": "餐饮服务;快餐厅;快餐厅",
+          "costReferenceYuan": 77,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MGB1V65D",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MUHORGT6",
+          "name": "老太原山西菜馆",
+          "location": [
+            112.57724,
+            37.859155
+          ],
+          "address": "太原汽车站西门旁(五一广场地铁站C口步行280米)",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 66,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MUHORGT6",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MRY1QXLP",
+          "name": "老太原家常菜",
+          "location": [
+            112.489625,
+            37.878775
+          ],
+          "address": "西中环路入口与西中环路辅路交叉口南60米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MRY1QXLP",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6ZY0RFM",
+          "name": "老太原家常菜馆(龙城店)",
+          "location": [
+            112.597675,
+            37.776825
+          ],
+          "address": "龙城北街与南大街交叉口东60米",
+          "type": "餐饮服务;餐饮相关场所;餐饮相关",
+          "costReferenceYuan": 78,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6ZY0RFM",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG2GBSR",
+          "name": "老太原面馆(旧城街店)",
+          "location": [
+            112.55908,
+            37.861632
+          ],
+          "address": "旧城街与解放路交叉口西60米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 21,
+          "openingReference": "周一至周日 10:00-22:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG2GBSR",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0K2Z5395Q",
+          "name": "老太原家常菜馆",
+          "location": [
+            112.565482,
+            37.886531
+          ],
+          "address": "东头道巷与忠和里交叉口东80米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 78,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0K2Z5395Q",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0K0R5GMD6",
+          "name": "晋阳楼老太原菜馆(北中环享堂美食城第1档口店)",
+          "location": [
+            112.587622,
+            37.902855
+          ],
+          "address": "敦化北路西巷2号国樾龙城湾",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 68,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0K0R5GMD6",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LK9ZACXH",
+          "name": "晋阳楼·老太原菜馆(西华苑店)",
+          "location": [
+            112.464686,
+            37.85518
+          ],
+          "address": "西机南路与虎峪河北沿岸辅路交叉口北340米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 92,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LK9ZACXH",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MBR4Q6EL",
+          "name": "老太原家常菜馆(五龙口店)",
+          "location": [
+            112.59038,
+            37.852748
+          ],
+          "address": "双塔北路95号东方红小区",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MBR4Q6EL",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LR7AIGKT",
+          "name": "老太原山西菜馆",
+          "location": [
+            112.593575,
+            37.802973
+          ],
+          "address": "学府逸居A座",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LR7AIGKT",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6ALZCC2",
+          "name": "老太原家常菜",
+          "location": [
+            112.598825,
+            37.865275
+          ],
+          "address": "黑土巷小区东1区东1门东北100米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 32,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6ALZCC2",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6TD3OA1",
+          "name": "老太原",
+          "location": [
+            112.630637,
+            37.766144
+          ],
+          "address": "经北街与新升巷交叉口东320米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6TD3OA1",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0M6UHPH6S",
+          "name": "晋阳楼老太原菜馆",
+          "location": [
+            112.558725,
+            37.939725
+          ],
+          "address": "恒山路918号恒山苑",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 78,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0M6UHPH6S",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0MUXRAUOO",
+          "name": "老太原面馆(精营西二道街)",
+          "location": [
+            112.573146,
+            37.877434
+          ],
+          "address": "新民中街特大市场门面59号",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 22,
+          "openingReference": null,
+          "priceStatus": "platform-reference",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0MUXRAUOO",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0LKL4784W",
+          "name": "老太原山西菜馆(万达店)",
+          "location": [
+            112.547125,
+            37.781675
+          ],
+          "address": "平阳南路与龙兴街交叉口西360米",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0LKL4784W",
+          "obtainedAt": "2026-10-28T08:54:56.443Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    },
+    {
+      "query": {
+        "id": "lunchB",
+        "keywords": "晋韵楼",
+        "purpose": "晋菜午餐候选，未接受"
+      },
+      "obtainedAt": "2026-10-28T08:54:56.714Z",
+      "declaredCount": "13",
+      "returned": 13,
+      "candidates": [
+        {
+          "id": "B0KB3ZVH8G",
+          "name": "晋韵楼(体育西路店)",
+          "location": [
+            112.564603,
+            37.820434
+          ],
+          "address": "",
+          "type": "餐饮服务;中餐厅;综合酒楼",
+          "costReferenceYuan": 100,
+          "openingReference": "周一至周日 10:00-14:30,17:30-21:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KB3ZVH8G",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFH1Q2KL",
+          "name": "晋韵楼体育西路店地面停车场(出入口)",
+          "location": [
+            112.564772,
+            37.820198
+          ],
+          "address": "体育西路188号(长风街地铁站A2口步行480米)",
+          "type": "交通设施服务;停车场;停车场出入口",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFH1Q2KL",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0K0FHBTWH",
+          "name": "晋韵楼体育西路店地面停车场",
+          "location": [
+            112.564685,
+            37.820202
+          ],
+          "address": "体育西路与亲贤西街交叉口西北40米",
+          "type": "交通设施服务;停车场;公共停车场",
+          "costReferenceYuan": null,
+          "openingReference": null,
+          "priceStatus": "unknown",
+          "openingStatus": "unknown",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0K0FHBTWH",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0I1JUGYQ5",
+          "name": "名仕汇轻奢汇(腾龙苑店)",
+          "location": [
+            112.565196,
+            37.820722
+          ],
+          "address": "体育西路晋韵楼对面",
+          "type": "购物服务;购物相关场所;购物相关场所",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:30-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0I1JUGYQ5",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0IGD5AD49",
+          "name": "福元昌(体育西路店)",
+          "location": [
+            112.56469,
+            37.820721
+          ],
+          "address": "体育西路晋韵楼底商",
+          "type": "购物服务;购物相关场所;购物相关场所",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 10:00-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0IGD5AD49",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0KDPC7Y38",
+          "name": "寻味河东(腾龙苑店)",
+          "location": [
+            112.565171,
+            37.820195
+          ],
+          "address": "体育西路晋韵楼对面(长风街地铁站A2口步行480米)",
+          "type": "餐饮服务;中餐厅;中餐厅",
+          "costReferenceYuan": 35,
+          "openingReference": "周一至周日 11:00-14:45，17:15-22:30",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0KDPC7Y38",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F16W7K",
+          "name": "忠忠名店(腾龙苑店)",
+          "location": [
+            112.565172,
+            37.820381
+          ],
+          "address": "体育西路晋韵楼对面",
+          "type": "购物服务;服装鞋帽皮具店;服装鞋帽皮具店",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:30-19:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F16W7K",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0HDCMJUC6",
+          "name": "ZAZA HAIR(天美店)",
+          "location": [
+            112.565207,
+            37.820382
+          ],
+          "address": "体育西路晋韵楼正对面",
+          "type": "生活服务;美容美发店;美容美发店",
+          "costReferenceYuan": 298,
+          "openingReference": "周一至周日 10:00-20:00",
+          "priceStatus": "platform-reference",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0HDCMJUC6",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0JGKSOSL7",
+          "name": "中国体育彩票(晋韵楼大酒店店)",
+          "location": [
+            112.564667,
+            37.820874
+          ],
+          "address": "人事厅小区东门旁",
+          "type": "生活服务;彩票彩券销售点;彩票彩券销售点",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:00-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0JGKSOSL7",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFG8Q0VH",
+          "name": "岭峥炒栗(晋韵楼店)",
+          "location": [
+            112.564689,
+            37.82011
+          ],
+          "address": "体育路188号晋韵楼一层南第一跨(天美新天地东门北110米)",
+          "type": "购物服务;综合市场;果品市场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 08:30-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFG8Q0VH",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B0FFGBJTOF",
+          "name": "弗纳兰鲜花店设计师店(茂业店)",
+          "location": [
+            112.565172,
+            37.820656
+          ],
+          "address": "体育西路晋韵楼大酒店对面",
+          "type": "购物服务;花鸟鱼虫市场;花卉市场",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 08:00-22:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B0FFGBJTOF",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "B015F0IICW",
+          "name": "沁心茶行(腾龙苑店)",
+          "location": [
+            112.565171,
+            37.820084
+          ],
+          "address": "体育西路晋韵楼对面沁心茶行",
+          "type": "购物服务;专卖店;专营店",
+          "costReferenceYuan": null,
+          "openingReference": "周一至周日 09:00-21:00",
+          "priceStatus": "unknown",
+          "openingStatus": "platform-reference",
+          "source": "高德Web服务关键词搜索",
+          "sourceUrl": "https://www.amap.com/place/B015F0IICW",
+          "obtainedAt": "2026-10-28T08:54:56.714Z",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "notice": "仅本页候选，不证明唯一或穷尽；地点/价格/营业为地图参考，不是旅行日承诺"
+    }
+  ],
+  "calls": {
+    "model": 4,
+    "location": 11,
+    "route": 16,
+    "map": 22
+  }
+}
