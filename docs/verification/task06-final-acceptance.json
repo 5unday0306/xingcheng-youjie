@@ -1,0 +1,886 @@
+{
+  "at": "2026-10-28T11:43:16.614Z",
+  "sourceCommit": "7904fc4",
+  "status": "real-routes-complete-with-estimated-walking-conflict",
+  "label": "历史回放 · 当前服务内的真实草案与道路",
+  "draftProvenance": {
+    "kind": "recovered-validated-visits",
+    "originGeneratedAt": "2026-10-28T11:14:28.105Z",
+    "notice": "真实草案的游览顺序/时长/理由来自已核查结果；午餐理由为程序恢复，不是原始模型全文"
+  },
+  "structure": "valid",
+  "executable": false,
+  "physicalLegCount": 10,
+  "availableLegCount": 10,
+  "days": [
+    {
+      "date": "2026-11-07",
+      "time": {
+        "status": "insufficient",
+        "value": null,
+        "knownSubtotal": [
+          384,
+          384
+        ],
+        "limit": 540,
+        "missing": [
+          "山西博物院等待未知",
+          "迎泽公园短环线等待未知",
+          "餐厅等位与旅行日营业未知"
+        ]
+      },
+      "activities": [
+        {
+          "id": "d1-p1-ENDPOINT",
+          "pointId": "ENDPOINT",
+          "name": "博物院东门外公共集合位置",
+          "location": [
+            112.532494,
+            37.865887
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p2-MUSEUM_GATE",
+          "pointId": "MUSEUM_GATE",
+          "name": "博物院院门测试位置",
+          "location": [
+            112.532197,
+            37.865453
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p3-TY01",
+          "pointId": "TY01",
+          "name": "博物院主馆参观入口测试位置",
+          "location": [
+            112.531111,
+            37.86639
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p4-MUSEUM_GATE",
+          "pointId": "MUSEUM_GATE",
+          "name": "博物院院门测试位置",
+          "location": [
+            112.532197,
+            37.865453
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p5-LUNCH1",
+          "pointId": "LUNCH1",
+          "name": "老太原山西菜馆",
+          "location": [
+            112.52693,
+            37.868819
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p6-TY04",
+          "pointId": "TY04",
+          "name": "迎泽公园北侧测试位置",
+          "location": [
+            112.562162,
+            37.858975
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d1-p7-ENDPOINT",
+          "pointId": "ENDPOINT",
+          "name": "博物院东门外公共集合位置",
+          "location": [
+            112.532494,
+            37.865887
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "legs": [
+        {
+          "id": "day1-leg1-part1",
+          "logicalId": "day1-leg1",
+          "dayIndex": 0,
+          "from": "d1-p1-ENDPOINT",
+          "to": "d1-p2-MUSEUM_GATE",
+          "includedInVisit": false,
+          "walkOnly": true,
+          "mode": "walk",
+          "distanceMeters": [
+            69,
+            69
+          ],
+          "minutes": [
+            1,
+            1
+          ],
+          "walkingMeters": [
+            69,
+            69
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:46.457Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "ENDPOINT",
+          "toPointId": "MUSEUM_GATE",
+          "fromName": "博物院东门外公共集合位置",
+          "toName": "博物院院门测试位置",
+          "accounting": "计入当日交通",
+          "geometryParts": 3
+        },
+        {
+          "id": "day1-leg1-part2",
+          "logicalId": "day1-leg1",
+          "dayIndex": 0,
+          "from": "d1-p2-MUSEUM_GATE",
+          "to": "d1-p3-TY01",
+          "includedInVisit": true,
+          "walkOnly": true,
+          "mode": "walk",
+          "distanceMeters": [
+            190,
+            190
+          ],
+          "minutes": [
+            3,
+            3
+          ],
+          "walkingMeters": [
+            190,
+            190
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:47.528Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "MUSEUM_GATE",
+          "toPointId": "TY01",
+          "fromName": "博物院院门测试位置",
+          "toName": "博物院主馆参观入口测试位置",
+          "accounting": "时间和步行已纳入博物院停留/内部步行估计，不重复累加",
+          "geometryParts": 2
+        },
+        {
+          "id": "day1-leg2-part1",
+          "logicalId": "day1-leg2",
+          "dayIndex": 0,
+          "from": "d1-p3-TY01",
+          "to": "d1-p4-MUSEUM_GATE",
+          "includedInVisit": true,
+          "walkOnly": true,
+          "mode": "walk",
+          "distanceMeters": [
+            190,
+            190
+          ],
+          "minutes": [
+            3,
+            3
+          ],
+          "walkingMeters": [
+            190,
+            190
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:48.627Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "TY01",
+          "toPointId": "MUSEUM_GATE",
+          "fromName": "博物院主馆参观入口测试位置",
+          "toName": "博物院院门测试位置",
+          "accounting": "时间和步行已纳入博物院停留/内部步行估计，不重复累加",
+          "geometryParts": 3
+        },
+        {
+          "id": "day1-leg2-part2",
+          "logicalId": "day1-leg2",
+          "dayIndex": 0,
+          "from": "d1-p4-MUSEUM_GATE",
+          "to": "d1-p5-LUNCH1",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "walk",
+          "distanceMeters": [
+            809,
+            809
+          ],
+          "minutes": [
+            11,
+            11
+          ],
+          "walkingMeters": [
+            809,
+            809
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:49.730Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "MUSEUM_GATE",
+          "toPointId": "LUNCH1",
+          "fromName": "博物院院门测试位置",
+          "toName": "老太原山西菜馆",
+          "accounting": "计入当日交通",
+          "geometryParts": 4
+        },
+        {
+          "id": "day1-leg3-part1",
+          "logicalId": "day1-leg3",
+          "dayIndex": 0,
+          "from": "d1-p5-LUNCH1",
+          "to": "d1-p6-TY04",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "transit",
+          "distanceMeters": [
+            4713,
+            4713
+          ],
+          "minutes": [
+            36,
+            36
+          ],
+          "walkingMeters": [
+            1773,
+            1773
+          ],
+          "fareCentsPerPerson": [
+            200,
+            200
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:52.015Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "LUNCH1",
+          "toPointId": "TY04",
+          "fromName": "老太原山西菜馆",
+          "toName": "迎泽公园北侧测试位置",
+          "accounting": "计入当日交通",
+          "geometryParts": 14
+        },
+        {
+          "id": "day1-leg4-part1",
+          "logicalId": "day1-leg4",
+          "dayIndex": 0,
+          "from": "d1-p6-TY04",
+          "to": "d1-p7-ENDPOINT",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "transit",
+          "distanceMeters": [
+            4643,
+            4643
+          ],
+          "minutes": [
+            36,
+            36
+          ],
+          "walkingMeters": [
+            1703,
+            1703
+          ],
+          "fareCentsPerPerson": [
+            200,
+            200
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:54.263Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "TY04",
+          "toPointId": "ENDPOINT",
+          "fromName": "迎泽公园北侧测试位置",
+          "toName": "博物院东门外公共集合位置",
+          "accounting": "计入当日交通",
+          "geometryParts": 15
+        }
+      ],
+      "walking": [
+        {
+          "id": "member-1",
+          "walking": {
+            "status": "conflict",
+            "value": null,
+            "knownSubtotal": [
+              6154,
+              7854
+            ],
+            "limit": 6000,
+            "missing": [
+              "餐厅内部步行未知",
+              "day1-leg1道路与内部步行去重未确认",
+              "day1-leg2道路与内部步行去重未确认",
+              "day1-leg3道路与内部步行去重未确认",
+              "day1-leg4道路与内部步行去重未确认"
+            ]
+          }
+        },
+        {
+          "id": "member-2",
+          "walking": {
+            "status": "conflict",
+            "value": null,
+            "knownSubtotal": [
+              6154,
+              7854
+            ],
+            "limit": 6000,
+            "missing": [
+              "餐厅内部步行未知",
+              "day1-leg1道路与内部步行去重未确认",
+              "day1-leg2道路与内部步行去重未确认",
+              "day1-leg3道路与内部步行去重未确认",
+              "day1-leg4道路与内部步行去重未确认"
+            ]
+          }
+        },
+        {
+          "id": "member-3",
+          "walking": {
+            "status": "conflict",
+            "value": null,
+            "knownSubtotal": [
+              6154,
+              7854
+            ],
+            "limit": 6000,
+            "missing": [
+              "餐厅内部步行未知",
+              "day1-leg1道路与内部步行去重未确认",
+              "day1-leg2道路与内部步行去重未确认",
+              "day1-leg3道路与内部步行去重未确认",
+              "day1-leg4道路与内部步行去重未确认"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "time": {
+        "status": "insufficient",
+        "value": null,
+        "knownSubtotal": [
+          277,
+          277
+        ],
+        "limit": 540,
+        "missing": [
+          "钟楼街等待未知",
+          "食品街等待未知",
+          "餐厅等位与旅行日营业未知"
+        ]
+      },
+      "activities": [
+        {
+          "id": "d2-p1-ENDPOINT",
+          "pointId": "ENDPOINT",
+          "name": "博物院东门外公共集合位置",
+          "location": [
+            112.532494,
+            37.865887
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d2-p2-TY05",
+          "pointId": "TY05",
+          "name": "钟楼街测试落点",
+          "location": [
+            112.564764,
+            37.867952
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d2-p3-LUNCH2",
+          "pointId": "LUNCH2",
+          "name": "老太原菜馆(钟楼街店)",
+          "location": [
+            112.567413,
+            37.868094
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d2-p4-TY06",
+          "pointId": "TY06",
+          "name": "食品街测试落点",
+          "location": [
+            112.562197,
+            37.870023
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        },
+        {
+          "id": "d2-p5-ENDPOINT",
+          "pointId": "ENDPOINT",
+          "name": "博物院东门外公共集合位置",
+          "location": [
+            112.532494,
+            37.865887
+          ],
+          "source": "用户确认的测试落点",
+          "entranceVerified": false,
+          "futureAccessVerified": false
+        }
+      ],
+      "legs": [
+        {
+          "id": "day2-leg1-part1",
+          "logicalId": "day2-leg1",
+          "dayIndex": 1,
+          "from": "d2-p1-ENDPOINT",
+          "to": "d2-p2-TY05",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "transit",
+          "distanceMeters": [
+            6196,
+            6196
+          ],
+          "minutes": [
+            54,
+            54
+          ],
+          "walkingMeters": [
+            2640,
+            2640
+          ],
+          "fareCentsPerPerson": [
+            200,
+            200
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:56.481Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "ENDPOINT",
+          "toPointId": "TY05",
+          "fromName": "博物院东门外公共集合位置",
+          "toName": "钟楼街测试落点",
+          "accounting": "计入当日交通",
+          "geometryParts": 14
+        },
+        {
+          "id": "day2-leg2-part1",
+          "logicalId": "day2-leg2",
+          "dayIndex": 1,
+          "from": "d2-p2-TY05",
+          "to": "d2-p3-LUNCH2",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "walk",
+          "distanceMeters": [
+            229,
+            229
+          ],
+          "minutes": [
+            4,
+            4
+          ],
+          "walkingMeters": [
+            229,
+            229
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:57.503Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "TY05",
+          "toPointId": "LUNCH2",
+          "fromName": "钟楼街测试落点",
+          "toName": "老太原菜馆(钟楼街店)",
+          "accounting": "计入当日交通",
+          "geometryParts": 1
+        },
+        {
+          "id": "day2-leg3-part1",
+          "logicalId": "day2-leg3",
+          "dayIndex": 1,
+          "from": "d2-p3-LUNCH2",
+          "to": "d2-p4-TY06",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "walk",
+          "distanceMeters": [
+            708,
+            708
+          ],
+          "minutes": [
+            10,
+            10
+          ],
+          "walkingMeters": [
+            708,
+            708
+          ],
+          "fareCentsPerPerson": [
+            0,
+            0
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:30:58.616Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "LUNCH2",
+          "toPointId": "TY06",
+          "fromName": "老太原菜馆(钟楼街店)",
+          "toName": "食品街测试落点",
+          "accounting": "计入当日交通",
+          "geometryParts": 3
+        },
+        {
+          "id": "day2-leg4-part1",
+          "logicalId": "day2-leg4",
+          "dayIndex": 1,
+          "from": "d2-p4-TY06",
+          "to": "d2-p5-ENDPOINT",
+          "includedInVisit": false,
+          "walkOnly": false,
+          "mode": "transit",
+          "distanceMeters": [
+            6375,
+            6375
+          ],
+          "minutes": [
+            49,
+            49
+          ],
+          "walkingMeters": [
+            1920,
+            1920
+          ],
+          "fareCentsPerPerson": [
+            200,
+            200
+          ],
+          "geometryComplete": true,
+          "excludesInternal": false,
+          "source": "高德Web服务响应",
+          "notice": "预测时长；道路与内部步行去重仍需核对；不保证未来交通",
+          "queriedAt": "2026-10-28T11:31:00.890Z",
+          "reused": false,
+          "status": "available",
+          "fromPointId": "TY06",
+          "toPointId": "ENDPOINT",
+          "fromName": "食品街测试落点",
+          "toName": "博物院东门外公共集合位置",
+          "accounting": "计入当日交通",
+          "geometryParts": 18
+        }
+      ],
+      "walking": [
+        {
+          "id": "member-1",
+          "walking": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              5497,
+              7297
+            ],
+            "limit": 6000,
+            "missing": [
+              "街区内部步行重叠，去重边界未知",
+              "餐厅内部步行未知",
+              "day2-leg1道路与内部步行去重未确认",
+              "day2-leg2道路与内部步行去重未确认",
+              "day2-leg3道路与内部步行去重未确认",
+              "day2-leg4道路与内部步行去重未确认"
+            ]
+          }
+        },
+        {
+          "id": "member-2",
+          "walking": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              5497,
+              7297
+            ],
+            "limit": 6000,
+            "missing": [
+              "街区内部步行重叠，去重边界未知",
+              "餐厅内部步行未知",
+              "day2-leg1道路与内部步行去重未确认",
+              "day2-leg2道路与内部步行去重未确认",
+              "day2-leg3道路与内部步行去重未确认",
+              "day2-leg4道路与内部步行去重未确认"
+            ]
+          }
+        },
+        {
+          "id": "member-3",
+          "walking": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              5497,
+              7297
+            ],
+            "limit": 6000,
+            "missing": [
+              "街区内部步行重叠，去重边界未知",
+              "餐厅内部步行未知",
+              "day2-leg1道路与内部步行去重未确认",
+              "day2-leg2道路与内部步行去重未确认",
+              "day2-leg3道路与内部步行去重未确认",
+              "day2-leg4道路与内部步行去重未确认"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "budgets": [
+    {
+      "id": "member-1",
+      "budget": {
+        "status": "insufficient",
+        "value": null,
+        "knownSubtotal": [
+          15000,
+          25800
+        ],
+        "limit": 60000,
+        "missing": [
+          "山西博物院门票未知",
+          "迎泽公园短环线门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）",
+          "钟楼街门票未知",
+          "食品街门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）"
+        ]
+      }
+    },
+    {
+      "id": "member-2",
+      "budget": {
+        "status": "insufficient",
+        "value": null,
+        "knownSubtotal": [
+          15000,
+          25800
+        ],
+        "limit": 60000,
+        "missing": [
+          "山西博物院门票未知",
+          "迎泽公园短环线门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）",
+          "钟楼街门票未知",
+          "食品街门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）"
+        ]
+      }
+    },
+    {
+      "id": "member-3",
+      "budget": {
+        "status": "insufficient",
+        "value": null,
+        "knownSubtotal": [
+          15000,
+          25800
+        ],
+        "limit": 60000,
+        "missing": [
+          "山西博物院门票未知",
+          "迎泽公园短环线门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）",
+          "钟楼街门票未知",
+          "食品街门票未知",
+          "其他餐饮总额未核实（逛吃不替代午餐）"
+        ]
+      }
+    }
+  ],
+  "lunches": [
+    {
+      "dayIndex": 0,
+      "candidate": {
+        "id": "B0MR2ZOJST",
+        "name": "老太原山西菜馆",
+        "location": [
+          112.52693,
+          37.868819
+        ],
+        "address": "",
+        "type": "餐饮服务;中餐厅;中餐厅",
+        "costReferenceYuan": null,
+        "openingReference": null,
+        "priceStatus": "unknown",
+        "openingStatus": "unknown",
+        "source": "高德Web服务关键词搜索",
+        "sourceUrl": "https://www.amap.com/place/B0MR2ZOJST",
+        "obtainedAt": "2026-10-28T08:54:56.443Z",
+        "entranceVerified": false,
+        "futureAccessVerified": false
+      },
+      "durationMinutes": 60,
+      "costCentsPerPerson": [
+        4000,
+        8000
+      ],
+      "costBasis": "用户接受的用餐估计，非餐厅报价",
+      "confirmedAt": "2026-10-28T10:44:04.634Z",
+      "futureOpeningVerified": false
+    },
+    {
+      "dayIndex": 1,
+      "candidate": {
+        "id": "B0I6T5MXGG",
+        "name": "老太原菜馆(钟楼街店)",
+        "location": [
+          112.567413,
+          37.868094
+        ],
+        "address": "柳巷街道钟楼街步行街1号",
+        "type": "餐饮服务;中餐厅;中餐厅",
+        "costReferenceYuan": 91,
+        "openingReference": "周一至周日 11:00-14:30,17:00-21:30",
+        "priceStatus": "platform-reference",
+        "openingStatus": "platform-reference",
+        "source": "高德Web服务关键词搜索",
+        "sourceUrl": "https://www.amap.com/place/B0I6T5MXGG",
+        "obtainedAt": "2026-10-28T08:54:56.443Z",
+        "entranceVerified": false,
+        "futureAccessVerified": false
+      },
+      "durationMinutes": 60,
+      "costCentsPerPerson": [
+        7200,
+        11000
+      ],
+      "costBasis": "用户接受的用餐估计，非餐厅报价",
+      "confirmedAt": "2026-10-28T10:52:27.054Z",
+      "futureOpeningVerified": false
+    }
+  ],
+  "parkSelection": {
+    "candidate": {
+      "id": "B0FFKG7U75",
+      "name": "迎泽公园-北入口广场",
+      "location": [
+        112.562162,
+        37.858975
+      ],
+      "address": "迎泽大街218号迎泽公园内(北侧)",
+      "type": "风景名胜;公园广场;城市广场",
+      "costReferenceYuan": null,
+      "openingReference": "周一至周日 00:00-24:00",
+      "priceStatus": "unknown",
+      "openingStatus": "platform-reference",
+      "source": "高德Web服务关键词搜索",
+      "sourceUrl": "https://www.amap.com/place/B0FFKG7U75",
+      "obtainedAt": "2026-10-28T08:54:55.231Z",
+      "entranceVerified": false,
+      "futureAccessVerified": false
+    },
+    "acceptedAt": "2026-10-28T11:07:32.222Z",
+    "notice": "用户接受北入口广场作为测试落点，非官方北门核验"
+  },
+  "counts": {
+    "model": 6,
+    "location": 11,
+    "route": 50,
+    "map": 33
+  },
+  "task06Delta": {
+    "model": 2,
+    "location": 6,
+    "route": 34,
+    "map": 11
+  },
+  "reservedCents": 286,
+  "actualCharge": "待供应商账单核对；预留不等于实扣",
+  "stopped": null,
+  "routeRequestIntervalMs": 1100,
+  "oldFailureCause": "初次UPSTREAM_DATA未留字段诊断，不追认根因；单次步行诊断通过",
+  "realInteraction": "a2双向定位/刷新不自动请求已实测；本次修正后只复用游览结构并重查道路，无新模型",
+  "limits": [
+    "未来开放/预约、票价、排队、餐厅等位/内部步行及街区重叠仍未知",
+    "第1天6154～7854米是当前估计范围，不能按6公里核查通过",
+    "多个相邻馆内标记在总览密集，放大或活动定位查看",
+    "没有实现多Agent、锁定或动态重排"
+  ],
+  "rawRoadGeometryPersisted": false
+}

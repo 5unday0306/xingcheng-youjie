@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-28T11:35:13.813Z",
+  "reports": [
+    {
+      "file": "task06-real-complete-a1-operation.webm",
+      "decoded": true,
+      "width": 1440,
+      "height": 900,
+      "shots": [
+        "docs/verification/task06-real-complete-a1-frame-5.png",
+        "docs/verification/task06-real-complete-a1-frame-40.png",
+        "docs/verification/task06-real-complete-a1-frame-70.png"
+      ]
+    },
+    {
+      "file": "task06-real-complete-a2-operation.webm",
+      "decoded": true,
+      "width": 1440,
+      "height": 900,
+      "shots": [
+        "docs/verification/task06-real-complete-a2-frame-5.png",
+        "docs/verification/task06-real-complete-a2-frame-30.png",
+        "docs/verification/task06-real-complete-a2-frame-200.png"
+      ]
+    },
+    {
+      "file": "task06-verified-release-operation.webm",
+      "decoded": true,
+      "width": 1440,
+      "height": 900,
+      "shots": [
+        "docs/verification/task06-verified-release-frame-3.png",
+        "docs/verification/task06-verified-release-frame-15.png",
+        "docs/verification/task06-verified-release-frame-25.png"
+      ]
+    }
+  ],
+  "limits": "同源本地媒体解码；首次about:blank媒体加载失败，改同源后检查。取帧不是全逐帧复核，无SDK与业务请求"
+}

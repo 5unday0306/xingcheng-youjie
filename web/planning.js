@@ -7,15 +7,15 @@ const labels={conflict:'冲突',insufficient:'资料不足',uncertain:'不确定
 function metric(title,result,unit,scale=1) {
   const format=value=>`${rangeText(value,{scale,digits:scale===100||scale===1000?2:0})}${unit}`;
   const box=el('div',undefined,'planMetric');
-  box.append(el('strong',`${title}：${labels[result.status]}`),el('p',result.value?`估计合计 ${format(result.value)}`:`总量未知；已知部分 ${format(result.knownSubtotal)}，不能当作总量`),el('p',`上限 ${(result.limit/scale).toFixed(scale===100?2:scale===1000?2:0)}${unit}`));
-  if(result.knownSubtotal[1]>result.limit){box.append(el('p',result.knownSubtotal[0]>result.limit?'按当前数值下限已超出上限，不能通过此项核查。':'当前估计上界可能超出上限；请核实缺口或调整游览/接驳后重新核查，未自动放宽条件。','warning'));}
+  box.append(el('strong',`${title}：${labels[result.status]}`),el('p',result.value?`估计合计 ${format(result.value)}`:`总量未知；已计入的预测/估计 ${format(result.knownSubtotal)}，不能当作总量`),el('p',`上限 ${(result.limit/scale).toFixed(scale===100?2:scale===1000?2:0)}${unit}`));
+  if(result.knownSubtotal[1]>result.limit){box.append(el('p',result.knownSubtotal[0]>result.limit?'按当前预测/估计下限已超出上限，不能通过此项核查。':'当前估计上界可能超出上限；请核实缺口或调整游览/接驳后重新核查，未自动放宽条件。','warning'));}
   if(result.missing.length){const d=el('details');d.append(el('summary',`查看${result.missing.length}项缺口`));const list=el('ul');result.missing.forEach(s=>list.append(el('li',s)));d.append(list);box.append(d);}
   box.dataset.status=result.status;return box;
 }
 export function createPlanPanel({getRequest,validate}) {
   let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null;
   const state=$('generationStatus'),button=$('offlineRun');
-  async function updateCase06Ready(){if(!capabilities?.case06)return;const started=revision;const r=await fetch('/api/capabilities');if(!r.ok)return;const c=await r.json();if(started!==revision)return;capabilities.canGenerate=c.canGenerate;button.disabled=busy||!c.canGenerate;button.textContent=c.canGenerate?'生成草案并核查两天完整交通链':'任务06：先复核位置与选择午餐';}
+  async function updateCase06Ready(){if(!capabilities?.case06)return;const started=revision;const r=await fetch('/api/capabilities');if(!r.ok)return;const c=await r.json();if(started!==revision)return;capabilities.canGenerate=c.canGenerate;button.disabled=busy||!c.canGenerate;button.textContent=c.canGenerate?'核查两天完整交通链':'任务06：先复核位置与选择午餐';}
   async function setup() {
     try {
       const [a,b]=await Promise.all([fetch('/api/capabilities'),fetch('/api/candidates')]);
@@ -27,7 +27,7 @@ export function createPlanPanel({getRequest,validate}) {
       if(capabilities.mapPicking){button.disabled=!capabilities.canGenerate;button.hidden=!capabilities.productFlow;$('generationTitle').textContent=capabilities.productFlow?'真实地图、草案与程序核查':'本轮：地图选点与首条道路';}
       if(capabilities.mode==='real-preparation'){$('generationMode').textContent=capabilities.productFlow?'真实模型与高德道路 · 手动触发':'真实接入准备 · 默认不调用';state.textContent=capabilities.productFlow?'加载地图，分别确认测试落点与交通方式，查询首段后可生成真实草案。未知资料保留缺口。':capabilities.mapPicking?'本轮仅验证两个用户测试落点与首条道路，地点检索和模型均关闭。':'先完成入口和单路段验收；有配置不代表有本轮授权。';}
       if(capabilities.productFlow){const r=await fetch('/api/live/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(getRequest())});if(r.ok){const old=await r.json();if(old.result){result=old.result;paint();state.textContent='历史回放：当前服务内真实结果，未重新调用模型或道路；地图需手动加载。';}}}
-      if(capabilities.case06){state.textContent='请先完成位置与午餐选择。短路先查询步行；超过1.2公里或20分钟的外部路段再取实际公交地铁结果，失败不自动换方式。';await updateCase06Ready();}
+      if(capabilities.case06){state.textContent=result?'历史回放：当前真实草案与道路未重新调用；再次手动核查时，相同需求复用游览草案，需求改变才请求模型。':'先确认位置与午餐，再手动核查。短路先查步行；超过1.2公里或20分钟的外部路段再取实际公交结果，无自动重试。';await updateCase06Ready();}
       $('candidateList').replaceChildren(...data.candidates.map(c=>{
         const item=el('li');item.append(el('strong',`${c.id} ${c.name}`),el('p',c.reference.value),el('p',`停留估计${c.stayMinutes.value.join('～')}分钟；内部步行估计${c.internalMeters.value.map(v=>v/1000).join('～')}公里。`),el('p','当日开放、预约、票价与等待：待核实。'));
         c.entrance.sources.forEach(id=>{const source=data.sources.find(s=>s.id===id);const a=el('a',`${id} ${source.kind}（${source.obtainedAt}）`);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);});return item;
@@ -35,7 +35,7 @@ export function createPlanPanel({getRequest,validate}) {
     } catch {state.textContent='本地准备接口不可用。请重启本项目服务再刷新；没有发起模型或地图请求。';button.disabled=true;}
   }
   function paint() {
-    const root=$('planResult');root.replaceChildren();if(!result)return;
+    const root=$('planResult');root.replaceChildren();const pending=$('pendingTitle')?.closest('.routePending');if(pending){pending.querySelector('h3').textContent=result?.mode==='real'?'已取得真实道路，请查看核查结果':'路线还未接入';pending.querySelector('p').textContent=result?.mode==='real'?'可以切换日期、定位活动和查看路段；资料缺口与约束冲突仍需处理，不代表旅行已经可行。':'先检查需求，再运行已启用的草案入口。地图仅显示已确认测试落点之间查询成功的路段。';}if(!result)return;
     if(result.mode==='real')livePanel?.showDay(result.review.days[Math.min(selectedDay,result.review.days.length-1)]);
     const heading=el('h3',result.label);heading.tabIndex=-1;heading.id='planResultTitle';
     root.append(heading,el('p',`${labels[result.review.status]} · ${result.review.notice}`,'warning'));
@@ -45,7 +45,7 @@ export function createPlanPanel({getRequest,validate}) {
     d.messages.forEach(m=>root.append(el('p',m,'hint')));
     const members=el('div',undefined,'planMembers');
     d.members.forEach(m=>{const box=el('section');box.append(el('h4',m.name),metric('当天步行',capabilities?.case06?{...m.walking,missing:m.walking.missing.map(s=>s==='用餐落点及内部步行未知'?'餐厅内部步行尚未核实（所选餐厅位置已知）':s)}:m.walking,'公里',1000),metric('个人全程费用',result.review.members.find(p=>p.id===m.id).budget,'元',100));members.append(box);});root.append(members);
-    const road=el('details');road.open=true;road.append(el('summary',result.mode==='real'?'道路逐段状态 · 缺口不连线':'道路与地图：未查询、未加载'));const list=el('ul');d.legs.forEach(l=>list.append(el('li',`${l.fromName||l.from} → ${l.toName||l.to}：${l.reason||(result.mode==='real'?`高德${l.mode==='walk'?'步行':'公交地铁'}预计${rangeText(l.minutes)}分钟；距离${rangeText(l.distanceMeters)}米；${l.accounting||''}`:'仅离线替身值，非真实道路')}`)));road.append(list);root.append(road);
+    const road=el('details');road.open=true;road.append(el('summary',result.mode==='real'?'道路逐段状态 · 缺口不连线':'道路与地图：未查询、未加载'));const list=el('ul');d.legs.forEach(l=>list.append(el('li',`${l.fromName||l.from} → ${l.toName||l.to}：${l.reason||(result.mode==='real'?`高德${l.mode==='walk'?'步行':'公交地铁'}预计${rangeText(l.minutes)}分钟；距离${rangeText(l.distanceMeters)}米；${l.accounting||''}；${l.reused?'沿用已取得道路':'来自已记录的真实查询'}${l.queriedAt?'，取得于'+new Date(l.queriedAt).toLocaleString('zh-CN'):''}`:'仅离线替身值，非真实道路')}`)));road.append(list);root.append(road);
     const events=el('details');events.append(el('summary','查看实际本地阶段记录（不是Agent看板）'));result.events.forEach(e=>events.append(el('p',`${e.stage} · ${e.status}`)));events.append(el('p',result.mode==='real'?(result.draftProvenance?'本次复用已生成的真实游览草案，未再次请求模型；道路按本次实际查询记录。':'真实单次模型与已成功路段；费用预留不等于供应商实扣。'):'真实模型/地点/道路/地图调用均为0。替身调用仅用于测试。'));if(result.callRecord)events.append(el('pre',JSON.stringify(result.callRecord,null,2)));root.append(events);
   }
   button.onclick=async()=>{
@@ -56,7 +56,7 @@ export function createPlanPanel({getRequest,validate}) {
       const response=await fetch('/api/plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request),signal:AbortSignal.any([AbortSignal.timeout(185000),runController.signal])});
       const body=await response.json();if(!response.ok)throw Error(body.message||'本地测试失败');
       if(revision!==startedRevision){state.textContent='运行期间需求已改变，本次旧结果已丢弃，请重新检查。';return;}
-      result=body;paint();state.textContent=body.mode==='real'?'真实草案已返回；仅部分道路可能可用，资料缺口仍在，旅行可行性未验证。':'离线替身测试结束：存在缺口，未验证真实旅行可行性。';$('planResultTitle').focus({preventScroll:true});$('planResultTitle').scrollIntoView({block:'start'});
+      result=body;paint();state.textContent=body.mode==='real'?(body.review.status==='conflict'?'真实道路已返回；程序发现约束冲突，请查看逐人核查。没有自动放宽条件。':'真实结果已返回；资料缺口仍在，旅行可行性未验证。'):'离线替身测试结束：存在缺口，未验证真实旅行可行性。';$('planResultTitle').focus({preventScroll:true});$('planResultTitle').scrollIntoView({block:'start'});
     } catch(error) {state.textContent=`未得到草案：${error.name==='TimeoutError'?'本地处理超时，无自动重试':error.message}。输入保留。`;}
     finally {busy=false;button.disabled=!capabilities?.canGenerate;}
   };

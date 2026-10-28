@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-28T11:11:54.957Z",
+  "purpose": "首次失败关系的单次步行诊断；不是对旧无日志响应根因的追认",
+  "mode": "walk",
+  "from": "LUNCH1",
+  "to": "TY04",
+  "httpStatus": 200,
+  "status": "1",
+  "infocode": "10000",
+  "info": null,
+  "pathCount": 1,
+  "pathFields": [
+    "distance",
+    "duration",
+    "steps"
+  ],
+  "durationType": "string",
+  "distanceType": "string",
+  "validation": "passed",
+  "statistics": {
+    "minutes": [
+      57,
+      57
+    ],
+    "distanceMeters": [
+      4259,
+      4259
+    ],
+    "geometryComplete": true,
+    "geometryParts": 6
+  }
+}

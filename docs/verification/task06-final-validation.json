@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-28T11:52:31.892083+00:00",
+  "node": {
+    "tests": 144,
+    "passed": 144,
+    "failed": 0,
+    "report": "task06-accounting-fixed-node.tap"
+  },
+  "browser": {
+    "originalUI": {
+      "assertions": 53,
+      "report": "task06-original-ui-regression-ui-browser.json"
+    },
+    "choices": {
+      "assertions": 14,
+      "report": "task06-choices-refined-browser.json"
+    },
+    "newDraftWorkflow": {
+      "assertions": 16,
+      "report": "task06-workflow-browser.json"
+    },
+    "reusedDraftWorkflow": {
+      "assertions": 17,
+      "report": "task06-workflow-reuse-browser.json"
+    },
+    "realCallsInTheseBrowserTests": 0
+  },
+  "real": {
+    "report": "task06-final-acceptance.json",
+    "geometryCompleteLegs": 10,
+    "days": [
+      6,
+      4
+    ],
+    "refreshAndLinkage": "task06-real-complete-a2-interaction-check.json",
+    "finalRecording": "task06-verified-release-operation.webm",
+    "finalRecordingSeconds": 35.95,
+    "unresolved": [
+      "未来营业/预约/票价/排队/等位与内部步行边界",
+      "第1天估计步行下限超6公里，未调整",
+      "原UPSTREAM_DATA无字段诊断，不追认根因"
+    ]
+  },
+  "mediaReview": "4份录屏本地解码取帧；截图与部分取帧查看，非全逐帧复核；固定1440录屏画布切手机时不作手机布局证据，手机以原生390PNG为准",
+  "formatting": "TAP仅规范化行尾空格/换行，未改变结果",
+  "notVerified": [
+    "干净克隆10分钟真实复现",
+    "供应商实际账单",
+    "本机以外部署",
+    "全部SDK分支兼容",
+    "完整开发对话导出"
+  ],
+  "scope": "task06真实道路取得；约束核查返回冲突/资料不足，不宣称多Agent或重排"
+}

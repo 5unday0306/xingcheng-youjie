@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-28T11:48:04.606Z",
+  "file": "task06-real-final-operation.webm",
+  "decoded": true,
+  "width": 1440,
+  "height": 900,
+  "shots": [
+    "docs/verification/task06-real-final-frame-3.png",
+    "docs/verification/task06-real-final-frame-10.png",
+    "docs/verification/task06-real-final-frame-17.png"
+  ],
+  "limits": "仅本地解码取帧，非全逐帧复核，外部请求0"
+}

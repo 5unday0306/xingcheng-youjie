@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-28T11:40:36.311Z",
+  "assertions": 17,
+  "upstreamCallsToSyntheticSender": 10,
+  "realBusinessCalls": 0,
+  "external": 0,
+  "errors": [],
+  "scope": "真实页面的8点/2餐显式选择、就地确认、1次替身模型/10道路、两天列表与地图、单值、刷新回放、手机；SDK与上游均合成"
+}

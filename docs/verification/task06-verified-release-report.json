@@ -1,0 +1,2256 @@
+{
+  "executedAt": "2026-10-28T11:31:13.126Z",
+  "mode": "真实SDK/用户点选会话记录（是否通过按各字段）",
+  "operator": "SDK和录制验证由授权助手操作；落点以本机用户确认记录为准，记录不冒充本次重新人工选择",
+  "mapReady": true,
+  "visibleBasemap": "待人工复核截图，加载事件不能单独证明可见",
+  "userPointSelectionPerformed": true,
+  "roadExecuted": true,
+  "sessionBaseline": {
+    "model": 6,
+    "location": 11,
+    "route": 36,
+    "map": 31
+  },
+  "sessionDelta": {
+    "model": 0,
+    "location": 0,
+    "route": 14,
+    "map": 1
+  },
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": {
+        "id": "ENDPOINT",
+        "name": "博物院东门外公共集合位置",
+        "location": [
+          112.532494,
+          37.865887
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:51:06.668Z"
+      },
+      "TY04": {
+        "id": "TY04",
+        "name": "迎泽公园北侧测试位置",
+        "location": [
+          112.562162,
+          37.858975
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T11:07:32.222Z"
+      },
+      "MUSEUM_GATE": {
+        "id": "MUSEUM_GATE",
+        "name": "博物院院门测试位置",
+        "location": [
+          112.532197,
+          37.865453
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:51:20.356Z"
+      },
+      "TY01": {
+        "id": "TY01",
+        "name": "博物院主馆参观入口测试位置",
+        "location": [
+          112.531111,
+          37.86639
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:51:31.707Z"
+      },
+      "LUNCH1": {
+        "id": "LUNCH1",
+        "name": "第1天午餐测试位置",
+        "location": [
+          112.52693,
+          37.868819
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:44:04.634Z"
+      },
+      "LUNCH2": {
+        "id": "LUNCH2",
+        "name": "第2天午餐测试位置",
+        "location": [
+          112.567413,
+          37.868094
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:52:27.054Z"
+      },
+      "TY05": {
+        "id": "TY05",
+        "name": "钟楼街测试落点",
+        "location": [
+          112.564764,
+          37.867952
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:44:31.502Z"
+      },
+      "TY06": {
+        "id": "TY06",
+        "name": "食品街测试落点",
+        "location": [
+          112.562197,
+          37.870023
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-28T10:44:33.079Z"
+      }
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 6,
+    "location": 11,
+    "route": 50,
+    "map": 32
+  },
+  "reservedCents": 281,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": null,
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T11:46:53.717Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T11:46:53.732Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T11:47:08.758Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "ad97da1e-db71-4ad1-b93f-c64b3bf78083",
+      "at": "2026-10-27T11:40:46.277Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:40:46.854Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:40:46.864Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:40:47.422Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "0e8078c5-a7e9-4eb3-a2e0-fe94aee9792f",
+      "at": "2026-10-27T11:42:09.740Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:42:10.304Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:42:10.321Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:42:10.643Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "04613566-ad4d-46b5-b9f8-47caf75f77cc",
+      "at": "2026-10-27T11:43:26.067Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:43:26.528Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:43:26.549Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:43:26.831Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "94236046-1d41-4d30-9a63-42ca79bf413b",
+      "at": "2026-10-27T11:44:52.052Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:44:52.646Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:44:52.658Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:44:52.950Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "3dac03d9-f49e-4985-b8a1-1dc3e78eb816",
+      "at": "2026-10-27T11:48:36.174Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:48:36.682Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:48:36.687Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:48:36.989Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "6b42db3d-329b-41d2-b6bf-0df9a912961b",
+      "at": "2026-10-27T11:51:19.889Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:51:20.390Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:51:20.407Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:51:20.686Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "a4c49a3d-0e9f-4245-b6b3-a640b751c9ad",
+      "at": "2026-10-27T11:53:15.821Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:53:16.342Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:53:16.346Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:53:16.736Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "71d664e3-7177-4aab-a003-27b4f4e4f39d",
+      "at": "2026-10-27T11:55:20.653Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:55:21.014Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:55:21.026Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:55:21.431Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "49a2d059-dc52-47da-a6bc-9221dd3e7b6d",
+      "at": "2026-10-27T11:56:33.262Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:56:33.826Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:56:33.840Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:56:34.153Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "8dfe5458-5c40-4c1a-93f5-3f53a9ef6007",
+      "at": "2026-10-27T12:01:01.574Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T12:01:02.292Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:02.302Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T12:01:02.782Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:03.329Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:03.349Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "302630e1-47e7-421d-9fb2-53b7d87f35ae",
+      "at": "2026-10-28T05:08:57.607Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:08:58.274Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:08:58.291Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-28T05:09:13.327Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "9429a771-15ba-4264-a410-bf8fa51b4607",
+      "at": "2026-10-28T05:10:58.164Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:10:58.607Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:58.613Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:10:58.900Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:59.549Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:59.556Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "e934854c-5f0a-43ab-81ea-7d5760a9eaa1",
+      "at": "2026-10-28T05:14:33.373Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:33.762Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:14:33.782Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:14:34.069Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:34.658Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:34.669Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "30213e9b-9b63-48ef-b21e-6d3d6b688085",
+      "at": "2026-10-28T05:23:20.943Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:23:21.329Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:21.332Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:23:21.599Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:22.022Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:22.033Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T05:23:40.344Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "9eecc67a-4954-4f6c-9c82-acb57a3f4c52",
+      "at": "2026-10-28T05:23:40.366Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:40.543Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:23:40.550Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:23:40.600Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:41.014Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:23:41.026Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T05:25:28.700Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "7e6b9061-ee02-4363-855a-5f8121fa63e5",
+      "at": "2026-10-28T05:25:28.727Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:25:29.194Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:29.197Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:25:29.445Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:29.891Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:29.902Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T05:25:42.060Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "ce2e9da8-bb8e-4efe-b3eb-2eea29b38e49",
+      "at": "2026-10-28T05:25:42.081Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:42.216Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:25:42.225Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:25:42.280Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:42.646Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:25:42.657Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "0b72aa0f-4553-4ac1-bbaa-9f5731daf290",
+      "at": "2026-10-28T08:22:33.642Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T08:22:34.278Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:22:34.281Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T08:22:34.609Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:22:35.214Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:22:35.223Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T08:23:14.884Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "667b0484-ed09-42f7-bd33-a4290fff62ab",
+      "at": "2026-10-28T08:23:14.910Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:23:15.016Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T08:23:15.024Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T08:23:15.078Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:23:15.511Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T08:23:15.523Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "6fa414c6-69a2-41a0-b073-f2b1e2012543",
+      "at": "2026-10-28T10:40:48.571Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:40:49.008Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T10:40:49.032Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T10:40:49.437Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:40:49.964Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:40:49.974Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T10:44:22.655Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "076766e3-78d9-403d-a186-6daea181f46e",
+      "at": "2026-10-28T10:44:22.686Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:44:22.940Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T10:44:22.955Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T10:44:23.154Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:44:23.586Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:44:23.601Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "3e7558a6-3900-42e6-a024-526a2b7ad718",
+      "at": "2026-10-28T10:50:11.915Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T10:50:12.107Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:50:12.111Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T10:50:12.211Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:50:12.832Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:50:12.841Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T10:57:09.945Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "f0112c7d-c35b-4d60-8f86-9c6870250334",
+      "at": "2026-10-28T10:57:09.961Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:57:10.366Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T10:57:10.371Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T10:57:10.992Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:57:11.344Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T10:57:11.349Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "9a178e8c-0d1a-43d1-9ad1-33fcb635aded",
+      "at": "2026-10-28T11:02:43.672Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:02:43.999Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:02:44.016Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:02:44.208Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:02:44.976Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:02:44.984Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T11:08:08.266Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "297e7242-d864-4ff8-a461-cb86912efd17",
+      "at": "2026-10-28T11:08:08.292Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:08:08.858Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:08:08.862Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:08:09.301Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:08:09.814Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:08:09.821Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "a7ce844d-bbd3-4983-9f97-35ad9a12a451",
+      "at": "2026-10-28T11:13:58.241Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:13:58.647Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:13:58.652Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:13:59.057Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:13:59.582Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:13:59.596Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T11:15:17.235Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "de3d2e62-5753-4595-a77c-7072821714e3",
+      "at": "2026-10-28T11:15:17.258Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:15:17.405Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:15:17.415Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:15:17.486Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:15:18.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:15:18.249Z"
+    },
+    {
+      "kind": "map",
+      "status": "closed",
+      "at": "2026-10-28T11:19:55.075Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "d71f959b-eda4-431e-aecf-2df204e4d84c",
+      "at": "2026-10-28T11:19:55.111Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:19:55.656Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:19:55.659Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:19:56.083Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:19:56.667Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:19:56.680Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "213ffb34-c80d-43c4-b653-ca232f0cf897",
+      "at": "2026-10-28T11:30:38.040Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:30:38.458Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T11:30:38.469Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T11:30:38.887Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:30:39.402Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T11:30:39.422Z"
+    }
+  ],
+  "planSummary": {
+    "mode": "real",
+    "status": "conflict",
+    "dates": [
+      "2026-11-07",
+      "2026-11-08"
+    ],
+    "budgets": [
+      {
+        "id": "member-1",
+        "budget": {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      },
+      {
+        "id": "member-2",
+        "budget": {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      },
+      {
+        "id": "member-3",
+        "budget": {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      }
+    ],
+    "days": [
+      {
+        "date": "2026-11-07",
+        "time": {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            384,
+            384
+          ],
+          "limit": 540,
+          "missing": [
+            "山西博物院等待未知",
+            "迎泽公园短环线等待未知",
+            "餐厅等位与旅行日营业未知"
+          ]
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "walking": {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6154,
+                7854
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4400,
+                8400
+              ],
+              "limit": 60000,
+              "missing": [
+                "山西博物院门票未知",
+                "迎泽公园短环线门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          },
+          {
+            "id": "member-2",
+            "walking": {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6154,
+                7854
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4400,
+                8400
+              ],
+              "limit": 60000,
+              "missing": [
+                "山西博物院门票未知",
+                "迎泽公园短环线门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          },
+          {
+            "id": "member-3",
+            "walking": {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6154,
+                7854
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4400,
+                8400
+              ],
+              "limit": 60000,
+              "missing": [
+                "山西博物院门票未知",
+                "迎泽公园短环线门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          }
+        ],
+        "activities": [
+          {
+            "id": "d1-p1-ENDPOINT",
+            "pointId": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          },
+          {
+            "id": "d1-p2-MUSEUM_GATE",
+            "pointId": "MUSEUM_GATE",
+            "name": "博物院院门测试位置",
+            "located": true
+          },
+          {
+            "id": "d1-p3-TY01",
+            "pointId": "TY01",
+            "name": "博物院主馆参观入口测试位置",
+            "located": true
+          },
+          {
+            "id": "d1-p4-MUSEUM_GATE",
+            "pointId": "MUSEUM_GATE",
+            "name": "博物院院门测试位置",
+            "located": true
+          },
+          {
+            "id": "d1-p5-LUNCH1",
+            "pointId": "LUNCH1",
+            "name": "老太原山西菜馆",
+            "located": true
+          },
+          {
+            "id": "d1-p6-TY04",
+            "pointId": "TY04",
+            "name": "迎泽公园北侧测试位置",
+            "located": true
+          },
+          {
+            "id": "d1-p7-ENDPOINT",
+            "pointId": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          }
+        ],
+        "legs": [
+          {
+            "id": "day1-leg1-part1",
+            "from": "d1-p1-ENDPOINT",
+            "to": "d1-p2-MUSEUM_GATE",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              1,
+              1
+            ],
+            "distanceMeters": [
+              69,
+              69
+            ],
+            "walkingMeters": [
+              69,
+              69
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 3,
+            "geometryComplete": true
+          },
+          {
+            "id": "day1-leg1-part2",
+            "from": "d1-p2-MUSEUM_GATE",
+            "to": "d1-p3-TY01",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              3,
+              3
+            ],
+            "distanceMeters": [
+              190,
+              190
+            ],
+            "walkingMeters": [
+              190,
+              190
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "时间和步行已纳入博物院停留/内部步行估计，不重复累加",
+            "geometryParts": 2,
+            "geometryComplete": true
+          },
+          {
+            "id": "day1-leg2-part1",
+            "from": "d1-p3-TY01",
+            "to": "d1-p4-MUSEUM_GATE",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              3,
+              3
+            ],
+            "distanceMeters": [
+              190,
+              190
+            ],
+            "walkingMeters": [
+              190,
+              190
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "时间和步行已纳入博物院停留/内部步行估计，不重复累加",
+            "geometryParts": 3,
+            "geometryComplete": true
+          },
+          {
+            "id": "day1-leg2-part2",
+            "from": "d1-p4-MUSEUM_GATE",
+            "to": "d1-p5-LUNCH1",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              11,
+              11
+            ],
+            "distanceMeters": [
+              809,
+              809
+            ],
+            "walkingMeters": [
+              809,
+              809
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 4,
+            "geometryComplete": true
+          },
+          {
+            "id": "day1-leg3-part1",
+            "from": "d1-p5-LUNCH1",
+            "to": "d1-p6-TY04",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              36,
+              36
+            ],
+            "distanceMeters": [
+              4713,
+              4713
+            ],
+            "walkingMeters": [
+              1773,
+              1773
+            ],
+            "fareCentsPerPerson": [
+              200,
+              200
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 14,
+            "geometryComplete": true
+          },
+          {
+            "id": "day1-leg4-part1",
+            "from": "d1-p6-TY04",
+            "to": "d1-p7-ENDPOINT",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              36,
+              36
+            ],
+            "distanceMeters": [
+              4643,
+              4643
+            ],
+            "walkingMeters": [
+              1703,
+              1703
+            ],
+            "fareCentsPerPerson": [
+              200,
+              200
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 15,
+            "geometryComplete": true
+          }
+        ]
+      },
+      {
+        "date": "2026-11-08",
+        "time": {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            277,
+            277
+          ],
+          "limit": 540,
+          "missing": [
+            "钟楼街等待未知",
+            "食品街等待未知",
+            "餐厅等位与旅行日营业未知"
+          ]
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "walking": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                5497,
+                7297
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                10600,
+                17400
+              ],
+              "limit": 60000,
+              "missing": [
+                "钟楼街门票未知",
+                "食品街门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          },
+          {
+            "id": "member-2",
+            "walking": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                5497,
+                7297
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                10600,
+                17400
+              ],
+              "limit": 60000,
+              "missing": [
+                "钟楼街门票未知",
+                "食品街门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          },
+          {
+            "id": "member-3",
+            "walking": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                5497,
+                7297
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            "dayCost": {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                10600,
+                17400
+              ],
+              "limit": 60000,
+              "missing": [
+                "钟楼街门票未知",
+                "食品街门票未知",
+                "其他餐饮总额未核实（逛吃不替代午餐）"
+              ]
+            }
+          }
+        ],
+        "activities": [
+          {
+            "id": "d2-p1-ENDPOINT",
+            "pointId": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          },
+          {
+            "id": "d2-p2-TY05",
+            "pointId": "TY05",
+            "name": "钟楼街测试落点",
+            "located": true
+          },
+          {
+            "id": "d2-p3-LUNCH2",
+            "pointId": "LUNCH2",
+            "name": "老太原菜馆(钟楼街店)",
+            "located": true
+          },
+          {
+            "id": "d2-p4-TY06",
+            "pointId": "TY06",
+            "name": "食品街测试落点",
+            "located": true
+          },
+          {
+            "id": "d2-p5-ENDPOINT",
+            "pointId": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          }
+        ],
+        "legs": [
+          {
+            "id": "day2-leg1-part1",
+            "from": "d2-p1-ENDPOINT",
+            "to": "d2-p2-TY05",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              54,
+              54
+            ],
+            "distanceMeters": [
+              6196,
+              6196
+            ],
+            "walkingMeters": [
+              2640,
+              2640
+            ],
+            "fareCentsPerPerson": [
+              200,
+              200
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 14,
+            "geometryComplete": true
+          },
+          {
+            "id": "day2-leg2-part1",
+            "from": "d2-p2-TY05",
+            "to": "d2-p3-LUNCH2",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              4,
+              4
+            ],
+            "distanceMeters": [
+              229,
+              229
+            ],
+            "walkingMeters": [
+              229,
+              229
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 1,
+            "geometryComplete": true
+          },
+          {
+            "id": "day2-leg3-part1",
+            "from": "d2-p3-LUNCH2",
+            "to": "d2-p4-TY06",
+            "status": "available",
+            "mode": "walk",
+            "minutes": [
+              10,
+              10
+            ],
+            "distanceMeters": [
+              708,
+              708
+            ],
+            "walkingMeters": [
+              708,
+              708
+            ],
+            "fareCentsPerPerson": [
+              0,
+              0
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 3,
+            "geometryComplete": true
+          },
+          {
+            "id": "day2-leg4-part1",
+            "from": "d2-p4-TY06",
+            "to": "d2-p5-ENDPOINT",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              49,
+              49
+            ],
+            "distanceMeters": [
+              6375,
+              6375
+            ],
+            "walkingMeters": [
+              1920,
+              1920
+            ],
+            "fareCentsPerPerson": [
+              200,
+              200
+            ],
+            "accounting": "计入当日交通",
+            "geometryParts": 18,
+            "geometryComplete": true
+          }
+        ]
+      }
+    ],
+    "usage": null,
+    "events": [
+      {
+        "stage": "planner",
+        "status": "reused-validated-visits",
+        "at": "2026-10-28T11:30:46.193Z"
+      },
+      {
+        "stage": "planner",
+        "status": "validated",
+        "at": "2026-10-28T11:30:46.193Z"
+      },
+      {
+        "stage": "day1-leg1-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:46.193Z"
+      },
+      {
+        "stage": "day1-leg1-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:46.457Z"
+      },
+      {
+        "stage": "day1-leg1-part2-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:46.457Z"
+      },
+      {
+        "stage": "day1-leg1-part2",
+        "status": "completed",
+        "at": "2026-10-28T11:30:47.528Z"
+      },
+      {
+        "stage": "day1-leg2-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:47.528Z"
+      },
+      {
+        "stage": "day1-leg2-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:48.627Z"
+      },
+      {
+        "stage": "day1-leg2-part2-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:48.627Z"
+      },
+      {
+        "stage": "day1-leg2-part2",
+        "status": "completed",
+        "at": "2026-10-28T11:30:49.730Z"
+      },
+      {
+        "stage": "day1-leg3-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:49.730Z"
+      },
+      {
+        "stage": "day1-leg3-part1-transit",
+        "status": "running",
+        "at": "2026-10-28T11:30:50.848Z"
+      },
+      {
+        "stage": "day1-leg3-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:52.015Z"
+      },
+      {
+        "stage": "day1-leg4-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:52.016Z"
+      },
+      {
+        "stage": "day1-leg4-part1-transit",
+        "status": "running",
+        "at": "2026-10-28T11:30:53.094Z"
+      },
+      {
+        "stage": "day1-leg4-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:54.263Z"
+      },
+      {
+        "stage": "day2-leg1-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:54.263Z"
+      },
+      {
+        "stage": "day2-leg1-part1-transit",
+        "status": "running",
+        "at": "2026-10-28T11:30:55.272Z"
+      },
+      {
+        "stage": "day2-leg1-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:56.481Z"
+      },
+      {
+        "stage": "day2-leg2-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:56.481Z"
+      },
+      {
+        "stage": "day2-leg2-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:57.503Z"
+      },
+      {
+        "stage": "day2-leg3-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:57.503Z"
+      },
+      {
+        "stage": "day2-leg3-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:30:58.616Z"
+      },
+      {
+        "stage": "day2-leg4-part1-walk",
+        "status": "running",
+        "at": "2026-10-28T11:30:58.616Z"
+      },
+      {
+        "stage": "day2-leg4-part1-transit",
+        "status": "running",
+        "at": "2026-10-28T11:30:59.684Z"
+      },
+      {
+        "stage": "day2-leg4-part1",
+        "status": "completed",
+        "at": "2026-10-28T11:31:00.890Z"
+      },
+      {
+        "stage": "review",
+        "status": "completed",
+        "at": "2026-10-28T11:31:00.895Z"
+      }
+    ]
+  },
+  "javascriptUrls": [
+    {
+      "length": 7,
+      "sha256": "97l24HYIWEdSIQ8PoMHzpxiGCZuyBDXtN19RPKFsOgk=",
+      "category": "empty-navigation"
+    }
+  ],
+  "responseDiagnostics": [
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "status": 200,
+      "type": "script",
+      "contentType": "application/javascript;charset=utf-8"
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/theme/v2.0/logo@2x.png",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web/init",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json",
+      "topKeys": [
+        "style",
+        "icon",
+        "tile"
+      ],
+      "codes": {}
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 1078,
+      "jsonKeys": [
+        "tile_urls",
+        "status",
+        "infocode",
+        "info"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data2.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data3.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data4.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data2.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://jsapi-service.amap.com",
+      "path": "/mapsplugincdn",
+      "status": 200,
+      "type": "script",
+      "contentType": "application/javascript;charset=utf-8"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/style/2.0.2.45/v1/pbf/1_0_s_migrate",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_1",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_4",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_9",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_64",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps/checkredirect",
+      "failed": true,
+      "type": "script"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 1049,
+      "jsonKeys": [
+        "tile_urls",
+        "status",
+        "infocode",
+        "info"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data3.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data4.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data2.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data3.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://mapplugin.amap.com",
+      "path": "/maps/checkredirectcdn",
+      "failed": true,
+      "type": "xhr"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 14,
+    "other": 11
+  },
+  "events": [
+    {
+      "at": "2026-10-28T11:30:37.841Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-28T11:30:37.973Z",
+      "action": "pickLoad"
+    },
+    {
+      "at": "2026-10-28T11:31:05.888Z",
+      "action": "pick-tool-2"
+    },
+    {
+      "at": "2026-10-28T11:31:07.264Z",
+      "action": "pick-tool-2"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[omitted] https://jsapi-service.amap.com/mapsplugincdn?[omitted]'. Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://webapi.amap.com/maps/checkredirect?[omitted]' violates the following Content Security Policy directive: \"script-src-elem 'self' https://webapi.amap.com/maps?[omitted] https://jsapi-service.amap.com/mapsplugincdn?[omitted]\". The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Connecting to 'https://mapplugin.amap.com/maps/checkredirectcdn?[omitted]' violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com/?[omitted] https://*.autonavi.com/?[omitted] https://jsapi.amap.com/web/init?[omitted] https://o4.amap.com/style/?[omitted] https://jsapi.amap.com/web_map/get_tile?[omitted] https://jsapi-data1.amap.com/tile/?[omitted] https://jsapi-data2.amap.com/tile/?[omitted] https://jsapi-data3.amap.com/tile/?[omitted] https://jsapi-data4.amap.com/tile/?[omitted] https://jsapi-data5.amap.com/tile/?[omitted]\". The action has been blocked."
+    }
+  ],
+  "networkDiagnostics": [],
+  "pageDiagnostics": [],
+  "frameDiagnostics": [
+    [
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "inline",
+        "path": "",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": 2,
+          "column": 258
+        },
+        "at": "2026-10-28T11:30:38.504Z"
+      },
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "https://webapi.amap.com",
+          "path": "/maps",
+          "line": 1,
+          "column": 642426
+        },
+        "at": "2026-10-28T11:30:39.105Z"
+      },
+      {
+        "kind": "resource-error",
+        "directive": "unknown",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "script",
+        "status": null,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": null,
+          "column": null
+        },
+        "at": "2026-10-28T11:30:39.105Z"
+      },
+      {
+        "kind": "csp",
+        "directive": "connect-src",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "connect",
+        "status": 200,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": 0,
+          "column": 0
+        },
+        "at": "2026-10-28T11:30:39.380Z"
+      }
+    ],
+    []
+  ],
+  "workerCount": 2,
+  "frameRenderMetadata": [
+    {
+      "contexts": [
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        }
+      ],
+      "canvas": [
+        {
+          "width": 544,
+          "height": 680,
+          "rect": {
+            "width": 272,
+            "height": 340
+          },
+          "display": "inline"
+        }
+      ],
+      "map": {
+        "width": 1278,
+        "height": 340
+      }
+    },
+    {
+      "contexts": [],
+      "canvas": [],
+      "map": null
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false
+}

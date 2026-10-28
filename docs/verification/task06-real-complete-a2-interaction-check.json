@@ -1,0 +1,29 @@
+{
+  "shots": [
+    "docs/verification/task06-real-complete-a2-day1-map.png",
+    "docs/verification/task06-real-complete-a2-day2-map.png"
+  ],
+  "overflow": false,
+  "replay": "历史回放 · 当前服务内的真实草案与道路",
+  "noAutomaticSDK": true,
+  "before": {
+    "model": 6,
+    "location": 11,
+    "route": 36,
+    "map": 29
+  },
+  "afterRefresh": {
+    "model": 6,
+    "location": 11,
+    "route": 36,
+    "map": 29
+  },
+  "afterExplicitMapReload": {
+    "model": 6,
+    "location": 11,
+    "route": 36,
+    "map": 30
+  },
+  "highlighted": "3",
+  "focused": "d1-p3-TY01"
+}
