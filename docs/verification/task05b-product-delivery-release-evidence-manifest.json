@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-28T08:26:26.971Z",
+  "scope": "Product validation media and diagnostic snapshots only; no chat export",
+  "manifest": [
+    {
+      "name": "task05b-product-delivery-release-recording.json",
+      "sha256": "20f898feea9522544a87ff37a9f5a341f24233af2eb73c3b421249c9028139e4",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-delivery-release-report.json",
+      "sha256": "eb859181758d86dee7eb381edd3ecd3a0135c17a66bb507bd34178eb9a15f4a5",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    }
+  ]
+}

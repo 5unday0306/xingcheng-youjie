@@ -22,7 +22,7 @@ export function createPlanPanel({getRequest,validate}) {
       state.textContent=capabilities.canGenerate?'此入口用当前日期与限制测试交接；候选按顺序分配，不做偏好优化。不会查询道路或加载地图。':'本轮未授权真实调用。可展开候选资料；体验草案交接请另启动离线测试服务（端口4174）。';
       button.disabled=!capabilities.canGenerate;button.textContent=capabilities.mode==='real-preparation'?'运行一次真实模型草案':capabilities.canGenerate?'运行离线替身测试':'真实生成未启用';
       if(capabilities.mapPicking){button.disabled=!capabilities.canGenerate;button.hidden=!capabilities.productFlow;$('generationTitle').textContent=capabilities.productFlow?'真实地图、草案与程序核查':'本轮：地图选点与首条道路';}
-      if(capabilities.mode==='real-preparation'){$('generationMode').textContent='真实接入准备 · 默认不调用';state.textContent=capabilities.productFlow?'加载地图，分别确认测试落点与交通方式，查询首段后可生成真实草案。未知资料保留缺口。':capabilities.mapPicking?'本轮仅验证两个用户测试落点与首条道路，地点检索和模型均关闭。':'先完成入口和单路段验收；有配置不代表有本轮授权。';}
+      if(capabilities.mode==='real-preparation'){$('generationMode').textContent=capabilities.productFlow?'真实模型与高德道路 · 手动触发':'真实接入准备 · 默认不调用';state.textContent=capabilities.productFlow?'加载地图，分别确认测试落点与交通方式，查询首段后可生成真实草案。未知资料保留缺口。':capabilities.mapPicking?'本轮仅验证两个用户测试落点与首条道路，地点检索和模型均关闭。':'先完成入口和单路段验收；有配置不代表有本轮授权。';}
       if(capabilities.productFlow){const r=await fetch('/api/live/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(getRequest())});if(r.ok){const old=await r.json();if(old.result){result=old.result;paint();state.textContent='历史回放：当前服务内真实结果，未重新调用模型或道路；地图需手动加载。';}}}
       $('candidateList').replaceChildren(...data.candidates.map(c=>{
         const item=el('li');item.append(el('strong',`${c.id} ${c.name}`),el('p',c.reference.value),el('p',`停留估计${c.stayMinutes.value.join('～')}分钟；内部步行估计${c.internalMeters.value.map(v=>v/1000).join('～')}公里。`),el('p','当日开放、预约、票价与等待：待核实。'));
@@ -46,7 +46,7 @@ export function createPlanPanel({getRequest,validate}) {
   }
   button.onclick=async()=>{
     if(busy||!capabilities?.canGenerate)return;if(!validate())return;
-    const startedRevision=revision,request=getRequest();runController=new AbortController();busy=true;button.disabled=true;result=null;paint();state.textContent=capabilities.mode==='real-preparation'?'已提交真实请求，受次数、超时与费用预留限制，无自动重试。':'本地测试运行中，没有发起真实调用……';
+    const startedRevision=revision,request=getRequest();runController=new AbortController();busy=true;button.disabled=true;result=null;paint();state.textContent=capabilities.mode==='real-preparation'?'已提交真实请求，受技术次数与超时保护；预留仅记账，无自动重试。':'本地测试运行中，没有发起真实调用……';
     if(livePanel)request.transportMode=livePanel.mode();
     try {
       const response=await fetch('/api/plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request),signal:AbortSignal.any([AbortSignal.timeout(185000),runController.signal])});

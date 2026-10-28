@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-28",
+  "scope": "Final release evidence/docs and two display/archive-only code changes; core d31fb58 already audited",
+  "textFiles": 12,
+  "mediaFiles": 11,
+  "findings": [
+    {
+      "scope": "release-staged",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 857,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "vendor logo asset name, not email"
+    },
+    {
+      "scope": "release-staged",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 1201,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "vendor logo asset name, not email"
+    }
+  ],
+  "pending": 0,
+  "limits": [
+    "heuristic scan only; no absolute guarantee",
+    "no .env/private files read",
+    "actual desktop/mobile images visually checked; videos decoded and sampled, not every frame",
+    "core checkpoint audit covers d31fb58; earlier retained history unchanged"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "checkedAt": "2026-10-28T08:23:17.605Z",
+  "testedCoreCommit": "d31fb58ffc6a73639962e0b83d03827d6b2db6ea",
+  "minimum05BFlowVerified": true,
+  "fullTripFeasibilityVerified": false,
+  "programConclusion": "insufficient",
+  "callsCumulative": {
+    "model": 4,
+    "location": 5,
+    "route": 16,
+    "map": 22
+  },
+  "callsSinceContinuousAuthorization": {
+    "model": 4,
+    "location": 0,
+    "route": 16,
+    "map": 19
+  },
+  "reservedCents": 171,
+  "actualCharge": "Not verified with supplier bills; reservation is not actual charge",
+  "confirmedUserTestPoints": 4,
+  "firstRoute": {
+    "mode": "transit",
+    "minutes": [
+      43,
+      43
+    ],
+    "distanceMeters": [
+      4980,
+      4980
+    ],
+    "geometryComplete": true,
+    "geometryParts": 13
+  },
+  "dailyAvailableLegs": [
+    {
+      "id": "day1-leg4",
+      "from": "TY04",
+      "to": "ENDPOINT",
+      "status": "available",
+      "mode": "transit",
+      "minutes": [
+        43,
+        43
+      ],
+      "geometryParts": 14,
+      "geometryComplete": true
+    },
+    {
+      "id": "day2-leg1",
+      "from": "ENDPOINT",
+      "to": "TY05",
+      "status": "available",
+      "mode": "transit",
+      "minutes": [
+        29,
+        29
+      ],
+      "geometryParts": 15,
+      "geometryComplete": true
+    },
+    {
+      "id": "day2-leg4",
+      "from": "TY06",
+      "to": "ENDPOINT",
+      "status": "available",
+      "mode": "transit",
+      "minutes": [
+        68,
+        68
+      ],
+      "geometryParts": 16,
+      "geometryComplete": true
+    }
+  ],
+  "missingLegs": [
+    {
+      "id": "day1-leg1",
+      "from": "ENDPOINT",
+      "to": "TY01",
+      "status": "missing",
+      "minutes": null,
+      "reason": "入口未知，未查询道路"
+    },
+    {
+      "id": "day1-leg2",
+      "from": "TY01",
+      "to": "MEAL_PENDING",
+      "status": "missing",
+      "minutes": null,
+      "reason": "午餐落点未知，不跨缺口连线"
+    },
+    {
+      "id": "day1-leg3",
+      "from": "MEAL_PENDING",
+      "to": "TY04",
+      "status": "missing",
+      "minutes": null,
+      "reason": "午餐落点未知，不跨缺口连线"
+    },
+    {
+      "id": "day2-leg2",
+      "from": "TY05",
+      "to": "MEAL_PENDING",
+      "status": "missing",
+      "minutes": null,
+      "reason": "午餐落点未知，不跨缺口连线"
+    },
+    {
+      "id": "day2-leg3",
+      "from": "MEAL_PENDING",
+      "to": "TY06",
+      "status": "missing",
+      "minutes": null,
+      "reason": "午餐落点未知，不跨缺口连线"
+    }
+  ],
+  "realInteraction": {
+    "shots": [
+      "docs/verification/task05b-product-delivery-release-day1-map.png",
+      "docs/verification/task05b-product-delivery-release-day2-map.png"
+    ],
+    "overflow": false,
+    "replay": "历史回放 · 当前服务内的真实草案与道路",
+    "noAutomaticSDK": true,
+    "before": {
+      "model": 4,
+      "location": 5,
+      "route": 16,
+      "map": 21
+    },
+    "afterRefresh": {
+      "model": 4,
+      "location": 5,
+      "route": 16,
+      "map": 21
+    },
+    "afterExplicitMapReload": {
+      "model": 4,
+      "location": 5,
+      "route": 16,
+      "map": 22
+    },
+    "highlighted": "4",
+    "focused": "TY04"
+  },
+  "manualVisualReview": {
+    "basemapAndGeometryDesktop": true,
+    "mobileBasemap390x844": true,
+    "programReviewDesktopAndMobile": true,
+    "videoDecoded": true,
+    "videoSampledNotEveryFrame": true,
+    "recordingSeconds": 44.61
+  },
+  "offlineValidation": {
+    "node": 132,
+    "productBrowser": 16,
+    "originalUIBrowser": 53,
+    "policyLifecycleBrowser": 59
+  },
+  "remaining": [
+    "Meal location/time/price unknown; no crossing gaps",
+    "Museum entrance and meeting point relationship unknown",
+    "Test labels/coordinates not official entrance verification",
+    "Future opening/reservation/price and road/internal walking overlap unknown",
+    "SDK void(0) and maps/checkredirect remain CSP-blocked; their full compatibility impact is not proved, no new permissions added",
+    "Clean-clone ten-minute reproduction not verified",
+    "Raw full development chat not exported; index is not a substitute",
+    "Single planning model; real multi-Agent and locked rearrangement not implemented"
+  ],
+  "captureTemplateNote": "The legacy full05BComplete:false in capture reports is not an acceptance calculation; use minimum05BFlowVerified and fullTripFeasibilityVerified here."
+}
