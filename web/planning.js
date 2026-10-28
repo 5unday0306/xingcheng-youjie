@@ -8,6 +8,7 @@ function metric(title,result,unit,scale=1) {
   const format=value=>`${rangeText(value,{scale,digits:scale===100||scale===1000?2:0})}${unit}`;
   const box=el('div',undefined,'planMetric');
   box.append(el('strong',`${title}：${labels[result.status]}`),el('p',result.value?`估计合计 ${format(result.value)}`:`总量未知；已知部分 ${format(result.knownSubtotal)}，不能当作总量`),el('p',`上限 ${(result.limit/scale).toFixed(scale===100?2:scale===1000?2:0)}${unit}`));
+  if(result.knownSubtotal[1]>result.limit){box.append(el('p',result.knownSubtotal[0]>result.limit?'按当前数值下限已超出上限，不能通过此项核查。':'当前估计上界可能超出上限；请核实缺口或调整游览/接驳后重新核查，未自动放宽条件。','warning'));}
   if(result.missing.length){const d=el('details');d.append(el('summary',`查看${result.missing.length}项缺口`));const list=el('ul');result.missing.forEach(s=>list.append(el('li',s)));d.append(list);box.append(d);}
   box.dataset.status=result.status;return box;
 }
@@ -43,9 +44,9 @@ export function createPlanPanel({getRequest,validate}) {
     d.timeline.forEach(item=>{const li=el('li');if(item.candidateId){li.dataset.activityRowId=item.candidateId;li.tabIndex=-1;}if(result.mode==='real'&&item.candidateId){const focus=el('button','在地图定位此活动');focus.type='button';focus.dataset.activityId=item.candidateId;focus.onclick=()=>{if(!livePanel?.focusActivity(item.candidateId))state.textContent='此活动没有已确认落点，不在地图补造。';};li.append(focus);}li.append(el('strong',item.name),el('p',item.durationMinutes?`${result.mode==='real'?'安排':'测试'}停留 ${item.durationMinutes}分钟（估计）；到离时间未知`:item.type==='connection'?'出发、入口接驳或返回；到离时间未知':'用餐门店、时间、费用待确定'),el('p',item.reason,'hint'));timeline.append(li);});root.append(timeline,metric('当天时间',d.time,'分钟'));
     d.messages.forEach(m=>root.append(el('p',m,'hint')));
     const members=el('div',undefined,'planMembers');
-    d.members.forEach(m=>{const box=el('section');box.append(el('h4',m.name),metric('当天步行',m.walking,'公里',1000),metric('个人全程费用',result.review.members.find(p=>p.id===m.id).budget,'元',100));members.append(box);});root.append(members);
+    d.members.forEach(m=>{const box=el('section');box.append(el('h4',m.name),metric('当天步行',capabilities?.case06?{...m.walking,missing:m.walking.missing.map(s=>s==='用餐落点及内部步行未知'?'餐厅内部步行尚未核实（所选餐厅位置已知）':s)}:m.walking,'公里',1000),metric('个人全程费用',result.review.members.find(p=>p.id===m.id).budget,'元',100));members.append(box);});root.append(members);
     const road=el('details');road.open=true;road.append(el('summary',result.mode==='real'?'道路逐段状态 · 缺口不连线':'道路与地图：未查询、未加载'));const list=el('ul');d.legs.forEach(l=>list.append(el('li',`${l.fromName||l.from} → ${l.toName||l.to}：${l.reason||(result.mode==='real'?`高德${l.mode==='walk'?'步行':'公交地铁'}预计${rangeText(l.minutes)}分钟；距离${rangeText(l.distanceMeters)}米；${l.accounting||''}`:'仅离线替身值，非真实道路')}`)));road.append(list);root.append(road);
-    const events=el('details');events.append(el('summary','查看实际本地阶段记录（不是Agent看板）'));result.events.forEach(e=>events.append(el('p',`${e.stage} · ${e.status}`)));events.append(el('p',result.mode==='real'?'真实单次模型与已成功路段；费用预留不等于供应商实扣。':'真实模型/地点/道路/地图调用均为0。替身调用仅用于测试。'));if(result.callRecord)events.append(el('pre',JSON.stringify(result.callRecord,null,2)));root.append(events);
+    const events=el('details');events.append(el('summary','查看实际本地阶段记录（不是Agent看板）'));result.events.forEach(e=>events.append(el('p',`${e.stage} · ${e.status}`)));events.append(el('p',result.mode==='real'?(result.draftProvenance?'本次复用已生成的真实游览草案，未再次请求模型；道路按本次实际查询记录。':'真实单次模型与已成功路段；费用预留不等于供应商实扣。'):'真实模型/地点/道路/地图调用均为0。替身调用仅用于测试。'));if(result.callRecord)events.append(el('pre',JSON.stringify(result.callRecord,null,2)));root.append(events);
   }
   button.onclick=async()=>{
     if(busy||!capabilities?.canGenerate)return;if(!validate())return;

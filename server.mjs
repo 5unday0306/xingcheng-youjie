@@ -83,7 +83,9 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     let case06=null;if(task06){const research=JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')),old=JSON.parse(await readFile(new URL('./docs/private/05b-picks.json',import.meta.url),'utf8').catch(e=>{if(e.code==='ENOENT')return '{"points":{}}';throw e;}));case06=case06Research(research,old.points);}
     let initialPicks=null;try{initialPicks=JSON.parse(await readFile(new URL(`./docs/private/${picksName}.json`,import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
     const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL(`./docs/private/${picksName}.json`,import.meta.url),tmp=new URL(`./docs/private/${picksName}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    let initialCase06Draft=null;if(task06)try{initialCase06Draft=JSON.parse(await readFile(new URL('./docs/private/06-draft.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+    const saveCase06Draft=async d=>{const path=new URL('./docs/private/06-draft.json',import.meta.url),tmp=new URL('./docs/private/06-draft.tmp',import.meta.url);await writeFile(tmp,JSON.stringify(d),{mode:0o600});await rename(tmp,path);};
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const port=realPrep?4177:testMode?4174:4173;

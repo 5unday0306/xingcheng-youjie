@@ -2,8 +2,18 @@
   "policy": "development-05b",
   "flow": "product-05b",
   "budgetCents": null,
-  "caps": {"model": 8, "location": 40, "route": 160, "map": 32},
-  "reserveCents": {"model": 10, "location": 1, "route": 1, "map": 5},
+  "caps": {
+    "model": 8,
+    "location": 40,
+    "route": 160,
+    "map": 64
+  },
+  "reserveCents": {
+    "model": 10,
+    "location": 1,
+    "route": 1,
+    "map": 5
+  },
   "sessionHours": 24,
-  "reference": "2026-10-27用户明确允许当前05B持续高德与DeepSeek联调，取消旧费用性限制；不充值购买，安全边界保持"
+  "reference": "2026-10-27用户明确允许当前05B持续高德与DeepSeek联调，取消旧费用性限制；不充值购买，安全边界保持；2026-10-28任务06沿用持续联调，SDK累计技术防循环上限64，保持显式加载、并发1和无自动重载，不作为费用闸门"
 }

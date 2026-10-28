@@ -21,7 +21,7 @@ test('持续05B授权取消费用上限但保留次数保护及旧停止历史',
  await ledger.amend(next,{approved:true,reference:'SYNTHETIC standing authorization'});const active=createLedger(p,next);
  await active.reserve('map');assert.equal((await active.summary()).counts.map,2);assert.equal((await active.summary()).reservedCents,10);
  const raw=JSON.parse(await readFile(p,'utf8'));assert.equal(raw.authorizations[0].previousStop.code,'SDK_FAILED');
- assert.throws(()=>validateApproval({...next,caps:{...next.caps,map:33}}));
+ assert.equal(validateApproval({...next,caps:{...next.caps,map:64}}).caps.map,64);assert.throws(()=>validateApproval({...next,caps:{...next.caps,map:65}}));
  }finally{await rm(d,{recursive:true,force:true});}
 });
 test('产品流程合成端到端：四点确认、首段、模型两天与更改失效',()=>setup(async({a,ledger:oldLedger,dir,send,calls})=>{

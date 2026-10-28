@@ -1,0 +1,3 @@
+import {writeFile} from 'node:fs/promises';import {defaultDraft,toRequest} from '../web/core.js';import {recoverCase06Draft} from '../lib/case06-draft.mjs';
+const request=toRequest(defaultDraft()),response=await fetch('http://127.0.0.1:4177/api/live/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)}),body=await response.json();
+if(!response.ok)throw Error('真实草案读取失败，未写入');const draft=recoverCase06Draft(body.result,request);await writeFile('docs/private/06-draft.json',JSON.stringify(draft),{mode:0o600});console.log({saved:true,kind:draft.kind,originGeneratedAt:draft.originGeneratedAt,days:draft.plan.days.map(d=>d.date),rawRoadGeometrySaved:false,newBusinessCalls:0});
