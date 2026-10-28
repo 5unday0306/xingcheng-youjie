@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-28T10:41:18.075124+00:00",
+  "baseRemote": "07db2186c37430916347ebb43ea2a98fccce5616",
+  "unpushedCommits": [
+    "e3198e1e0bb586b30c07dd14b18e937e10b4f5b6"
+  ],
+  "stagedFiles": [
+    "docs/iterations/06-每日路线与核查.md",
+    "docs/prompts/任务06-每日路线核查索引.md",
+    "docs/verification/task06-choices-browser.json",
+    "docs/verification/task06-choices-node.tap",
+    "docs/verification/task06-choices-offline-desktop.png",
+    "docs/verification/task06-choices-offline-mobile.png",
+    "docs/verification/task06-choices-validation.json",
+    "docs/开发进度.md",
+    "lib/case06.mjs",
+    "lib/live-planning.mjs",
+    "lib/map-picking.mjs",
+    "server.mjs",
+    "tests/browser06-choices.mjs",
+    "tests/case06.test.mjs",
+    "web/case06-controls.js",
+    "web/isolated-map-container.js",
+    "web/map-container.js",
+    "web/map-frame-protocol.js",
+    "web/map-view.js",
+    "web/pick-panel.js",
+    "web/planning.js",
+    "web/range-text.js",
+    "web/styles.css"
+  ],
+  "textSnapshotsChecked": 26,
+  "mediaReviewed": [
+    "docs/verification/task06-choices-offline-desktop.png",
+    "docs/verification/task06-choices-offline-mobile.png"
+  ],
+  "risks": [],
+  "deployment": "仓库未发现.github/Vercel/Netlify部署配置；外部Webhook未核实",
+  "limits": "启发式文本扫描加逐项字段检查与两张截图视觉检查；未读取.env值，不能证明绝对无泄漏；原有远程历史本轮未重新全量扫描。私有授权/账本/落点/聊天不提交。"
+}

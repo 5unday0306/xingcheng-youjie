@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-28T10:39:54.155101+00:00",
+  "node": {
+    "tests": 137,
+    "pass": 137,
+    "fail": 0,
+    "report": "task06-choices-node.tap"
+  },
+  "case06Browser": {
+    "assertions": 14,
+    "fail": 0,
+    "report": "task06-choices-browser.json",
+    "realCalls": 0
+  },
+  "productRegression": {
+    "assertions": 16,
+    "fail": 0,
+    "command": "node tests/browser05b-product.mjs",
+    "source": "本轮真实运行stdout，旧轮次报告写出后恢复原文，未作为本轮证据沿用",
+    "realCalls": 0
+  },
+  "notRun": [
+    "53项旧输入UI专项",
+    "任务06真实地图、道路和两天核查"
+  ],
+  "newRealCalls": {
+    "location": 6,
+    "model": 0,
+    "route": 0,
+    "map": 0
+  },
+  "status": "awaiting-human-location-and-lunch-choices",
+  "limitations": [
+    "不是任务06完整交付",
+    "截图为替身SDK",
+    "风险预留非实扣"
+  ],
+  "reportFormatting": "TAP仅规范化换行与行尾空格，测试内容和结果未改"
+}

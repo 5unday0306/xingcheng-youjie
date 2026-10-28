@@ -25,6 +25,7 @@ const endpoint=createMapEndpoint({target:parent,origin:PARENT_ORIGIN,runId,role:
  if(closed)return;
  if(m.type==='INIT'&&!initialized){initialized=true;status.textContent='隔离容器已就绪；真实SDK未加载';endpoint.send('READY');}
  if(m.type==='LOAD')load();
+ if(m.type==='CAMERA'&&mapReady&&!closed)map.centerOn(m.payload.center,m.payload.zoom);
  if(m.type==='VIEW'&&mapReady&&!closed){if(m.payload.action==='zoomIn')map.zoomIn();if(m.payload.action==='zoomOut')map.zoomOut();if(m.payload.action==='fit')map.fit();}
  if(m.type==='PICK'&&mapReady)map.setPicking(m.payload.enabled);
  if(m.type==='DISPLAY'&&mapReady){const p=m.payload;map.showDay({activities:p.points.map(n=>({id:n.id,name:n.label,location:n.position,sequence:n.sequence,userSelected:true,routePointAccepted:!n.pending,editable:n.editable===true})),legs:p.segments.map((s,i)=>({id:'shown-'+i,status:'available',source:'高德Web服务响应',geometryComplete:true,geometry:[s]}))},{fit:false});if(p.selectedId)map.focusActivity(p.selectedId);}

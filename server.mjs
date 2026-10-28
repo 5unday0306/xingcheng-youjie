@@ -1,3 +1,4 @@
+import {case06Research} from './lib/case06.mjs';
 import http from 'node:http';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
@@ -10,7 +11,7 @@ import {offlinePlanner} from './lib/offline-fixture.mjs';
 import {localCsp,realMapCsp,isolatedWorkbenchCsp} from './lib/content-security-policy.mjs';
 import {createMapContainerServer} from './lib/map-container-server.mjs';
 import {createFrameMapSession} from './lib/frame-map-session.mjs';
-const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
+const files = new Map([['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/case06-controls.js',['case06-controls.js','text/javascript']],['/range-text.js',['range-text.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
 function json(res,status,data) {res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data));}
 function readBody(req) {
   return new Promise((resolve,reject)=>{
@@ -70,15 +71,19 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const testMode=process.argv.includes('--offline-test'),realPrep=process.argv.includes('--real-preparation');
   if(testMode&&realPrep)throw Error('模式不能同时启用');
+  const task06=process.argv.includes('--case06');
+  if(task06&&!realPrep)throw Error('任务06需使用正式受控联调模式');
   let live=null;
   if(realPrep){
     const {credentials,status}=await loadCredentials(new URL('./.env',import.meta.url));
     let approval=null;try{approval=await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url));}catch(e){console.log(e.message);}
     const historyApproval=approval||await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url),{allowExpired:true}).catch(()=>null);
     const ledger=historyApproval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),historyApproval):null;
-    let initialPicks=null;try{initialPicks=JSON.parse(await readFile(new URL('./docs/private/05b-picks.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
-    const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL('./docs/private/05b-picks.json',import.meta.url),tmp=new URL('./docs/private/05b-picks.tmp',import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    const picksName=task06?'06-picks':'05b-picks';
+    let case06=null;if(task06){const research=JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')),old=JSON.parse(await readFile(new URL('./docs/private/05b-picks.json',import.meta.url),'utf8').catch(e=>{if(e.code==='ENOENT')return '{"points":{}}';throw e;}));case06=case06Research(research,old.points);}
+    let initialPicks=null;try{initialPicks=JSON.parse(await readFile(new URL(`./docs/private/${picksName}.json`,import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
+    const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL(`./docs/private/${picksName}.json`,import.meta.url),tmp=new URL(`./docs/private/${picksName}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const port=realPrep?4177:testMode?4174:4173;
