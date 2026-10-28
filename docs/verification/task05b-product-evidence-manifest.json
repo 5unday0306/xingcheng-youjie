@@ -1,0 +1,192 @@
+{
+  "at": "2026-10-28T05:34:24.656Z",
+  "scope": "Product validation media and diagnostic snapshots only; no chat export",
+  "manifest": [
+    {
+      "name": "task05b-product-base-real-recording.json",
+      "sha256": "61eb397176bcff03aa295fe95cb5f31f7f1db60694064c7f83a05245d9ef92a8",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-base-real-report.json",
+      "sha256": "8c6755b71d9dc008e3eed9657c964bf9248b12b258303de88c32dfe65de65801",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-canvas-diagnostic-real-recording.json",
+      "sha256": "79636a9c702805ad06a163dcf612032865f87b9f5c5f0364c850bebc83d1e683",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-canvas-diagnostic-real-report.json",
+      "sha256": "91ece54ef08a0633defb2b3e4b2555811b9ef7eda2ae29099d9339733603291f",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-delivery-final-recording.json",
+      "sha256": "036a3ca3f9f896683338ca8269d29f7643ddd9c1bcb35b446c8e02ea2dda0366",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-delivery-final-report.json",
+      "sha256": "574aec2bd912e51f40a5629ffc84889fbaba2e0b096ef37dee58edcfcabb82e0",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-delivery-real-operation.webm",
+      "sha256": "2340ba87543540f6c67941f7ed664a55806f3f12f8b47ffc901dfc652dee6b7f",
+      "privateCopyHashVerified": true,
+      "kind": "unreviewed-movie-local-only"
+    },
+    {
+      "name": "task05b-product-delivery-real-recording.json",
+      "sha256": "c5acfb11b3b86e3e05f2f89823655a56c6a8734bcf4b827857187b2578f44530",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-delivery-real-report.json",
+      "sha256": "b4560b8937e97ad0ef82b0852b38266188dd62c9742133b9fc7e68aabd59b1ae",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-init-fixed-real-recording.json",
+      "sha256": "d47122764eb797cf8432f7efbb13d8064941277a531747989ac269c9adf2ad8f",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-init-fixed-real-report.json",
+      "sha256": "69455ae99b9c3b3933044ee6a8d5f26a0dce739820f2cf6c05d39737a6f68a52",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-operable-real-recording.json",
+      "sha256": "5e4bb2b5c3fd5edcf7945805d2101bfc43ac683689a000d858494ea0172ad81c",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-operable-real-report.json",
+      "sha256": "4b04402af35c825befbae137228ccfa3e2a4c40cdb7815112ca928bbbc1ea2d8",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-render-diagnostic-real-recording.json",
+      "sha256": "ba0fc51f6b06c3b4a5a9d5c9a925b68fce1884752efa191006af7ad80c5518d2",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-render-diagnostic-real-report.json",
+      "sha256": "ff440a769210efb0c93c70f0799b1b58ea0092b1cf397c492cd296788b0e9e07",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-resume-real-recording.json",
+      "sha256": "2dc655164459c295d0807a41a8811925234de41376c3c3251f4261c4c833487a",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-resume-real-report.json",
+      "sha256": "99df7b283f446412ee7732cdf3231be0e8dba0ea5aa9da0c2544a29fd5f3e8ce",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-resume-visible-real-recording.json",
+      "sha256": "1f1cf8bd09a7eb67caeb541d3a33e7e98622d9adc0970ee32a2fe21fd3f839d9",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-resume-visible-real-report.json",
+      "sha256": "2f8dade23d41f6adfd66b057cf0eda0840be7ec26995b761715e5a25db777af3",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-tile-target-real-recording.json",
+      "sha256": "97ca859869d70f12caadc1bd68c58fa896ad8c41eb4e288fb6c87c35194bc0c0",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-tile-target-real-report.json",
+      "sha256": "a4b162c8e31434ee7b4d0e67d64d94073f15a915197836a1341f6a9d921ca50b",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-tiles-fixed-real-recording.json",
+      "sha256": "5259f80cefa81f0c60196690bf0f53ff1617db18c6fbd9c930c62b1f91a8ba8b",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-tiles-fixed-real-report.json",
+      "sha256": "07496f159f95f4cc7f6b108d9e3a5a6e7a1acf7457f3f4ee0777bd6871050f5c",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-two-days-real-recording.json",
+      "sha256": "5a32ae051d28fc27b87715bd4982ad0f99fc53e4ede8bbbb76007db4ea224178",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-two-days-real-report.json",
+      "sha256": "e37c8f7b07e1721e63034df192770846307ea863cc672c83217a53533685c816",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-view-diagnostic-real-recording.json",
+      "sha256": "a6b4dec4f4c134d0b73889bee5463760092e90a8317b0397c69f434dcb5844a6",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-view-diagnostic-real-report.json",
+      "sha256": "86efbb5bdfd1241e5a1c158f357d4327309f233d35042fa552ed3ae6cf3d2711",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-visible-real-recording.json",
+      "sha256": "ddeef0baf46df5a19c4165391b4ba70404cdbd14a41f9598fa264a17d4930be3",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-visible-real-report.json",
+      "sha256": "1d02053ea3608593f33068e70e449b781fd6f3999276de4ad01fb0a796249892",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-working-real-recording.json",
+      "sha256": "37c8f3459c459aacde90e2b7ecda408fb972633d75571ede4b50d4ead8c0d662",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    },
+    {
+      "name": "task05b-product-working-real-report.json",
+      "sha256": "e77370df48fb013e716fc12f418b5ca86dca459915c36921351c49d713e36610",
+      "privateCopyHashVerified": true,
+      "kind": "original-json"
+    }
+  ]
+}

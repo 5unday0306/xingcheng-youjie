@@ -16,8 +16,8 @@ async function load(){if(!SDK_ENABLED||!initialized||loading||closed)return;load
   const [{loadAMapSdk},{createMapView}]=await Promise.all([import('/amap-loader.js'),import('/map-view.js')]);check();
   const AMap=await loadAMapSdk({jsKey:config.jsKey,serviceHost:config.serviceHost,signal:abort.signal});check();
   await post('/frame/event',{runId,event:'script-loaded'});check();mapBox.hidden=false;
-  map=createMapView({AMap,container:mapBox,initialRegion:[112.55,37.87]});await map.whenReady();check();
-  await post('/frame/event',{runId,event:'map-ready'});check();mapReady=true;status.textContent='底图完成事件已取得，仍需人工核对可见性；未选点、未查路';document.getElementById('containerBoundary').textContent='当前只验收底图缩放与拖动，不代表行程可行';endpoint.send('MAP_READY');
+  map=createMapView({AMap,container:mapBox,initialRegion:[112.55,37.87],onPick:position=>endpoint.send('PICK_LOCATION',{position}),onDrag:(id,position)=>endpoint.send('MOVE_POINT',{id,position}),onSelect:(id,{origin}={})=>{if(origin==='map')endpoint.send('SELECT',{id});}});await map.whenReady();check();
+  await post('/frame/event',{runId,event:'map-ready'});check();mapReady=true;status.textContent='地图已就绪；测试落点需分别确认，不代表官方入口核验';document.getElementById('containerBoundary').textContent='只绘制真实返回的路段，未知路段保持缺口，整体可行性由程序核查并提示';endpoint.send('MAP_READY');
  }catch{dispose();try{await post('/frame/event',{runId,event:'sdk-failed'});}catch{}endpoint.send('ERROR',{code:'SDK_FAILED'});}
 }
 if(parent===window)throw Error('地图容器不支持直接打开');
@@ -26,5 +26,8 @@ const endpoint=createMapEndpoint({target:parent,origin:PARENT_ORIGIN,runId,role:
  if(m.type==='INIT'&&!initialized){initialized=true;status.textContent='隔离容器已就绪；真实SDK未加载';endpoint.send('READY');}
  if(m.type==='LOAD')load();
  if(m.type==='VIEW'&&mapReady&&!closed){if(m.payload.action==='zoomIn')map.zoomIn();if(m.payload.action==='zoomOut')map.zoomOut();if(m.payload.action==='fit')map.fit();}
+ if(m.type==='PICK'&&mapReady)map.setPicking(m.payload.enabled);
+ if(m.type==='DISPLAY'&&mapReady){const p=m.payload;map.showDay({activities:p.points.map(n=>({id:n.id,name:n.label,location:n.position,sequence:n.sequence,userSelected:true,routePointAccepted:!n.pending,editable:n.editable===true})),legs:p.segments.map((s,i)=>({id:'shown-'+i,status:'available',source:'高德Web服务响应',geometryComplete:true,geometry:[s]}))},{fit:false});if(p.selectedId)map.focusActivity(p.selectedId);}
+ if(m.type==='FOCUS'&&mapReady)map.focusActivity(m.payload.id);
  if(m.type==='DESTROY'){dispose();status.textContent='容器已销毁';endpoint.send('CLOSED');endpoint.dispose();}
 }});

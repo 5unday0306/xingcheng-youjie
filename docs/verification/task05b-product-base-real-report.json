@@ -1,0 +1,368 @@
+{
+  "executedAt": "2026-10-27T11:41:42.778Z",
+  "mode": "真实SDK/用户点选会话记录（是否通过按各字段）",
+  "operator": "SDK加载由授权助手触发；测试落点与查路由用户操作",
+  "mapReady": true,
+  "visibleBasemap": "待人工复核截图，加载事件不能单独证明可见",
+  "userPointSelectionPerformed": false,
+  "roadExecuted": false,
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": null,
+      "TY04": null
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 4
+  },
+  "reservedCents": 25,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": null,
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T11:46:53.717Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T11:46:53.732Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T11:47:08.758Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "ad97da1e-db71-4ad1-b93f-c64b3bf78083",
+      "at": "2026-10-27T11:40:46.277Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:40:46.854Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:40:46.864Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:40:47.422Z"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 0,
+    "other": 3
+  },
+  "events": [
+    {
+      "at": "2026-10-27T11:40:46.095Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T11:40:46.235Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Connecting to 'https://jsapi.amap.com/web/init?[query omitted] omitted] violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[query omitted] omitted] https://jsapi-service.amap.com/?[query omitted] omitted] https://*.autonavi.com/\"./?[omitted] The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn'.?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    }
+  ],
+  "networkDiagnostics": [],
+  "pageDiagnostics": [],
+  "frameDiagnostics": [
+    [
+      {
+        "kind": "csp",
+        "directive": "connect-src",
+        "origin": "https://jsapi.amap.com",
+        "path": "/web/init",
+        "resourceType": "connect",
+        "status": 200,
+        "initiator": {
+          "origin": "https://webapi.amap.com",
+          "path": "/maps",
+          "line": 1,
+          "column": 643343
+        },
+        "at": "2026-10-27T11:40:46.896Z"
+      },
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "inline",
+        "path": "",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "https://webapi.amap.com",
+          "path": "/maps",
+          "line": 1,
+          "column": 536555
+        },
+        "at": "2026-10-27T11:40:46.897Z"
+      }
+    ],
+    []
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false,
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "8c6755b71d9dc008e3eed9657c964bf9248b12b258303de88c32dfe65de65801"
+  }
+}

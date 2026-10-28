@@ -1,0 +1,340 @@
+{
+  "executedAt": "2026-10-27T11:53:01.915Z",
+  "mode": "真实SDK/用户点选会话记录（是否通过按各字段）",
+  "operator": "SDK加载由授权助手触发；测试落点与查路由用户操作",
+  "mapReady": true,
+  "visibleBasemap": "待人工复核截图，加载事件不能单独证明可见",
+  "userPointSelectionPerformed": false,
+  "roadExecuted": false,
+  "state": {
+    "revision": 0,
+    "mode": "",
+    "points": {
+      "ENDPOINT": null,
+      "TY04": null,
+      "TY05": null,
+      "TY06": null
+    },
+    "route": null
+  },
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 0,
+    "map": 9
+  },
+  "reservedCents": 50,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": null,
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T11:46:53.717Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T11:46:53.732Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T11:47:08.758Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "ad97da1e-db71-4ad1-b93f-c64b3bf78083",
+      "at": "2026-10-27T11:40:46.277Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:40:46.854Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:40:46.864Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:40:47.422Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "0e8078c5-a7e9-4eb3-a2e0-fe94aee9792f",
+      "at": "2026-10-27T11:42:09.740Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:42:10.304Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:42:10.321Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:42:10.643Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "04613566-ad4d-46b5-b9f8-47caf75f77cc",
+      "at": "2026-10-27T11:43:26.067Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:43:26.528Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:43:26.549Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:43:26.831Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "94236046-1d41-4d30-9a63-42ca79bf413b",
+      "at": "2026-10-27T11:44:52.052Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:44:52.646Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:44:52.658Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:44:52.950Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "3dac03d9-f49e-4985-b8a1-1dc3e78eb816",
+      "at": "2026-10-27T11:48:36.174Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:48:36.682Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:48:36.687Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:48:36.989Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "6b42db3d-329b-41d2-b6bf-0df9a912961b",
+      "at": "2026-10-27T11:51:19.889Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:51:20.390Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:51:20.407Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:51:20.686Z"
+    }
+  ],
+  "javascriptUrls": [
+    {
+      "length": 7,
+      "sha256": "97l24HYIWEdSIQ8PoMHzpxiGCZuyBDXtN19RPKFsOgk=",
+      "category": "empty-navigation"
+    }
+  ],
+  "responseDiagnostics": [
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web/init",
+      "status": 200,
+      "type": "xhr",
+      "topKeys": [
+        "tile",
+        "style",
+        "icon"
+      ],
+      "codes": {}
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/theme/v2.0/logo@2x.png",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://jsapi-service.amap.com",
+      "path": "/mapsplugincdn",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/style/2.0.2.45/v1/pbf/1_0_s_migrate",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_1",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_64",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_9",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_4",
+      "status": 200,
+      "type": "image"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 2,
+    "other": 8
+  },
+  "events": [
+    {
+      "at": "2026-10-27T11:51:19.743Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T11:51:19.857Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn'.?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    }
+  ],
+  "networkDiagnostics": [],
+  "pageDiagnostics": [],
+  "frameDiagnostics": [
+    [
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "inline",
+        "path": "",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": 2,
+          "column": 258
+        },
+        "at": "2026-10-27T11:51:20.457Z"
+      }
+    ],
+    []
+  ],
+  "frameRenderMetadata": [
+    {
+      "canvas": [
+        {
+          "width": 2526,
+          "height": 680,
+          "rect": {
+            "width": 1263,
+            "height": 340
+          },
+          "display": "inline"
+        }
+      ],
+      "map": {
+        "width": 1263,
+        "height": 340
+      }
+    },
+    {
+      "canvas": [],
+      "map": null
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false,
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "91ece54ef08a0633defb2b3e4b2555811b9ef7eda2ae29099d9339733603291f"
+  }
+}

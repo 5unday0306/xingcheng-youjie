@@ -2,7 +2,7 @@
   "policy": "development-05b",
   "flow": "product-05b",
   "budgetCents": null,
-  "caps": {"model": 8, "location": 40, "route": 160, "map": 16},
+  "caps": {"model": 8, "location": 40, "route": 160, "map": 32},
   "reserveCents": {"model": 10, "location": 1, "route": 1, "map": 5},
   "sessionHours": 24,
   "reference": "2026-10-27用户明确允许当前05B持续高德与DeepSeek联调，取消旧费用性限制；不充值购买，安全边界保持"

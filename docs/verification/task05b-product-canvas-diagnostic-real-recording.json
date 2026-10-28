@@ -1,0 +1,27 @@
+{
+  "executedAt": "2026-10-27T11:53:01.812Z",
+  "wallDurationSeconds": 102.57,
+  "frames": 42,
+  "bytes": 7746745,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-27T11:51:19.743Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T11:51:19.857Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn'.?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    }
+  ],
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "79636a9c702805ad06a163dcf612032865f87b9f5c5f0364c850bebc83d1e683"
+  }
+}

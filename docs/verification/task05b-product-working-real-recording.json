@@ -1,0 +1,111 @@
+{
+  "executedAt": "2026-10-27T12:09:50.651Z",
+  "wallDurationSeconds": 529.84,
+  "frames": 356,
+  "bytes": 39352883,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-27T12:01:01.368Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T12:01:01.519Z",
+      "action": "pickLoad"
+    },
+    {
+      "at": "2026-10-27T12:01:28.334Z",
+      "action": "pickLedgerRefresh"
+    },
+    {
+      "at": "2026-10-27T12:01:29.122Z",
+      "action": "pick-tool-0"
+    },
+    {
+      "at": "2026-10-27T12:01:30.784Z",
+      "action": "pick-tool-1"
+    },
+    {
+      "at": "2026-10-27T12:04:49.688Z",
+      "action": "pick-begin-ENDPOINT"
+    },
+    {
+      "at": "2026-10-27T12:04:50.755Z",
+      "action": "pick-begin-TY04"
+    },
+    {
+      "at": "2026-10-27T12:04:53.339Z",
+      "action": "pick-begin-ENDPOINT"
+    },
+    {
+      "at": "2026-10-27T12:04:54.713Z",
+      "action": "pick-begin-TY04"
+    },
+    {
+      "at": "2026-10-27T12:05:30.714Z",
+      "action": "pick-begin-ENDPOINT"
+    },
+    {
+      "at": "2026-10-27T12:06:07.134Z",
+      "action": "pick-confirm-ENDPOINT"
+    },
+    {
+      "at": "2026-10-27T12:06:16.061Z",
+      "action": "pick-begin-TY04"
+    },
+    {
+      "at": "2026-10-27T12:06:18.810Z",
+      "action": "pick-begin-TY05"
+    },
+    {
+      "at": "2026-10-27T12:06:20.658Z",
+      "action": "pick-begin-TY06"
+    },
+    {
+      "at": "2026-10-27T12:06:26.724Z",
+      "action": "pick-confirm-TY05"
+    },
+    {
+      "at": "2026-10-27T12:06:27.796Z",
+      "action": "pick-confirm-TY06"
+    },
+    {
+      "at": "2026-10-27T12:06:28.458Z",
+      "action": "pick-confirm-TY04"
+    },
+    {
+      "at": "2026-10-27T12:06:31.068Z",
+      "action": "pickRoute"
+    },
+    {
+      "at": "2026-10-27T12:06:42.134Z",
+      "action": "pickRoute"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn?[query omitted] omitted]'. Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://webapi.amap.com/maps/checkredirect?[query omitted] omitted]' violates the following Content Security Policy directive: \"script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn?[query omitted] omitted]\". The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Connecting to 'https://mapplugin.amap.com/maps/checkredirectcdn?[query omitted] omitted]' violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[query omitted] omitted] https://jsapi-service.amap.com/?[query omitted] omitted] https://*.autonavi.com/?[query omitted] omitted] https://jsapi.amap.com/web/init?[query omitted] omitted] https://o4.amap.com/style/?[query omitted] omitted] https://jsapi.amap.com/web_map/get_tile?[query omitted] omitted] https://jsapi-data1.amap.com/tile/?[query omitted] omitted] https://jsapi-data2.amap.com/tile/?[query omitted] omitted] https://jsapi-data3.amap.com/tile/?[query omitted] omitted] https://jsapi-data4.amap.com/tile/?[query omitted] omitted] https://jsapi-data5.amap.com/tile/?[query omitted] omitted]\". The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    }
+  ],
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "37c8f3459c459aacde90e2b7ecda408fb972633d75571ede4b50d4ead8c0d662"
+  }
+}

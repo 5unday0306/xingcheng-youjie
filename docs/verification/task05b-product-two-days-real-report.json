@@ -1,0 +1,1159 @@
+{
+  "executedAt": "2026-10-28T05:23:07.752Z",
+  "mode": "真实SDK/用户点选会话记录（是否通过按各字段）",
+  "operator": "SDK加载由授权助手触发；测试落点与查路由用户操作",
+  "mapReady": true,
+  "visibleBasemap": "待人工复核截图，加载事件不能单独证明可见",
+  "userPointSelectionPerformed": true,
+  "roadExecuted": true,
+  "state": {
+    "revision": 0,
+    "mode": "transit",
+    "points": {
+      "ENDPOINT": {
+        "id": "ENDPOINT",
+        "name": "博物院东门外公共集合位置",
+        "location": [
+          112.558489,
+          37.847864
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-27T12:06:07.005Z"
+      },
+      "TY04": {
+        "id": "TY04",
+        "name": "迎泽公园北门位置",
+        "location": [
+          112.583829,
+          37.867293
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-27T12:06:28.459Z"
+      },
+      "TY05": {
+        "id": "TY05",
+        "name": "钟楼街测试落点",
+        "location": [
+          112.554992,
+          37.870816
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-27T12:06:26.725Z"
+      },
+      "TY06": {
+        "id": "TY06",
+        "name": "食品街测试落点",
+        "location": [
+          112.62451,
+          37.857943
+        ],
+        "confirmed": true,
+        "userSelected": true,
+        "routePointAccepted": true,
+        "entranceVerified": false,
+        "futureAccessVerified": false,
+        "source": "用户确认的测试落点",
+        "confirmedAt": "2026-10-27T12:06:27.492Z"
+      }
+    },
+    "route": {
+      "id": "picked-first-road",
+      "mode": "transit",
+      "distanceMeters": [
+        4980,
+        4980
+      ],
+      "minutes": [
+        43,
+        43
+      ],
+      "geometryComplete": true,
+      "geometryParts": 13,
+      "source": "高德Web服务响应"
+    }
+  },
+  "calls": {
+    "model": 2,
+    "location": 5,
+    "route": 8,
+    "map": 16
+  },
+  "reservedCents": 113,
+  "actualCharge": "待账单核对，预留非实扣",
+  "stopped": null,
+  "resources": [
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T10:18:49.189Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T10:18:49.202Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T10:19:04.241Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-26T11:46:53.717Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-26T11:46:53.732Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-26T11:47:08.758Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "ad97da1e-db71-4ad1-b93f-c64b3bf78083",
+      "at": "2026-10-27T11:40:46.277Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:40:46.854Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:40:46.864Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:40:47.422Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "0e8078c5-a7e9-4eb3-a2e0-fe94aee9792f",
+      "at": "2026-10-27T11:42:09.740Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:42:10.304Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:42:10.321Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:42:10.643Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "04613566-ad4d-46b5-b9f8-47caf75f77cc",
+      "at": "2026-10-27T11:43:26.067Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:43:26.528Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:43:26.549Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:43:26.831Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "94236046-1d41-4d30-9a63-42ca79bf413b",
+      "at": "2026-10-27T11:44:52.052Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:44:52.646Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:44:52.658Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:44:52.950Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "3dac03d9-f49e-4985-b8a1-1dc3e78eb816",
+      "at": "2026-10-27T11:48:36.174Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:48:36.682Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:48:36.687Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:48:36.989Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "6b42db3d-329b-41d2-b6bf-0df9a912961b",
+      "at": "2026-10-27T11:51:19.889Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:51:20.390Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:51:20.407Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:51:20.686Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "a4c49a3d-0e9f-4245-b6b3-a640b751c9ad",
+      "at": "2026-10-27T11:53:15.821Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:53:16.342Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:53:16.346Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:53:16.736Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "71d664e3-7177-4aab-a003-27b4f4e4f39d",
+      "at": "2026-10-27T11:55:20.653Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:55:21.014Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:55:21.026Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:55:21.431Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "49a2d059-dc52-47da-a6bc-9221dd3e7b6d",
+      "at": "2026-10-27T11:56:33.262Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T11:56:33.826Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T11:56:33.840Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T11:56:34.153Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "8dfe5458-5c40-4c1a-93f5-3f53a9ef6007",
+      "at": "2026-10-27T12:01:01.574Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-27T12:01:02.292Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:02.302Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-27T12:01:02.782Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:03.329Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-27T12:01:03.349Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "302630e1-47e7-421d-9fb2-53b7d87f35ae",
+      "at": "2026-10-28T05:08:57.607Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:08:58.274Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:08:58.291Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-28T05:09:13.327Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "9429a771-15ba-4264-a410-bf8fa51b4607",
+      "at": "2026-10-28T05:10:58.164Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:10:58.607Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:58.613Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:10:58.900Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:59.549Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:10:59.556Z"
+    },
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "e934854c-5f0a-43ab-81ea-7d5760a9eaa1",
+      "at": "2026-10-28T05:14:33.373Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:33.762Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-28T05:14:33.782Z"
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-28T05:14:34.069Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:34.658Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-28T05:14:34.669Z"
+    }
+  ],
+  "planSummary": {
+    "mode": "real",
+    "status": "insufficient",
+    "dates": [
+      "2026-11-07",
+      "2026-11-08"
+    ],
+    "days": [
+      {
+        "date": "2026-11-07",
+        "activities": [
+          {
+            "id": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          },
+          {
+            "id": "TY01",
+            "name": "山西博物院",
+            "located": false
+          },
+          {
+            "id": "MEAL_PENDING-0",
+            "name": "待选用餐区段",
+            "located": false
+          },
+          {
+            "id": "TY04",
+            "name": "迎泽公园北门位置",
+            "located": true
+          }
+        ],
+        "legs": [
+          {
+            "id": "day1-leg1",
+            "from": "ENDPOINT",
+            "to": "TY01",
+            "status": "missing",
+            "minutes": null,
+            "reason": "入口未知，未查询道路"
+          },
+          {
+            "id": "day1-leg2",
+            "from": "TY01",
+            "to": "MEAL_PENDING",
+            "status": "missing",
+            "minutes": null,
+            "reason": "午餐落点未知，不跨缺口连线"
+          },
+          {
+            "id": "day1-leg3",
+            "from": "MEAL_PENDING",
+            "to": "TY04",
+            "status": "missing",
+            "minutes": null,
+            "reason": "午餐落点未知，不跨缺口连线"
+          },
+          {
+            "id": "day1-leg4",
+            "from": "TY04",
+            "to": "ENDPOINT",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              43,
+              43
+            ],
+            "geometryParts": 14,
+            "geometryComplete": true
+          }
+        ]
+      },
+      {
+        "date": "2026-11-08",
+        "activities": [
+          {
+            "id": "ENDPOINT",
+            "name": "博物院东门外公共集合位置",
+            "located": true
+          },
+          {
+            "id": "TY05",
+            "name": "钟楼街测试落点",
+            "located": true
+          },
+          {
+            "id": "MEAL_PENDING-1",
+            "name": "待选用餐区段",
+            "located": false
+          },
+          {
+            "id": "TY06",
+            "name": "食品街测试落点",
+            "located": true
+          }
+        ],
+        "legs": [
+          {
+            "id": "day2-leg1",
+            "from": "ENDPOINT",
+            "to": "TY05",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              29,
+              29
+            ],
+            "geometryParts": 15,
+            "geometryComplete": true
+          },
+          {
+            "id": "day2-leg2",
+            "from": "TY05",
+            "to": "MEAL_PENDING",
+            "status": "missing",
+            "minutes": null,
+            "reason": "午餐落点未知，不跨缺口连线"
+          },
+          {
+            "id": "day2-leg3",
+            "from": "MEAL_PENDING",
+            "to": "TY06",
+            "status": "missing",
+            "minutes": null,
+            "reason": "午餐落点未知，不跨缺口连线"
+          },
+          {
+            "id": "day2-leg4",
+            "from": "TY06",
+            "to": "ENDPOINT",
+            "status": "available",
+            "mode": "transit",
+            "minutes": [
+              68,
+              68
+            ],
+            "geometryParts": 16,
+            "geometryComplete": true
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input": 644,
+      "output": 185,
+      "total": 829
+    },
+    "events": [
+      {
+        "stage": "planner",
+        "status": "running",
+        "at": "2026-10-28T05:14:47.771Z"
+      },
+      {
+        "stage": "planner",
+        "status": "validated",
+        "at": "2026-10-28T05:14:49.123Z"
+      },
+      {
+        "stage": "day1-leg4",
+        "status": "running",
+        "at": "2026-10-28T05:14:49.123Z"
+      },
+      {
+        "stage": "day1-leg4",
+        "status": "completed",
+        "at": "2026-10-28T05:14:49.379Z"
+      },
+      {
+        "stage": "day2-leg1",
+        "status": "running",
+        "at": "2026-10-28T05:14:49.379Z"
+      },
+      {
+        "stage": "day2-leg1",
+        "status": "completed",
+        "at": "2026-10-28T05:14:49.627Z"
+      },
+      {
+        "stage": "day2-leg4",
+        "status": "running",
+        "at": "2026-10-28T05:14:49.627Z"
+      },
+      {
+        "stage": "day2-leg4",
+        "status": "completed",
+        "at": "2026-10-28T05:14:49.906Z"
+      },
+      {
+        "stage": "review",
+        "status": "completed",
+        "at": "2026-10-28T05:14:49.908Z"
+      }
+    ]
+  },
+  "javascriptUrls": [
+    {
+      "length": 7,
+      "sha256": "97l24HYIWEdSIQ8PoMHzpxiGCZuyBDXtN19RPKFsOgk=",
+      "category": "empty-navigation"
+    }
+  ],
+  "responseDiagnostics": [
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "status": 200,
+      "type": "script",
+      "contentType": "application/javascript;charset=utf-8"
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/theme/v2.0/logo@2x.png",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web/init",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json",
+      "topKeys": [
+        "style",
+        "icon",
+        "tile"
+      ],
+      "codes": {}
+    },
+    {
+      "origin": "https://jsapi-service.amap.com",
+      "path": "/mapsplugincdn",
+      "status": 200,
+      "type": "script",
+      "contentType": "application/javascript;charset=utf-8"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 1078,
+      "jsonKeys": [
+        "info",
+        "status",
+        "infocode",
+        "tile_urls"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data4.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data2.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data3.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data4.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/style/2.0.2.45/v1/pbf/1_0_s_migrate",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_1",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 1048,
+      "jsonKeys": [
+        "info",
+        "status",
+        "infocode",
+        "tile_urls"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data2.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data3.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1185_12"
+        },
+        {
+          "origin": "https://jsapi-data4.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_4",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_64",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_9",
+      "status": 200,
+      "type": "image",
+      "contentType": "image/png"
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps/checkredirect",
+      "failed": true,
+      "type": "script"
+    },
+    {
+      "origin": "https://mapplugin.amap.com",
+      "path": "/maps/checkredirectcdn",
+      "failed": true,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 399,
+      "jsonKeys": [
+        "info",
+        "status",
+        "infocode",
+        "tile_urls"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3330_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3330_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr",
+      "contentType": "application/json;charset=UTF-8",
+      "bytes": 389,
+      "jsonKeys": [
+        "info",
+        "status",
+        "infocode",
+        "tile_urls"
+      ],
+      "tileShape": "array",
+      "tileTargets": [
+        {
+          "origin": "https://jsapi-data5.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3330_1186_12"
+        },
+        {
+          "origin": "https://jsapi-data1.amap.com",
+          "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3330_1185_12"
+        }
+      ],
+      "codes": {
+        "status": "1",
+        "info": "OK",
+        "infocode": "10000"
+      }
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3330_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3330_1186_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3330_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3330_1185_12",
+      "status": 200,
+      "type": "fetch",
+      "contentType": "application/x-protobuf"
+    }
+  ],
+  "observedSdkResources": {
+    "script": 1,
+    "tiles": 20,
+    "other": 11
+  },
+  "events": [
+    {
+      "at": "2026-10-28T05:14:33.199Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-28T05:14:33.332Z",
+      "action": "pickLoad"
+    },
+    {
+      "at": "2026-10-28T05:14:46.495Z",
+      "action": "pickRoute"
+    },
+    {
+      "at": "2026-10-28T05:16:53.101Z",
+      "action": "pick-tool-0"
+    },
+    {
+      "at": "2026-10-28T05:16:54.312Z",
+      "action": "pick-tool-1"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] https://jsapi-service.amap.com/mapsplugincdn?[query omitted]'. Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://webapi.amap.com/maps/checkredirect?[query omitted]' violates the following Content Security Policy directive: \"script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] https://jsapi-service.amap.com/mapsplugincdn?[query omitted]\". The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Connecting to 'https://mapplugin.amap.com/maps/checkredirectcdn?[query omitted]' violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[query omitted] https://jsapi-service.amap.com/?[query omitted] https://*.autonavi.com/?[query omitted] https://jsapi.amap.com/web/init?[query omitted] https://o4.amap.com/style/?[query omitted] https://jsapi.amap.com/web_map/get_tile?[query omitted] https://jsapi-data1.amap.com/tile/?[query omitted] https://jsapi-data2.amap.com/tile/?[query omitted] https://jsapi-data3.amap.com/tile/?[query omitted] https://jsapi-data4.amap.com/tile/?[query omitted] https://jsapi-data5.amap.com/tile/?[query omitted]\". The action has been blocked."
+    }
+  ],
+  "networkDiagnostics": [],
+  "pageDiagnostics": [],
+  "frameDiagnostics": [
+    [
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "inline",
+        "path": "",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": 2,
+          "column": 258
+        },
+        "at": "2026-10-28T05:14:33.825Z"
+      },
+      {
+        "kind": "csp",
+        "directive": "script-src-elem",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "https://webapi.amap.com",
+          "path": "/maps",
+          "line": 1,
+          "column": 642426
+        },
+        "at": "2026-10-28T05:14:34.458Z"
+      },
+      {
+        "kind": "resource-error",
+        "directive": "unknown",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "script",
+        "status": null,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": null,
+          "column": null
+        },
+        "at": "2026-10-28T05:14:34.458Z"
+      },
+      {
+        "kind": "csp",
+        "directive": "connect-src",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps/checkredirect",
+        "resourceType": "connect",
+        "status": 200,
+        "initiator": {
+          "origin": "unknown",
+          "path": "",
+          "line": 0,
+          "column": 0
+        },
+        "at": "2026-10-28T05:14:34.639Z"
+      }
+    ],
+    []
+  ],
+  "workerCount": 2,
+  "frameRenderMetadata": [
+    {
+      "contexts": [
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "webgl",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        },
+        {
+          "type": "2d",
+          "available": true,
+          "lost": false
+        }
+      ],
+      "canvas": [
+        {
+          "width": 2526,
+          "height": 680,
+          "rect": {
+            "width": 1263,
+            "height": 340
+          },
+          "display": "inline"
+        }
+      ],
+      "map": {
+        "width": 1263,
+        "height": 340
+      }
+    },
+    {
+      "contexts": [],
+      "canvas": [],
+      "map": null
+    }
+  ],
+  "full05BComplete": false,
+  "rawRoadGeometryPersisted": false,
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "e37c8f7b07e1721e63034df192770846307ea863cc672c83217a53533685c816"
+  }
+}

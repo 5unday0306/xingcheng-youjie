@@ -6,6 +6,18 @@ import {createMapView} from '../web/map-view.js';
 const credentials={webKey:'test-web',jsKey:'test-js',jsSecurityCode:'test-security',modelKey:'test-model'};
 const walk=()=>({status:'1',route:{paths:[{distance:'1234',duration:'61',steps:[{polyline:'112.5,37.8;112.51,37.81'}]}]}});
 const settings=send=>({enabled:true,reserve:async()=>true,send,credentials,model:'offline-test-model-name'});
+
+test('显式取消保留发送记录，区别于超时/上游失败，不自动重试',async()=>{
+ const controller=new AbortController();let calls=0,finished=0,ready;const started=new Promise(r=>ready=r);
+ const adapter=createUpstreamAdapters({...settings(async r=>{calls++;return new Promise((resolve,reject)=>{r.signal.addEventListener('abort',()=>reject(Error('SYNTHETIC_CANCEL')));ready();});}),finish:async()=>{finished++;}});
+ const pending=adapter.plan({}, {signal:controller.signal});await started;controller.abort();await assert.rejects(pending,e=>e.code==='CANCELLED');assert.equal(calls,1);assert.equal(finished,1);
+});
+
+test('公交空铁路信封不误判实际铁路；存在列车数据仍拒绝',()=>{
+ const body={status:'1',route:{transits:[{duration:'600',walking_distance:'100',distance:'1000',cost:'2',segments:[{railway:{via_stops:[],alters:[],spaces:[]},walking:{distance:'100',steps:[{polyline:'112.5,37.8;112.51,37.81'}]},bus:{buslines:[{polyline:'112.51,37.81;112.52,37.82'}]}}]}]}};
+ assert.equal(parseRoad(body,'transit').geometryComplete,true);
+ body.route.transits[0].segments[0].railway.name='SYNTHETIC_TRAIN';assert.throws(()=>parseRoad(body,'transit'));
+});
 test('上游适配默认关闭，配置存在也不会执行send；配额拒绝也不执行',async()=>{
   let calls=0;const send=async()=>{calls++;};
   await assert.rejects(createUpstreamAdapters({...settings(send),enabled:false}).locate('测试地址'),e=>e.code==='OFFLINE_ONLY');

@@ -1,0 +1,29 @@
+{
+  "shots": [
+    "docs/verification/task05b-product-delivery-final-day1-map.png",
+    "docs/verification/task05b-product-delivery-final-day2-map.png"
+  ],
+  "overflow": false,
+  "replay": "历史回放 · 当前服务内的真实草案与道路",
+  "noAutomaticSDK": true,
+  "before": {
+    "model": 3,
+    "location": 5,
+    "route": 12,
+    "map": 19
+  },
+  "afterRefresh": {
+    "model": 3,
+    "location": 5,
+    "route": 12,
+    "map": 19
+  },
+  "afterExplicitMapReload": {
+    "model": 3,
+    "location": 5,
+    "route": 12,
+    "map": 20
+  },
+  "highlighted": "4",
+  "focused": "TY04"
+}

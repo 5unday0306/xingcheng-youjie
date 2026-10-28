@@ -21,4 +21,6 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 .pickPanel{padding-top:20px}.pickPanel>p{margin:12px 0}.pickPanel button{border:1px solid #B8D2D3;background:#E1F0EB;color:#073B4B;border-radius:8px;padding:8px 14px;margin:5px;min-height:44px}.pickCards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}.pickCards article{border:1px solid #BCD3CE;padding:16px;border-radius:12px;min-width:0}.pickCards article[data-active=true]{outline:3px solid #AF5427}.pickCards p{font-size:13px;overflow-wrap:anywhere;margin:7px 0}#pickMap{height:460px;width:100%;margin:14px 0;isolation:isolate}#pickRouteInfo,#pickStatus{padding:12px;background:#EDF6F2}.mapPin.isPending{background:white;color:#073B4B;border:2px dashed #073B4B}.pickPanel label{margin:8px 0}.pickPanel select{max-width:360px}.pickPanel pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}@media(max-width:760px){.pickCards{grid-template-columns:1fr}#pickMap{height:52dvh;min-height:320px}.pickCards article{padding:12px}.pickPanel button{margin:4px;padding:7px 10px}}
 .isolatedContainerFrame{display:block;width:100%;height:290px;border:1px solid #c3d9dc;border-radius:8px}
 #pickMap.isContainerOnly{height:auto;min-height:0}
-.isolatedContainerFrame.hasSdk{height:520px}
+.isolatedContainerFrame.hasSdk{height:620px}
+
+#pickRouteInfo{white-space:pre-line}

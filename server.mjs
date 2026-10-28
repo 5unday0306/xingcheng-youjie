@@ -1,7 +1,7 @@
 import http from 'node:http';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
-import {readFile} from 'node:fs/promises';
+import {readFile,writeFile,rename} from 'node:fs/promises';
 import {catalog} from './data/taiyuan.mjs';
 import {createPlanningService,PlanningError} from './lib/planning.mjs';
 import {loadCredentials,readApproval,createLedger,createHttpSender} from './lib/runtime05b.mjs';
@@ -39,7 +39,7 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
           return json(res,200,reply?.kind==='sdk-json'?reply.data:reply);}
         catch(e){return json(res,e instanceof PlanningError?e.status:502,{code:e instanceof PlanningError?e.code:'PROXY_FAILED',message:e instanceof PlanningError?e.message:'安全代理失败'});}
       }
-      if(req.method==='GET'&&path==='/api/capabilities')return json(res,200,{...planning.capabilities(),...(mapFrameOrigin?{mapFrameOrigin:frameOrigin,mapFrameContainerOnly:!mapFrameSession,canPrepare:!!frameOrigin&&!!mapFrameSession&&planning.capabilities().canPrepare,canGenerate:false}:{})});
+      if(req.method==='GET'&&path==='/api/capabilities')return json(res,200,{...planning.capabilities(),...(mapFrameOrigin?{mapFrameOrigin:frameOrigin,mapFrameContainerOnly:!mapFrameSession,canPrepare:!!frameOrigin&&!!mapFrameSession&&planning.capabilities().canPrepare,canGenerate:!!mapFrameSession&&planning.capabilities().canGenerate}:{})});
       if(req.method==='GET'&&path==='/api/candidates')return json(res,200,catalog());
       if(req.method==='POST'&&(path==='/api/plan'||path.startsWith('/api/live/'))) {
         if(mapFrameOrigin&&['/api/live/map-lease','/api/live/sdk-event'].includes(path))return json(res,403,{code:'ISOLATED_SDK_PENDING',message:'容器阶段不领取SDK许可或记录SDK就绪'});
@@ -76,7 +76,9 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     let approval=null;try{approval=await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url));}catch(e){console.log(e.message);}
     const historyApproval=approval||await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url),{allowExpired:true}).catch(()=>null);
     const ledger=historyApproval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),historyApproval):null;
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    let initialPicks=null;try{initialPicks=JSON.parse(await readFile(new URL('./docs/private/05b-picks.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
+    const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL('./docs/private/05b-picks.json',import.meta.url),tmp=new URL('./docs/private/05b-picks.tmp',import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const port=realPrep?4177:testMode?4174:4173;

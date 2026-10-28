@@ -1,0 +1,370 @@
+{
+  "at": "2026-10-28",
+  "scope": {
+    "stagedTextFiles": 81,
+    "stagedMedia": [
+      {
+        "path": "docs/verification/task05b-product-base-real-desktop.png",
+        "bytes": 63768
+      },
+      {
+        "path": "docs/verification/task05b-product-canvas-diagnostic-real-desktop.png",
+        "bytes": 68231
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-day1-map.png",
+        "bytes": 230949
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-day2-map.png",
+        "bytes": 249886
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-desktop.png",
+        "bytes": 74987
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-frame-14.png",
+        "bytes": 226421
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-frame-18.png",
+        "bytes": 386816
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-frame-2.png",
+        "bytes": 297088
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-frame-8.png",
+        "bytes": 649611
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-map-mobile.png",
+        "bytes": 100848
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-operation.webm",
+        "bytes": 1586249
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-review-desktop.png",
+        "bytes": 65733
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-final-review-mobile.png",
+        "bytes": 44570
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-day1-map.png",
+        "bytes": 229846
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-day2-map.png",
+        "bytes": 244433
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-desktop.png",
+        "bytes": 63374
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-map-mobile.png",
+        "bytes": 14715
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-review-desktop.png",
+        "bytes": 66902
+      },
+      {
+        "path": "docs/verification/task05b-product-delivery-real-review-mobile.png",
+        "bytes": 45747
+      },
+      {
+        "path": "docs/verification/task05b-product-init-fixed-real-desktop.png",
+        "bytes": 71625
+      },
+      {
+        "path": "docs/verification/task05b-product-operable-real-desktop.png",
+        "bytes": 68231
+      },
+      {
+        "path": "docs/verification/task05b-product-regression-editor-390.png",
+        "bytes": 42689
+      },
+      {
+        "path": "docs/verification/task05b-product-regression-ui-1440.png",
+        "bytes": 139864
+      },
+      {
+        "path": "docs/verification/task05b-product-regression-ui-390.png",
+        "bytes": 50485
+      },
+      {
+        "path": "docs/verification/task05b-product-render-diagnostic-real-desktop.png",
+        "bytes": 70995
+      },
+      {
+        "path": "docs/verification/task05b-product-resume-real-desktop.png",
+        "bytes": 90243
+      },
+      {
+        "path": "docs/verification/task05b-product-resume-regression-editor-390.png",
+        "bytes": 42689
+      },
+      {
+        "path": "docs/verification/task05b-product-resume-regression-ui-1440.png",
+        "bytes": 139864
+      },
+      {
+        "path": "docs/verification/task05b-product-resume-regression-ui-390.png",
+        "bytes": 50485
+      },
+      {
+        "path": "docs/verification/task05b-product-resume-visible-real-desktop.png",
+        "bytes": 79978
+      },
+      {
+        "path": "docs/verification/task05b-product-tile-target-real-desktop.png",
+        "bytes": 68231
+      },
+      {
+        "path": "docs/verification/task05b-product-tiles-fixed-real-desktop.png",
+        "bytes": 63028
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-desktop.png",
+        "bytes": 297765
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-frame-140.png",
+        "bytes": 338559
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-frame-18.png",
+        "bytes": 329811
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-frame-2.png",
+        "bytes": 241617
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-frame-50.png",
+        "bytes": 324624
+      },
+      {
+        "path": "docs/verification/task05b-product-two-days-real-operation.webm",
+        "bytes": 7917900
+      },
+      {
+        "path": "docs/verification/task05b-product-view-diagnostic-real-desktop.png",
+        "bytes": 74156
+      },
+      {
+        "path": "docs/verification/task05b-product-visible-real-desktop.png",
+        "bytes": 151871
+      },
+      {
+        "path": "docs/verification/task05b-product-working-real-desktop.png",
+        "bytes": 151862
+      }
+    ],
+    "unpushedCommits": [
+      "379b8ddf343b9410e7b5da2d42c3e87c167dbdda"
+    ],
+    "historyUniqueBlobs": 285
+  },
+  "findings": [
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-canvas-diagnostic-real-report.json",
+      "line": 215,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 803,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 1112,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 718,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 1060,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-operable-real-report.json",
+      "line": 175,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-render-diagnostic-real-report.json",
+      "line": 152,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-resume-real-report.json",
+      "line": 379,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-resume-visible-real-report.json",
+      "line": 427,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-tile-target-real-report.json",
+      "line": 246,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-two-days-real-report.json",
+      "line": 646,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-view-diagnostic-real-report.json",
+      "line": 225,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-visible-real-report.json",
+      "line": 293,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "docs/verification/task05b-product-working-real-report.json",
+      "line": 357,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed vendor logo@2x.png asset name, not contact address"
+    },
+    {
+      "scope": "staged",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "staged",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "staged",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 50,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed empty configuration assignment notation, not credential value"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 33,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "reviewed field-name mapping or synthetic test placeholder"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "reviewed synthetic URL-parser fixture"
+    },
+    {
+      "scope": "unpushed-history",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "reviewed synthetic URL-parser fixture"
+    }
+  ],
+  "pending": 0,
+  "limits": [
+    "heuristic text scan, not proof of absence",
+    "no .env/private credential values read",
+    "media excluded from text scan; key actual screenshots and decoded video samples visually inspected",
+    "intermediate screenshots reviewed by anonymous test provenance; not OCR or full-frame forensic review",
+    "all prior reachable history last audited at cb4a2de; this scan adds unpushed history and staged files"
+  ],
+  "result": "reviewed-no-real-secret-found"
+}

@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-28T05:30:01.422Z",
+  "assertions": 16,
+  "upstreamCallsToSyntheticSender": 5,
+  "realBusinessCalls": 0,
+  "external": 0,
+  "errors": [],
+  "scope": "正式工作台隔离四点选择/确认、首段、双向定位、模型两天、修改失效、手机；全部合成"
+}

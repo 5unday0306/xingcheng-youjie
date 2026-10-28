@@ -1,0 +1,48 @@
+{
+  "success": false,
+  "code": "UPSTREAM_DATA",
+  "diagnostic": {
+    "stage": "road-parse",
+    "mode": "transit",
+    "serviceStatus": "success",
+    "infocode": "10000",
+    "info": "OK",
+    "paths": null,
+    "transits": 5,
+    "pathFields": [
+      "cost",
+      "duration",
+      "nightflag",
+      "walking_distance",
+      "distance",
+      "missed",
+      "segments"
+    ],
+    "durationType": "string",
+    "walkingType": "string",
+    "railwayKeys": [
+      [
+        "via_stops",
+        "alters",
+        "spaces"
+      ],
+      [
+        "via_stops",
+        "alters",
+        "spaces"
+      ],
+      [
+        "via_stops",
+        "alters",
+        "spaces"
+      ]
+    ]
+  },
+  "at": "2026-10-27T12:10:32.495Z",
+  "calls": {
+    "model": 0,
+    "location": 5,
+    "route": 3,
+    "map": 13
+  }
+}

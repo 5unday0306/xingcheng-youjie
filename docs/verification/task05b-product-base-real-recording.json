@@ -1,0 +1,251 @@
+{
+  "executedAt": "2026-10-27T11:41:04.669Z",
+  "wallDurationSeconds": 19.21,
+  "frames": 100,
+  "bytes": 1165413,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-27T11:40:46.095Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T11:40:46.235Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Connecting to 'https://jsapi.amap.com/web/init?[query omitted] omitted] violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[query omitted] omitted] https://jsapi-service.amap.com/?[query omitted] omitted] https://*.autonavi.com/\"./?[omitted] The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn'.?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    },
+    {
+      "type": "page",
+      "message": "null"
+    }
+  ],
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "61eb397176bcff03aa295fe95cb5f31f7f1db60694064c7f83a05245d9ef92a8"
+  }
+}

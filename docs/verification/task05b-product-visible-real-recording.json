@@ -1,0 +1,67 @@
+{
+  "executedAt": "2026-10-27T12:00:45.807Z",
+  "wallDurationSeconds": 253.26,
+  "frames": 497,
+  "bytes": 18735424,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-27T11:56:33.085Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-27T11:56:33.222Z",
+      "action": "pickLoad"
+    },
+    {
+      "at": "2026-10-27T11:56:49.519Z",
+      "action": "pick-tool-0"
+    },
+    {
+      "at": "2026-10-27T11:56:50.735Z",
+      "action": "pick-tool-1"
+    },
+    {
+      "at": "2026-10-27T11:57:46.122Z",
+      "action": "pick-begin-ENDPOINT"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn'.?[omitted] Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://webapi.amap.com/maps/checkredirect?[query omitted] omitted] violates the following Content Security Policy directive: \"script-src-elem 'self' https://webapi.amap.com/maps?[query omitted] omitted] https://jsapi-service.amap.com/mapsplugincdn%22.?[query omitted] omitted] The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Connecting to 'https://mapplugin.amap.com/maps/checkredirectcdn?[query omitted] omitted] violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[query omitted] omitted] https://jsapi-service.amap.com/?[query omitted] omitted] https://*.autonavi.com/?[query omitted] omitted] https://jsapi.amap.com/web/init?[query omitted] omitted] https://o4.amap.com/style/?[query omitted] omitted] https://jsapi.amap.com/web_map/get_tile?[query omitted] omitted] https://jsapi-data1.amap.com/tile/?[query omitted] omitted] https://jsapi-data2.amap.com/tile/?[query omitted] omitted] https://jsapi-data3.amap.com/tile/?[query omitted] omitted] https://jsapi-data4.amap.com/tile/?[query omitted] omitted] https://jsapi-data5.amap.com/tile/%22.?[query omitted] omitted] The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "console",
+      "message": "Refused to execute script from 'http://127.0.0.2:4184/_AMapService/v3/log/init?[query omitted] omitted]' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled."
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "console",
+      "message": "Refused to execute script from 'http://127.0.0.2:4184/_AMapService/v3/log/init?[query omitted] omitted]' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled."
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    }
+  ],
+  "redaction": {
+    "scope": "URL query removal; original snapshot retained locally",
+    "originalSha256": "ddeef0baf46df5a19c4165391b4ba70404cdbd14a41f9598fa264a17d4930be3"
+  }
+}

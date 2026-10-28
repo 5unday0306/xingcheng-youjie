@@ -5,12 +5,12 @@ const point=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&p[0]>=1
 const empty=p=>own(p,[]);
 export function validDisplay(p){
   if(!own(p,['points','segments','selectedId'])||!Array.isArray(p.points)||p.points.length>64||!Array.isArray(p.segments)||p.segments.length>128)return false;
-  if(!p.points.every(n=>own(n,['id','label','position','sequence'])&&id(n.id)&&typeof n.label==='string'&&n.label.length>0&&n.label.length<=60&&point(n.position)&&Number.isSafeInteger(n.sequence)&&n.sequence>=1&&n.sequence<=64))return false;
+  if(!p.points.every(n=>(own(n,['id','label','position','sequence'])||own(n,['id','label','position','sequence','editable','pending'])&&typeof n.editable==='boolean'&&typeof n.pending==='boolean')&&id(n.id)&&typeof n.label==='string'&&n.label.length>0&&n.label.length<=60&&point(n.position)&&Number.isSafeInteger(n.sequence)&&n.sequence>=1&&n.sequence<=64))return false;
   const ids=new Set(p.points.map(n=>n.id));if(ids.size!==p.points.length||!(p.selectedId===null||ids.has(p.selectedId)))return false;
   let total=0;return p.segments.every(s=>own(s,['mode','path'])&&['walk','transit'].includes(s.mode)&&Array.isArray(s.path)&&s.path.length>=2&&(total+=s.path.length)<=10000&&s.path.every(point));
 }
-const fromMain={INIT:empty,LOAD:empty,DISPLAY:validDisplay,FOCUS:p=>own(p,['id'])&&id(p.id),VIEW:p=>own(p,['action'])&&['zoomIn','zoomOut','fit'].includes(p.action),DESTROY:empty};
-const fromMap={READY:empty,MAP_READY:empty,SELECT:p=>own(p,['id'])&&id(p.id),VIEW_CHANGED:p=>own(p,['center','zoom'])&&point(p.center)&&Number.isFinite(p.zoom)&&p.zoom>=3&&p.zoom<=20,CLOSED:empty,ERROR:p=>own(p,['code'])&&['TIMEOUT','DESTROYED','INVALID_DATA','SDK_FAILED'].includes(p.code)};
+const fromMain={INIT:empty,LOAD:empty,PICK:p=>own(p,['enabled'])&&typeof p.enabled==='boolean',DISPLAY:validDisplay,FOCUS:p=>own(p,['id'])&&id(p.id),VIEW:p=>own(p,['action'])&&['zoomIn','zoomOut','fit'].includes(p.action),DESTROY:empty};
+const fromMap={READY:empty,MAP_READY:empty,SELECT:p=>own(p,['id'])&&id(p.id),PICK_LOCATION:p=>own(p,['position'])&&point(p.position),MOVE_POINT:p=>own(p,['id','position'])&&id(p.id)&&point(p.position),VIEW_CHANGED:p=>own(p,['center','zoom'])&&point(p.center)&&Number.isFinite(p.zoom)&&p.zoom>=3&&p.zoom<=20,CLOSED:empty,ERROR:p=>own(p,['code'])&&['TIMEOUT','DESTROYED','INVALID_DATA','SDK_FAILED'].includes(p.code)};
 export function validMessage(m,receiver){
   try{return own(m,['v','runId','seq','type','payload'])&&m.v===1&&typeof m.runId==='string'&&/^[a-f0-9-]{36}$/.test(m.runId)&&Number.isSafeInteger(m.seq)&&m.seq>0&&m.seq<=1000000&&Object.hasOwn(receiver==='main'?fromMap:fromMain,m.type)&&(receiver==='main'?fromMap:fromMain)[m.type](m.payload)&&new TextEncoder().encode(JSON.stringify(m)).length<=65536;}catch{return false;}
 }

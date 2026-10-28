@@ -21,9 +21,26 @@ test('持续05B授权取消费用上限但保留次数保护及旧停止历史',
  await ledger.amend(next,{approved:true,reference:'SYNTHETIC standing authorization'});const active=createLedger(p,next);
  await active.reserve('map');assert.equal((await active.summary()).counts.map,2);assert.equal((await active.summary()).reservedCents,10);
  const raw=JSON.parse(await readFile(p,'utf8'));assert.equal(raw.authorizations[0].previousStop.code,'SDK_FAILED');
- assert.throws(()=>validateApproval({...next,caps:{...next.caps,map:17}}));
+ assert.throws(()=>validateApproval({...next,caps:{...next.caps,map:33}}));
  }finally{await rm(d,{recursive:true,force:true});}
 });
+test('产品流程合成端到端：四点确认、首段、模型两天与更改失效',()=>setup(async({a,ledger:oldLedger,dir,send,calls})=>{
+ const next={...a,policy:'development-05b',flow:'product-05b',budgetCents:null,caps:{model:8,location:40,route:160,map:32}};await oldLedger.amend(next,{approved:true,reference:'SYNTHETIC development scope'});const ledger=createLedger(join(dir,'ledger.json'),next);
+ const live=createLivePlanning({credentials,approval:next,ledger,send});
+ await live.action('/api/live/map-lease',{});await live.action('/api/live/sdk-event',{event:'map-ready'});
+ let s=await live.action('/api/live/pick/state');
+ for(const [i,id] of ['ENDPOINT','TY04','TY05','TY06'].entries()){
+  s=await live.action('/api/live/pick/set',{id,location:[112.5+i*.01,37.8],revision:s.revision});
+  s=await live.action('/api/live/pick/confirm',{id,accepted:true,revision:s.revision});
+ }
+ s=await live.action('/api/live/pick/mode',{mode:'walk',revision:s.revision});s=await live.action('/api/live/pick/route',{revision:s.revision});
+ assert.equal(s.route.geometryComplete,true);assert.equal(live.capabilities().canGenerate,true);
+ const plan=await live.run({...toRequest(defaultDraft()),transportMode:'walk'});assert.equal(plan.mode,'real');assert.equal(plan.review.days.length,2);assert.equal(calls.filter(x=>x==='/chat/completions').length,1);
+ assert.equal(plan.review.days[0].activities.find(x=>x.id==='ENDPOINT').entranceVerified,false);
+ const replay=await live.action('/api/live/result',toRequest(defaultDraft()));assert.equal(replay.result.replay,true);assert.equal(calls.filter(x=>x==='/chat/completions').length,1);await live.frameEnd();assert.equal((await ledger.summary()).stopped,null);await live.action('/api/live/map-lease',{});await live.action('/api/live/sdk-event',{event:'map-ready'});
+ const inflight=live.run({...toRequest(defaultDraft()),transportMode:'walk'});s=await live.action('/api/live/invalidate',{});await assert.rejects(inflight,e=>e.code==='CANCELLED');assert.equal((await ledger.summary()).stopped,null);assert.equal((await live.action('/api/live/result',toRequest(defaultDraft()))).result,null);
+ s=await live.action('/api/live/pick/set',{id:'TY04',location:[112.53,37.82],revision:s.revision});assert.equal(s.route,null);assert.equal(live.capabilities().canGenerate,false);assert.equal((await live.action('/api/live/result',toRequest(defaultDraft()))).result,null);
+}));
 async function setup(fn,options={}){const dir=await mkdtemp(join(tmpdir(),'xingcheng-05b-test-'));const a=approval(),ledger=createLedger(join(dir,'ledger.json'),a),calls=[];let req;
  const send=async r=>{calls.push(new URL(r.url).pathname);if(options.send)return options.send(r);if(r.url.includes('/place/detail'))return poiResponse(r);if(r.url.includes('/log/init'))return {status:200,body:{status:'1'}};if(r.url.includes('geocode'))return {status:200,body:{status:'1',geocodes:[{adcode:'140100',location:'112.5,37.8',formatted_address:'合成测试入口'}]}};if(r.url.includes('direction'))return {status:200,body:{status:'1',route:{paths:[{duration:'61',distance:'100',steps:[{polyline:'112.5,37.8;112.51,37.81'}]}]}}};req=JSON.parse(r.body.messages[1].content);return {status:200,body:{choices:[{finish_reason:'stop',message:{content:await offlinePlanner(req)}}],usage:{prompt_tokens:100,completion_tokens:50,total_tokens:150}}};};
  const live=createLivePlanning({credentials,configuration:{webKey:true,modelKey:true,jsKey:true,jsSecurityCode:true},approval:a,ledger,send});
