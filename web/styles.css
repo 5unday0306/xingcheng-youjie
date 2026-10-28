@@ -28,3 +28,5 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 /* Task06 targeted choice controls; formal layout retained. */
 #case06Choices article{padding:16px 0;border-bottom:1px solid var(--line,#c7d4d6)}
 #case06Choices button{margin:6px 8px 6px 0}#case06Choices p{overflow-wrap:anywhere}#case06Choices details{margin:16px 0} .case06Estimates{display:flex;flex-wrap:wrap;gap:12px}.case06Estimates label{display:grid;gap:6px;min-width:0}.case06Estimates input{width:120px;max-width:100%}
+
+.activePickBar{padding:12px;background:#edf6f2;border:1px solid #b8d2d3;scroll-margin-top:16px}.activePickBar p{margin:0 0 6px}#case06Progress{padding:12px;border-left:3px solid #ad5427;background:#fff4e8;overflow-wrap:anywhere}

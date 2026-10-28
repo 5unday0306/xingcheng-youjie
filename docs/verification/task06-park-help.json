@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-28T11:07:10.594831+00:00",
+  "scope": "真实底图上的北入口广场候选帮助；不代表两天路线通过",
+  "candidate": {
+    "id": "B0FFKG7U75",
+    "name": "迎泽公园-北入口广场",
+    "source": "高德Web服务本轮已取得资料",
+    "sourceUrl": "https://www.amap.com/place/B0FFKG7U75",
+    "location": [
+      112.562162,
+      37.858975
+    ],
+    "officialEntranceVerified": false,
+    "futureAccessVerified": false
+  },
+  "userAccepted": false,
+  "currentStatus": "候选卡片与明确接受按钮已在正式页面，等待用户决定",
+  "screenshots": [
+    "task06-park-candidate-real-map.png",
+    "task06-park-candidate-real-choice.png"
+  ],
+  "visualCheck": "实际截图可见高德底图、北门、牌坊、北入口对应区域及待接受按钮；只移动镜头，没有代用户接受或发新模型/道路请求",
+  "ledgerAtCheck": {
+    "model": 4,
+    "location": 11,
+    "route": 16,
+    "map": 27,
+    "reservedCents": 202,
+    "actualCharge": "未知，风险预留不是实扣"
+  },
+  "task06DeltaAtCheck": {
+    "model": 0,
+    "location": 6,
+    "route": 0,
+    "map": 5
+  },
+  "otherChoices": "三处博物院测试点、两处街区和两天餐厅保存未覆盖",
+  "limits": "人工截图观察不是官方入口核验；完整路线与核查真实验收尚待执行"
+}
