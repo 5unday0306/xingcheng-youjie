@@ -1,7 +1,7 @@
 {
-  "scope": "本轮暂存文本形态扫描与跟踪路径核对；不读取.env；不是绝对无泄露证明",
-  "stagedFiles": 19,
-  "forbiddenTrackedPaths": [],
-  "secretShapedHits": [],
-  "privateRawChatIncluded": false
+  "scope": "本轮相对b7d871c全部改动路径/文本形态扫描；未读取.env；不是绝对无泄露证明",
+  "changedFiles": 35,
+  "findings": [],
+  "rawChatIncluded": false,
+  "realBusinessCallsThisIteration": 0
 }

@@ -81,6 +81,7 @@ export function createPickPanel({root,capabilities,onReady=()=>{},onModeChange=(
   renderControls();
   return {
     state:()=>state,
+    clearDisplay(){view?.clear();routeInfo.textContent='当前视图尚无方案路段；未自动查询。';},
     ready:initialState,
     mapReady:()=>capabilities.mapFrameOrigin?!!isolatedContainer?.state().mapReady&&!isolatedContainer?.state().ended:!!view&&!failed,
     async prepareMap(){

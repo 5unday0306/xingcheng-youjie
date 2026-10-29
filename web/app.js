@@ -33,7 +33,7 @@ function updateDirty() {
 }
 let routeReturnHash='#routeView';
 function showView(view, focus = false, updateHash = true) {
-  if(location.hash==='#replan08')routeReturnHash='#replan08';
+  if(['#replan08','#routeView'].includes(location.hash))routeReturnHash=location.hash;
   const focusId=++focusRevision;
   const editor=$('editDialog');
   if(view==='edit'&&!editor.open)editor.showModal();
@@ -421,7 +421,7 @@ restoreDraft(true);
 showView('route',false,false);
 $('editTrip').onclick=()=>showView('edit',true);
 $('closeEditor').onclick=()=>{showView(currentDisplay);$('editTrip').focus();};
-$('editDialog').addEventListener('cancel',()=>requestAnimationFrame(()=>{showView(currentDisplay);$('editTrip').focus();}));
+$('editDialog').addEventListener('cancel',event=>{event.preventDefault();showView(currentDisplay);$('editTrip').focus();});
 planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
 
 function routeHash(){
