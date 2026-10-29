@@ -17,9 +17,9 @@ function metric(title,result,unit,scale=1) {
 }
 export function createPlanPanel({getRequest,validate,applyRequest}) {
   let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null,agentPanel=null,replanPanel=null;
-  let flowBusy=false,metaData=null;const agentStates={review:null,replan:null},agentBusy=new Set();
-  const workspace=createWorkspace({getRequest,onAction:runPrimary,onMode:value=>{const panel=value==='replan'?replanPanel?.agents:agentPanel;if(panel?.state()?.original)panel.show(panel.state().status==='accepted'?'preview':'original');else if(result){result=null;paint();}updateExperience();}});
-  function agentUpdate(source,value){agentStates[source]=value;updateExperience();}
+  let flowBusy=false,metaData=null,activeWorkflow=null;const agentStates={review:null,replan:null},agentBusy=new Set();
+  const workspace=createWorkspace({getRequest,onAction:runPrimary,onMode:value=>{if(activeWorkflow===null||activeWorkflow===value){activeWorkflow=value;updateExperience();return;}activeWorkflow=value;const panel=value==='replan'?replanPanel?.agents:agentPanel;if(panel?.state()?.original)panel.show(panel.state().status==='accepted'?'preview':'original');else if(result){result=null;paint();}updateExperience();}});
+  function agentUpdate(source,value){const previous=agentStates[source]?.status;agentStates[source]=value;if(source==='replan'&&value?.status==='accepted'&&previous!=='accepted')replanPanel?.refresh();updateExperience();}
   function setAgentBusy(source,value){if(value)agentBusy.add(source);else agentBusy.delete(source);busy=agentBusy.size>0;button.disabled=busy||!capabilities?.canGenerate;updateExperience();}
   function stale(r){return r?.review.days.flatMap(d=>d.legs).some(l=>l.source==='高德Web服务响应'&&(!Number.isFinite(Date.parse(l.queriedAt))||Date.now()-Date.parse(l.queriedAt)>1800000));}
   function acceptable(r){return r?.readiness?r.readiness.canAccept:!!r&&!r.review.days.some(d=>d.time.knownSubtotal[1]>d.time.limit||d.members.some(m=>m.walking.knownSubtotal[1]>m.walking.limit))&&!r.review.members.some(m=>m.budget.knownSubtotal[1]>m.budget.limit);}

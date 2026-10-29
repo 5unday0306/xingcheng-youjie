@@ -31,7 +31,9 @@ function updateDirty() {
   if (savedSignature === signature()) storageStatus('当前需求与上次保存一致', 'saved');
   else storageStatus('有未保存修改，刷新不会保留本次修改', 'dirty');
 }
+let routeReturnHash='#routeView';
 function showView(view, focus = false, updateHash = true) {
+  if(location.hash==='#replan08')routeReturnHash='#replan08';
   const focusId=++focusRevision;
   const editor=$('editDialog');
   if(view==='edit'&&!editor.open)editor.showModal();
@@ -46,8 +48,8 @@ function showView(view, focus = false, updateHash = true) {
   }
   $('tabRoute').setAttribute('aria-pressed', String(currentDisplay === 'route'));
   $('tabSummary').setAttribute('aria-pressed', String(currentDisplay === 'summary'));
-  if(updateHash)history.replaceState(null,'',view==='edit'?'#edit':view==='summary'?'#summaryView':'#routeView');
-  $('navReplan').setAttribute('aria-pressed',String(location.hash==='#replan08'&&view==='route'));
+  if(updateHash)history.replaceState(null,'',view==='edit'?'#edit':view==='summary'?'#summaryView':routeReturnHash);
+  $('navReplan').setAttribute('aria-pressed',String(location.hash==='#replan08'&&view==='route'));if(location.hash==='#replan08'&&view==='route')$('navRoute').setAttribute('aria-pressed','false');
   if (focus) {
     const title = $(view === 'edit' ? 'editorTitle' : view === 'summary' ? 'summaryTitle' : 'routeTitle');
     title.focus({ preventScroll: true });
@@ -431,7 +433,7 @@ function routeHash(){
  if(target){for(let p=target.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;target.scrollIntoView({block:'start'});}
  if(hash==='#replan08'){document.dispatchEvent(new CustomEvent('workspace:mode',{detail:'replan'}));$('navRoute').setAttribute('aria-pressed','false');$('navReplan').setAttribute('aria-pressed','true');}
 }
-$('navRoute').onclick=()=>{showView('route',true);document.dispatchEvent(new CustomEvent('workspace:mode',{detail:'review'}));};
+$('navRoute').onclick=()=>{routeReturnHash='#routeView';if(location.hash==='#replan08')history.replaceState(null,'','#routeView');showView('route',true);document.dispatchEvent(new CustomEvent('workspace:mode',{detail:'review'}));};
 $('navReplan').onclick=()=>{history.pushState(null,'','#replan08');routeHash();};
 window.addEventListener('hashchange',routeHash);
 document.addEventListener('workspace:ready',routeHash);

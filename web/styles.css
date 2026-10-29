@@ -48,3 +48,5 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 
 .journeyWorkspace .lockBadge{font-size:12px;color:#775027}.journeyWorkspace .journeyAgents [data-role] summary span{display:block}
 @media(max-width:760px){.journeyWorkspace .travel-scene{height:116px}.journeyWorkspace .scene-facts{line-height:1.6}.journeyWorkspace .scene-copy{padding-top:12px}}
+
+.journeyWorkspace #agentDock [data-role]{margin:7px 0}.journeyWorkspace #agentDock [data-role]>summary{padding:7px 10px}.journeyWorkspace #agentDock .agentOutcome{line-height:1.5;margin-top:2px}.journeyWorkspace #agentDock h3{margin-bottom:6px}
