@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-29T03:57:50.419Z",
+  "assertions": 26,
+  "upstreamCallsToSyntheticSender": 29,
+  "realBusinessCalls": 0,
+  "external": 0,
+  "errors": [],
+  "scope": "合成SDK与上游：8点2餐选择、原链17道路+1模型、4角色+7少步行道路、预览/拒绝/切日双向定位/刷新回放/手机；真实业务0"
+}

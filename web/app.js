@@ -1,7 +1,7 @@
 import {installSdkDiagnostics} from './sdk-diagnostics.js';
 installSdkDiagnostics();
 import {
-  defaultDraft, toRequest, validateRequest, dateAt, BUDGET, GAPS,
+  defaultDraft, toRequest, fromRequest, validateRequest, dateAt, BUDGET, GAPS,
   save, restore, STORAGE_KEY, CITY_CONFIG,
 } from './core.js';
 import {createPlanPanel} from './planning.js';
@@ -414,4 +414,4 @@ showView('route');
 $('editTrip').onclick=()=>showView('edit',true);
 $('closeEditor').onclick=()=>{$('editDialog').close();$('editTrip').focus();};
 $('editDialog').addEventListener('cancel',()=>requestAnimationFrame(()=>$('editTrip').focus()));
-planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false})});
+planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});

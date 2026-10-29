@@ -1,0 +1,222 @@
+{
+  "licensing": "User states explicit permission exists, local document not yet reviewed. Basemap/road derived evidence withheld from push.",
+  "items": [
+    {
+      "file": "task08-real-a1-desktop.png",
+      "bytes": 79879,
+      "sha256": "d8f8faeaa61bee1d7fc0cb92c15bd6643ff993fd440078637143f48c7a069036",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a1-desktop.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a1-operation.webm",
+      "bytes": 18994040,
+      "sha256": "9ec07890bd19908e1c26a6d4bd141798458e1d68197de1241cff247c49eb4c4c",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a1-operation.webm",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a1-recording.json",
+      "bytes": 2022,
+      "sha256": "ec0cb736a2ffa921b4514cd344dfd96f064226ed0ee8e1a88e9fe5bdf87bbfcd",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a1-recording.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a1-report.json",
+      "bytes": 49272,
+      "sha256": "e1a4d5c947d18a5f9f8f8b3638cb4d33adb79f7830f6714bf6b76cf35700be2e",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a1-report.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a2-desktop.png",
+      "bytes": 79163,
+      "sha256": "b02029f0f081c418d65f3fca8c91d37633d071befa8cbdfd38321cd19cfcb98c",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a2-desktop.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a2-operation.webm",
+      "bytes": 6907541,
+      "sha256": "261c8560da5eae6d3d7a3bfff0a13a37e6e2ca1f795500b43aa565f3ca89a5e0",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a2-operation.webm",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a2-recording.json",
+      "bytes": 2020,
+      "sha256": "40b88ff421b7f01342d9322ebe67ef92b4e2a87af5b509441a4aab1fffbcc125",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a2-recording.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a2-replan.json",
+      "bytes": 156624,
+      "sha256": "bfb52d5a71c6cd509de99da7b78193709896ed5fa175abd11feac004ccac0d21",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a2-replan.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a2-report.json",
+      "bytes": 61564,
+      "sha256": "e7d946acc78397c634ffab81002de749ccdcac7554b6648f0bf20561328a2713",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a2-report.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a3-desktop.png",
+      "bytes": 81320,
+      "sha256": "a84dc01959a093305f1971770d54c171b582732e597507d8ae751b0f111f318a",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a3-desktop.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a3-operation.webm",
+      "bytes": 7846537,
+      "sha256": "2695bda62da4491890bf354f78be85362c09ce63b736301ac9001f8bba571d3a",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a3-operation.webm",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a3-recording.json",
+      "bytes": 2020,
+      "sha256": "99d9000a79ddd88ce033c9b52b07e37b29878fe31e8768cf3f47c6e9ec50df05",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a3-recording.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a3-replan.json",
+      "bytes": 71914,
+      "sha256": "c9ea7b92745d1182d198d67786f9da0620b181335dd1f6dfb0a2f0a09513a767",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a3-replan.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a3-report.json",
+      "bytes": 44253,
+      "sha256": "76f05e266a9de030e8621648d2b0887595071857957fa29c08e24ec18bfdacb6",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a3-report.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a4-desktop.png",
+      "bytes": 85427,
+      "sha256": "0313b01650f307b3e2ef16132f29cb21c059ff49bd4446859880e626e2be3a6b",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a4-desktop.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a4-operation.webm",
+      "bytes": 27445863,
+      "sha256": "dbb1783529e1906d04dbbb2aeebda8fed6c8885a2cd3cbfd147d636441cf1901",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a4-operation.webm",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a4-recording.json",
+      "bytes": 2023,
+      "sha256": "f4dab17f252e8332ff8d41a9679ec730d77843b2c934aa943e1c0745ed6edfb7",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a4-recording.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a4-replan.json",
+      "bytes": 193879,
+      "sha256": "033755a8764f68af6a54d745e5b90b78923f1c63d7f479f419ae22a14c8b258f",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a4-replan.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-a4-report.json",
+      "bytes": 42377,
+      "sha256": "cbdaa3719e32d8251e3c6641a26cffc8283cd43c81f65d03334a64400e64e51e",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-a4-report.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-compare.json",
+      "bytes": 365,
+      "sha256": "805d120f06b4eef70005e58c7fe69494a5645f219730d0ab3fdb64aaae517067",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-compare.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-desktop-controls.png",
+      "bytes": 79322,
+      "sha256": "b7782ea200c576ed643a9258a7b6b8b535fa3e9455c765f7cb7338ed9a2c7a67",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-desktop-controls.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-desktop.png",
+      "bytes": 100543,
+      "sha256": "f48f9be91f39c6790df313a6691b8c95e4487b468b6caf5c3ff1ee9a0285258a",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-desktop.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-mobile-compare.png",
+      "bytes": 47706,
+      "sha256": "5401fc31a17aa730df40b1d0944e808c50765b6199f69caf8ec7f25da4d9a51b",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-mobile-compare.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-operation.webm",
+      "bytes": 1621660,
+      "sha256": "38a2d402d241581c31caa7930baafd10637ffb5c4e8cd79c04664a288cc47fa2",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-operation.webm",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-original-day1.png",
+      "bytes": 258534,
+      "sha256": "5c772314a861545e172d3a6a2cd25ca3e0bf21276237b9499cb73ed20b9a0160",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-original-day1.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-original-day2.png",
+      "bytes": 310847,
+      "sha256": "755ef99a13475d43059ab8cb6804b3076a96a112721dc94696aa1803f7b7c612",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-original-day2.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-preview-day1.png",
+      "bytes": 258534,
+      "sha256": "5c772314a861545e172d3a6a2cd25ca3e0bf21276237b9499cb73ed20b9a0160",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-preview-day1.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-preview-day2.png",
+      "bytes": 212499,
+      "sha256": "1c538b44244c5d10c08ba46c6265f8c19537685a48c283e7564e5fb239854baa",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-preview-day2.png",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-recording.json",
+      "bytes": 2435,
+      "sha256": "488fbf742ba8f29ebc2ca2fbc44e741acf10c084c165589ffe156d212aace9e0",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-recording.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-replan.json",
+      "bytes": 193879,
+      "sha256": "033755a8764f68af6a54d745e5b90b78923f1c63d7f479f419ae22a14c8b258f",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-replan.json",
+      "hashVerified": true
+    },
+    {
+      "file": "task08-real-replay-report.json",
+      "bytes": 64438,
+      "sha256": "9d82c63d6540e2f119202c4d7d17bc71ecb5ef3d000e604eecae4b9d815c170c",
+      "privateRelativePath": "docs/private/task08-evidence/task08-real-replay-report.json",
+      "hashVerified": true
+    }
+  ]
+}

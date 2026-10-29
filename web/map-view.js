@@ -8,7 +8,7 @@ export function createMapView({AMap,container,onSelect=()=>{},onLeg=()=>{},initi
   ready.catch(()=>{});
   let pickingEnabled=false;const pair=p=>p&&typeof p.getLng==='function'?[p.getLng(),p.getLat()]:Array.isArray(p)?p:[p?.lng,p?.lat];
   map.on?.('click',e=>{if(!destroyed&&pickingEnabled)onPick(pair(e.lnglat));});
-  const label=a=>a.role?.includes('集合')?'集合/返':String(a.sequence??'?');
+  const label=a=>a.role?.includes('集合')?'集合/返':String(a.sequence??'?')+(a.name?.includes('锁定')?'锁':'');
   const content=(group,active=false)=>`<span class="mapPin${active?' isActive':''}${group.pending?' isPending':''}">${group.labels.join('·')}</span>`;
   const clear=()=>{if(overlays.length)map.remove(overlays.splice(0));markers.clear();groups.length=0;};
   function highlight(id){for(const group of groups){const active=group.ids.includes(id);group.marker.setContent?.(content(group,active));group.marker.setzIndex?.(active?200:100);}}

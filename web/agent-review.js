@@ -2,15 +2,15 @@ const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.
 const roleNames={coordinate:'需求协调',screen:'方案筛选',plan:'行程规划',audit:'行程审查'};
 const metricStates={conflict:'估计冲突',insufficient:'资料不足',uncertain:'不确定',within_estimate:'当前估计未超'};
 const states={running:'正在执行',completed:'已完成',failed:'失败',preview:'修订待确认',accepted:'已采用修订',rejected:'保留原方案',invalidated:'需求已变，结果失效',cancelled:'已取消'};
-export function createAgentPanel({root,getRequest,validate,onResult,onBusy}){
+export function createAgentPanel({root,getRequest,validate,onResult,onBusy,apiBase='/api/live/agents/',prefix='agent'}){
  let state=null,epoch=0,poll=null,view='original',baseline=false,disposed=false;
- const section=el('section');section.id='agentReview';section.className='agentReview';
+ const section=el('section');section.id=prefix+'Review';section.className=prefix+'Review';
  const h=el('h3','多Agent冲突审查与修订预览'),notice=el('p','四个角色独立调用，程序核算；先核查原交通链，再手动启动。地点、午餐和硬约束保持，原方案保留。');
- const start=el('button','运行一次多Agent冲突审查');start.id='agentStart';start.type='button';
- const status=el('p','尚未运行');status.id='agentStatus';status.setAttribute('role','status');
- const nodes=el('div');nodes.id='agentNodes';const compare=el('div');compare.id='agentCompare';
+ const start=el('button','运行一次多Agent冲突审查');start.id=prefix+'Start';start.type='button';
+ const status=el('p','尚未运行');status.id=prefix+'Status';status.setAttribute('role','status');
+ const nodes=el('div');nodes.id=prefix+'Nodes';const compare=el('div');compare.id=prefix+'Compare';
  section.append(h,notice,el('p','需求协调 → 方案筛选 → 行程规划 → 程序核算 → 行程审查；最多一次规划/审查回交。'),start,status,nodes,compare);root.append(section);
- const post=async(action,extra={})=>{const r=await fetch('/api/live/agents/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({request:getRequest(),...extra})});const b=await r.json();if(!r.ok)throw Error(b.message||'协作接口失败');return b;};
+ const post=async(action,extra={})=>{const r=await fetch(apiBase+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({request:getRequest(),...extra})});const b=await r.json();if(!r.ok)throw Error(b.message||'协作接口失败');return b;};
  function show(which){view=which;const r=which==='preview'?state?.preview:state?.original;if(r)onResult({...r,label:(state?.replay?'历史回放 · ':'')+(which==='preview'?'修订预览（'+(state.status==='accepted'?'已采用':'尚未采用')+'）':'原方案（保留）')});}
  function render(){
   start.disabled=!baseline||state?.status==='running'||!!state&&state.status!=='invalidated';
@@ -30,11 +30,12 @@ export function createAgentPanel({root,getRequest,validate,onResult,onBusy}){
   state.original.review.days.forEach((d,i)=>{const p=state.preview.review.days[i];d.members.forEach((m,j)=>row(`第${i+1}天 · 同行者${j+1}步行`,range(m.walking.knownSubtotal,1000)+'公里 · '+metricStates[m.walking.status],range(p.members[j].walking.knownSubtotal,1000)+'公里 · '+metricStates[p.members[j].walking.status]));row(`第${i+1}天已计入时间`,range(d.time.knownSubtotal)+'分钟',range(p.time.knownSubtotal)+'分钟');});
   state.original.review.members.forEach((m,i)=>row(`同行者${i+1}全程费用`,range(m.budget.knownSubtotal,100)+'元 · 总量未知',range(state.preview.review.members[i].budget.knownSubtotal,100)+'元 · 总量未知'));compare.append(table);
   const changes=el('details');changes.append(el('summary','每项候选修改、影响与来源'));for(const c of state.changes){changes.append(el('p',`${c.from} → ${c.to}：${c.usedAlternative?'预览采用较少步行路段':'候选没有更少步行，保留原路段'}；影响${c.affectedPersons.join('、')}`),el('p',c.reason),el('pre',JSON.stringify({original:c.original,candidate:c.candidate,notice:c.notice},null,2)));}compare.append(changes,el('p','未知开放、预约、内部步行、等位和费用仍在。修订未达标或资料不足也可比较，不自动判为可行。'));
+  if(state.preview?.selectedOption)compare.append(el('p',state.preview.selectedOption.label+'：'+state.preview.selectedOption.tradeoff));if(state.preview?.readiness){compare.append(el('p',state.preview.readiness.canAccept?'已计入估计未发现硬冲突，未知仍待核实':'本轮候选未满足，不能采用失败预览'));state.preview.readiness.issues.forEach(x=>compare.append(el('p',x)));state.preview.readiness.choices.forEach(x=>compare.append(el('p',x)));}
   if(state.roundLimitReached)compare.append(el('p','已达到最多两轮，停止修订；遗留问题保留。'));
-  for(const [accept,label,id] of [[true,'接受当前修订','agentAccept'],[false,'保留原方案','agentReject']]){const b=el('button',label);b.id=id;b.type='button';b.disabled=!['preview','accepted','rejected'].includes(state.status);b.onclick=async()=>{b.disabled=true;try{const d=await post('decide',{id:state.id,accept});state=d.state;view=accept?'preview':'original';show(view);render();}catch(e){status.textContent=e.message;}};compare.append(b);}
+  for(const [accept,label,id] of [[true,'接受当前修订',prefix+'Accept'],[false,'保留原方案',prefix+'Reject']]){const b=el('button',label);b.id=id;b.type='button';b.disabled=!['preview','accepted','rejected'].includes(state.status)||(accept&&state.preview?.readiness?.canAccept===false);b.onclick=async()=>{b.disabled=true;try{const d=await post('decide',{id:state.id,accept});state=d.state;view=accept?'preview':'original';show(view);render();}catch(e){status.textContent=e.message;}};compare.append(b);}
  }
  async function read(replay=false){const current=epoch;try{const d=await post('state');if(current!==epoch||disposed)return;state=d.state;if(state)state.replay=replay;render();onBusy(state?.status==='running');if(state?.status==='running')poll=setTimeout(()=>read(false),750);else if(state?.preview){show(state.status==='accepted'?'preview':view);}}catch(e){if(current===epoch){status.textContent=e.message;onBusy(false);}}}
  start.onclick=async()=>{if(start.disabled||!validate())return;start.disabled=true;onBusy(true);const current=++epoch;try{const d=await post('start');if(current!==epoch)return;state=d.state;render();await read();}catch(e){status.textContent=e.message;onBusy(false);start.disabled=!baseline;}};
  render();read(true);
- return {baselineReady(v){baseline=v;render();},invalidate(){epoch++;clearTimeout(poll);state=null;baseline=false;render();onBusy(false);post('invalidate').catch(()=>{});},destroy(){disposed=true;clearTimeout(poll);}};
+ return {refresh:()=>read(true),baselineReady(v){baseline=v;render();},invalidate(){epoch++;clearTimeout(poll);state=null;baseline=false;render();onBusy(false);post('invalidate').catch(()=>{});},destroy(){disposed=true;clearTimeout(poll);}};
 }

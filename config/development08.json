@@ -1,0 +1,6 @@
+{
+  "stages": ["task07", "task08"],
+  "caps": {"model":64,"location":40,"route":320,"map":64},
+  "perRun": {"model":6,"route":16,"concurrency":1,"timeoutMs":720000,"automaticRetries":0},
+  "reference":"2026-10-29用户明确授权任务08，锁第2天午餐12:30～13:30；仅第2天三人4公里，保留原采用版本，不自动采用07预览；不充值购买或新增安全权限"
+}
