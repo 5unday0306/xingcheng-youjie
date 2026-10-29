@@ -1,0 +1,214 @@
+{
+  "message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#configure08:not([disabled])')\u001b[22m\n",
+  "statusText": "尚未运行，先取得原方案真实道路",
+  "replanText": "输入已改变：旧运行/预览失效，原采用方案保留并标为尚未适配。",
+  "meta": {
+    "version": 1,
+    "requestVersion": "9e31a863-71dc-43bb-988e-2c0c7be82440",
+    "request": {
+      "city": "taiyuan",
+      "people": 3,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "start": "09:00",
+          "end": "18:00"
+        },
+        {
+          "date": "2026-11-08",
+          "start": "09:00",
+          "end": "18:00"
+        }
+      ],
+      "endpoint": {
+        "name": "山西博物院东门外公共集合点",
+        "address": "太原市滨河西路北段13号（东门地址线索）",
+        "verified": false
+      },
+      "members": [
+        {
+          "id": "member-1",
+          "name": "同行者1",
+          "preference": "历史展览",
+          "budget": 600,
+          "walking": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "member-2",
+          "name": "同行者2",
+          "preference": "风景拍照",
+          "budget": 600,
+          "walking": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "member-3",
+          "name": "同行者3",
+          "preference": "美食，少走路",
+          "budget": 600,
+          "walking": [
+            6,
+            6
+          ]
+        }
+      ],
+      "transportMode": "mixed"
+    },
+    "lock": null,
+    "adopted": {
+      "id": "adopted-2026-10-29T07:28:27.895Z",
+      "requestVersion": "9e31a863-71dc-43bb-988e-2c0c7be82440",
+      "requestHash": "69a3b97cee7aaf7d0cdf73b848c4efcfa465d5fa6d91300f92547c539be9db8b",
+      "request": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-3",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ],
+        "transportMode": "mixed"
+      },
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "测试替身按候选顺序分配，仅验证交接，不代表偏好优化"
+              },
+              {
+                "type": "meal",
+                "reason": "具体门店未知，未定位或锁定午餐"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "测试替身按候选顺序分配，仅验证交接，不代表偏好优化"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "测试替身按候选顺序分配，仅验证交接，不代表偏好优化"
+              },
+              {
+                "type": "meal",
+                "reason": "具体门店未知，未定位或锁定午餐"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "测试替身按候选顺序分配，仅验证交接，不代表偏好优化"
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "当前正式已采用方案，非07预览",
+      "roadPreferences": {
+        "ENDPOINT>MUSEUM_GATE": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "MUSEUM_GATE>TY01": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "TY01>MUSEUM_GATE": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "MUSEUM_GATE>LUNCH1": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "LUNCH1>TY04": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "TY04>ENDPOINT": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "ENDPOINT>TY05": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "TY05>LUNCH2": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "LUNCH2>TY06": {
+          "mode": "walk",
+          "strategy": 0
+        },
+        "TY06>ENDPOINT": {
+          "mode": "walk",
+          "strategy": 0
+        }
+      }
+    }
+  },
+  "workflow": null
+}

@@ -1,0 +1,180 @@
+{
+  "format": "xingcheng-youjie.plan",
+  "version": 1,
+  "exportedAt": "2026-10-29T07:31:47.496Z",
+  "scheme": {
+    "versionId": "d995d8e9-807d-4ff6-b601-5e47c1148018-r1",
+    "requestVersion": "961cca08-8c62-4dfc-a3b9-c24bda9cd023",
+    "state": "adopted",
+    "history": false,
+    "assessmentStatus": "需在线复核",
+    "adoptionNotice": "采用状态以应用版本记录为准",
+    "matchesCurrentRequest": true
+  },
+  "requirements": {
+    "city": "taiyuan",
+    "people": 3,
+    "days": [
+      {
+        "date": "2026-11-07",
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "date": "2026-11-08",
+        "start": "09:00",
+        "end": "18:00"
+      }
+    ],
+    "endpointLabel": "山西博物院东门外公共集合点",
+    "members": [
+      {
+        "id": "member-1",
+        "name": "同行者1",
+        "preference": "历史展览",
+        "budgetYuan": 600,
+        "walkingLimitsKm": [
+          6,
+          4
+        ]
+      },
+      {
+        "id": "member-2",
+        "name": "同行者2",
+        "preference": "风景拍照",
+        "budgetYuan": 600,
+        "walkingLimitsKm": [
+          6,
+          4
+        ]
+      },
+      {
+        "id": "member-3",
+        "name": "同行者3",
+        "preference": "美食，少走路",
+        "budgetYuan": 600,
+        "walkingLimitsKm": [
+          6,
+          4
+        ]
+      }
+    ]
+  },
+  "lock": {
+    "activityId": "meal:2026-11-08:LUNCH2",
+    "date": "2026-11-08",
+    "pointReference": "LUNCH2",
+    "name": "老太原菜馆(钟楼街店)",
+    "start": "12:30",
+    "end": "13:30",
+    "notice": "计划锁定，不是营业/预约或到达保证"
+  },
+  "days": [
+    {
+      "date": "2026-11-07",
+      "activities": [
+        {
+          "type": "visit",
+          "candidateId": "TY01",
+          "name": "山西博物院",
+          "stayMinutesEstimate": 150,
+          "internalWalkingMetersEstimate": [
+            1000,
+            2000
+          ],
+          "sourceKind": "项目自有游览准备估计，非实测",
+          "sourceObtainedAt": "2026-10-23",
+          "opening": "待核实",
+          "ticketPrice": "待核实"
+        },
+        {
+          "type": "meal",
+          "label": "已确认午餐/餐厅请在应用核对",
+          "scheduledStart": null,
+          "scheduledEnd": null,
+          "durationMinutes": null
+        },
+        {
+          "type": "visit",
+          "candidateId": "TY04",
+          "name": "迎泽公园短环线",
+          "stayMinutesEstimate": 45,
+          "internalWalkingMetersEstimate": [
+            800,
+            1500
+          ],
+          "sourceKind": "项目自有游览准备估计，非实测",
+          "sourceObtainedAt": "2026-10-23",
+          "opening": "待核实",
+          "ticketPrice": "待核实"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "activities": [
+        {
+          "type": "visit",
+          "candidateId": "TY05",
+          "name": "钟楼街",
+          "stayMinutesEstimate": 45,
+          "internalWalkingMetersEstimate": [
+            500,
+            1000
+          ],
+          "sourceKind": "项目自有游览准备估计，非实测",
+          "sourceObtainedAt": "2026-10-23",
+          "opening": "待核实",
+          "ticketPrice": "待核实"
+        },
+        {
+          "type": "meal",
+          "label": "老太原菜馆(钟楼街店)",
+          "scheduledStart": "12:30",
+          "scheduledEnd": "13:30",
+          "durationMinutes": 60
+        }
+      ]
+    }
+  ],
+  "mealEstimates": [
+    {
+      "day": 1,
+      "name": "老太原山西菜馆",
+      "durationMinutesEstimate": 60,
+      "costCentsPerPersonEstimate": [
+        4000,
+        8000
+      ],
+      "source": "用户接受的准备估计，不是餐厅报价或API价格"
+    },
+    {
+      "day": 2,
+      "name": "老太原菜馆(钟楼街店)",
+      "durationMinutesEstimate": 60,
+      "costCentsPerPersonEstimate": [
+        7200,
+        11000
+      ],
+      "source": "用户接受的准备估计，不是餐厅报价或API价格"
+    }
+  ],
+  "changes": null,
+  "totals": {
+    "time": "交通/等位和完整到离时间未随文件导出，请在应用在线核查",
+    "walking": "仅列独立内部步行估计和用户上限；不以此替代全程步行",
+    "budget": "列个人预算上限，完整费用尚有未知"
+  },
+  "dataBoundary": {
+    "mapDataIncluded": false,
+    "scope": "用户输入、锁定、版本及模型活动结构、项目独立估计；不包含地图图面/瓦片、坐标、道路几何、原始响应或上游交通指标",
+    "licenseStatus": "用户声明已有许可，文件待本机复核；本导出仍按保守范围",
+    "mapAccess": "运行本项目后在正式工作台显式加载地图，不以文本导出替代应用地图"
+  },
+  "unknowns": [
+    "未来开放/预约/门票",
+    "排队/餐厅等位与营业",
+    "内部步行边界与街区重叠",
+    "未来交通与完整费用，整体旅行可行性未验证"
+  ]
+}

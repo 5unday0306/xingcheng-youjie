@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-29T07:31:47.846Z",
+  "assertions": 30,
+  "upstreamCallsToSyntheticSender": 16,
+  "realBusinessCalls": 0,
+  "external": 0,
+  "errors": [],
+  "scope": "受控08：锁12:30午餐、仅第2天4公里、四角色、删除活动重连、拒绝/接受、版本保存刷新、切日/定位/手机；SDK与上游合成，真实业务0"
+}

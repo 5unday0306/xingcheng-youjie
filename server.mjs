@@ -11,7 +11,7 @@ import {offlinePlanner} from './lib/offline-fixture.mjs';
 import {localCsp,realMapCsp,isolatedWorkbenchCsp} from './lib/content-security-policy.mjs';
 import {createMapContainerServer} from './lib/map-container-server.mjs';
 import {createFrameMapSession} from './lib/frame-map-session.mjs';
-const files = new Map([['/replan08.js',['replan08.js','text/javascript']],['/agent-review.js',['agent-review.js','text/javascript']],['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/case06-controls.js',['case06-controls.js','text/javascript']],['/range-text.js',['range-text.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
+const files = new Map([['/export09.js',['export09.js','text/javascript']],['/replan08.js',['replan08.js','text/javascript']],['/agent-review.js',['agent-review.js','text/javascript']],['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/case06-controls.js',['case06-controls.js','text/javascript']],['/range-text.js',['range-text.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
 function json(res,status,data) {res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data));}
 function readBody(req) {
   return new Promise((resolve,reject)=>{
@@ -94,14 +94,16 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,initialReplan08,saveReplan08,saveReplanJournal,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
-  const port=realPrep?4177:testMode?4174:4173;
+  const portArg=process.argv.find(a=>a.startsWith('--port=')),mapArg=process.argv.find(a=>a.startsWith('--map-port='));
+  const port=portArg?Number(portArg.split('=')[1]):realPrep?4177:testMode?4174:4173,mapPort=mapArg?Number(mapArg.split('=')[1]):4184;
+  if(![port,mapPort].every(n=>Number.isInteger(n)&&n>=1024&&n<=65535)||port===mapPort)throw Error('本机端口须为1024～65535的不同整数');
   let frameOrigin=null;
   const mapSession=realPrep?createFrameMapSession({live}):null;
   const mainServer=createServer({planning,live,mapFrameOrigin:realPrep?()=>frameOrigin:null,mapFrameSession:mapSession});
   if(realPrep){
     const child=createMapContainerServer({getOrigins:()=>({parentOrigin:'http://127.0.0.1:'+port,mapOrigin:frameOrigin}),mapSession});
-    await new Promise((resolve,reject)=>{child.once('error',reject);child.listen(4184,'127.0.0.2',resolve);});
-    frameOrigin='http://127.0.0.2:4184';
+    await new Promise((resolve,reject)=>{child.once('error',reject);child.listen(mapPort,'127.0.0.2',resolve);});
+    frameOrigin='http://127.0.0.2:'+mapPort;
     process.on('SIGINT',()=>child.close());
   }
   mainServer.listen(port,'127.0.0.1',()=>console.log(`行程有解：http://127.0.0.1:${port} ${testMode?'（离线替身测试）':realPrep?'（受控联调准备，点击前不联网）':'（普通模式，真实生成关闭）'}，Ctrl+C停止`));
