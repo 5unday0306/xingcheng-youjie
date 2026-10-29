@@ -1,0 +1,7 @@
+{
+  "scope": "本轮暂存文本形态扫描与跟踪路径核对；不读取.env；不是绝对无泄露证明",
+  "stagedFiles": 19,
+  "forbiddenTrackedPaths": [],
+  "secretShapedHits": [],
+  "privateRawChatIncluded": false
+}
