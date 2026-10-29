@@ -85,9 +85,10 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL(`./docs/private/${picksName}.json`,import.meta.url),tmp=new URL(`./docs/private/${picksName}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
     let initialCase06Draft=null;if(task06)try{initialCase06Draft=JSON.parse(await readFile(new URL('./docs/private/06-draft.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
     const saveCase06Draft=async d=>{const path=new URL('./docs/private/06-draft.json',import.meta.url),tmp=new URL('./docs/private/06-draft.tmp',import.meta.url);await writeFile(tmp,JSON.stringify(d),{mode:0o600});await rename(tmp,path);};
+    let historicalReview=null;if(task06){const h=JSON.parse(await readFile(new URL('./docs/verification/task06-final-acceptance.json',import.meta.url),'utf8'));historicalReview={at:h.at,source:'docs/verification/task06-final-acceptance.json',scope:'历史任务06的预测/估计，不是本次新查询',days:h.days.map(d=>({date:d.date,walking:d.walking.map((m,i)=>({person:i+1,range:m.walking.knownSubtotal,limit:m.walking.limit,status:m.walking.status}))}))};}
     // Per-run journals contain exact role inputs/outputs, never credentials or raw geometry.
     const saveAgentJournal=async journal=>{if(!journal)return;const path=new URL(`./docs/private/07-${journal.id}.json`,import.meta.url),tmp=new URL(`./docs/private/07-${journal.id}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(journal,null,2),{mode:0o600});await rename(tmp,path);};
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const port=realPrep?4177:testMode?4174:4173;
