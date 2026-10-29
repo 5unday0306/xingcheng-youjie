@@ -15,7 +15,7 @@ export function createWorkspace({getRequest,onAction,onMode}){
  for(const [v,t] of [['review','旅行规划'],['replan','锁定重排']]){const b=el('button',t);b.type='button';b.dataset.mode=v;b.onclick=()=>selectMode(v);modes.append(b);}agents.append(modes);
  grid.append(map,activities);panel.prepend(head,tabs,agents,grid);
  const disclosure=(id,title)=>{const d=el('details');d.id=id;d.append(el('summary',title));panel.append(d);return d;};
- const places=disclosure('placeSettings','开发模式 · 地点维护');const lock=disclosure('lockSettings','锁定安排与重排条件');const basis=disclosure('basisDetails','依据与待核实');const records=disclosure('devRecords','开发与运行记录');
+ const places=disclosure('placeSettings','开发模式 · 地点维护');const lock=disclosure('lockSettings','锁定安排与重排条件');const basis=disclosure('basisDetails','依据与待核实');const records=disclosure('devRecords','开发与运行记录');records.hidden=new URLSearchParams(location.search).get('developer')!=='1';
  for(const n of [document.getElementById('generationTitle')?.parentElement,document.getElementById('generationMode'),document.getElementById('generationStatus'),document.getElementById('offlineRun')])if(n)records.append(n);
  const candidates=document.getElementById('candidateList')?.closest('details');if(candidates)basis.append(candidates);
  for(const n of [document.querySelector('.gaps'),document.querySelector('.dayBrief')])if(n)basis.append(n);
