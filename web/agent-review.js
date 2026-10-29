@@ -7,7 +7,7 @@ const states={running:'正在执行',completed:'已完成',failed:'失败',previ
 export function createAgentPanel({root,getRequest,validate,onResult,onBusy,apiBase='/api/live/agents/',prefix='agent',onState=()=>{},onLocate=()=>{}}){
  let state=null,epoch=0,poll=null,view=apiBase.includes('/journey/')?'preview':'original',baseline=false,disposed=false;
  const section=el('section');section.id=prefix+'Review';section.className=prefix+'Review';
- const h=el('h3','多Agent冲突审查与修订预览'),notice=el('p','四个角色独立调用，程序核算；先核查原交通链，再手动启动。地点、午餐和硬约束保持，原方案保留。');
+ const h=el('h3',apiBase.includes('/journey/')?'四角色旅行规划':'多Agent冲突审查与修订预览'),notice=el('p','四个角色独立调用，程序核算；先核查原交通链，再手动启动。地点、午餐和硬约束保持，原方案保留。');
  const start=el('button','运行一次多Agent冲突审查');start.id=prefix+'Start';start.type='button';
  const status=el('p','尚未运行');status.id=prefix+'Status';status.setAttribute('role','status');
  const nodes=el('div');nodes.id=prefix+'Nodes';const compare=el('div');compare.id=prefix+'Compare';
@@ -15,11 +15,11 @@ export function createAgentPanel({root,getRequest,validate,onResult,onBusy,apiBa
  const drawer=el('dialog');drawer.className='agentDrawer';drawer.setAttribute('aria-label','角色输入输出与交接');const drawerClose=el('button','关闭角色详情');drawerClose.type='button';const drawerBody=el('div');drawerClose.onclick=()=>drawer.close();drawer.append(drawerClose,drawerBody);document.body.append(drawer);
 
  const post=async(action,extra={})=>{const r=await fetch(apiBase+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({request:getRequest(),...extra})});const b=await r.json();if(!r.ok)throw Error(b.message||'协作接口失败');return b;};
- function show(which){view=which;const r=which==='preview'?state?.preview:state?.original;if(!r){onResult(null);return;}if(r)onResult({...r,label:(state?.replay?'历史回放 · ':'')+(which==='preview'?'修订预览（'+(state.status==='accepted'?'已采用':'尚未采用')+'）':'原方案（保留）')});}
+ function show(which){view=which;const r=which==='preview'?state?.preview:state?.original;if(!r){onResult(null);return;}if(r)onResult({...r,label:(state?.replay?'历史回放 · ':'')+(which==='preview'?(state.kind==='initial-generation'?'生成预览（':'修订预览（')+(state.status==='accepted'?'已采用':'尚未采用')+'）':'原方案（保留）')});}
  function render(){
   onState(state);
   start.disabled=!baseline||state?.status==='running'||!!state&&state.status!=='invalidated';
-  status.textContent=state?(state.replay?'历史回放 · ':'')+(states[state.status]||state.status)+(state.reason?'：'+state.reason:''):'尚未运行，先取得原方案真实道路';
+  status.textContent=state?(state.replay?'历史回放 · ':'')+(state.kind==='initial-generation'&&state.status==='preview'?'生成待确认':states[state.status]||state.status)+(state.reason?'：'+state.reason:''):(apiBase.includes('/journey/')?'尚未执行，点“生成行程”开始四角色规划':'尚未运行，先取得原方案真实道路');
   const opened=new Set([...nodes.querySelectorAll('details[data-role][open]')].map(n=>n.dataset.role));const openedInputs=new Set([...nodes.querySelectorAll('details[data-node-input][open]')].map(n=>n.dataset.nodeInput));
   nodes.replaceChildren();if(state?.historicalReview){const past=state.historicalReview;nodes.append(el('p',`历史核查（${past.at}）：第1天${past.days[0].walking[0].range.join('～')}米，对应${past.days[0].walking[0].limit}米上限，估计下限冲突。本次原方案按新取得道路重新核算，与历史值分别展示。`));}
   for(const role of Object.keys(roleNames)){
