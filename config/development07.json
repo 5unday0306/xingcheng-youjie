@@ -1,0 +1,12 @@
+{
+  "stages": ["task07"],
+  "modelCap": 24,
+  "modelPerRun": 6,
+  "routePerRun": 16,
+  "maxRounds": 2,
+  "runTimeoutMs": 720000,
+  "requestTimeoutMs": 60000,
+  "automaticRetries": 0,
+  "concurrency": 1,
+  "reference": "用户明确同意将持续高德/DeepSeek联调扩展至任务07，四角色各一次且最多一次规划审查回交；无充值购买、无新增安全权限，旧消耗失败保留"
+}

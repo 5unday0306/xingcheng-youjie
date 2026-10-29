@@ -1,3 +1,4 @@
+import {createAgentPanel} from './agent-review.js';
 import {rangeText} from './range-text.js';
 import {createPickPanel} from './pick-panel.js';
 import {createLivePanel} from './live-panel.js';
@@ -13,20 +14,21 @@ function metric(title,result,unit,scale=1) {
   box.dataset.status=result.status;return box;
 }
 export function createPlanPanel({getRequest,validate}) {
-  let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null;
+  let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null,agentPanel=null;
   const state=$('generationStatus'),button=$('offlineRun');
   async function updateCase06Ready(){if(!capabilities?.case06)return;const started=revision;const r=await fetch('/api/capabilities');if(!r.ok)return;const c=await r.json();if(started!==revision)return;capabilities.canGenerate=c.canGenerate;button.disabled=busy||!c.canGenerate;button.textContent=c.canGenerate?'核查两天完整交通链':'任务06：先复核位置与选择午餐';}
   async function setup() {
     try {
       const [a,b]=await Promise.all([fetch('/api/capabilities'),fetch('/api/candidates')]);
       if(!a.ok||!b.ok)throw Error();capabilities=await a.json();const data=await b.json();
-      if(capabilities.mode==='real-preparation'){const root=el('div');$('planResult').before(root);livePanel=(capabilities.mapPicking||!capabilities.canPrepare)?createPickPanel({root,capabilities,onMapReady:()=>{paint();updateCase06Ready();},onReady:()=>{if(capabilities.case06){state.textContent='首条道路已查询；任务06请先完成位置与午餐选择，完整核查待接通。';return;}capabilities.canGenerate=true;button.disabled=false;button.hidden=false;button.textContent='生成真实模型草案与两天路线';},onModeChange:()=>{revision++;runController?.abort();result=null;paint();capabilities.canGenerate=false;button.disabled=true;state.textContent=capabilities.case06?'位置或午餐已改变，旧结果失效；完成全部选择后可重新核查。':'落点或方式已改变，旧草案与路线失效；请确认落点并重新查询首段。';updateCase06Ready();}}):createLivePanel({root,capabilities,onModeChange:()=>{revision++;result=null;paint();livePanel?.invalidate();state.textContent='道路方式已修改，旧结果已清除。';},onReady:()=>{if(capabilities.case06){state.textContent='首条道路已查询；任务06请先完成位置与午餐选择，完整核查待接通。';return;}capabilities.canGenerate=true;button.disabled=false;button.textContent='运行一次真实模型草案';}});}
+      if(capabilities.mode==='real-preparation'){const root=el('div');$('planResult').before(root);livePanel=(capabilities.mapPicking||!capabilities.canPrepare)?createPickPanel({root,capabilities,onMapReady:()=>{paint();updateCase06Ready();},onReady:()=>{if(capabilities.case06){state.textContent='首条道路已查询；任务06请先完成位置与午餐选择，完整核查待接通。';return;}capabilities.canGenerate=true;button.disabled=false;button.hidden=false;button.textContent='生成真实模型草案与两天路线';},onModeChange:()=>{revision++;agentPanel?.invalidate();runController?.abort();result=null;paint();capabilities.canGenerate=false;button.disabled=true;state.textContent=capabilities.case06?'位置或午餐已改变，旧结果失效；完成全部选择后可重新核查。':'落点或方式已改变，旧草案与路线失效；请确认落点并重新查询首段。';updateCase06Ready();}}):createLivePanel({root,capabilities,onModeChange:()=>{revision++;result=null;paint();livePanel?.invalidate();state.textContent='道路方式已修改，旧结果已清除。';},onReady:()=>{if(capabilities.case06){state.textContent='首条道路已查询；任务06请先完成位置与午餐选择，完整核查待接通。';return;}capabilities.canGenerate=true;button.disabled=false;button.textContent='运行一次真实模型草案';}});}
       $('generationMode').textContent=capabilities.mode==='offline-test'?'离线替身测试 · 非模型与地图结果':'离线准备 · 真实生成未启用';
       state.textContent=capabilities.canGenerate?'此入口用当前日期与限制测试交接；候选按顺序分配，不做偏好优化。不会查询道路或加载地图。':'本轮未授权真实调用。可展开候选资料；体验草案交接请另启动离线测试服务（端口4174）。';
       button.disabled=!capabilities.canGenerate;button.textContent=capabilities.mode==='real-preparation'?'运行一次真实模型草案':capabilities.canGenerate?'运行离线替身测试':'真实生成未启用';
       if(capabilities.mapPicking){button.disabled=!capabilities.canGenerate;button.hidden=!capabilities.productFlow;$('generationTitle').textContent=capabilities.productFlow?'真实地图、草案与程序核查':'本轮：地图选点与首条道路';}
       if(capabilities.mode==='real-preparation'){$('generationMode').textContent=capabilities.productFlow?'真实模型与高德道路 · 手动触发':'真实接入准备 · 默认不调用';state.textContent=capabilities.productFlow?'加载地图，分别确认测试落点与交通方式，查询首段后可生成真实草案。未知资料保留缺口。':capabilities.mapPicking?'本轮仅验证两个用户测试落点与首条道路，地点检索和模型均关闭。':'先完成入口和单路段验收；有配置不代表有本轮授权。';}
       if(capabilities.productFlow){const r=await fetch('/api/live/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(getRequest())});if(r.ok){const old=await r.json();if(old.result){result=old.result;paint();state.textContent='历史回放：当前服务内真实结果，未重新调用模型或道路；地图需手动加载。';}}}
+      if(capabilities.agentReview){const root=el('div');$('planResult').before(root);agentPanel=createAgentPanel({root,getRequest,validate,onResult:r=>{result=r;paint();},onBusy:v=>{busy=v;button.disabled=v||!capabilities.canGenerate;}});agentPanel.baselineReady(!!result);}
       if(capabilities.case06){state.textContent=result?'历史回放：当前真实草案与道路未重新调用；再次手动核查时，相同需求复用游览草案，需求改变才请求模型。':'先确认位置与午餐，再手动核查。短路先查步行；超过1.2公里或20分钟的外部路段再取实际公交结果，无自动重试。';await updateCase06Ready();}
       $('candidateList').replaceChildren(...data.candidates.map(c=>{
         const item=el('li');item.append(el('strong',`${c.id} ${c.name}`),el('p',c.reference.value),el('p',`停留估计${c.stayMinutes.value.join('～')}分钟；内部步行估计${c.internalMeters.value.map(v=>v/1000).join('～')}公里。`),el('p','当日开放、预约、票价与等待：待核实。'));
@@ -56,9 +58,9 @@ export function createPlanPanel({getRequest,validate}) {
       const response=await fetch('/api/plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request),signal:AbortSignal.any([AbortSignal.timeout(185000),runController.signal])});
       const body=await response.json();if(!response.ok)throw Error(body.message||'本地测试失败');
       if(revision!==startedRevision){state.textContent='运行期间需求已改变，本次旧结果已丢弃，请重新检查。';return;}
-      result=body;paint();state.textContent=body.mode==='real'?(body.review.status==='conflict'?'真实道路已返回；程序发现约束冲突，请查看逐人核查。没有自动放宽条件。':'真实结果已返回；资料缺口仍在，旅行可行性未验证。'):'离线替身测试结束：存在缺口，未验证真实旅行可行性。';$('planResultTitle').focus({preventScroll:true});$('planResultTitle').scrollIntoView({block:'start'});
+      result=body;agentPanel?.baselineReady(body.mode==='real');paint();state.textContent=body.mode==='real'?(body.review.status==='conflict'?'真实道路已返回；程序发现约束冲突，请查看逐人核查。没有自动放宽条件。':'真实结果已返回；资料缺口仍在，旅行可行性未验证。'):'离线替身测试结束：存在缺口，未验证真实旅行可行性。';$('planResultTitle').focus({preventScroll:true});$('planResultTitle').scrollIntoView({block:'start'});
     } catch(error) {state.textContent=`未得到草案：${error.name==='TimeoutError'?'本地处理超时，无自动重试':error.message}。输入保留。`;}
     finally {busy=false;button.disabled=!capabilities?.canGenerate;}
   };
-  setup();return {invalidate(){revision++;if(capabilities?.mode==='real-preparation')runController?.abort();livePanel?.invalidate();if(result){result=null;paint();state.textContent='需求已改变，旧测试结果已清除；重新运行才会核查当前输入。';}},selectDay(index){selectedDay=index;if(result)paint();}};
+  setup();return {invalidate(){revision++;agentPanel?.invalidate();if(capabilities?.mode==='real-preparation')runController?.abort();livePanel?.invalidate();if(result){result=null;paint();state.textContent='需求已改变，旧测试结果已清除；重新运行才会核查当前输入。';}},selectDay(index){selectedDay=index;if(result)paint();}};
 }

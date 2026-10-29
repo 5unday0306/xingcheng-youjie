@@ -30,3 +30,11 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 #case06Choices button{margin:6px 8px 6px 0}#case06Choices p{overflow-wrap:anywhere}#case06Choices details{margin:16px 0} .case06Estimates{display:flex;flex-wrap:wrap;gap:12px}.case06Estimates label{display:grid;gap:6px;min-width:0}.case06Estimates input{width:120px;max-width:100%}
 
 .activePickBar{padding:12px;background:#edf6f2;border:1px solid #b8d2d3;scroll-margin-top:16px}.activePickBar p{margin:0 0 6px}#case06Progress{padding:12px;border-left:3px solid #ad5427;background:#fff4e8;overflow-wrap:anywhere}
+/* Task07 adds a bounded review panel within the existing workbench. */
+.agentReview{margin-block:24px;padding:20px;border:1px solid #b6c8ce;background:#f5f9f9;color:#163544;overflow-wrap:anywhere}
+.agentReview button{margin:6px 8px 6px 0;padding:10px 14px;min-height:44px}
+.agentReview details{margin-block:12px}.agentReview summary{cursor:pointer;min-height:36px}
+.agentReview pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;font-size:13px}
+.agentReview table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:14px}
+.agentReview td,.agentReview th{padding:8px;border:1px solid #bdcdd1;vertical-align:top;text-align:left}
+@media(max-width:480px){.agentReview{padding:12px}.agentReview table{font-size:12px}.agentReview td,.agentReview th{padding:5px}.agentReview button{width:100%}}
