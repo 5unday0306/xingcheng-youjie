@@ -1,0 +1,1096 @@
+{
+  "at": "2026-10-29T12:56:51.558360+00:00",
+  "auditedHead": "65ef1f3328eba2ae4a93c65d727426a780b11033",
+  "commits": 69,
+  "uniqueHistoryBlobs": 1052,
+  "workingFiles": 752,
+  "sensitiveNamedHistoryBlobs": 0,
+  "findings": [
+    {
+      "scope": "history-blob:4cfa261deda0002695a6958a5e90883687ea1535",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:65b326132837dc696eec6bf8f77c3ae330169539",
+      "path": "docs/verification/task05b-product-canvas-diagnostic-real-report.json",
+      "line": 215,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:849a648d9a89e57db6afed695ca5b526008f1549",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 803,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:849a648d9a89e57db6afed695ca5b526008f1549",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 1112,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:94a1e4c11f067d84423c416d830165b6bb999649",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 718,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:94a1e4c11f067d84423c416d830165b6bb999649",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 1060,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:65d42331c8c4c1fd6e38d11bfc53b7ea85767b6d",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 857,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:65d42331c8c4c1fd6e38d11bfc53b7ea85767b6d",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 1201,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:1519bab0d5afd684b844967f4133f3d5f4b85022",
+      "path": "docs/verification/task05b-product-operable-real-report.json",
+      "line": 175,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:6a7594b1cf0f9fbbbd7771fa71882e4344739698",
+      "path": "docs/verification/task05b-product-render-diagnostic-real-report.json",
+      "line": 152,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:89782b6db89c6091fe21859c995a53700d5ccf3a",
+      "path": "docs/verification/task05b-product-resume-real-report.json",
+      "line": 379,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:55038f990cc4f22d2cda5e8c774f74edb916aa15",
+      "path": "docs/verification/task05b-product-resume-visible-real-report.json",
+      "line": 427,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:a1d0f016094091c1e2cac384d3ec048dd88f3893",
+      "path": "docs/verification/task05b-product-tile-target-real-report.json",
+      "line": 246,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:3907e95bc0d3666cded9178e0a5e578c7721598d",
+      "path": "docs/verification/task05b-product-two-days-real-report.json",
+      "line": 646,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 183,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 191,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 199,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 207,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 215,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 223,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 231,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 239,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 247,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 255,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 263,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 271,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 279,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b9c6d0e3b0a0f6c1c951054bdbff7863a9cd4daf",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 287,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:8d281152e94b78236774a9dec78f8a794d340f35",
+      "path": "docs/verification/task05b-product-view-diagnostic-real-report.json",
+      "line": 225,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:897ebaff0595d76c7c6ddb9d3f67b39cc0081bf0",
+      "path": "docs/verification/task05b-product-visible-real-report.json",
+      "line": 293,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:78c6116a36659ec1d8a04155bd8f6d90678a0917",
+      "path": "docs/verification/task05b-product-working-real-report.json",
+      "line": 357,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:6de8b2c8492727c19a90b410ccd4a3093107bf23",
+      "path": "docs/verification/task06-real-complete-a1-report.json",
+      "line": 1597,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:858139eb071b7a1123bc10acdedc9bca167c8e3d",
+      "path": "docs/verification/task06-real-complete-a2-report.json",
+      "line": 1781,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:858139eb071b7a1123bc10acdedc9bca167c8e3d",
+      "path": "docs/verification/task06-real-complete-a2-report.json",
+      "line": 2037,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:85dbc1b4a9053f2e0222b8b2dddbe09eca2fbcf2",
+      "path": "docs/verification/task06-real-final-report.json",
+      "line": 1871,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:1d9289a91bd73d0e56ef7d1b6c9a918cfda42d45",
+      "path": "docs/verification/task06-verified-release-report.json",
+      "line": 1839,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:ac81d93a4d8dcdfcb53bb8c7a667d1d06d88a23c",
+      "path": "docs/verification/task07-real-a1-report.json",
+      "line": 1906,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:7154e1e195bdff4b04dcb1958ab95bb282de1e88",
+      "path": "docs/verification/task07-real-a2-report.json",
+      "line": 1937,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:2e0b272e1fbb3049593416538a6b6f4877b233a9",
+      "path": "docs/verification/task07-real-a4-report.json",
+      "line": 1999,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:618ca528bdd4805f8ba67ed232355ae00e108fab",
+      "path": "docs/verification/task07-real-a5-report.json",
+      "line": 2071,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:618ca528bdd4805f8ba67ed232355ae00e108fab",
+      "path": "docs/verification/task07-real-a5-report.json",
+      "line": 2327,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:b4586dd867d6af564397090b091ddcd27e1b8309",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:b4586dd867d6af564397090b091ddcd27e1b8309",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:0f39128aeb2609139bdb7b5e2ea8f71d285c7ec8",
+      "path": "tests/export09.test.mjs",
+      "line": 5,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:be154e7714cbef467748503185f074e8479320a1",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 50,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:041e8e18e0f09d3ff62b928d9400845d82ac6672",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "脱敏诊断的合成CANARY测试URL，不是真实凭据"
+    },
+    {
+      "scope": "history-blob:041e8e18e0f09d3ff62b928d9400845d82ac6672",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:1c26c52a0b8843b7ff8dcd9f2aa2faf77a45e21a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:1c26c52a0b8843b7ff8dcd9f2aa2faf77a45e21a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:f85aeda21cd6167df22c84e27179128e0e861497",
+      "path": "tests/export09.test.mjs",
+      "line": 4,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:6d1545ff3757399e80e3970a930df1ac2ae5a7b9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:6d1545ff3757399e80e3970a930df1ac2ae5a7b9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:37bf5e419c0feb762b7f11febf8502aa09b36277",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:37bf5e419c0feb762b7f11febf8502aa09b36277",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:7d357a147e062e8b947800820bd5ff855c347054",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:7d357a147e062e8b947800820bd5ff855c347054",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:a50fc27dcbed2709ef1180b59b92b1f8a9e4b80c",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 50,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:dab36a6049e16fda904e0712c516532dd4646613",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:dab36a6049e16fda904e0712c516532dd4646613",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:d77a60fca4e494f6ed5dc43fa8f507805866ebe8",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 33,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:c723ec97631cf757858b722894827ee3eafa5a99",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:c723ec97631cf757858b722894827ee3eafa5a99",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:e6c725e31e5d2af9c36317bbf4f1839800b07290",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 23,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:e3d3a4960561c0f7cd98ee7c2d32d96dabb3fee3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:e3d3a4960561c0f7cd98ee7c2d32d96dabb3fee3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:7fd819f22a2ee62a3eeb1b1be9e615a817794250",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 23,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:c310afa2ca1c249753859f662f012d8b7bcdee24",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "脱敏诊断的合成CANARY测试URL，不是真实凭据"
+    },
+    {
+      "scope": "history-blob:c310afa2ca1c249753859f662f012d8b7bcdee24",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:ab5a3379773d7bd851cf19972bb1f849e5b1955d",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:ab5a3379773d7bd851cf19972bb1f849e5b1955d",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:125886049879817f38222d8f9bae7401bc70a2c1",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "脱敏诊断的合成CANARY测试URL，不是真实凭据"
+    },
+    {
+      "scope": "history-blob:125886049879817f38222d8f9bae7401bc70a2c1",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 28,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "history-blob:6322f9b5d33fff1ed4841dde9607f98bff717d0b",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:6322f9b5d33fff1ed4841dde9607f98bff717d0b",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:667c07820e5a084fe428173164010e72b48352c5",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:667c07820e5a084fe428173164010e72b48352c5",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:3bb8bfabda9c3987ad7ea060c4bd155216bb5960",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:3bb8bfabda9c3987ad7ea060c4bd155216bb5960",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:046dc69ba78b510329a6d335566e03322987dc7a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:046dc69ba78b510329a6d335566e03322987dc7a",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:f708b5821b76a4a333daa333db5bfb9261fb59d9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:f708b5821b76a4a333daa333db5bfb9261fb59d9",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:860dc6c6ca42fd866690de7f3164854b9927786a",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 21,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:08f4f51ded5e0a5c14af83d5e3738ad89d09531b",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:ae95c28acf975dd2decb8a6b2fb6ee3c18c8b7e3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:ae95c28acf975dd2decb8a6b2fb6ee3c18c8b7e3",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "history-blob:5294edb25278b8e9df815c07ba75d30362dbf73d",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 21,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "cmc_markers.json",
+      "line": 1,
+      "type": "phone-shape",
+      "severity": "review",
+      "resolution": "无关未跟踪材料文件中的号码形状，未纳入提交/推送；不扩大审查或披露内容"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-canvas-diagnostic-real-report.json",
+      "line": 215,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 803,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-final-report.json",
+      "line": 1112,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 718,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-real-report.json",
+      "line": 1060,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 857,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-delivery-release-report.json",
+      "line": 1201,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-operable-real-report.json",
+      "line": 175,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-render-diagnostic-real-report.json",
+      "line": 152,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-resume-real-report.json",
+      "line": 379,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-resume-visible-real-report.json",
+      "line": 427,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-tile-target-real-report.json",
+      "line": 246,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-two-days-real-report.json",
+      "line": 646,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 183,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 191,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 199,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 207,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 215,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 223,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 231,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 239,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 247,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 255,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 263,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 271,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 279,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-upload-audit.json",
+      "line": 287,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-view-diagnostic-real-report.json",
+      "line": 225,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-visible-real-report.json",
+      "line": 293,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task05b-product-working-real-report.json",
+      "line": 357,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task06-real-complete-a1-report.json",
+      "line": 1597,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task06-real-complete-a2-report.json",
+      "line": 1781,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task06-real-complete-a2-report.json",
+      "line": 2037,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task06-real-final-report.json",
+      "line": 1871,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task06-verified-release-report.json",
+      "line": 1839,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task07-real-a1-report.json",
+      "line": 1906,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task07-real-a2-report.json",
+      "line": 1937,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task07-real-a4-report.json",
+      "line": 1999,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task07-real-a5-report.json",
+      "line": 2071,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "docs/verification/task07-real-a5-report.json",
+      "line": 2327,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    },
+    {
+      "scope": "worktree",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/export09.test.mjs",
+      "line": 5,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 50,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "配置说明/凭据字段映射或合成测试常量，已复核上下文"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/sdk-policy.test.mjs",
+      "type": "credential-in-url",
+      "severity": "block",
+      "resolution": "脱敏诊断的合成CANARY测试URL，不是真实凭据"
+    },
+    {
+      "scope": "worktree",
+      "path": "tests/sdk-policy.test.mjs",
+      "line": 30,
+      "type": "email-in-text",
+      "severity": "review",
+      "resolution": "高德@2x图片资源名或诊断CANARY URL，不是联系人邮箱"
+    }
+  ],
+  "limits": [
+    "heuristics only; no proof of absence",
+    "no .env values read",
+    "binary text patterns only; no OCR",
+    "Git author identity travels with unchanged history",
+    "private session corpus excluded from Git audit and push"
+  ],
+  "rawEnvironmentRead": false,
+  "unresolvedIncludedFindings": 0,
+  "warning": "启发式扫描＋命中上下文复核，不是绝对不存在泄漏；二进制未OCR。Git身份随原历史保留，未公开私有聊天/真实地图素材。"
+}

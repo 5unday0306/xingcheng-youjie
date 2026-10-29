@@ -1,0 +1,279 @@
+{
+  "runs": [
+    {
+      "at": "2026-10-29T12:38:14.861Z",
+      "before": {
+        "counts": {
+          "model": 41,
+          "location": 11,
+          "route": 209,
+          "map": 48
+        },
+        "reservedCents": 870,
+        "stopped": null
+      },
+      "after": {
+        "counts": {
+          "model": 44,
+          "location": 11,
+          "route": 223,
+          "map": 49
+        },
+        "reservedCents": 919,
+        "stopped": null
+      },
+      "status": "failed",
+      "calls": {
+        "model": 3,
+        "route": 14
+      },
+      "evidenceFolder": "docs/private/product-flow-real",
+      "failure": "规划缺少plan.version",
+      "days": []
+    },
+    {
+      "at": "2026-10-29T12:40:17.135Z",
+      "before": {
+        "counts": {
+          "model": 44,
+          "location": 11,
+          "route": 223,
+          "map": 49
+        },
+        "reservedCents": 919,
+        "stopped": null
+      },
+      "after": {
+        "counts": {
+          "model": 47,
+          "location": 11,
+          "route": 237,
+          "map": 50
+        },
+        "reservedCents": 968,
+        "stopped": null
+      },
+      "status": "failed",
+      "calls": {
+        "model": 3,
+        "route": 14
+      },
+      "evidenceFolder": "docs/private/product-flow-real-attempt2",
+      "failure": "规划JSON语法错误",
+      "days": []
+    },
+    {
+      "at": "2026-10-29T12:41:52.626Z",
+      "before": {
+        "counts": {
+          "model": 47,
+          "location": 11,
+          "route": 237,
+          "map": 50
+        },
+        "reservedCents": 968,
+        "stopped": null
+      },
+      "after": {
+        "counts": {
+          "model": 51,
+          "location": 11,
+          "route": 251,
+          "map": 51
+        },
+        "reservedCents": 1027,
+        "stopped": null
+      },
+      "status": "preview",
+      "calls": {
+        "model": 4,
+        "route": 14
+      },
+      "evidenceFolder": "docs/private/product-flow-real-attempt3",
+      "failure": null,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            6151,
+            7851
+          ],
+          "limit": 6000,
+          "time": [
+            339,
+            339
+          ],
+          "lock": null
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            5491,
+            7291
+          ],
+          "limit": 6000,
+          "time": [
+            374,
+            374
+          ],
+          "lock": "12:30"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-29T12:45:57.325Z",
+      "before": {
+        "counts": {
+          "model": 51,
+          "location": 11,
+          "route": 251,
+          "map": 51
+        },
+        "reservedCents": 1027,
+        "stopped": null
+      },
+      "after": {
+        "counts": {
+          "model": 53,
+          "location": 11,
+          "route": 254,
+          "map": 52
+        },
+        "reservedCents": 1055,
+        "stopped": null
+      },
+      "status": "failed",
+      "calls": {
+        "model": 2,
+        "route": 3
+      },
+      "evidenceFolder": "docs/private/product-flow-real-release",
+      "failure": "Windows EPERM账本替换失败",
+      "days": []
+    },
+    {
+      "at": "2026-10-29T12:47:31.558Z",
+      "before": {
+        "counts": {
+          "model": 53,
+          "location": 11,
+          "route": 254,
+          "map": 52
+        },
+        "reservedCents": 1055,
+        "stopped": null
+      },
+      "after": {
+        "counts": {
+          "model": 57,
+          "location": 11,
+          "route": 268,
+          "map": 53
+        },
+        "reservedCents": 1114,
+        "stopped": null
+      },
+      "status": "preview",
+      "calls": {
+        "model": 4,
+        "route": 14
+      },
+      "evidenceFolder": "docs/private/product-flow-real-release2",
+      "failure": null,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            6151,
+            7851
+          ],
+          "limit": 6000,
+          "time": [
+            339,
+            339
+          ],
+          "lock": null
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            5491,
+            7291
+          ],
+          "limit": 6000,
+          "time": [
+            374,
+            374
+          ],
+          "lock": "12:30"
+        }
+      ]
+    }
+  ],
+  "delta": {
+    "model": 16,
+    "location": 0,
+    "route": 59,
+    "map": 5,
+    "reservedCents": 244
+  },
+  "reservationIsNotBill": true,
+  "lastInteraction": {
+    "focusedFromMap": true,
+    "roleDrawer": 1,
+    "narrowNoOverflow": true,
+    "before": {
+      "counts": {
+        "model": 57,
+        "location": 11,
+        "route": 268,
+        "map": 53
+      },
+      "reservedCents": 1114,
+      "stopped": null
+    },
+    "after": {
+      "counts": {
+        "model": 57,
+        "location": 11,
+        "route": 268,
+        "map": 53
+      },
+      "reservedCents": 1114,
+      "stopped": null
+    },
+    "notice": "鍒囨棩/瀹氫綅/缂╂斁/鎶藉眽涓嶄骇鐢熸柊涓氬姟璇锋眰"
+  },
+  "screenshots": [
+    {
+      "path": "docs/private/product-flow-real-release2/activities-390.png",
+      "sha256": "703426e501e590db891a87b1d7656412efb5f1d6e001d9b061034d6c64b8d342"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/agents-390.png",
+      "sha256": "e170fa73009cc80e40fcf9ce51d5d9a1a89cf734134683636670b882c5e08b42"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/before-generation.png",
+      "sha256": "390d56fd47977d163ec5e87453ecc27f944e4f03f474b86002a9a1f7e49bc965"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/day1-1440.png",
+      "sha256": "08f850150b88d8e13ebfe61ff32ae2c15d7159cf211bf227b211c3638e7c6f27"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/day2-1440.png",
+      "sha256": "c67efa6dacd7743071fb8db146dbf3d8100a8e3558d8cceb6ec6158a7336ed2a"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/map-390.png",
+      "sha256": "71d9872d222675bfd0bd934c062b578142bbceb1153678816c2b942bce038dbb"
+    },
+    {
+      "path": "docs/private/product-flow-real-release2/overview-1440.png",
+      "sha256": "b4d16d404885c848e5fb30b893588c8b52e2dbe759f461386a631b23f4e17ade"
+    }
+  ],
+  "currentAdoptionUnchanged": true,
+  "rawMaterialsPrivate": true
+}

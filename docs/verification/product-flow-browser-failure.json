@@ -1,0 +1,9 @@
+{
+  "scope": "本地受控替身，不是真实接口",
+  "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'preview'\n- 'rejected'\n",
+  "flow": "已计入估计未超，未知仍需核实。",
+  "agent": "保留原方案",
+  "errors": [],
+  "cause": "浏览器断言先于异步拒绝完成；随后增加明确状态等待",
+  "fullDiagnostic": "本地私有保留"
+}
