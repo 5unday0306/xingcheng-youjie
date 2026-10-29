@@ -25,4 +25,4 @@ for(const branch of ['reuse','automatic','ambiguous','failure'])test('缺失地�
  finally{await rm(dir,{recursive:true,force:true});}
 });
 
-test('真实失败形状回归：遗漏嵌套plan.version必须拒绝，不给模型补造字段',async()=>{const t=setup({model:async p=>{const r=syntheticGeneration(p);if(p.role==='plan'){const o=JSON.parse(r.content);delete o.plan.version;r.content=JSON.stringify(o);}return r;}});await t.gen.start({request,original:{marker:'旧方案'}});const s=await done(t.gen);assert.equal(s.status,'failed');assert.equal(s.calls.model,3);assert.equal(s.preview,null);assert.equal(s.original.marker,'旧方案');});
+test('规划格式回归：缺少活动停留字段必须拒绝，不给模型补造字段',async()=>{const t=setup({model:async p=>{const r=syntheticGeneration(p);if(p.role==='plan'){const o=JSON.parse(r.content);delete o.stays[0].durationMinutes;r.content=JSON.stringify(o);}return r;}});await t.gen.start({request,original:{marker:'旧方案'}});const s=await done(t.gen);assert.equal(s.status,'failed');assert.equal(s.calls.model,3);assert.equal(s.preview,null);assert.equal(s.original.marker,'旧方案');});
