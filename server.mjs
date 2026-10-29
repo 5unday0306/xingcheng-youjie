@@ -91,7 +91,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     let initialReplan08=null;try{initialReplan08=JSON.parse(await readFile(new URL('./docs/private/08-state.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
     const saveReplan08=async d=>{const p=new URL('./docs/private/08-state.json',import.meta.url),t=new URL('./docs/private/08-state.tmp',import.meta.url);await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
     const saveReplanJournal=async d=>{if(!d)return;const p=new URL(`./docs/private/08-${d.id}.json`,import.meta.url),t=new URL(`./docs/private/08-${d.id}.tmp`,import.meta.url);await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
-    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,initialReplan08,saveReplan08,saveReplanJournal,send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    live=createLivePlanning({credentials,configuration:status,approval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,initialReplan08,saveReplan08,saveReplanJournal,saveGenerationJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/generation-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const portArg=process.argv.find(a=>a.startsWith('--port=')),mapArg=process.argv.find(a=>a.startsWith('--map-port='));
