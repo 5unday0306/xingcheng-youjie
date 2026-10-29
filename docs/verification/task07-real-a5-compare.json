@@ -1,0 +1,24 @@
+{
+  "shots": [
+    "docs/verification/task07-real-a5-original-day1.png",
+    "docs/verification/task07-real-a5-original-day2.png",
+    "docs/verification/task07-real-a5-preview-day1.png",
+    "docs/verification/task07-real-a5-preview-day2.png"
+  ],
+  "focused": "d1-p6-TY04",
+  "expected": "d1-p6-TY04",
+  "overflow": false,
+  "before": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 39
+  },
+  "after": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 39
+  },
+  "scope": "真实原方案/修订预览两天地图、活动定位及地图序号回定位，不采用预览"
+}

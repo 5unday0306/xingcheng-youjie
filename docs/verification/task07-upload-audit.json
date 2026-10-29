@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-29T02:33:11.108731+00:00",
+  "branch": "main",
+  "remote": "https://github.com/5unday0306/xingcheng-youjie.git",
+  "reviewedBase": "69f3bd7",
+  "unpushedCommits": [
+    "3ca7f61b431e4eda884e46487d2b3761ebc8c3e4",
+    "011568830e5e06329303d337809554cacd21ada5"
+  ],
+  "stagedFiles": [
+    "README.md",
+    "docs/07-多Agent修订预览交付.md",
+    "docs/prompts/任务07-协作审查与修订索引.md",
+    "docs/verification/task07-final-acceptance.json",
+    "docs/verification/task07-private-recordings.json",
+    "docs/verification/task07-prompt-locators.json",
+    "docs/verification/task07-real-a1-agents.json",
+    "docs/verification/task07-real-a1-desktop.png",
+    "docs/verification/task07-real-a1-recording.json",
+    "docs/verification/task07-real-a1-report.json",
+    "docs/verification/task07-real-a2-agents.json",
+    "docs/verification/task07-real-a2-desktop.png",
+    "docs/verification/task07-real-a2-recording.json",
+    "docs/verification/task07-real-a2-report.json",
+    "docs/verification/task07-real-a3-agents.json",
+    "docs/verification/task07-real-a3-collaboration-desktop.png",
+    "docs/verification/task07-real-a3-collaboration-mobile.png",
+    "docs/verification/task07-real-a3-compare.json",
+    "docs/verification/task07-real-a3-desktop.png",
+    "docs/verification/task07-real-a3-original-day1.png",
+    "docs/verification/task07-real-a3-original-day2.png",
+    "docs/verification/task07-real-a3-preview-day1.png",
+    "docs/verification/task07-real-a3-preview-day2.png",
+    "docs/verification/task07-real-a3-recording.json",
+    "docs/verification/task07-real-a3-report.json",
+    "docs/verification/task07-real-a4-agents.json",
+    "docs/verification/task07-real-a4-desktop.png",
+    "docs/verification/task07-real-a4-recording.json",
+    "docs/verification/task07-real-a4-report.json",
+    "docs/verification/task07-real-a5-agents.json",
+    "docs/verification/task07-real-a5-collaboration-desktop.png",
+    "docs/verification/task07-real-a5-collaboration-mobile.png",
+    "docs/verification/task07-real-a5-compare.json",
+    "docs/verification/task07-real-a5-day1-map.png",
+    "docs/verification/task07-real-a5-day2-map.png",
+    "docs/verification/task07-real-a5-decode.json",
+    "docs/verification/task07-real-a5-desktop.png",
+    "docs/verification/task07-real-a5-frame-15.png",
+    "docs/verification/task07-real-a5-frame-3.png",
+    "docs/verification/task07-real-a5-frame-30.png",
+    "docs/verification/task07-real-a5-full-recording.json",
+    "docs/verification/task07-real-a5-interaction-check.json",
+    "docs/verification/task07-real-a5-map-mobile.png",
+    "docs/verification/task07-real-a5-operation.webm",
+    "docs/verification/task07-real-a5-original-day1.png",
+    "docs/verification/task07-real-a5-original-day2.png",
+    "docs/verification/task07-real-a5-preview-day1.png",
+    "docs/verification/task07-real-a5-preview-day2.png",
+    "docs/verification/task07-real-a5-recording.json",
+    "docs/verification/task07-real-a5-report.json",
+    "docs/verification/task07-real-a5-review-desktop.png",
+    "docs/verification/task07-real-a5-review-mobile.png",
+    "docs/verification/task07-session-archive.json",
+    "docs/决策记录.md",
+    "docs/开发进度.md"
+  ],
+  "uniqueTextBlobsReviewed": 60,
+  "media": [
+    {
+      "path": "docs/verification/task07-real-a1-desktop.png",
+      "bytes": 73947,
+      "sha256": "e7fcd0ed635cf4e68bc16c99a20e7d5fce2d69f5ea69e8e3b49174c49628de4d"
+    },
+    {
+      "path": "docs/verification/task07-real-a2-desktop.png",
+      "bytes": 72929,
+      "sha256": "5e8b5aa867c844c876848e545166c3ce7d9cee781afa21814c6718aa01da3c20"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-collaboration-desktop.png",
+      "bytes": 67777,
+      "sha256": "b8f37a1896ca49675d30dfe7b8c94522c5046fc0f2229ac7865bcc4b5e4e97e7"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-collaboration-mobile.png",
+      "bytes": 42911,
+      "sha256": "fd3370833b5c981f1be3f9694e8d4bf4c14d3ccd00a88bc36422524f0ee04c2b"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-desktop.png",
+      "bytes": 112421,
+      "sha256": "9f840c57d8c109a47cf6e8f8c6b5c0899b8ac1d2d9ce5495379537b7c2b4b0e1"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-original-day1.png",
+      "bytes": 304753,
+      "sha256": "1415cdc60815b1542f91e0c654c5bb9b1370b0eeaecf4b19dcb3db9bad248baf"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-original-day2.png",
+      "bytes": 308131,
+      "sha256": "a4e479c1c22898835f17c55cef9e1b185c50fd8ece189279192725e023996c19"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-preview-day1.png",
+      "bytes": 249374,
+      "sha256": "53e63394a5fecbde9a7cd30bcd0da2687b4352a3333ec572b7b665beb42f26eb"
+    },
+    {
+      "path": "docs/verification/task07-real-a3-preview-day2.png",
+      "bytes": 203890,
+      "sha256": "bb44ebc27212939e04f6b1bd04e458b95c9a78613625385c5ef9386e1b6a5c1c"
+    },
+    {
+      "path": "docs/verification/task07-real-a4-desktop.png",
+      "bytes": 79565,
+      "sha256": "70d47acc5a2f7a74f5ad6bf13fada0f472a5a6c1d0ae5a9e4061bcec8fcdff75"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-collaboration-desktop.png",
+      "bytes": 75080,
+      "sha256": "e0cb4b4b97889d87dd1277403b2896395a7ca2e00fe409376da969119e446569"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-collaboration-mobile.png",
+      "bytes": 46305,
+      "sha256": "a0a6b9df08adeae41e62a2684ea59d69ff83046459d947f47d917c6877b6c2b3"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-day1-map.png",
+      "bytes": 210545,
+      "sha256": "44bd1c32ad4c5ceeb49817bc0ff7d2e43dbcf9c6e3cbf8c6e0d39f065d4daa83"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-day2-map.png",
+      "bytes": 293414,
+      "sha256": "fec8ed688872b330f534d94a1df28413fda9d2f3e36258234090a4da767e4d62"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-desktop.png",
+      "bytes": 250171,
+      "sha256": "35211fa4638a886e890155d0f20713f95dff1531be591b5f9ec8e4f85bbe43d7"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-frame-15.png",
+      "bytes": 973604,
+      "sha256": "4d4d9f3a6dc9f8b292701e1a0395b9188e188b2ac0be57b681c673bd2c4d3a7e"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-frame-3.png",
+      "bytes": 804395,
+      "sha256": "d40c50c3d97bb446a252f545bdfaca30b182958d860405b044c532429708954c"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-frame-30.png",
+      "bytes": 947899,
+      "sha256": "d396f860616ee1ec27731b32ca8c4ed264699e9d1d741b95b40d9bcfc21ed2eb"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-map-mobile.png",
+      "bytes": 102815,
+      "sha256": "b670fe4130e2a9cf7f4cdaccac92b043fd20cda70a25f776fd2d613c95174849"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-operation.webm",
+      "bytes": 3829842,
+      "sha256": "9bbeee1789a72ec13154df52ca59374a05bd673a1911cb7dcb4a5a7d0cfc9e16"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-original-day1.png",
+      "bytes": 250731,
+      "sha256": "2beed138a91810d3f363b5b3a84df3e7a42ba6452f792c59985bf3eaa19e69d4"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-original-day2.png",
+      "bytes": 298401,
+      "sha256": "888ee9feacac39295321dc8ca70745c53a3fb7bf1963edd8bf20929f8a486f44"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-preview-day1.png",
+      "bytes": 243361,
+      "sha256": "0861bdcaa302a86075f62ec33c259919423691dc8afaa082234a7c36d70470c7"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-preview-day2.png",
+      "bytes": 201811,
+      "sha256": "53eda84727874884297b5d63ef9cc7bc3cce2e5887a15d9ba9fc609d0c95bed1"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-review-desktop.png",
+      "bytes": 73150,
+      "sha256": "7ca792bab6365d1ec5316b6bc611a8b92803ba9e431557760eb4b37ab044a81b"
+    },
+    {
+      "path": "docs/verification/task07-real-a5-review-mobile.png",
+      "bytes": 50128,
+      "sha256": "5c4d8808c9d59ec988129233b7670d916846da5e2a5428057073bff705644cf3"
+    },
+    {
+      "path": "docs/verification/task07-synthetic-desktop.png",
+      "bytes": 70858,
+      "sha256": "5889c04b35f4bff2ac1d47f3bf57cdb7b75bae85766382a59e6f0c1bbc4803c4"
+    },
+    {
+      "path": "docs/verification/task07-synthetic-mobile.png",
+      "bytes": 43992,
+      "sha256": "0ada711a05421cdf93a3b71d17eccec8bd9f8a10e89c6154c40cccaf088f5e5d"
+    },
+    {
+      "path": "docs/verification/task07-original-ui-editor-390.png",
+      "bytes": 42689,
+      "sha256": "1bdce6ed6e6b489c1760d38c0ad021e90d923de4755e3886f70386bdd780ef13"
+    },
+    {
+      "path": "docs/verification/task07-original-ui-ui-1440.png",
+      "bytes": 139864,
+      "sha256": "ed6381426e6f4eac3924dd00cc89f686847b2f815e4fc699b44b4a106fef257e"
+    },
+    {
+      "path": "docs/verification/task07-original-ui-ui-390.png",
+      "bytes": 50485,
+      "sha256": "e0652e4d06e4cab4e646102135d0cae285abd60d30bccb8641d9bfac4584d33b"
+    },
+    {
+      "path": "docs/verification/task07-synthetic-desktop.png",
+      "bytes": 65076,
+      "sha256": "acf5bc307984cbae00d966eccbd729d3b74effd041f7f56c456df95777d9709b"
+    },
+    {
+      "path": "docs/verification/task07-synthetic-mobile-misaligned.png",
+      "bytes": 46679,
+      "sha256": "6286e2b2f359bef887c2bd07cbd26353780bbde4d60ace198e9242a3afb93cc6"
+    },
+    {
+      "path": "docs/verification/task07-synthetic-mobile.png",
+      "bytes": 40591,
+      "sha256": "cf3081dfbfac58ab435bb4e9fed47f857675a64a3f3828e9cef64b5ff28935af"
+    }
+  ],
+  "risks": [],
+  "manualMediaReview": "31 PNG contact-sheet plus selected full images; public 47.44s WebM decoded at 3/15/30s, selected frames inspected, not every frame. Five unedited long clips private and excluded.",
+  "deploymentCheck": "No repository GitHub/Vercel/Netlify deployment config or pre-push hook found; external webhooks unverified; backup authorization only.",
+  "limitations": "Heuristic credential and URL scan plus human review; no credential values read for comparison, no absolute no-leak guarantee. Older already-pushed history not rescanned in full."
+}

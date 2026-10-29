@@ -1,0 +1,27 @@
+{
+  "scope": "Exact RAW snapshot: user-message task-input locators only, not proof every turn/attachment is complete",
+  "userInputLines": {
+    "02": [
+      510
+    ],
+    "03": [
+      645
+    ],
+    "04": [
+      803
+    ],
+    "05": [
+      1040,
+      2107
+    ],
+    "06": [
+      5991
+    ],
+    "07": [
+      7717
+    ]
+  },
+  "sourceSessionSuffix": "8c63",
+  "snapshotSha256": "507ae520730f105ff3af5e3492b998368357927cd81ab8cb77050e4732047b4f",
+  "coreFunctionIterationCountClaimed": false
+}

@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-10-29T02:29:34.621264+00:00",
+  "distinctSessions": 1,
+  "snapshots": 2,
+  "sessionSuffix": "8c63",
+  "selectedBy": "explicit-human-text-keep-8c63-drop-17",
+  "latestSnapshotSha256": "507ae520730f105ff3af5e3492b998368357927cd81ab8cb77050e4732047b4f",
+  "snapshotBytes": 69067939,
+  "checks": {
+    "manifestHashMatches": true,
+    "sourcePrefixMatches": true,
+    "sourceWholeMatchesAtCheck": true
+  },
+  "privateDirectory": "docs/private/task07-session-snapshot-2026-10-29-final/",
+  "publicTranscriptExported": false,
+  "notice": "Live source keeps appending; prefix verified, not a permanent complete backup. RAW never committed."
+}

@@ -1,0 +1,29 @@
+{
+  "shots": [
+    "docs/verification/task07-real-a5-day1-map.png",
+    "docs/verification/task07-real-a5-day2-map.png"
+  ],
+  "overflow": false,
+  "replay": "历史回放 · 原方案（保留）",
+  "noAutomaticSDK": true,
+  "before": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 38
+  },
+  "afterRefresh": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 38
+  },
+  "afterExplicitMapReload": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 39
+  },
+  "highlighted": "3",
+  "focused": "d1-p3-TY01"
+}

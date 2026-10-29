@@ -1,0 +1,492 @@
+{
+  "at": "2026-10-29T02:32:28.332015+00:00",
+  "scope": "Task07 fixed independent-role workflow, no taxi/new places/constraint changes",
+  "realRunId": "c0095608-d8de-4d50-bc3f-2af6c1296c30",
+  "status": "preview",
+  "accepted": false,
+  "roleCalls": [
+    {
+      "role": "coordinate",
+      "ref": "426ddba6b48e816c44d82f7f9156de006faec752b947387d0ee62985c050b434",
+      "status": "completed",
+      "usage": {
+        "input": 1584,
+        "output": 483,
+        "total": 2067
+      }
+    },
+    {
+      "role": "screen",
+      "ref": "31e9544aac03c84a85f550adc6f70ce375f7b645d46ca86396822901cd166045",
+      "status": "completed",
+      "usage": {
+        "input": 1403,
+        "output": 634,
+        "total": 2037
+      }
+    },
+    {
+      "role": "plan",
+      "ref": "054b0a12f77a61fdd1f036decec460300022471b5443d020dd5ec56aa3cb13d7",
+      "status": "completed",
+      "usage": {
+        "input": 1050,
+        "output": 338,
+        "total": 1388
+      }
+    },
+    {
+      "role": "audit",
+      "ref": "a9c0b6908f04e6a36c120193bdc816feab33a334465bd85c78f0ae9bd6e1deb0",
+      "status": "completed",
+      "usage": {
+        "input": 1764,
+        "output": 392,
+        "total": 2156
+      }
+    }
+  ],
+  "realWorkflowCalls": {
+    "model": 4,
+    "route": 4
+  },
+  "cumulativeCalls": {
+    "model": 20,
+    "location": 11,
+    "route": 133,
+    "map": 39
+  },
+  "taskDelta": {
+    "model": 14,
+    "location": 0,
+    "route": 83,
+    "map": 6
+  },
+  "routeBreakdown": {
+    "restoreOriginalAfterFiveRestarts": 70,
+    "candidateRequestsIncludingFailure": 13
+  },
+  "reservedCents": 539,
+  "actualChargeVerified": false,
+  "program": {
+    "original": {
+      "status": "conflict",
+      "executable": false,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walkingByMember": [
+            {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6151,
+                7851
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6151,
+                7851
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "conflict",
+              "value": null,
+              "knownSubtotal": [
+                6151,
+                7851
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              384,
+              384
+            ],
+            "limit": 540,
+            "missing": [
+              "山西博物院等待未知",
+              "迎泽公园短环线等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        },
+        {
+          "date": "2026-11-08",
+          "walkingByMember": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3500,
+                5300
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3500,
+                5300
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3500,
+                5300
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              266,
+              266
+            ],
+            "limit": 540,
+            "missing": [
+              "钟楼街等待未知",
+              "食品街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15000,
+            25800
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ]
+    },
+    "preview": {
+      "status": "insufficient",
+      "executable": false,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walkingByMember": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3880,
+                5580
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3880,
+                5580
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3880,
+                5580
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              404,
+              404
+            ],
+            "limit": 540,
+            "missing": [
+              "山西博物院等待未知",
+              "迎泽公园短环线等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        },
+        {
+          "date": "2026-11-08",
+          "walkingByMember": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2344,
+                4144
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2344,
+                4144
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2344,
+                4144
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              255,
+              255
+            ],
+            "limit": 540,
+            "missing": [
+              "钟楼街等待未知",
+              "食品街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15100,
+            25900
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15100,
+            25900
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15100,
+            25900
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ]
+    }
+  },
+  "checks": {
+    "node": 153,
+    "syntheticBrowserAssertions": 26,
+    "originalUIAssertions": 53,
+    "realLinkageAndNoCalls": "task07-real-a5-compare.json",
+    "refreshEvidence": "task07-real-a5-interaction-check.json",
+    "realVisibleMaps": [
+      "task07-real-a5-original-day1.png",
+      "task07-real-a5-original-day2.png",
+      "task07-real-a5-preview-day1.png",
+      "task07-real-a5-preview-day2.png"
+    ]
+  },
+  "recording": {
+    "file": "task07-real-a5-operation.webm",
+    "seconds": 47.44,
+    "decoded": "task07-real-a5-decode.json",
+    "rawClipsPrivate": 5,
+    "reviewLimit": "31 PNG contact sheet and selected full images; short clip 3 extracted frames; not every video frame"
+  },
+  "limits": [
+    "Unknown opening/reservations/queues/internal walking/total budget remain",
+    "No arbitrary place/meal replacement UI",
+    "Road geometry and actionable comparison are memory-only, explicit restoration after server restart",
+    "RAW development session private; public sanitized full conversation not reviewed",
+    "Supplier bill, clean clone and external deployment not verified"
+  ]
+}

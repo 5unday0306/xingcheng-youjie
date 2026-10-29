@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-29T02:23:33.146Z",
+  "file": "task07-real-a5-operation.webm",
+  "decoded": true,
+  "width": 1440,
+  "height": 900,
+  "shots": [
+    "docs/verification/task07-real-a5-frame-3.png",
+    "docs/verification/task07-real-a5-frame-15.png",
+    "docs/verification/task07-real-a5-frame-30.png"
+  ],
+  "limits": "仅本地解码取帧，非全逐帧复核，外部请求0"
+}

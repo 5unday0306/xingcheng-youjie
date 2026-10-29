@@ -1,0 +1,31 @@
+{
+  "executedAt": "2026-10-29T01:43:34.690Z",
+  "wallDurationSeconds": 215.27,
+  "frames": 90,
+  "bytes": 11884958,
+  "scope": "实际应用视口录屏，无音频或系统鼠标指针；未用合成地图",
+  "events": [
+    {
+      "at": "2026-10-29T01:40:00.077Z",
+      "action": "pickInspectContainer"
+    },
+    {
+      "at": "2026-10-29T01:40:00.215Z",
+      "action": "pickLoad"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Running the JavaScript URL violates the following Content Security Policy directive 'script-src-elem 'self' https://webapi.amap.com/maps?[omitted] https://jsapi-service.amap.com/mapsplugincdn?[omitted]'. Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Loading the script 'https://webapi.amap.com/maps/checkredirect?[omitted]' violates the following Content Security Policy directive: \"script-src-elem 'self' https://webapi.amap.com/maps?[omitted] https://jsapi-service.amap.com/mapsplugincdn?[omitted]\". The action has been blocked."
+    },
+    {
+      "type": "console",
+      "message": "Connecting to 'https://mapplugin.amap.com/maps/checkredirectcdn?[omitted]' violates the following Content Security Policy directive: \"connect-src 'self' https://webapi.amap.com/?[omitted] https://jsapi-service.amap.com/?[omitted] https://*.autonavi.com/?[omitted] https://jsapi.amap.com/web/init?[omitted] https://o4.amap.com/style/?[omitted] https://jsapi.amap.com/web_map/get_tile?[omitted] https://jsapi-data1.amap.com/tile/?[omitted] https://jsapi-data2.amap.com/tile/?[omitted] https://jsapi-data3.amap.com/tile/?[omitted] https://jsapi-data4.amap.com/tile/?[omitted] https://jsapi-data5.amap.com/tile/?[omitted]\". The action has been blocked."
+    }
+  ]
+}

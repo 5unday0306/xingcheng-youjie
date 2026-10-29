@@ -1,0 +1,42 @@
+[
+  {
+    "attempt": "a1",
+    "bytes": 5876470,
+    "sha256": "9576aeb654796241afd05e7db35a2ebfd4a72b7a8e3159bf32e99ae915b95feb",
+    "hashVerifiedAfterMove": true,
+    "localPrivateFile": "docs/private/task07-recordings/task07-real-a1-operation.webm",
+    "scope": "Unedited actual viewport recording; local private only, including idle and failures"
+  },
+  {
+    "attempt": "a2",
+    "bytes": 11884958,
+    "sha256": "2b336962878e9d3ca8fcf105b34506fd0c3f804bf3269625de64ec15d9cccac3",
+    "hashVerifiedAfterMove": true,
+    "localPrivateFile": "docs/private/task07-recordings/task07-real-a2-operation.webm",
+    "scope": "Unedited actual viewport recording; local private only, including idle and failures"
+  },
+  {
+    "attempt": "a3",
+    "bytes": 46301078,
+    "sha256": "4db806e7aeb096a3cc2b30853ed859695847665b86ef85735f85ddb1e13f5473",
+    "hashVerifiedAfterMove": true,
+    "localPrivateFile": "docs/private/task07-recordings/task07-real-a3-operation.webm",
+    "scope": "Unedited actual viewport recording; local private only, including idle and failures"
+  },
+  {
+    "attempt": "a4",
+    "bytes": 23514959,
+    "sha256": "d7793d3ac4c4ff1b733388d862c4d2dd64a7e92e2d12754c4cc9c00e50e83328",
+    "hashVerifiedAfterMove": true,
+    "localPrivateFile": "docs/private/task07-recordings/task07-real-a4-operation.webm",
+    "scope": "Unedited actual viewport recording; local private only, including idle and failures"
+  },
+  {
+    "attempt": "a5",
+    "bytes": 32735044,
+    "sha256": "672814adfc193bf926c829173d0df15d028b7567b4baac083be065f518f7c5ae",
+    "hashVerifiedAfterMove": true,
+    "localPrivateFile": "docs/private/task07-recordings/task07-real-a5-operation.webm",
+    "scope": "Unedited actual viewport recording; local private only, including idle and failures"
+  }
+]
