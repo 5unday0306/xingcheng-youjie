@@ -16,7 +16,8 @@
   <nav class="viewNav" aria-label="工作台视图">
     <button id="navEdit" type="button" aria-pressed="true">编辑需求</button>
     <button id="navSummary" type="button" aria-pressed="false">需求摘要</button>
-    <button id="navRoute" type="button" aria-pressed="false">路线准备</button>
+    <button id="navRoute" type="button" aria-pressed="false">旅行安排</button>
+    <button id="navReplan" type="button" aria-pressed="false">锁定与重排</button>
   </nav>
   <main class="workbench" data-view="route" id="workbench">    <section class="travel-scene" aria-labelledby="scene-title">
       <svg class="scenery" viewBox="0 0 1440 440" preserveAspectRatio="xMidYMid slice" role="img" aria-label="原创山形与城市建筑艺术意象，非实景、地图或道路">
@@ -94,7 +95,7 @@
         </section>
         <section id="summaryView" aria-labelledby="summaryTitle" hidden>
           <div class="summaryHeading"><div><p class="sectionKicker">核对每个人的限制</p><h3 id="summaryTitle" tabindex="-1">需求摘要</h3></div><button type="button" id="backEdit">修改需求</button></div>
-          <p class="warning">需求格式已检查，行程尚未生成，旅行可行性未验证。</p>
+          <p class="warning" id="summaryValidation">当前需求尚未检查，不能视为行程可行。</p>
           <div id="summary"></div>
         </section>
       </div>

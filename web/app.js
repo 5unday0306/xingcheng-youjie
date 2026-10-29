@@ -31,7 +31,7 @@ function updateDirty() {
   if (savedSignature === signature()) storageStatus('当前需求与上次保存一致', 'saved');
   else storageStatus('有未保存修改，刷新不会保留本次修改', 'dirty');
 }
-function showView(view, focus = false) {
+function showView(view, focus = false, updateHash = true) {
   const focusId=++focusRevision;
   const editor=$('editDialog');
   if(view==='edit'&&!editor.open)editor.showModal();
@@ -46,6 +46,8 @@ function showView(view, focus = false) {
   }
   $('tabRoute').setAttribute('aria-pressed', String(currentDisplay === 'route'));
   $('tabSummary').setAttribute('aria-pressed', String(currentDisplay === 'summary'));
+  if(updateHash)history.replaceState(null,'',view==='edit'?'#edit':view==='summary'?'#summaryView':'#routeView');
+  $('navReplan').setAttribute('aria-pressed',String(location.hash==='#replan08'&&view==='route'));
   if (focus) {
     const title = $(view === 'edit' ? 'editorTitle' : view === 'summary' ? 'summaryTitle' : 'routeTitle');
     title.focus({ preventScroll: true });
@@ -142,6 +144,7 @@ function paintErrors(errors) {
 function edited() {
   planPanel?.invalidate();
   $('checkStatus').textContent = '输入已修改，请重新检查';
+  $('summaryValidation').textContent='当前编辑需求尚未重新检查；旧方案与预览不代表本次输入。';
   $('summary').replaceChildren(node('p', '当前需求尚未重新检查。回到编辑区检查后，再核对完整摘要。', 'summaryEmpty'));
   updateDirty();
   paintRoute();
@@ -315,11 +318,13 @@ function check({navigate=true} = {}) {
   paintErrors(errors);
   if (errors.length) {
     $('checkStatus').textContent = '输入检查未通过';
+    $('summaryValidation').textContent='当前需求检查未通过，请修正输入；不是行程核查结果。';
     $('summary').replaceChildren(node('p','输入仍有错误，请返回编辑区修正。','summaryEmpty'));
     focusField(errorTarget(errors[0].field));
     return false;
   }
   $('checkStatus').textContent = '输入检查通过 · 仅结构与格式';
+  $('summaryValidation').textContent='当前需求格式已检查；方案须单独核查，旅行可行性未验证。';
   summaryContent(r);
   if (navigate) showView('summary',true);
   return true;
@@ -340,6 +345,7 @@ function restoreDraft(auto=false) {
     render();
     paintErrors([]);
     $('checkStatus').textContent = '已恢复需求，请重新检查';
+    $('summaryValidation').textContent='已恢复编辑需求，尚未重新检查；不代表当前方案已满足。';
     $('summary').replaceChildren(node('p','已恢复上次保存，请重新检查后查看摘要。','summaryEmpty'));
     storageStatus('已恢复上次保存，尚未重新检查','saved');
   } catch (error) {
@@ -410,8 +416,23 @@ $('gaps').replaceChildren(...GAPS.map(text=>node('li',text)));
 $('summary').append(node('p','先在编辑区检查需求，再查看逐人摘要。','summaryEmpty'));
 render();
 restoreDraft(true);
-showView('route');
+showView('route',false,false);
 $('editTrip').onclick=()=>showView('edit',true);
-$('closeEditor').onclick=()=>{$('editDialog').close();$('editTrip').focus();};
-$('editDialog').addEventListener('cancel',()=>requestAnimationFrame(()=>$('editTrip').focus()));
+$('closeEditor').onclick=()=>{showView(currentDisplay);$('editTrip').focus();};
+$('editDialog').addEventListener('cancel',()=>requestAnimationFrame(()=>{showView(currentDisplay);$('editTrip').focus();}));
 planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
+
+function routeHash(){
+ const hash=location.hash;
+ if(hash==='#edit'){showView('edit',false,false);return;}
+ if(hash==='#summaryView'){showView('summary',false,false);return;}
+ showView('route',false,false);
+ const target=document.getElementById(hash==='#replan08'?'experienceWorkspace':hash.slice(1));
+ if(target){for(let p=target.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;target.scrollIntoView({block:'start'});}
+ if(hash==='#replan08'){document.dispatchEvent(new CustomEvent('workspace:mode',{detail:'replan'}));$('navRoute').setAttribute('aria-pressed','false');$('navReplan').setAttribute('aria-pressed','true');}
+}
+$('navRoute').onclick=()=>{showView('route',true);document.dispatchEvent(new CustomEvent('workspace:mode',{detail:'review'}));};
+$('navReplan').onclick=()=>{history.pushState(null,'','#replan08');routeHash();};
+window.addEventListener('hashchange',routeHash);
+document.addEventListener('workspace:ready',routeHash);
+routeHash();
