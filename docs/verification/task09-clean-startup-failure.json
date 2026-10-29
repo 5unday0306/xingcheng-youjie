@@ -1,0 +1,18 @@
+{
+  "startedAt": "2026-10-29T07:38:32.197Z",
+  "sourceCommit": "fb39953c4e95f28aa63960306f27d5ee3132b355",
+  "isolatedDirectory": "docs/private/clean09-h97sv0",
+  "oldPrivateCopied": false,
+  "oldBrowserStorageCopied": false,
+  "credentialsValuesLogged": false,
+  "stages": [],
+  "realPassed": false,
+  "failure": {
+    "message": "独立服务启动超时"
+  },
+  "elapsedMs": 27227,
+  "finishedAt": "2026-10-29T07:38:59.424Z",
+  "scope": "独立归档，无旧私有文件/浏览器存档；既有账号Key本机安全配置，不含注册/人工准备耗时；真实API，测试操作未替用户采用",
+  "mapEvidence": "仅私有，许可文件待核",
+  "credentialFileRemoved": true
+}

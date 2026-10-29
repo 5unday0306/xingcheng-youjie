@@ -96,7 +96,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const portArg=process.argv.find(a=>a.startsWith('--port=')),mapArg=process.argv.find(a=>a.startsWith('--map-port='));
   const port=portArg?Number(portArg.split('=')[1]):realPrep?4177:testMode?4174:4173,mapPort=mapArg?Number(mapArg.split('=')[1]):4184;
-  if(![port,mapPort].every(n=>Number.isInteger(n)&&n>=1024&&n<=65535)||port===mapPort)throw Error('本机端口须为1024～65535的不同整数');
+  if(![port,mapPort].every(n=>Number.isInteger(n)&&n>=1024&&n<=65535)||port===mapPort||port===4190||mapPort===4190)throw Error('本机端口无效/重复或为浏览器保留端口4190；请选择4173/4174/4177或4187/4188');
   let frameOrigin=null;
   const mapSession=realPrep?createFrameMapSession({live}):null;
   const mainServer=createServer({planning,live,mapFrameOrigin:realPrep?()=>frameOrigin:null,mapFrameSession:mapSession});

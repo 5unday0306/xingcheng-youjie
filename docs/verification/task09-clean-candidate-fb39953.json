@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-10-29T07:40:42.132Z",
+  "sourceCommit": "fb39953c4e95f28aa63960306f27d5ee3132b355",
+  "isolatedDirectory": "docs/private/clean09-xqsneV",
+  "oldPrivateCopied": false,
+  "oldBrowserStorageCopied": false,
+  "credentialsValuesLogged": false,
+  "stages": [
+    {
+      "stage": "offline-no-credentials",
+      "ms": 1089,
+      "mode": "offline-test",
+      "externalRequests": 0,
+      "passed": true
+    },
+    {
+      "stage": "local-configuration-and-new-authorization",
+      "ms": 115,
+      "preparedKeysUsed": true,
+      "humanAccountPreparationMeasured": false,
+      "setupContainsNoCredentialValues": true
+    },
+    {
+      "stage": "fresh-map-input-and-original-real-plan",
+      "ms": 23622,
+      "calls": {
+        "model": 1,
+        "location": 0,
+        "route": 14,
+        "map": 1
+      },
+      "inputMethod": "公开既有测试条件，通过SDK镜头+实际点击/确认UI重新输入；自动化测试操作，非新用户现场入口核验"
+    },
+    {
+      "stage": "real-collaboration-lock-and-replan",
+      "ms": 24422,
+      "calls": {
+        "model": 9,
+        "location": 0,
+        "route": 18,
+        "map": 1
+      },
+      "adoptedAutomatically": false
+    }
+  ],
+  "realPassed": true,
+  "initialCalls": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 0
+  },
+  "refreshNoAutomaticCalls": {
+    "before": {
+      "model": 9,
+      "location": 0,
+      "route": 18,
+      "map": 1
+    },
+    "after": {
+      "model": 9,
+      "location": 0,
+      "route": 18,
+      "map": 1
+    }
+  },
+  "savedVersion": {
+    "adoptedId": "adopted-2026-10-29T07:41:21.943Z",
+    "requestVersion": "b3044853-bc81-423f-82a6-699b326ca0ce",
+    "lockStart": "12:30",
+    "lockEnd": "13:30",
+    "day2": [
+      4,
+      4,
+      4
+    ],
+    "previewSnapshot": true
+  },
+  "restart": {
+    "baselineAvailable": false,
+    "snapshot": true,
+    "adoptedId": "adopted-2026-10-29T07:41:21.943Z",
+    "calls": {
+      "model": 9,
+      "location": 0,
+      "route": 18,
+      "map": 1
+    }
+  },
+  "finalCalls": {
+    "model": 9,
+    "location": 0,
+    "route": 18,
+    "map": 1
+  },
+  "elapsedMs": 74083,
+  "finishedAt": "2026-10-29T07:41:56.215Z",
+  "scope": "独立归档，无旧私有文件/浏览器存档；既有账号Key本机安全配置，不含注册/人工准备耗时；真实API，测试操作未替用户采用",
+  "mapEvidence": "仅私有，许可文件待核",
+  "credentialFileAbsentAfterTest": true
+}

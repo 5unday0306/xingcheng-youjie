@@ -1,0 +1,1 @@
+{"stage":"Windows tar archive extraction","passed":false,"failure":"Chinese filenames rejected by native tar; switched to independent clean git clone","credentialsRead":false,"providerCalls":0}
