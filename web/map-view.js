@@ -27,7 +27,7 @@ export function createMapView({AMap,container,onSelect=()=>{},onLeg=()=>{},initi
       }
       const grouped=new Map();
       for(const [index,a] of day.activities.entries()) {
-        if(!(a.entranceVerified===true||a.userSelected===true)||!Array.isArray(a.location)||a.location.length!==2||!a.location.every(Number.isFinite)){gaps++;continue;}
+        if(!(a.entranceVerified===true||a.userSelected===true||a.routePointAccepted===true)||!Array.isArray(a.location)||a.location.length!==2||!a.location.every(Number.isFinite)){gaps++;continue;}
         const key=a.location.join(',');if(!grouped.has(key))grouped.set(key,[]);grouped.get(key).push({...a,sequence:a.sequence??index+1});
       }
       for(const values of grouped.values()){

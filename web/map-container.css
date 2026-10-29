@@ -1,3 +1,6 @@
 html{color:#173f50;background:#f4f8f8;font:16px/1.7 system-ui}body{padding:20px;margin:0}h2{font-size:20px}p{max-width:50em}
 #mapView{height:340px;width:100%}#mapView[hidden]{display:none}
 .mapPin{display:block;min-width:30px;text-align:center;background:#073b4b;color:white;border:2px solid white;border-radius:8px;padding:5px 9px;font:600 14px/1.5 'Microsoft YaHei',sans-serif;box-shadow:0 2px 6px #0005}.mapPin.isActive{outline:3px solid #af5427;transform:scale(1.12)}.mapPin.isPending{background:white;color:#073b4b;border:2px dashed #073b4b}
+
+/* Give the embedded map the available space, including narrow screens. */
+html,body{height:100%;overflow:hidden}body{padding:8px;display:flex;flex-direction:column;box-sizing:border-box}body>h2{display:none}#containerStatus{font-size:12px;line-height:1.5;margin:0 0 6px;flex:none}#containerBoundary{display:none}#mapView{height:auto;min-height:0;flex:1}#mapView[hidden]{display:none}

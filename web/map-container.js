@@ -17,7 +17,7 @@ async function load(){if(!SDK_ENABLED||!initialized||loading||closed)return;load
   const AMap=await loadAMapSdk({jsKey:config.jsKey,serviceHost:config.serviceHost,signal:abort.signal});check();
   await post('/frame/event',{runId,event:'script-loaded'});check();mapBox.hidden=false;
   map=createMapView({AMap,container:mapBox,initialRegion:[112.55,37.87],onPick:position=>endpoint.send('PICK_LOCATION',{position}),onDrag:(id,position)=>endpoint.send('MOVE_POINT',{id,position}),onSelect:(id,{origin}={})=>{if(origin==='map')endpoint.send('SELECT',{id});}});await map.whenReady();check();
-  await post('/frame/event',{runId,event:'map-ready'});check();mapReady=true;status.textContent='地图已就绪；测试落点需分别确认，不代表官方入口核验';document.getElementById('containerBoundary').textContent='只绘制真实返回的路段，未知路段保持缺口，整体可行性由程序核查并提示';endpoint.send('MAP_READY');
+  await post('/frame/event',{runId,event:'map-ready'});check();mapReady=true;status.textContent='真实地图 · 测试落点非官方入口核验；缺段不补线';document.getElementById('containerBoundary').textContent='只绘制真实返回的路段，未知路段保持缺口，整体可行性由程序核查并提示';endpoint.send('MAP_READY');
  }catch{dispose();try{await post('/frame/event',{runId,event:'sdk-failed'});}catch{}endpoint.send('ERROR',{code:'SDK_FAILED'});}
 }
 if(parent===window)throw Error('地图容器不支持直接打开');

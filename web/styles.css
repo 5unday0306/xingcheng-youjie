@@ -50,3 +50,39 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 @media(max-width:760px){.journeyWorkspace .travel-scene{height:116px}.journeyWorkspace .scene-facts{line-height:1.6}.journeyWorkspace .scene-copy{padding-top:12px}}
 
 .journeyWorkspace #agentDock [data-role]{margin:7px 0}.journeyWorkspace #agentDock [data-role]>summary{padding:7px 10px}.journeyWorkspace #agentDock .agentOutcome{line-height:1.5;margin-top:2px}.journeyWorkspace #agentDock h3{margin-bottom:6px}
+
+/* Product journey: four roles form a horizontal handoff above two working columns. */
+.journeyWorkspace .journeyGrid{grid-template-columns:minmax(0,1.25fr) minmax(320px,1fr);align-items:start}
+.journeyWorkspace .journeyAgents{border:1px solid #cee0df;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:16px;min-width:0}
+.journeyWorkspace .journeyAgents>h3{font-size:16px;display:inline-block;margin:0 20px 8px 0}
+.journeyWorkspace .workflowModes{display:inline-flex;min-width:240px;margin-bottom:8px}
+.journeyWorkspace .journeyAgents [id$=Nodes]{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
+.journeyWorkspace .journeyAgents [data-role]{min-width:0;margin:0!important}
+.journeyWorkspace .journeyAgents [data-role] summary{height:100%;min-height:83px;cursor:pointer}
+.journeyWorkspace .journeyAgents .programBridge{grid-column:1/-1;grid-row:2;margin:0;border:0;font-size:12px;padding:0}
+.journeyWorkspace .journeyAgents [id$=Status]{margin-bottom:8px}
+.journeyWorkspace .journeyAgents [id$=Nodes]>p{grid-column:1/-1;font-size:12px}
+.journeyWorkspace .journeyAgents .agentOutcome{display:block;margin-top:6px}
+.journeyWorkspace .journeyActivities{max-height:850px;overflow:auto;scrollbar-gutter:stable}
+.journeyWorkspace .journeyActivities [id$=Compare]:empty{display:none}
+.journeyWorkspace .journeyActivities [data-scheme]{font-size:12px;padding:8px 10px;background:#e7f0ec;color:#174d5d;margin:0 5px 8px 0}
+.journeyWorkspace .journeyActivities table{font-size:12px;table-layout:fixed;width:100%;overflow-wrap:anywhere}
+.journeyWorkspace .journeyActivities table td{padding:6px;vertical-align:top}
+.journeyWorkspace .journeyActivities [id$=Compare]>details{margin:8px 0;font-size:13px}
+.journeyWorkspace .mapEmpty{min-height:340px}
+.journeyWorkspace .journeyMap .isolatedContainerFrame.hasSdk{height:600px}
+.agentDrawer{position:fixed;margin:0 0 0 auto;inset:0;width:min(560px,100%);height:100dvh;max-height:100dvh;border:0;padding:24px;background:#f5faf8;color:#173e49;overflow:auto}
+.agentDrawer::backdrop{background:#062a3655}.agentDrawer>button{position:sticky;top:0;float:right;background:#174d5d;color:white;padding:10px 16px;border-radius:8px;z-index:1}.agentDrawer h2{font-size:23px;padding:10px 0 22px}.agentDrawer p{margin:14px 0}.agentDrawer pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#e4efec;padding:14px}.agentDrawer details{margin:12px 0}
+.placeRecovery{background:#fff3df;padding:16px;border:1px solid #d6ba91;border-radius:10px;margin-bottom:12px}.placeRecovery button,.mealActions button{padding:8px 12px;background:#e0efea;color:#173e49;border-radius:7px;margin:6px}.placeRecovery input{width:100%}.placeRecovery small{display:block}
+@media(max-width:760px){.journeyWorkspace .journeyGrid{display:block}.journeyWorkspace .journeyAgents [id$=Nodes]{grid-template-columns:1fr 1fr;gap:8px}.journeyWorkspace .journeyAgents .programBridge{grid-row:auto}.journeyWorkspace .journeyActivities{max-height:none;overflow:visible}.journeyWorkspace .journeyAgents{padding:12px}.journeyWorkspace .generationPanel[data-pane=map]>.journeyAgents,.journeyWorkspace .generationPanel[data-pane=activities]>.journeyAgents{display:none}.journeyWorkspace .generationPanel[data-pane=agents]>.journeyGrid{display:none}.journeyWorkspace .journeyMap .isolatedContainerFrame.hasSdk{height:440px}.journeyWorkspace .workflowModes{min-width:0;width:100%}}
+
+.journeyWorkspace .journeyAgents .programBridge{order:5}.journeyWorkspace .journeyAgents [id$=Nodes]{clear:both}.journeyWorkspace .journeyAgents .agentReview>h3{display:none}
+
+/* Product flow: reserve the first screen for the collaboration and map. */
+@media(min-width:761px){
+.journeyWorkspace .topbar{height:58px}.journeyWorkspace .viewNav{margin-bottom:8px}.journeyWorkspace .travel-scene{height:80px}.journeyWorkspace .scene-copy{padding:10px 25px}.journeyWorkspace .scene-copy h1{font-size:23px}.journeyWorkspace .dayTabs{margin-top:10px;margin-bottom:10px}.journeyWorkspace .journeyActionbar{margin:8px 0;gap:5px 16px}.journeyWorkspace .journeyAgents{padding:12px 16px}.journeyWorkspace .agentNodes>details{padding:7px 9px;min-height:68px}.journeyWorkspace .agentNodes{gap:8px;margin-top:5px}.journeyWorkspace .agentOutcome{margin-top:3px}.journeyWorkspace .journeyAgents h3{font-size:16px}.journeyWorkspace .journeyAgents .workflowModes button{min-height:36px;padding:5px 16px}.journeyWorkspace .journeyGrid{margin-top:12px}
+}
+.journeyWorkspace .agentOutcome{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.journeyWorkspace .agentHandoff{display:block;margin-top:4px;font-size:11px;font-weight:500;color:#28616b}.journeyWorkspace .journeyAgents [id$=Nodes]>details{min-width:0}
+
+.journeyWorkspace #agentDock .agentOutcome{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-height:3em;overflow:hidden}
+@media(min-width:761px){.journeyWorkspace .appHeader{height:58px}.journeyWorkspace .viewNav{padding-bottom:8px}.journeyWorkspace .journeyAgents [id$=Nodes]>details{padding:8px 10px}}
