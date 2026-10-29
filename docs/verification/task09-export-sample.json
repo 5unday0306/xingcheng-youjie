@@ -1,10 +1,10 @@
 {
   "format": "xingcheng-youjie.plan",
   "version": 1,
-  "exportedAt": "2026-10-29T07:31:47.496Z",
+  "exportedAt": "2026-10-29T08:02:27.730Z",
   "scheme": {
-    "versionId": "d995d8e9-807d-4ff6-b601-5e47c1148018-r1",
-    "requestVersion": "961cca08-8c62-4dfc-a3b9-c24bda9cd023",
+    "versionId": "04851136-c765-4db5-8e28-ff48c81f30b5-r1",
+    "requestVersion": "8374d394-3a52-4d4b-93e4-246a95d80468",
     "state": "adopted",
     "history": false,
     "assessmentStatus": "需在线复核",
@@ -160,6 +160,7 @@
     }
   ],
   "changes": null,
+  "assessmentIssues": [],
   "totals": {
     "time": "交通/等位和完整到离时间未随文件导出，请在应用在线核查",
     "walking": "仅列独立内部步行估计和用户上限；不以此替代全程步行",

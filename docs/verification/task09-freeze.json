@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-10-29T08:03:01.844805+00:00",
+  "runtimeFingerprintSHA256": "3516f3a7af02692f1c6c7ec0ad08a5ae508e369f6c2d6c12e7932d62c776cff5",
+  "runtimeFileCount": 47,
+  "independentRealCandidate": "ded7b1f416ab9b7866d683caa29a86a3ab164bda",
+  "formalRealCandidate": "d88669e8a748f6be61c73872833bdd67bfa36634",
+  "afterFormalReal": "仅修web/replan08.js历史提示/恢复按钮；30项浏览器再通过，正式UI已加载核对同结果回放，无模型/道路重发",
+  "finalFunctionalState": "4公里上界仍超限，不采用；午餐锁定保持",
+  "productAndMaterials": "功能冻结；最终视频/PDF及脱敏完整对话仍待制作复核"
+}

@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-10-29T08:01:29.712982+00:00",
+  "range": "origin/main..HEAD plus individually reviewed staged files",
+  "unpublishedCommits": [
+    "d88669e8a748f6be61c73872833bdd67bfa36634",
+    "ded7b1f416ab9b7866d683caa29a86a3ab164bda",
+    "fb39953c4e95f28aa63960306f27d5ee3132b355"
+  ],
+  "uniqueHistoryBlobs": 601,
+  "stagedFiles": 26,
+  "textChecks": 434,
+  "findings": [
+    {
+      "path": "docs/05B-配置与真实联调.md",
+      "line": 14,
+      "scope": "unpublished-history",
+      "type": "literal-credential-review",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    },
+    {
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "scope": "unpublished-history",
+      "type": "literal-credential-review",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    },
+    {
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "scope": "unpublished-history",
+      "type": "literal-credential-review",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    },
+    {
+      "path": "tests/export09.test.mjs",
+      "line": 5,
+      "scope": "unpublished-history",
+      "type": "literal-credential-review",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    },
+    {
+      "path": "tests/sdk-policy.test.mjs",
+      "scope": "unpublished-history",
+      "type": "credential-url",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    },
+    {
+      "path": "tests/export09.test.mjs",
+      "line": 4,
+      "scope": "unpublished-history",
+      "type": "literal-credential-review",
+      "reviewStatus": "已复核，无真实凭据：说明用占位文本/运行时字段别名/测试哨兵或测试URL；未输出值"
+    }
+  ],
+  "mediaEntries": 193,
+  "deploymentFiles": [],
+  "prePushHook": false,
+  "limitations": [
+    "heuristic text/filename scan, not proof of absence",
+    "no .env credentials or private raw sessions read",
+    "public images from synthetic tests visually inspected; no full-frame OCR of historical media",
+    "existing remote history previously audited, not re-scanned here",
+    "external GitHub webhooks/visibility not verified"
+  ],
+  "rawChatAndRealMapEvidence": "Git-ignored private files excluded",
+  "unresolvedFindings": 0,
+  "finalStagedFiles": 27,
+  "finalStageReviewedAt": "2026-10-29T08:03:01.537871+00:00",
+  "supplement": "最后状态提示/恢复按钮及文档变更另行审阅，无凭据/私有文件；仅提交公开合成截图。"
+}

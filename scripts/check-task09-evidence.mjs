@@ -1,0 +1,10 @@
+// Local media QA only. No application server, credentials, SDK or external calls.
+import {createRequire} from 'node:module';import {readFile,writeFile} from 'node:fs/promises';import http from 'node:http';
+const file='task09-main-verified-operation.webm';
+const bytes=await readFile('docs/private/'+file),{chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
+const server=http.createServer((req,res)=>{if(req.url==='/'){res.writeHead(200,{'Content-Type':'text/html'});res.end('<video id="v" muted></video>');}else if(req.url==='/media'){res.writeHead(200,{'Content-Type':'video/webm','Content-Length':bytes.length});res.end(bytes);}else{res.writeHead(404);res.end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const browser=await chromium.launch({channel:'msedge',headless:true}),page=await browser.newPage();
+try{await page.goto('http://127.0.0.1:'+server.address().port+'/');const metadata=await page.evaluate(async()=>{const v=document.getElementById('v');v.src='/media';await new Promise((r,j)=>{v.onloadeddata=r;v.onerror=()=>j(Error('media decode '+v.error?.code));});return {width:v.videoWidth,height:v.videoHeight};});const shots=[];
+ for(const second of [3,30,60]){const data=await page.evaluate(async second=>{const v=document.getElementById('v');await new Promise(r=>{v.onseeked=r;v.currentTime=second;});const c=document.createElement('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);return c.toDataURL('image/png').split(',')[1];},second);const path='docs/private/'+file.replace('-operation.webm','-frame-'+second+'.png');await writeFile(path,Buffer.from(data,'base64'));shots.push(path);}
+ const report={at:new Date().toISOString(),file,decoded:true,...metadata,shots,limits:'仅本地解码取帧，非全逐帧复核，外部请求0'};await writeFile('docs/private/'+file.replace('-operation.webm','-decode.json'),JSON.stringify(report,null,2)+'\n');console.log({file,decoded:true,...metadata,frames:shots.length});
+}finally{await browser.close();await new Promise(r=>server.close(r));}

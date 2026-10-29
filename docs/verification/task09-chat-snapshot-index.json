@@ -1,0 +1,95 @@
+{
+  "exportedAt": "2026-10-29T07:50:27.551Z",
+  "scope": "用户已确认仅8c63，其余17份排除，沿用不更改；真实原文仅私有",
+  "sessions": 1,
+  "bytes": 75067643,
+  "events": 9345,
+  "sha256": "3e4207c04dcdd4f20dc1e81dfe1958efa211f956f9ea22a8051a4a687a370784",
+  "manifestMatches": true,
+  "sourcePrefixMatches": true,
+  "sourceWholeMatches": false,
+  "coverage": [
+    {
+      "query": "UI优化完成后，开始任务05B",
+      "lines": [
+        2107,
+        2108,
+        2128,
+        3502,
+        4480,
+        6113,
+        7588,
+        8382,
+        8383,
+        9269
+      ],
+      "userMessageLines": [
+        2107
+      ]
+    },
+    {
+      "query": "开始任务07：多Agent冲突审查",
+      "lines": [
+        7717,
+        7718,
+        8389,
+        8391,
+        9269
+      ],
+      "userMessageLines": [
+        7717
+      ]
+    },
+    {
+      "query": "执行 docs/开发任务08",
+      "lines": [
+        8455,
+        8456,
+        9269
+      ],
+      "userMessageLines": [
+        8455
+      ]
+    },
+    {
+      "query": "现在连续完成任务08和09",
+      "lines": [
+        8625,
+        8626,
+        9269
+      ],
+      "userMessageLines": [
+        8625
+      ]
+    },
+    {
+      "query": "授权任务08，午餐改12:30",
+      "lines": [
+        8466,
+        8467,
+        8477,
+        8478,
+        9269
+      ],
+      "userMessageLines": [
+        8477
+      ]
+    },
+    {
+      "query": "已有明确许可，稍后本地核对文件",
+      "lines": [
+        8752,
+        8753,
+        8915,
+        8916,
+        9269
+      ],
+      "userMessageLines": [
+        8915
+      ]
+    }
+  ],
+  "snapshot": "截至本次导出时点；持续聊天后续仍需补档",
+  "rawPublished": false,
+  "coverageMethod": "正文命中附实际user消息行；工具引用不计为用户输入证据。主线05B/07/08/09均能定位。用户许可声明若快照中仅见工具转述，不当原始输入复核完成。"
+}

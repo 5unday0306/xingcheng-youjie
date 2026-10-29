@@ -1,0 +1,213 @@
+{
+  "indexedAt": "2026-10-29T07:59:55.877817+00:00",
+  "status": "仅本地私有，许可文件待核；索引不包含地图内容或原始响应",
+  "files": [
+    {
+      "path": "docs/private/task09-main-final-desktop.png",
+      "bytes": 81937,
+      "sha256": "9f5eae20cdcf43b985fcf90413df083350f0be2c88dccb0788e5092bcb6a2062"
+    },
+    {
+      "path": "docs/private/task09-main-final-operation.webm",
+      "bytes": 9540079,
+      "sha256": "64b9e0bce78bde49eda2587dab82f2abc45f44fce5f4edb62726a2c51b931d71"
+    },
+    {
+      "path": "docs/private/task09-main-final-recording.json",
+      "bytes": 2020,
+      "sha256": "43ea8f70fd578d97815000d1602318e6dd4262002ad29d030f337aef004c857a"
+    },
+    {
+      "path": "docs/private/task09-main-final-replan.json",
+      "bytes": 160575,
+      "sha256": "bdee79234f21eadc13f6a485959e40aa2a0cb177b7fec37adcb71831f427ae8c"
+    },
+    {
+      "path": "docs/private/task09-main-final-report.json",
+      "bytes": 46575,
+      "sha256": "5c7686d884e8833d00b570608f13be7fe3c8f96a71fa00e5050d7ec3de98a801"
+    },
+    {
+      "path": "docs/private/task09-main-verified-compare.json",
+      "bytes": 353,
+      "sha256": "0c64cb7ebff1b8b3d393fe11c7dc27f38e67521410c6c9443507717e6f7a9bbf"
+    },
+    {
+      "path": "docs/private/task09-main-verified-decode.json",
+      "bytes": 393,
+      "sha256": "d185b661ff2fbc5ef4fc33ecd222f61c15ccb8b200a496f2a85da944addf3514"
+    },
+    {
+      "path": "docs/private/task09-main-verified-desktop-controls.png",
+      "bytes": 68941,
+      "sha256": "b1c65b871f816419ab3944170145ff4419e240bb01ea46010c7039101fa92f28"
+    },
+    {
+      "path": "docs/private/task09-main-verified-desktop.png",
+      "bytes": 99933,
+      "sha256": "6de5c11a9317af0b46609b56547f80725a0ea0b002add05c261525f6205b1a73"
+    },
+    {
+      "path": "docs/private/task09-main-verified-frame-3.png",
+      "bytes": 907203,
+      "sha256": "f5cfa4066f3d517aed6ae6711286c7ba14ff2b2733ed9553438af84747c0a7d8"
+    },
+    {
+      "path": "docs/private/task09-main-verified-frame-30.png",
+      "bytes": 446624,
+      "sha256": "0e5d7244454504e186d152b1e0729895de22ad6d18221483de64a5589e4d13dd"
+    },
+    {
+      "path": "docs/private/task09-main-verified-frame-60.png",
+      "bytes": 451083,
+      "sha256": "06445ba779b8a7e21458060956c4f3bd0c155c2667d4bae0a79604b8c61efca5"
+    },
+    {
+      "path": "docs/private/task09-main-verified-mobile-compare.png",
+      "bytes": 48521,
+      "sha256": "44de8511f830926cfcc163d9c7db6bcc292051ae57a1255c25e648058edb6fec"
+    },
+    {
+      "path": "docs/private/task09-main-verified-operation.webm",
+      "bytes": 4959965,
+      "sha256": "00895f586dd6a9f3d67220d9eba92b152e837d99f05a85f9769b9100e09c27ae"
+    },
+    {
+      "path": "docs/private/task09-main-verified-original-day1.png",
+      "bytes": 304724,
+      "sha256": "999181f78513f07523c8c24448bd53006a59c5e0da13f211c522ec05344a52b8"
+    },
+    {
+      "path": "docs/private/task09-main-verified-original-day2.png",
+      "bytes": 310864,
+      "sha256": "527d5581b25a781251eee6d11c2b44313379948479c8e6a7183035ebf3dbd7d8"
+    },
+    {
+      "path": "docs/private/task09-main-verified-preview-day1.png",
+      "bytes": 304724,
+      "sha256": "999181f78513f07523c8c24448bd53006a59c5e0da13f211c522ec05344a52b8"
+    },
+    {
+      "path": "docs/private/task09-main-verified-preview-day2.png",
+      "bytes": 212491,
+      "sha256": "5877998f16c3da7ec4319353590b98058243f1e5a4444bb06fb7eb37d8a3ca66"
+    },
+    {
+      "path": "docs/private/task09-main-verified-recording.json",
+      "bytes": 2435,
+      "sha256": "0f5f550824817fb44cffc4830d5af6f73d99acad866e736f576152ddb60f4edd"
+    },
+    {
+      "path": "docs/private/task09-main-verified-replan.json",
+      "bytes": 203228,
+      "sha256": "bed3f739ff094d0b9d81357e8a28b8f0816b87fd21c63976d2e14bf3fec08890"
+    },
+    {
+      "path": "docs/private/task09-main-verified-report.json",
+      "bytes": 47698,
+      "sha256": "776dfeca404405f0d3a29b4f56d2f162a2d74aaf8269d9b2af8a69c96ee5bbf1"
+    },
+    {
+      "path": "docs/private/task09-ui-final-compare.json",
+      "bytes": 306,
+      "sha256": "e73b778cbacc29dbf08329359075038acfa164657ae3f21414092dab4f086636"
+    },
+    {
+      "path": "docs/private/task09-ui-final-desktop-controls.png",
+      "bytes": 68570,
+      "sha256": "d405dd0351308ca297b3e6f030581ba94b65aca0442c1fdd4977fa9ed7557527"
+    },
+    {
+      "path": "docs/private/task09-ui-final-desktop.png",
+      "bytes": 99933,
+      "sha256": "6de5c11a9317af0b46609b56547f80725a0ea0b002add05c261525f6205b1a73"
+    },
+    {
+      "path": "docs/private/task09-ui-final-mobile-compare.png",
+      "bytes": 48521,
+      "sha256": "44de8511f830926cfcc163d9c7db6bcc292051ae57a1255c25e648058edb6fec"
+    },
+    {
+      "path": "docs/private/task09-ui-final-operation.webm",
+      "bytes": 1722352,
+      "sha256": "f095780e8f6ccdb68faa8544c449f7197ad0764aefad0e6e0d1b5daf785a588c"
+    },
+    {
+      "path": "docs/private/task09-ui-final-original-day1.png",
+      "bytes": 304721,
+      "sha256": "488a65040560e693c71554389d8f3eb9dc0797d997618e4704e57b2f6dfb34fc"
+    },
+    {
+      "path": "docs/private/task09-ui-final-original-day2.png",
+      "bytes": 310861,
+      "sha256": "afd963c09714c2c37d7eba4c82c4cd089e9ca8a5c6b628aacce190e0f68003d5"
+    },
+    {
+      "path": "docs/private/task09-ui-final-preview-day1.png",
+      "bytes": 304721,
+      "sha256": "488a65040560e693c71554389d8f3eb9dc0797d997618e4704e57b2f6dfb34fc"
+    },
+    {
+      "path": "docs/private/task09-ui-final-preview-day2.png",
+      "bytes": 212488,
+      "sha256": "754948655630dab63f830c83e382e5e03b302c204c949e3e2ca9d4e1149f56fc"
+    },
+    {
+      "path": "docs/private/task09-ui-final-recording.json",
+      "bytes": 2434,
+      "sha256": "ab6449c85ca1b1ab116aa8310e468860ce17a1915abbace681a5f6ffc1217b47"
+    },
+    {
+      "path": "docs/private/task09-ui-final-replan.json",
+      "bytes": 203228,
+      "sha256": "bed3f739ff094d0b9d81357e8a28b8f0816b87fd21c63976d2e14bf3fec08890"
+    },
+    {
+      "path": "docs/private/task09-ui-final-report.json",
+      "bytes": 66676,
+      "sha256": "aee32fc87d58d2999278e466929b9428b111a6b183a687539125f689d8e6673e"
+    },
+    {
+      "path": "docs/private/clean09-xqsneV/real-map.png",
+      "bytes": 174639,
+      "sha256": "91984ae6b1a060f82853cc01bcc7490750c5a5d6cd362315f73236b05d8d534c"
+    },
+    {
+      "path": "docs/private/clean09-xqsneV/real-plan.html",
+      "bytes": 3887,
+      "sha256": "311d535fcf2ca37b7b755beb9702ebb659459622c8ef2f078ea975ece0c150ed"
+    },
+    {
+      "path": "docs/private/clean09-xqsneV/real-plan.json",
+      "bytes": 5484,
+      "sha256": "23c68e18b652ae0416e2cd33055dd5b5f6334bd49e5a4ec3014e1ca6db635010"
+    },
+    {
+      "path": "docs/private/clean09-xqsneV/report.json",
+      "bytes": 2423,
+      "sha256": "44031e9765d88b5c6ae7f709d833367fc0121b4828d216fd4277c6489552a36a"
+    },
+    {
+      "path": "docs/private/clean09-b8H7hC/real-map.png",
+      "bytes": 187700,
+      "sha256": "be3d7b89af15ae5828a5f14189dfc416eaaab0d4616af2485b5be261cfff63c9"
+    },
+    {
+      "path": "docs/private/clean09-b8H7hC/real-plan.html",
+      "bytes": 4218,
+      "sha256": "073637857b53cceeaa882d3b6cd23c0a924e0474ad60ab5200e55735b24025b2"
+    },
+    {
+      "path": "docs/private/clean09-b8H7hC/real-plan.json",
+      "bytes": 5791,
+      "sha256": "4b55ac4ada60980e7d17caca280c41876757d53b018a678e23cc5812e6f36c18"
+    },
+    {
+      "path": "docs/private/clean09-b8H7hC/report.json",
+      "bytes": 2422,
+      "sha256": "0d28dbed23a2d4a7a03647c097c835a196d96a33885742fef5a4808fbc0f577f"
+    }
+  ],
+  "mediaQA": "task09-main-verified-operation.webm已实际解码1440x900并取3/30/60秒帧；目视核对代表帧，非逐帧；最终UI提示另有ui-final截图",
+  "retryEvidence": "main-final为漏screenRef失败，main-verified为实际四角色完成，ui-final为同结果回放，仅SDK新增1，无模型/道路"
+}
