@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-30T16:49:19.164Z",
+  "adopted": true,
+  "origin": "用户明确采用的动态方案",
+  "versionId": "1258dde5-9af1-4543-80ff-31b36f67884d-restored-1793377422048",
+  "lock": {
+    "date": "2026-11-08",
+    "start": "12:30",
+    "end": "13:30"
+  },
+  "saved": true,
+  "exportHTML": true,
+  "exportJSON": true,
+  "noMapRawDataInExport": true,
+  "before": {
+    "counts": {
+      "model": 107,
+      "location": 11,
+      "route": 520,
+      "map": 67
+    },
+    "reservedCents": 1936
+  },
+  "after": {
+    "counts": {
+      "model": 107,
+      "location": 11,
+      "route": 520,
+      "map": 67
+    },
+    "reservedCents": 1936
+  },
+  "limits": [
+    "真实浏览器刷新恢复尚未本轮验收；不能将服务结构读回当浏览器实测",
+    "无新增真实模型、道路、地点或SDK请求",
+    "未知仍保留，采用不代表旅行可行性已证明"
+  ]
+}
