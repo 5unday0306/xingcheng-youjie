@@ -88,3 +88,18 @@ dialog{border:0;padding:0;max-width:none;max-height:none;background:#F6FAF8;colo
 @media(min-width:761px){.journeyWorkspace .appHeader{height:58px}.journeyWorkspace .viewNav{padding-bottom:8px}.journeyWorkspace .journeyAgents [id$=Nodes]>details{padding:8px 10px}}
 
 .agentProducts>section{padding:14px 0;border-bottom:1px solid var(--line)}.agentProducts h3{font-size:16px;margin:0 0 10px}.agentProducts h4{font-size:14px;margin:0 0 4px}.agentProducts p,.agentProducts li{font-size:13px;overflow-wrap:anywhere;line-height:1.75}.agentProducts ul,.agentProducts ol{padding-left:21px;margin:7px 0}.productCard{border:1px solid #d3e4e4;background:#f4f8f7;border-radius:9px;padding:10px;margin:8px 0}.agentProducts details{padding:8px 0}.agentProducts button{background:#deefeb;border:1px solid #bdd5d4;border-radius:7px;color:#174b59;padding:7px 12px;margin:5px 6px 0 0;max-width:100%}.agentProducts a{display:inline-block;font-size:12px;color:#165e71;margin:4px 0}.agentProducts summary{font-size:13px;cursor:pointer}
+
+/* Same visual system, decision-oriented comparison; never expand the map to match text. */
+.candidateComparison{border-top:2px solid #2c737b;margin:14px 0;padding-top:14px;min-width:0}
+.candidateComparison>h3{font-size:18px}.candidateComparison>p{font-size:12px;color:#315d67;line-height:1.65}
+.candidateGrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:5px 2px 14px}
+.candidateCard{flex:0 0 min(300px,90%);min-width:0;scroll-snap-align:start;border:1px solid #c7dcdc;border-radius:12px;padding:14px;background:#f4f9f7;overflow-wrap:anywhere}
+.candidateCard[data-selected=true]{border:2px solid #226875;padding:13px;background:#edf6f3}.candidateCard h4{font-size:16px;margin:0 0 10px}
+.candidateCard>section{padding:10px 0;border-top:1px solid #d9e5e1}.candidateCard p{font-size:12px;line-height:1.7;margin:5px 0}.candidateCard strong{font-size:13px}
+.candidateGate{color:#174e58;font-weight:700}.candidateWarning{display:block;color:#914d1b;margin:7px 0}
+.candidateCard button{max-width:100%;padding:9px 12px;min-height:40px;border-radius:7px;background:#dceee8;color:#124651;border:1px solid #accdca;font-size:12px;cursor:pointer}
+.candidateCard>button{display:block;width:100%;margin-top:12px;background:#174f5b;color:white}.candidateCard details{margin:10px 0;font-size:12px}.candidateCard summary{cursor:pointer;line-height:1.7}
+.candidateCard :focus-visible{outline:3px solid #aa571a;outline-offset:3px}
+@media(max-width:760px){.candidateCard{flex-basis:94%}.candidateComparison{margin-top:12px}.candidateGrid{gap:9px}}
+
+.candidateChooser{padding:10px 0;border-bottom:1px solid #c6ddda;margin-bottom:10px;display:flex;gap:7px;flex-wrap:wrap}.candidateChooser[hidden]{display:none}.candidateChooser strong{font-size:13px;width:100%}.candidateChooser button{padding:8px 11px;min-height:40px;border:1px solid #a8c9c8;border-radius:7px;background:#e6f1ee;color:#194b56;font-size:12px}.candidateChooser button[aria-pressed=true]{background:#174f5b;color:white}

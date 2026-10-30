@@ -252,7 +252,7 @@ function renderMembers() {
     body.append(node('p','步行包含交通接驳与场馆内部步行；这是上限，不是实际距离。','hint'));
     const dev = node('details',undefined,'developerDetails');
     dev.append(node('summary','开发详情'),node('code',`稳定ID：${m.id}`));
-    body.append(dev);
+    if(new URLSearchParams(location.search).get('developer')==='1')body.append(dev);
     card.append(summary,body);
     return card;
   }));
@@ -292,14 +292,14 @@ function paintRoute() {
   const endpoint = toRequest(draft).endpoint;
   $('activeDay').replaceChildren(node('p',dateAt(draft.startDate,activeDay) || '日期待填写','dayDate'),
     node('p',`${day.start || '待填'}～${day.end || '待填'}（含往返交通）`),
-    node('p',endpoint.name,'meetingPoint'), node('small','公共测试点，现场落点仍待核对。步行上限见下方同行者。','hint'));
+    node('p',endpoint.name,'meetingPoint'), node('small','公共测试集合点；位置来源与适用范围见依据。','hint'));
 }
 function summaryContent(r) {
   const intro = node('section', undefined, 'summaryTrip');
   intro.append(node('h4', `${CITY_CONFIG[r.city]?.fullName || '目的地'} · ${r.people}人 · ${r.days.length}天`));
   const schedule = node('div', undefined, 'summarySchedule');
   r.days.forEach(day => schedule.append(node('p', `${day.date}　${day.start}～${day.end}（含出发与返回交通）`)));
-  intro.append(schedule, node('p', `每天往返：${r.endpoint.name}`), node('p', `${r.endpoint.address}；公共测试点，落点未人工核对。`, 'hint'));
+  intro.append(schedule, node('p', `每天往返：${r.endpoint.name}`), node('p', `${r.endpoint.address}；公共测试点；采用位置与确认来源见方案依据。`, 'hint'));
   const scope = node('details', undefined, 'budgetDetails');
   scope.append(node('summary', '查看预算包含与排除范围'), node('p', BUDGET, 'hint'));
   intro.append(scope);
@@ -314,7 +314,7 @@ function summaryContent(r) {
   });
   const dev = node('details', undefined, 'developerDetails');
   dev.append(node('summary', '开发详情：结构化需求与稳定ID'), node('pre', JSON.stringify(r, null, 2)));
-  $('summary').replaceChildren(intro, members, dev);
+  $('summary').replaceChildren(intro, members);if(new URLSearchParams(location.search).get('developer')==='1')$('devRecords').append(dev);
 }
 function check({navigate=true,extraErrors=[]} = {}) {
   validationStarted = true;
