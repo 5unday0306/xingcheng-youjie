@@ -1,0 +1,2110 @@
+{
+  "at": "2026-10-30T18:57:14.173Z",
+  "source": "本轮真实DeepSeek四角色＋高德底图与道路；非替身",
+  "authorization": {
+    "issuedAt": "2026-10-30T18:46:00.000Z",
+    "expiresAt": "2026-10-30T19:31:00.000Z",
+    "allowance": {
+      "model": 6,
+      "route": 32,
+      "location": 0,
+      "map": 1
+    }
+  },
+  "before": {
+    "counts": {
+      "model": 107,
+      "location": 11,
+      "route": 520,
+      "map": 70
+    },
+    "reservedCents": 1951,
+    "stop": null,
+    "starts": 0
+  },
+  "after": {
+    "counts": {
+      "model": 111,
+      "location": 11,
+      "route": 552,
+      "map": 71
+    },
+    "reservedCents": 2028,
+    "stop": null,
+    "starts": 1
+  },
+  "checks": {
+    "confirmationVisible": true,
+    "lockShown": true,
+    "confirmationNoCalls": true,
+    "visibleBasemap": true,
+    "fourRolesComplete": true,
+    "candidateCount": 3,
+    "candidateVersionSync": true,
+    "activityToMap": "未验证：桌面隐藏页签状态不能作为定位断言",
+    "mapToActivity": "未验证：真实标记未以正确可见目标操作",
+    "coordinateProduct": true,
+    "screenProduct": true,
+    "planProduct": true,
+    "auditProduct": true,
+    "passiveNoCalls": true,
+    "narrowNoOverflow": true,
+    "error": "验收脚本桌面点击隐藏手机页签超时，非接口失败；保留私有原始失败记录",
+    "errorPhase": "candidate-checks",
+    "adoptedPreserved": true,
+    "lockPreserved": true
+  },
+  "request": {
+    "city": "taiyuan",
+    "people": 3,
+    "days": [
+      {
+        "date": "2026-11-07",
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "date": "2026-11-08",
+        "start": "09:00",
+        "end": "18:00"
+      }
+    ],
+    "adjustableGoals": true,
+    "members": [
+      {
+        "name": "同行者1",
+        "preference": "历史展览",
+        "budget": 600,
+        "walking": [
+          6,
+          4
+        ]
+      },
+      {
+        "name": "同行者2",
+        "preference": "风景拍照",
+        "budget": 600,
+        "walking": [
+          6,
+          4
+        ]
+      },
+      {
+        "name": "同行者3",
+        "preference": "美食，少走路",
+        "budget": 600,
+        "walking": [
+          6,
+          4
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "role": "coordinate",
+      "status": "completed",
+      "startedAt": "2026-10-30T18:50:26.222Z",
+      "completedAt": "2026-10-30T18:50:29.699Z",
+      "ref": "0ed4d7341d7a62182e51668a4033e20af1636009d0ef3b2797289fa76c41cc7c",
+      "output": {
+        "version": 1,
+        "role": "coordinate",
+        "hardConstraintIds": [
+          "person-1-budget",
+          "person-2-budget",
+          "person-3-budget",
+          "walk-transit-only"
+        ],
+        "memberNeeds": [
+          {
+            "personId": "person-1",
+            "preference": "历史展览；预算600为硬约束；步行区间[6,4]可调整",
+            "suggestion": "11-07保留TY01历史类参观150分钟；11-08可加一处历史展览候选，需先核实开放与费用"
+          },
+          {
+            "personId": "person-2",
+            "preference": "风景拍照；预算600为硬约束；步行区间[6,4]可调整",
+            "suggestion": "11-08的TY05停留45分钟偏短，可延长拍照时间；风景类候选需核实可达与门票"
+          },
+          {
+            "personId": "person-3",
+            "preference": "美食，少走路；预算600为硬约束；步行区间[6,4]可调整",
+            "suggestion": "锁定11-08午餐LUNCH2不动；步行按可调整目标压缩，用公共交通衔接，不缩短停留换低步行"
+          }
+        ],
+        "summary": "三人预算各600为硬约束，步行仅公交/步行且区间可调整，11-08午餐锁定不可动。原安排仅两处参观，历史展览与风景拍照偏好覆盖不足，美食仅一处午餐。建议11-07保留TY01，11-08延长TY05拍照并补一处历史展览候选，餐饮围绕锁定午餐就近安排。所有候选开放、费用、等位与道路均未核实，不计为已满足。",
+        "unknowns": [
+          "候选TY01、TY05的开放时间、门票与预约要求未核实",
+          "锁定午餐LUNCH2营业与等位情况未核实，锁定不等于保证到达",
+          "各候选间公交线路与步行距离未核查，步行区间可调整但需实测",
+          "三人预算600是否覆盖门票与餐饮总额未核算",
+          "11-07、11-08天气与景点人流未知"
+        ]
+      },
+      "responseMeta": {
+        "finishReason": "tool_calls",
+        "transport": "named-tool"
+      },
+      "usage": {
+        "input": 1336,
+        "output": 525,
+        "total": 1861
+      }
+    },
+    {
+      "role": "screen",
+      "status": "completed",
+      "startedAt": "2026-10-30T18:50:29.703Z",
+      "completedAt": "2026-10-30T18:50:34.424Z",
+      "ref": "74486dfb9b21bf00e927aec41f1991ce33e4a1ed508776865526ab61e22bf4cf",
+      "inputUpstream": {
+        "ref": "0ed4d7341d7a62182e51668a4033e20af1636009d0ef3b2797289fa76c41cc7c",
+        "output": {
+          "summary": "三人预算各600为硬约束，步行仅公交/步行且区间可调整，11-08午餐锁定不可动。原安排仅两处参观，历史展览与风景拍照偏好覆盖不足，美食仅一处午餐。建议11-07保留TY01，11-08延长TY05拍照并补一处历史展览候选，餐饮围绕锁定午餐就近安排。所有候选开放、费用、等位与道路均未核实，不计为已满足。",
+          "memberNeeds": [
+            {
+              "personId": "person-1",
+              "suggestion": "11-07保留TY01历史类参观150分"
+            },
+            {
+              "personId": "person-2",
+              "suggestion": "11-08的TY05停留45分钟偏短，可"
+            },
+            {
+              "personId": "person-3",
+              "suggestion": "锁定11-08午餐LUNCH2不动；步行"
+            }
+          ]
+        }
+      },
+      "output": {
+        "version": 1,
+        "role": "screen",
+        "coordinationRef": "0ed4d7341d7a62182e51668a4033e20af1636009d0ef3b2797289fa76c41cc7c",
+        "rankings": [
+          {
+            "candidateId": "TY01",
+            "personScores": [
+              {
+                "personId": "person-1",
+                "score": 5,
+                "reason": "历史展览首选，停留150分以上"
+              },
+              {
+                "personId": "person-2",
+                "score": 3,
+                "reason": "建筑外景可拍，室内拍照受限未知"
+              },
+              {
+                "personId": "person-3",
+                "score": 2,
+                "reason": "室内久站步行多，无餐饮"
+              }
+            ],
+            "reason": "唯一历史展览类，11-07保留，停留150-210分"
+          },
+          {
+            "candidateId": "TY04",
+            "personScores": [
+              {
+                "personId": "person-1",
+                "score": 1,
+                "reason": "无展览内容，不匹配"
+              },
+              {
+                "personId": "person-2",
+                "score": 4,
+                "reason": "园景适合拍照，45-75分"
+              },
+              {
+                "personId": "person-3",
+                "score": 3,
+                "reason": "可短环线少走，但无餐饮"
+              }
+            ],
+            "reason": "风景拍照备选，可作11-08补充或删除"
+          },
+          {
+            "candidateId": "TY05",
+            "personScores": [
+              {
+                "personId": "person-1",
+                "score": 2,
+                "reason": "街区历史氛围弱，非展览"
+              },
+              {
+                "personId": "person-2",
+                "score": 4,
+                "reason": "街景拍照好，建议延至60分"
+              },
+              {
+                "personId": "person-3",
+                "score": 4,
+                "reason": "紧邻锁定午餐，步行少"
+              }
+            ],
+            "reason": "11-08保留并延至60分，紧邻锁定午餐"
+          },
+          {
+            "candidateId": "TY06",
+            "personScores": [
+              {
+                "personId": "person-1",
+                "score": 1,
+                "reason": "小吃街非展览"
+              },
+              {
+                "personId": "person-2",
+                "score": 3,
+                "reason": "街景可拍，人流未知"
+              },
+              {
+                "personId": "person-3",
+                "score": 5,
+                "reason": "美食首选，紧邻钟楼街"
+              }
+            ],
+            "reason": "美食补充，30-60元/人为假设非报价"
+          }
+        ],
+        "mealIds": [
+          "B0MR2ZOJST",
+          "B0I6T5MXGG"
+        ],
+        "proposedPlan": {
+          "version": 1,
+          "days": [
+            {
+              "date": "2026-11-07",
+              "items": [
+                {
+                  "type": "visit",
+                  "candidateId": "TY01",
+                  "durationMinutes": 180,
+                  "reason": "历史展览主项，停留180分在150-210区间"
+                },
+                {
+                  "type": "meal",
+                  "reason": "午餐有来源，营业与等位待核实"
+                },
+                {
+                  "type": "visit",
+                  "candidateId": "TY04",
+                  "durationMinutes": 60,
+                  "reason": "园景拍照补充，60分在45-75区间"
+                }
+              ]
+            },
+            {
+              "date": "2026-11-08",
+              "items": [
+                {
+                  "type": "visit",
+                  "candidateId": "TY05",
+                  "durationMinutes": 60,
+                  "reason": "拍照延至60分，紧邻锁定午餐"
+                },
+                {
+                  "type": "meal",
+                  "reason": "锁定午餐12:30-13:30保持不动"
+                },
+                {
+                  "type": "visit",
+                  "candidateId": "TY06",
+                  "durationMinutes": 60,
+                  "reason": "美食逛吃补充，60分在45-60区间"
+                }
+              ]
+            }
+          ]
+        },
+        "reason": "11-07保留TY01并加TY04补拍照；11-08保留TY05延至60分并加TY06补美食；锁定午餐不动，预算600硬约束不变。",
+        "unknowns": [
+          "各候选开放时间、最后入场、门票费用均为unknown，未核实",
+          "TY01特展与当期规则未知，免费仅为旧摘要线索",
+          "TY04未来开放与维修影响未知",
+          "TY05街区统一通行与店铺营业未知",
+          "TY06费用30-60元/人为开发假设，非午餐报价",
+          "两处午餐营业、等位与道路通行均未核实",
+          "新增TY04/TY06后总步行与公交区间需程序核算，可能超各人6/4区间"
+        ]
+      },
+      "responseMeta": {
+        "finishReason": "tool_calls",
+        "transport": "named-tool"
+      },
+      "usage": {
+        "input": 3661,
+        "output": 1072,
+        "total": 4733
+      }
+    },
+    {
+      "role": "plan",
+      "status": "completed",
+      "startedAt": "2026-10-30T18:51:00.175Z",
+      "completedAt": "2026-10-30T18:51:02.261Z",
+      "ref": "a1f789cf630e5d959a3d88c3de7a6b1735c5143dd8b04428ff7affe356aabe73",
+      "inputUpstream": {
+        "ref": "74486dfb9b21bf00e927aec41f1991ce33e4a1ed508776865526ab61e22bf4cf",
+        "output": {
+          "rankings": [
+            {
+              "candidateId": "TY01",
+              "personScores": [
+                {
+                  "personId": "person-1",
+                  "score": 5
+                },
+                {
+                  "personId": "person-2",
+                  "score": 3
+                },
+                {
+                  "personId": "person-3",
+                  "score": 2
+                }
+              ]
+            },
+            {
+              "candidateId": "TY04",
+              "personScores": [
+                {
+                  "personId": "person-1",
+                  "score": 1
+                },
+                {
+                  "personId": "person-2",
+                  "score": 4
+                },
+                {
+                  "personId": "person-3",
+                  "score": 3
+                }
+              ]
+            },
+            {
+              "candidateId": "TY05",
+              "personScores": [
+                {
+                  "personId": "person-1",
+                  "score": 2
+                },
+                {
+                  "personId": "person-2",
+                  "score": 4
+                },
+                {
+                  "personId": "person-3",
+                  "score": 4
+                }
+              ]
+            },
+            {
+              "candidateId": "TY06",
+              "personScores": [
+                {
+                  "personId": "person-1",
+                  "score": 1
+                },
+                {
+                  "personId": "person-2",
+                  "score": 3
+                },
+                {
+                  "personId": "person-3",
+                  "score": 5
+                }
+              ]
+            }
+          ],
+          "reason": "11-07保留TY01并加TY04补拍照；11-08保留TY05延至60分并加TY06补美食；锁定午餐不动，预算600硬约束不变。"
+        }
+      },
+      "output": {
+        "version": 1,
+        "role": "plan",
+        "screenRef": "74486dfb9b21bf00e927aec41f1991ce33e4a1ed508776865526ab61e22bf4cf",
+        "proposalId": "proposal-3",
+        "reason": "选proposal-3：逐人覆盖5/4/5，两日均有游览，预算与锁定未动",
+        "unknowns": [
+          "各候选开放时间、预约要求、等位时长与完整费用均未知，未计为已满足",
+          "11-07步行估计4527-7027米超出6000米上限，程序状态insufficient，需调整或核实",
+          "11-08步行估计1965-2965米在4000米内，但为估计值，实际路线待核实",
+          "两日预算估计15600-26400元在60000元内，缺失项6项，实际费用待核实",
+          "锁定午餐老太原菜馆(钟楼街店)12:30-13:30为非预约、非营业保证，到达与等位待核实",
+          "11-07三项游览各45分钟为候选估计范围内停留，不得借缩短停留调低步行"
+        ]
+      },
+      "responseMeta": {
+        "finishReason": "tool_calls",
+        "transport": "named-tool"
+      },
+      "usage": {
+        "input": 2700,
+        "output": 343,
+        "total": 3043
+      }
+    },
+    {
+      "role": "audit",
+      "status": "completed",
+      "startedAt": "2026-10-30T18:51:02.270Z",
+      "completedAt": "2026-10-30T18:51:05.539Z",
+      "ref": "47a755b0a833cd19482d774608eed78f6261e97f98ff350032c9064515dad8fe",
+      "inputUpstream": {
+        "ref": "a1f789cf630e5d959a3d88c3de7a6b1735c5143dd8b04428ff7affe356aabe73",
+        "output": {
+          "version": 1,
+          "role": "plan",
+          "screenRef": "74486dfb9b21bf00e927aec41f1991ce33e4a1ed508776865526ab61e22bf4cf",
+          "proposalId": "proposal-3",
+          "reason": "选proposal-3：逐人覆盖5/4/5，两日均有游览，预算与锁定未动",
+          "unknowns": [
+            "各候选开放时间、预约要求、等位时长与完整费用均未知，未计为已满足",
+            "11-07步行估计4527-7027米超出6000米上限，程序状态insufficient，需调整或核实",
+            "11-08步行估计1965-2965米在4000米内，但为估计值，实际路线待核实",
+            "两日预算估计15600-26400元在60000元内，缺失项6项，实际费用待核实",
+            "锁定午餐老太原菜馆(钟楼街店)12:30-13:30为非预约、非营业保证，到达与等位待核实",
+            "11-07三项游览各45分钟为候选估计范围内停留，不得借缩短停留调低步行"
+          ]
+        }
+      },
+      "output": {
+        "version": 1,
+        "role": "audit",
+        "planningRef": "a1f789cf630e5d959a3d88c3de7a6b1735c5143dd8b04428ff7affe356aabe73",
+        "programStatus": "insufficient",
+        "issueIds": [
+          "day1-person1-walking-upper-risk",
+          "day1-person2-walking-upper-risk",
+          "day1-person3-walking-upper-risk",
+          "day1-unknowns",
+          "day2-unknowns",
+          "person1-budget-unknown",
+          "person2-budget-unknown",
+          "person3-budget-unknown"
+        ],
+        "decision": "complete",
+        "candidateReviews": [
+          {
+            "proposalId": "proposal-3",
+            "verdict": "reviewed",
+            "reason": "覆盖5/4/5，但11-07步行上限7027米超6000米，三人均不足"
+          },
+          {
+            "proposalId": "proposal-7",
+            "verdict": "reviewed",
+            "reason": "仅两餐无游览，三人覆盖0且被忽略，不满足游览需求"
+          },
+          {
+            "proposalId": "proposal-1",
+            "verdict": "reviewed",
+            "reason": "覆盖5/4/4，步行上限均在限内，但两日各仅一处游览"
+          }
+        ],
+        "revisionRequests": [
+          {
+            "targetIds": [
+              "day1-person1-walking-upper-risk",
+              "day1-person2-walking-upper-risk",
+              "day1-person3-walking-upper-risk"
+            ],
+            "affectedPersons": [
+              "person-1",
+              "person-2",
+              "person-3"
+            ],
+            "change": "11-07步行上限7027米超6000米：减少一处游览或改交通方式，不得缩短停留凑数"
+          },
+          {
+            "targetIds": [
+              "day1-unknowns",
+              "day2-unknowns"
+            ],
+            "affectedPersons": [
+              "person-1",
+              "person-2",
+              "person-3"
+            ],
+            "change": "核实各点开放、预约、等位与去重边界，未知不得计为满足"
+          },
+          {
+            "targetIds": [
+              "person1-budget-unknown",
+              "person2-budget-unknown",
+              "person3-budget-unknown"
+            ],
+            "affectedPersons": [
+              "person-1",
+              "person-2",
+              "person-3"
+            ],
+            "change": "补齐门票与餐饮费用，确认在60000元硬预算内"
+          }
+        ],
+        "reason": "程序核查后剩余风险：步行上限、未知项与费用未核实",
+        "unknowns": [
+          "各候选开放时间、预约要求与等位时长未知，未计为已满足",
+          "11-07步行上限7027米超6000米，需调整或核实",
+          "11-08步行1965-2965米为估计值，实际路线待核实",
+          "两日预算15600-26400元为估计，缺失6项，实际费用待核实",
+          "锁定午餐老太原菜馆(钟楼街店)12:30-13:30非预约非营业保证，到达与等位待核实",
+          "街区内部与道路步行去重边界未知，可能影响步行估计"
+        ]
+      },
+      "responseMeta": {
+        "finishReason": "tool_calls",
+        "transport": "named-tool"
+      },
+      "usage": {
+        "input": 3607,
+        "output": 793,
+        "total": 4400
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "proposal-3",
+      "versionId": "dc8aedb0-2ef5-48ae-ba5f-17a3137a004a-proposal-3",
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "generatedAt": "2026-10-30T18:51:05.544Z",
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": [
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 0,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者1",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 1,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者2",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 2,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者3",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        }
+      ],
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY04",
+                "minutes": 45
+              },
+              {
+                "id": "TY05",
+                "minutes": 45
+              },
+              {
+                "id": "TY06",
+                "minutes": 45
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 285,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "coverage": [
+        {
+          "personId": "person-1",
+          "name": "同行者1",
+          "score": 5,
+          "bestAvailable": 5,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 5,
+              "reason": "历史展览首选，停留150分以上"
+            },
+            {
+              "candidateId": "TY04",
+              "score": 1,
+              "reason": "无展览内容，不匹配"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 2,
+              "reason": "街区历史氛围弱，非展览"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 1,
+              "reason": "小吃街非展览"
+            }
+          ],
+          "missed": [],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-2",
+          "name": "同行者2",
+          "score": 4,
+          "bestAvailable": 4,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 3,
+              "reason": "建筑外景可拍，室内拍照受限未知"
+            },
+            {
+              "candidateId": "TY04",
+              "score": 4,
+              "reason": "园景适合拍照，45-75分"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "街景拍照好，建议延至60分"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 3,
+              "reason": "街景可拍，人流未知"
+            }
+          ],
+          "missed": [],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-3",
+          "name": "同行者3",
+          "score": 5,
+          "bestAvailable": 5,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 2,
+              "reason": "室内久站步行多，无餐饮"
+            },
+            {
+              "candidateId": "TY04",
+              "score": 3,
+              "reason": "可短环线少走，但无餐饮"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "紧邻锁定午餐，步行少"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 5,
+              "reason": "美食首选，紧邻钟楼街"
+            }
+          ],
+          "missed": [],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        }
+      ],
+      "budget": [
+        {
+          "name": "同行者1",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              15600,
+              26400
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "迎泽公园短环线门票未知",
+              "钟楼街门票未知",
+              "食品街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者2",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              15600,
+              26400
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "迎泽公园短环线门票未知",
+              "钟楼街门票未知",
+              "食品街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者3",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              15600,
+              26400
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "迎泽公园短环线门票未知",
+              "钟楼街门票未知",
+              "食品街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            {
+              "id": "d1-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d1-p2-LUNCH1",
+              "name": "老太原山西菜馆"
+            },
+            {
+              "id": "d1-p3-TY04",
+              "name": "迎泽公园北侧测试位置"
+            },
+            {
+              "id": "d1-p4-TY05",
+              "name": "钟楼街测试落点"
+            },
+            {
+              "id": "d1-p5-TY06",
+              "name": "食品街测试落点"
+            },
+            {
+              "id": "d1-p6-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              351,
+              351
+            ],
+            "limit": 540,
+            "unknowns": [
+              "迎泽公园短环线等待未知",
+              "钟楼街等待未知",
+              "食品街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  4527,
+                  7027
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "街区内部步行重叠，去重边界未知",
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认",
+                  "day1-leg4道路与内部步行去重未确认",
+                  "day1-leg5道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  4527,
+                  7027
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "街区内部步行重叠，去重边界未知",
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认",
+                  "day1-leg4道路与内部步行去重未确认",
+                  "day1-leg5道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  4527,
+                  7027
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "街区内部步行重叠，去重边界未知",
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认",
+                  "day1-leg4道路与内部步行去重未确认",
+                  "day1-leg5道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "legs": [
+            {
+              "id": "day1-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH1",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:40.255Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg2-part1",
+              "fromPointId": "LUNCH1",
+              "toPointId": "TY04",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:42.529Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg3-part1",
+              "fromPointId": "TY04",
+              "toPointId": "TY05",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:44.751Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg4-part1",
+              "fromPointId": "TY05",
+              "toPointId": "TY06",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:36.891Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg5-part1",
+              "fromPointId": "TY06",
+              "toPointId": "ENDPOINT",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:39.194Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            {
+              "id": "d2-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d2-p2-LUNCH2",
+              "name": "老太原菜馆(钟楼街店)（锁定12:30～13:30）"
+            },
+            {
+              "id": "d2-p3-MUSEUM_GATE",
+              "name": "博物院院门测试位置"
+            },
+            {
+              "id": "d2-p4-TY01",
+              "name": "博物院主馆参观入口测试位置"
+            },
+            {
+              "id": "d2-p5-MUSEUM_GATE",
+              "name": "博物院院门测试位置"
+            },
+            {
+              "id": "d2-p6-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              471,
+              471
+            ],
+            "limit": 540,
+            "unknowns": [
+              "山西博物院等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1965,
+                  2965
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1965,
+                  2965
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1965,
+                  2965
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 582,
+            "arrivalEstimate": [
+              582,
+              582
+            ],
+            "conditionalWaitMinutes": [
+              168,
+              168
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": [
+            {
+              "id": "day2-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH2",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:24.015Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg2-part1",
+              "fromPointId": "LUNCH2",
+              "toPointId": "MUSEUM_GATE",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:46.957Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg2-part2",
+              "fromPointId": "MUSEUM_GATE",
+              "toPointId": "TY01",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:20.640Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg3-part1",
+              "fromPointId": "TY01",
+              "toPointId": "MUSEUM_GATE",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:21.757Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg3-part2",
+              "fromPointId": "MUSEUM_GATE",
+              "toPointId": "ENDPOINT",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:22.839Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proposal-7",
+      "versionId": "dc8aedb0-2ef5-48ae-ba5f-17a3137a004a-proposal-7",
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              }
+            ]
+          }
+        ]
+      },
+      "generatedAt": "2026-10-30T18:51:05.544Z",
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": [],
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": []
+          },
+          {
+            "date": "2026-11-08",
+            "visits": []
+          }
+        ],
+        "emptyDays": [
+          "2026-11-07",
+          "2026-11-08"
+        ],
+        "visitMinutes": 0,
+        "status": "tradeoff",
+        "notice": "当天没有游览，仅保留午餐及往返；这是取舍预览，不是推荐完成。"
+      },
+      "coverage": [
+        {
+          "personId": "person-1",
+          "name": "同行者1",
+          "score": 0,
+          "bestAvailable": 5,
+          "overlooked": true,
+          "covered": [],
+          "missed": [
+            {
+              "candidateId": "TY01",
+              "score": 5,
+              "reason": "历史展览首选，停留150分以上"
+            }
+          ],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-2",
+          "name": "同行者2",
+          "score": 0,
+          "bestAvailable": 4,
+          "overlooked": true,
+          "covered": [],
+          "missed": [
+            {
+              "candidateId": "TY01",
+              "score": 3,
+              "reason": "建筑外景可拍，室内拍照受限未知"
+            },
+            {
+              "candidateId": "TY04",
+              "score": 4,
+              "reason": "园景适合拍照，45-75分"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "街景拍照好，建议延至60分"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 3,
+              "reason": "街景可拍，人流未知"
+            }
+          ],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-3",
+          "name": "同行者3",
+          "score": 0,
+          "bestAvailable": 5,
+          "overlooked": true,
+          "covered": [],
+          "missed": [
+            {
+              "candidateId": "TY04",
+              "score": 3,
+              "reason": "可短环线少走，但无餐饮"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "紧邻锁定午餐，步行少"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 5,
+              "reason": "美食首选，紧邻钟楼街"
+            }
+          ],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        }
+      ],
+      "budget": [
+        {
+          "name": "同行者1",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11900,
+              19700
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者2",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11900,
+              19700
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者3",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11900,
+              19700
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            {
+              "id": "d1-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d1-p2-LUNCH1",
+              "name": "老太原山西菜馆"
+            },
+            {
+              "id": "d1-p3-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              84,
+              84
+            ],
+            "limit": 540,
+            "unknowns": [
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1740,
+                  1740
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1740,
+                  1740
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  1740,
+                  1740
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "legs": [
+            {
+              "id": "day1-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH1",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:18.492Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg2-part1",
+              "fromPointId": "LUNCH1",
+              "toPointId": "ENDPOINT",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:53.503Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            {
+              "id": "d2-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d2-p2-LUNCH2",
+              "name": "老太原菜馆(钟楼街店)（锁定12:30～13:30）"
+            },
+            {
+              "id": "d2-p3-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              314,
+              314
+            ],
+            "limit": 540,
+            "unknowns": [
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  922,
+                  922
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  922,
+                  922
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  922,
+                  922
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 582,
+            "arrivalEstimate": [
+              582,
+              582
+            ],
+            "conditionalWaitMinutes": [
+              168,
+              168
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": [
+            {
+              "id": "day2-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH2",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:24.015Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg2-part1",
+              "fromPointId": "LUNCH2",
+              "toPointId": "ENDPOINT",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:52.456Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proposal-1",
+      "versionId": "dc8aedb0-2ef5-48ae-ba5f-17a3137a004a-proposal-1",
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "generatedAt": "2026-10-30T18:51:05.545Z",
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": [],
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY05",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 195,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "coverage": [
+        {
+          "personId": "person-1",
+          "name": "同行者1",
+          "score": 5,
+          "bestAvailable": 5,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 5,
+              "reason": "历史展览首选，停留150分以上"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 2,
+              "reason": "街区历史氛围弱，非展览"
+            }
+          ],
+          "missed": [],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-2",
+          "name": "同行者2",
+          "score": 4,
+          "bestAvailable": 4,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 3,
+              "reason": "建筑外景可拍，室内拍照受限未知"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "街景拍照好，建议延至60分"
+            }
+          ],
+          "missed": [
+            {
+              "candidateId": "TY04",
+              "score": 4,
+              "reason": "园景适合拍照，45-75分"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 3,
+              "reason": "街景可拍，人流未知"
+            }
+          ],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        },
+        {
+          "personId": "person-3",
+          "name": "同行者3",
+          "score": 4,
+          "bestAvailable": 5,
+          "overlooked": false,
+          "covered": [
+            {
+              "candidateId": "TY01",
+              "score": 2,
+              "reason": "室内久站步行多，无餐饮"
+            },
+            {
+              "candidateId": "TY05",
+              "score": 4,
+              "reason": "紧邻锁定午餐，步行少"
+            }
+          ],
+          "missed": [
+            {
+              "candidateId": "TY04",
+              "score": 3,
+              "reason": "可短环线少走，但无餐饮"
+            },
+            {
+              "candidateId": "TY06",
+              "score": 5,
+              "reason": "美食首选，紧邻钟楼街"
+            }
+          ],
+          "source": "筛选Agent模型评估，非真实满意度；最高候选匹配0～5分"
+        }
+      ],
+      "budget": [
+        {
+          "name": "同行者1",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11800,
+              19600
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "钟楼街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者2",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11800,
+              19600
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "钟楼街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        },
+        {
+          "name": "同行者3",
+          "budget": {
+            "status": "insufficient",
+            "range": [
+              11800,
+              19600
+            ],
+            "limit": 60000,
+            "unknowns": [
+              "山西博物院门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）",
+              "钟楼街门票未知",
+              "其他餐饮总额未核实（逛吃不替代午餐）"
+            ]
+          }
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            {
+              "id": "d1-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d1-p2-LUNCH1",
+              "name": "老太原山西菜馆"
+            },
+            {
+              "id": "d1-p3-MUSEUM_GATE",
+              "name": "博物院院门测试位置"
+            },
+            {
+              "id": "d1-p4-TY01",
+              "name": "博物院主馆参观入口测试位置"
+            },
+            {
+              "id": "d1-p5-MUSEUM_GATE",
+              "name": "博物院院门测试位置"
+            },
+            {
+              "id": "d1-p6-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              234,
+              234
+            ],
+            "limit": 540,
+            "unknowns": [
+              "山西博物院等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2748,
+                  3748
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2748,
+                  3748
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2748,
+                  3748
+                ],
+                "limit": 6000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day1-leg1道路与内部步行去重未确认",
+                  "day1-leg2道路与内部步行去重未确认",
+                  "day1-leg3道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "legs": [
+            {
+              "id": "day1-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH1",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:18.492Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg2-part1",
+              "fromPointId": "LUNCH1",
+              "toPointId": "MUSEUM_GATE",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:19.612Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg2-part2",
+              "fromPointId": "MUSEUM_GATE",
+              "toPointId": "TY01",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:20.640Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg3-part1",
+              "fromPointId": "TY01",
+              "toPointId": "MUSEUM_GATE",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:21.757Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day1-leg3-part2",
+              "fromPointId": "MUSEUM_GATE",
+              "toPointId": "ENDPOINT",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:22.839Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            {
+              "id": "d2-p1-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            },
+            {
+              "id": "d2-p2-LUNCH2",
+              "name": "老太原菜馆(钟楼街店)（锁定12:30～13:30）"
+            },
+            {
+              "id": "d2-p3-TY05",
+              "name": "钟楼街测试落点"
+            },
+            {
+              "id": "d2-p4-ENDPOINT",
+              "name": "博物院东门外公共集合位置"
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "range": [
+              364,
+              364
+            ],
+            "limit": 540,
+            "unknowns": [
+              "钟楼街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          },
+          "walking": [
+            {
+              "name": "同行者1",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2048,
+                  2548
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者2",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2048,
+                  2548
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            },
+            {
+              "name": "同行者3",
+              "walking": {
+                "status": "insufficient",
+                "range": [
+                  2048,
+                  2548
+                ],
+                "limit": 4000,
+                "unknowns": [
+                  "餐厅内部步行未知",
+                  "day2-leg1道路与内部步行去重未确认",
+                  "day2-leg2道路与内部步行去重未确认",
+                  "day2-leg3道路与内部步行去重未确认"
+                ]
+              }
+            }
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 582,
+            "arrivalEstimate": [
+              582,
+              582
+            ],
+            "conditionalWaitMinutes": [
+              168,
+              168
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": [
+            {
+              "id": "day2-leg1-part1",
+              "fromPointId": "ENDPOINT",
+              "toPointId": "LUNCH2",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:24.015Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg2-part1",
+              "fromPointId": "LUNCH2",
+              "toPointId": "TY05",
+              "mode": "walk",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:25.042Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            },
+            {
+              "id": "day2-leg3-part1",
+              "fromPointId": "TY05",
+              "toPointId": "ENDPOINT",
+              "mode": "transit",
+              "status": "available",
+              "queriedAt": "2026-10-30T18:50:26.199Z",
+              "source": "高德Web服务响应",
+              "geometryComplete": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "search": {
+    "enumerated": 1457,
+    "assessmentLimit": 8,
+    "assessed": 7,
+    "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查",
+    "cacheHits": 8
+  },
+  "limitations": [
+    "原始模型叙述误将分数值15600～26400、60000描述为元；程序个人预算为156～264元/上限600元，不能将该模型叙述视为正确核算",
+    "地图标记→活动与活动→地图未完成本轮可靠真实操作验收",
+    "候选有未知开放预约等待与费用；允许调整目标不等于原目标达标",
+    "本轮未替用户采用，页面仍为预览"
+  ]
+}
