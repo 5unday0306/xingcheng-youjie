@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-30T15:34:38.148341+00:00",
+  "at": "2026-10-30T16:32:18.828974+00:00",
   "source": "本轮真实DeepSeek/高德，角色与地图图像仅私有；不是替身结果",
   "before": {
     "model": 83,
@@ -11,9 +11,9 @@
   "after": {
     "model": 107,
     "location": 11,
-    "route": 512,
-    "map": 66,
-    "reservedCents": 1923
+    "route": 520,
+    "map": 67,
+    "reservedCents": 1936
   },
   "reservationIsNotActualCharge": true,
   "completed": [
@@ -1154,11 +1154,11 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793372057063/B-state.json",
-      "sha256": "ec2e9cc7aabfd55e3d5526a6f1a5975874fd13c3277a29d191316c1a9ed95007"
+      "sha256": "b4d9a4fd71c9a8d183fbbf3115ee6245dd8de73010bde12bf2ee8f703c4b85bb"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793372057063/P-state.json",
-      "sha256": "ac98014572e239d416d292e371bf797f62d33029f2b0fa55a9647b041b15e752"
+      "sha256": "d4af8915817b6de4e1d80e629ffe3c1c16e08e60395008e0d53cb139954675d2"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793372057063/report.json",
@@ -1170,7 +1170,7 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793372689153/L-state.json",
-      "sha256": "7c7a045214ec36fb7e8b86a5811a298c8d267c3e45d44433fa4748965a5732ee"
+      "sha256": "efee12b674a2e8949aae24335eaf0bd516776e1f395eb6eb92acd035ed8a7378"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793372689153/report.json",
@@ -1182,7 +1182,7 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793373682308/N-state.json",
-      "sha256": "c9e51c807ed84b65336aed252f9247c01340d8052efd07d9405e0755e899fc93"
+      "sha256": "3da26bebc3829891045493b3de08f91a9d8a4cb9221cf237e3725584655e2c46"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793373682308/P-desktop.png",
@@ -1190,7 +1190,7 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793373682308/P-state.json",
-      "sha256": "d5b1023b3613bc5ada8f04b7830ef94fa59d506caade6a3b910a82f098326fe0"
+      "sha256": "6ffb3f73feb4a30197999995ac1e6b1ebfe2830f625bfee471919aa5b10374dc"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793373682308/report.json",
@@ -1198,7 +1198,7 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793373682308/W-state.json",
-      "sha256": "3ff7540d82136a64a74c97676922579501b449a5697f317df589d0da5bdef46d"
+      "sha256": "5ce9c62c5ec0419a675fb27f81f19bd4203462a0ee59dc2be95f9c7125a11a17"
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793374264937/report.json",
@@ -1214,7 +1214,7 @@
     },
     {
       "privatePath": "docs/private/final-closeout-real-1793374264937/W-state.json",
-      "sha256": "f216b2fa8d085c18c0cca7ec5fa048ba8c3cf1e237081dc8be603ccc57744486"
+      "sha256": "cddae1a38d103b2f4fc83fff8e460dcf850ff7575aeb699b9bcd4b8af796036c"
     }
   ],
   "publication": "不上传模型原文、原始地图、未脱敏聊天或.env"

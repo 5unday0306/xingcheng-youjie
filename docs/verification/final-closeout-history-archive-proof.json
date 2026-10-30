@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-30T16:32:18.453391+00:00",
+  "kept": 1,
+  "events": 14487,
+  "bytes": 108276349,
+  "sha256": "1a6bede816f2b298aaf942268dfaafd350b6a778051d4e8bd6853448ea9749e7",
+  "manifestMatch": true,
+  "sourcePrefixMatch": true,
+  "privateOnly": true,
+  "snapshotNotPermanentComplete": true
+}

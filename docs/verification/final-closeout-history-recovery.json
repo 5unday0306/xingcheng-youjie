@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-30T16:31:11.509308+00:00",
+  "source": "真实道路及SDK恢复；角色来自历史实际执行，未重跑",
+  "before": {
+    "model": 107,
+    "location": 11,
+    "route": 512,
+    "map": 66,
+    "reservedCents": 1923
+  },
+  "after": {
+    "model": 107,
+    "location": 11,
+    "route": 520,
+    "map": 67,
+    "reservedCents": 1936
+  },
+  "actualCharge": "待供应商账单核对；预留非实扣",
+  "days": [
+    {
+      "date": "2026-11-07",
+      "walking": [
+        2748,
+        3748
+      ],
+      "minutes": [
+        234,
+        234
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "walking": [
+        2305,
+        2805
+      ],
+      "minutes": [
+        363,
+        363
+      ],
+      "lunch": "12:30～13:30"
+    }
+  ],
+  "adoption": "尚未发生用户采用；保存预览不代表采用",
+  "realGeometry": {
+    "physicalLegs": 8,
+    "completeLegs": 8,
+    "persisted": false
+  },
+  "limits": [
+    "未知开放、预约、等位、内部步行及完整费用仍在",
+    "用户采用后保存刷新导出仍待实际操作",
+    "未增加模型/地点请求，未声称新执行四角色"
+  ],
+  "tests": {
+    "node": 224,
+    "historyModal390NoOverflow": true,
+    "liveMapVisible": true
+  }
+}

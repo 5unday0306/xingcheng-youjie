@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-30T16:36:36.985217+00:00",
+  "files": [
+    "docs/iterations/2026-10-30-最终产品收尾.md",
+    "docs/prompts/最终产品收尾索引.md",
+    "docs/verification/final-closeout-cross-window-node.tap",
+    "docs/verification/final-closeout-history-1440.png",
+    "docs/verification/final-closeout-history-390.png",
+    "docs/verification/final-closeout-history-archive-proof.json",
+    "docs/verification/final-closeout-history-recovery.json",
+    "docs/verification/final-closeout-real-report.json",
+    "docs/决策记录.md",
+    "docs/开发进度.md",
+    "docs/最终产品收尾验收.md",
+    "web/planning.js"
+  ],
+  "findings": [],
+  "manualReview": "历史截图仅合成姓名和真实记录文本，无地图图面或凭据；真实地图截图与原始聊天只私有；先前runtime字段映射告警为字段名称而非凭据值",
+  "limits": [
+    "启发式扫描不是绝对无泄漏证明",
+    "不读取.env值",
+    "二进制未全面OCR",
+    "旧历史保持，不重写"
+  ]
+}

@@ -30,7 +30,7 @@ export function createPlanPanel({getRequest,validate,validateDynamic=()=>true,ap
       const s=payload.state;if(!s)throw Error('尚无真实规划记录');
       const dialog=el('dialog',undefined,'agentDrawer');dialog.id='latestPlanningHistoryDialog';dialog.setAttribute('aria-label','最近一次真实规划历史');
       const close=el('button','关闭历史结果');close.type='button';close.onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());
-      dialog.append(close,el('h2','最近一次真实规划 · 历史回放'),el('p',(s.status==='accepted'?'这是历史采用记录。':'尚未采用。')+'此入口只读，不改变正在编辑的需求、不调用模型或地图。恢复预览需重新核查道路后再决定采用。'));
+      dialog.append(close,el('h2',s.simulated?'离线演练 · 替身历史':'最近一次真实规划 · 历史回放'),el('p',(s.status==='accepted'?'这是历史采用记录。':'尚未采用。')+'此入口只读，不改变正在编辑的需求、不调用模型或地图。恢复预览需重新核查道路后再决定采用。'));
       const names={TY01:'山西博物院',TY04:'迎泽公园',TY05:'钟楼街',TY06:'食品街'};
       const audit=s.nodes?.findLast(n=>n.role==='audit'&&n.input?.program)?.input.program;
       dialog.append(el('p','执行时间：'+s.createdAt+'；时间／步行目标'+(s.requestSnapshot?.adjustableGoals?'允许建议调整':'严格限制')+'，预算与锁定保持。'));
@@ -50,6 +50,7 @@ export function createPlanPanel({getRequest,validate,validateDynamic=()=>true,ap
   function stale(r){return r?.review.days.flatMap(d=>d.legs).some(l=>l.source==='高德Web服务响应'&&(!Number.isFinite(Date.parse(l.queriedAt))||Date.now()-Date.parse(l.queriedAt)>1800000));}
   function acceptable(r){return r?.readiness?r.readiness.canAccept:!!r&&!r.review.days.some(d=>d.lockCheck?.status==='conflict'||d.time.knownSubtotal[1]>d.time.limit||d.members.some(m=>m.walking.knownSubtotal[1]>m.walking.limit))&&!r.review.members.some(m=>m.budget.knownSubtotal[1]>m.budget.limit);}
   function updateExperience(){
+    historyButton.textContent=capabilities?.mode==='offline-test'?'查看最近一次离线演练（替身）':'查看最近一次真实规划（历史）';
     workspace.version(metaData?.meta,result);workspace.mapReady(livePanel?.mapReady?.());
     if(capabilities?.readOnly){workspace.action.disabled=true;workspace.action.textContent='历史产物 · 只读';workspace.status.textContent=capabilities.dynamicRunExhausted?'本轮真实验证次数已用尽。当前只读查看历史产物，离线动态演练可继续；未重置记录或自动续期。':'真实联调未启用或授权已到期；当前只读展示历史产物，不加载地图或发起新请求。';return;}
     const saved=metaData?.meta,selected=agentStates[workspace.mode],replan=workspace.mode==='replan';
@@ -78,7 +79,7 @@ export function createPlanPanel({getRequest,validate,validateDynamic=()=>true,ap
     if(selected&&['preview','accepted'].includes(selected.status)&&selected.preview&&!stale(selected.preview)){
       flowBusy=true;workspace.status.dataset.error='';updateExperience();
       try{
-        if(capabilities?.mode!=='offline-test'&&!livePanel?.mapReady?.()){workspace.status.textContent='正在加载已有结果的地图，不重新生成…';await livePanel.prepareMap();(replan?replanPanel.agents:agentPanel).show('preview');paint();}
+        if(selected.status==='accepted'&&capabilities?.mode!=='offline-test'&&!livePanel?.mapReady?.()){workspace.status.textContent='正在加载已有结果的地图，不重新生成…';await livePanel.prepareMap();(replan?replanPanel.agents:agentPanel).show('preview');paint();}
         if(selected.status==='accepted'){(replan?replanPanel.agents:agentPanel).show('preview');paint();return;}
         if(acceptable(selected.preview)){await (replan?replanPanel.agents:agentPanel).accept();if(replan)await replanPanel.refresh();}
         else{workspace.setPane('agents');$(replan?'replanAgentCompare':'agentCompare')?.scrollIntoView({block:'start'});}
