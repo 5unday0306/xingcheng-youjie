@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-30T14:13:44.063483+00:00",
+  "scope": "历史全量启发式＋本轮新增历史blob和暂存文件检查，人工查看离线截图；不读取.env值",
+  "historyCommits": 77,
+  "historyBlobs": 1134,
+  "incrementalBase": "057b560",
+  "incrementalBlobs": 40,
+  "stagedAtScan": 22,
+  "resolutions": [
+    {
+      "path": "lib/runtime05b.mjs:6",
+      "type": "literal-credential-assignment",
+      "resolution": "字段名到内部变量名映射，不是凭据值"
+    },
+    {
+      "path": "tests/sdk-policy.test.mjs:30",
+      "type": "credential-in-url/email-in-text",
+      "resolution": "已有CANARY诊断URL合成用例，沿用agent-products-push-audit.json已复核处理，不是实际账号"
+    },
+    {
+      "path": "历史验证报告与配置/测试",
+      "type": "email-in-text/literal-credential-assignment",
+      "resolution": "沿用已复核记录：高德@2x资源名、配置说明、测试常量；无新的真实凭据命中"
+    },
+    {
+      "path": "cmc_markers.json",
+      "type": "phone-shape",
+      "resolution": "无关未跟踪材料，未纳入暂存/提交/推送，未在此公开内容"
+    }
+  ],
+  "privateRawExcluded": true,
+  "privateMapImagesExcluded": true,
+  "envIgnored": true,
+  "newSecretsDetected": false,
+  "limits": [
+    "启发式不能证明绝对无泄漏",
+    "没有OCR；两张提交截图已人工查看",
+    "完整原文仅私有快照，未当作公开脱敏全文",
+    "旧历史未改写"
+  ],
+  "incrementalFindingCount": 4,
+  "incrementalResolution": "全部为lib/runtime05b第6行字段名映射，已复核非凭据值"
+}

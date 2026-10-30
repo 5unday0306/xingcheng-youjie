@@ -1,0 +1,438 @@
+{
+  "at": "2026-10-30T14:00:03.355543+00:00",
+  "scope": "真实动态流程与失败修复；未接受预览；风险预留不等于实扣",
+  "runs": [
+    {
+      "at": "2026-10-30T13:47:39.459Z",
+      "scenario": "baseline",
+      "status": "failed",
+      "reason": "本步骤产物不符合动态规划合同，未传给下游",
+      "blockedRole": "coordinate",
+      "errorCode": "AGENT_SCHEMA",
+      "before": {
+        "counts": {
+          "model": 72,
+          "location": 11,
+          "route": 338,
+          "map": 58
+        },
+        "reservedCents": 1359
+      },
+      "after": {
+        "counts": {
+          "model": 73,
+          "location": 11,
+          "route": 338,
+          "map": 59
+        },
+        "reservedCents": 1374
+      },
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "failed",
+          "error": {
+            "code": "AGENT_SCHEMA",
+            "message": "本步骤产物不符合动态规划合同，未传给下游"
+          },
+          "transport": "named-tool"
+        }
+      ],
+      "adoptedPreserved": true,
+      "errors": []
+    },
+    {
+      "at": "2026-10-30T13:49:21.101Z",
+      "scenario": "baseline",
+      "status": "failed",
+      "reason": "本步骤产物不符合动态规划合同，未传给下游",
+      "blockedRole": "screen",
+      "errorCode": "AGENT_SCHEMA",
+      "before": {
+        "counts": {
+          "model": 73,
+          "location": 11,
+          "route": 338,
+          "map": 59
+        },
+        "reservedCents": 1374
+      },
+      "after": {
+        "counts": {
+          "model": 75,
+          "location": 11,
+          "route": 338,
+          "map": 60
+        },
+        "reservedCents": 1399
+      },
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "screen",
+          "status": "failed",
+          "error": {
+            "code": "AGENT_SCHEMA",
+            "message": "本步骤产物不符合动态规划合同，未传给下游"
+          },
+          "transport": "named-tool"
+        }
+      ],
+      "adoptedPreserved": true,
+      "errors": []
+    },
+    {
+      "at": "2026-10-30T13:53:21.789Z",
+      "scenario": "walking",
+      "status": "failed",
+      "reason": "本步骤产物不符合动态规划合同，未传给下游",
+      "blockedRole": "audit",
+      "errorCode": "AGENT_SCHEMA",
+      "before": {
+        "counts": {
+          "model": 75,
+          "location": 11,
+          "route": 338,
+          "map": 60
+        },
+        "reservedCents": 1399
+      },
+      "after": {
+        "counts": {
+          "model": 79,
+          "location": 11,
+          "route": 370,
+          "map": 61
+        },
+        "reservedCents": 1476
+      },
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "audit",
+          "status": "failed",
+          "error": {
+            "code": "AGENT_SCHEMA",
+            "message": "本步骤产物不符合动态规划合同，未传给下游"
+          },
+          "transport": "named-tool"
+        }
+      ],
+      "ownPlan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 5,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "adoptedPreserved": true,
+      "errors": []
+    },
+    {
+      "at": "2026-10-30T13:57:34.035Z",
+      "scenario": "walking",
+      "status": "preview",
+      "before": {
+        "counts": {
+          "model": 79,
+          "location": 11,
+          "route": 370,
+          "map": 61
+        },
+        "reservedCents": 1476
+      },
+      "after": {
+        "counts": {
+          "model": 83,
+          "location": 11,
+          "route": 402,
+          "map": 62
+        },
+        "reservedCents": 1553
+      },
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "transport": "named-tool"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "transport": "named-tool"
+        }
+      ],
+      "ownPlan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 5,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ]
+          ],
+          "limits": [
+            6000,
+            6000,
+            6000
+          ],
+          "time": [
+            234,
+            234
+          ],
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              3571,
+              3571
+            ],
+            [
+              3571,
+              3571
+            ],
+            [
+              3571,
+              3571
+            ]
+          ],
+          "limits": [
+            4000,
+            4000,
+            4000
+          ],
+          "time": [
+            332,
+            332
+          ],
+          "lock": {
+            "version": 1,
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 619,
+            "arrivalEstimate": [
+              619,
+              619
+            ],
+            "conditionalWaitMinutes": [
+              131,
+              131
+            ],
+            "unknownBeforeLock": false
+          },
+          "missing": 4
+        }
+      ],
+      "adoptedPreserved": true,
+      "errors": []
+    }
+  ],
+  "delta": {
+    "model": 11,
+    "location": 0,
+    "route": 64,
+    "map": 4,
+    "reservedCents": 194
+  },
+  "artifacts": [
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/390.png",
+      "sha256": "4539407b61f959246dd68a8ca646195d3015a5d5ba89c5b42a87cf8a224b4048",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    },
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/audit.png",
+      "sha256": "dbb3858f0d84382bcfdf400936b3b30df049c92d292e8fcc7f1c403fe843b832",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    },
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/coordinate.png",
+      "sha256": "c9dfbe67e9e222f3824fca4b1dca4fda1c7e6e507537faf8ab0e256b8deb5d43",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    },
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/desktop.png",
+      "sha256": "b61661c20514261aa78d2113fc57152dffa0dc00f2f568e52a75124b1dd2fde4",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    },
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/plan.png",
+      "sha256": "efb4398d514cd30cb45cc234f53da0a859d82323a871d96764295043a16b94df",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    },
+    {
+      "path": "docs/private/dynamic-real-walking-1793368600427/screen.png",
+      "sha256": "ba2bcc37c38ad1b5f149739ff873bbc984f26fa8f934445e7c87648329aadaa4",
+      "scope": "真实地图/角色本地证据，未上传图片"
+    }
+  ],
+  "unverified": [
+    "未做真实偏好/预算/人数全矩阵对照，见合成对照",
+    "本轮未再次实际操作验证真实地图双向定位",
+    "许可原文件仍待人工复核，原始地图截图仅本地私有",
+    "未来营业、预约、报价、内部步行等缺口保留"
+  ],
+  "finalVerification": {
+    "status": "preview",
+    "roles": [
+      {
+        "role": "coordinate",
+        "status": "completed"
+      },
+      {
+        "role": "screen",
+        "status": "completed"
+      },
+      {
+        "role": "plan",
+        "status": "completed"
+      },
+      {
+        "role": "audit",
+        "status": "completed"
+      }
+    ],
+    "handoffs": [
+      true,
+      true,
+      true
+    ],
+    "availableLegs": 7,
+    "physicalLegs": 7,
+    "geometryComplete": true,
+    "budgets": [
+      {
+        "range": [
+          11600,
+          19400
+        ],
+        "limit": 60000,
+        "unknownCount": 3
+      },
+      {
+        "range": [
+          11600,
+          19400
+        ],
+        "limit": 60000,
+        "unknownCount": 3
+      },
+      {
+        "range": [
+          11600,
+          19400
+        ],
+        "limit": 60000,
+        "unknownCount": 3
+      }
+    ],
+    "executable": false
+  }
+}

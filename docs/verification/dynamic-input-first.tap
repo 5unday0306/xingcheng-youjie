@@ -1,0 +1,35 @@
+✔ 同一候选/道路矩阵对照：偏好实际影响活动；不是以说明文字差异判通过 (47.9062ms)
+✖ 高低全程预算和无法满足的低预算，逐人算不互抵 (124.5204ms)
+✔ 6/4公里动态删除或换序并重连相邻道路，不用减少停留调低内部估计 (56.0789ms)
+✔ 1人与6人匹配/预算/逐日步行独立，不串成员 (78.5713ms)
+✔ 每日时段影响活动与全局时间；极短时段保留冲突，不放宽窗口 (29.4042ms)
+✔ 改日期重新判断已知开放/价格适用性，旧日期结论不得沿用 (0.4945ms)
+✔ 锁定12:30～13:30午餐后仅第二天改4公里，全球核查和拒绝保持原采用 (80.382ms)
+✔ 边界3天提交前拒绝，保留可保存的原始输入；锁定日期冲突定位 (0.5785ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 523.0101
+
+✖ failing tests:
+
+test at tests\dynamic-input.test.mjs:7:1
+✖ 高低全程预算和无法满足的低预算，逐人算不互抵 (124.5204ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!ids(lo.r).includes('TY06'))
+  
+      at TestContext.<anonymous> (file:///C:/Users/lenovo/Desktop/%E4%BC%A0%E6%99%BA/tests/dynamic-input.test.mjs:7:239)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

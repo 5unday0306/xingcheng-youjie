@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-30T14:06:50.267Z",
+  "checks": [
+    {
+      "role": "coordinate",
+      "technicalHidden": true,
+      "historical": true
+    },
+    {
+      "role": "screen",
+      "technicalHidden": true,
+      "historical": true
+    },
+    {
+      "role": "plan",
+      "technicalHidden": true,
+      "historical": true
+    },
+    {
+      "role": "audit",
+      "technicalHidden": true,
+      "historical": true
+    }
+  ],
+  "before": {
+    "entries": 558,
+    "resources": 355,
+    "starts": 4,
+    "reserved": 1553
+  },
+  "after": {
+    "entries": 558,
+    "resources": 355,
+    "starts": 4,
+    "reserved": 1553
+  },
+  "external": 0,
+  "errors": [],
+  "realBusinessCalls": 0,
+  "scope": "真实产物历史只读；未加载SDK或复验地图"
+}

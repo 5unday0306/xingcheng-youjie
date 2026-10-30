@@ -1,0 +1,1690 @@
+{
+  "at": "2026-10-30T14:11:06.441Z",
+  "source": "同一公开候选快照＋固定合成道路矩阵＋关键词角色替身；不是真实接口",
+  "realBusinessCalls": 0,
+  "records": [
+    {
+      "name": "偏好-历史",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY01",
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                3140,
+                4640
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            319,
+            335
+          ],
+          "timeLimit": 540,
+          "missing": 8
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            4800,
+            8800
+          ],
+          "limit": 60000,
+          "missing": 3
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 261,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "偏好-美食",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "美食小吃",
+            "budget": 600,
+            "walking": [
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY04",
+        "TY05",
+        "TY06"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2866,
+                5366
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            275,
+            295
+          ],
+          "timeLimit": 540,
+          "missing": 11
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            8000,
+            15000
+          ],
+          "limit": 60000,
+          "missing": 4
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 261,
+        "assessmentLimit": 8,
+        "assessed": 7,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "预算-600",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "美食小吃",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "美食小吃",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食小吃",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY01",
+        "TY04",
+        "TY05",
+        "TY06"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            260,
+            268
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            275,
+            295
+          ],
+          "timeLimit": 540,
+          "missing": 11
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 4,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "预算-170",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "美食小吃",
+            "budget": 170,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "美食小吃",
+            "budget": 170,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食小吃",
+            "budget": 170,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY04",
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2768,
+                3468
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2768,
+                3468
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2768,
+                3468
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            155,
+            163
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2472,
+                2972
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2472,
+                2972
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2472,
+                2972
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            155,
+            163
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            8800,
+            16800
+          ],
+          "limit": 17000,
+          "missing": 4
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            8800,
+            16800
+          ],
+          "limit": 17000,
+          "missing": 4
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            8800,
+            16800
+          ],
+          "limit": 17000,
+          "missing": 4
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 6,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "预算-20",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 20,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 20,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 20,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            179,
+            179
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            96,
+            96
+          ],
+          "timeLimit": 540,
+          "missing": 4
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 2000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 2000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 2000,
+          "missing": 3
+        }
+      ],
+      "risks": [
+        {
+          "kind": "budget",
+          "personIndex": 0,
+          "excess": 14000
+        },
+        {
+          "kind": "budget",
+          "personIndex": 1,
+          "excess": 14000
+        },
+        {
+          "kind": "budget",
+          "personIndex": 2,
+          "excess": 14000
+        }
+      ],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 6,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "conflict",
+      "executable": false
+    },
+    {
+      "name": "步行-6",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY01",
+        "TY04",
+        "TY05",
+        "TY06"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            260,
+            268
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            275,
+            295
+          ],
+          "timeLimit": 540,
+          "missing": 11
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 4,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "步行-4",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              4,
+              4
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              4,
+              4
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY04",
+        "TY05",
+        "TY06"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2068,
+                2768
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2068,
+                2768
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2068,
+                2768
+              ],
+              "limit": 4000
+            }
+          ],
+          "time": [
+            153,
+            165
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                1672,
+                3472
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                1672,
+                3472
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                1672,
+                3472
+              ],
+              "limit": 4000
+            }
+          ],
+          "time": [
+            214,
+            230
+          ],
+          "timeLimit": 540,
+          "missing": 9
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 5
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 5
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 5
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 3,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "人数-1",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 70,
+            "walking": [
+              6,
+              2
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            179,
+            179
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 2000
+            }
+          ],
+          "time": [
+            96,
+            96
+          ],
+          "timeLimit": 540,
+          "missing": 4
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 7000,
+          "missing": 3
+        }
+      ],
+      "risks": [
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 0,
+          "excess": 274
+        },
+        {
+          "kind": "budget",
+          "personIndex": 0,
+          "excess": 9000
+        }
+      ],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 7,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      },
+      "status": "conflict",
+      "executable": false
+    },
+    {
+      "name": "人数-6",
+      "input": {
+        "city": "taiyuan",
+        "people": 6,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 70,
+            "walking": [
+              6,
+              2
+            ]
+          },
+          {
+            "id": "person-local-1",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-2",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-3",
+            "name": "同行者4",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-4",
+            "name": "同行者5",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "person-local-5",
+            "name": "同行者6",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-3",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-4",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-5",
+              "range": [
+                5220,
+                5720
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            179,
+            179
+          ],
+          "timeLimit": 540,
+          "missing": 6
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 2000
+            },
+            {
+              "id": "person-local-1",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-2",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-3",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-4",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "person-local-5",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            96,
+            96
+          ],
+          "timeLimit": 540,
+          "missing": 4
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 7000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-1",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-2",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-3",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-4",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 3
+        },
+        {
+          "id": "person-local-5",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 3
+        }
+      ],
+      "risks": [
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 0,
+          "excess": 274
+        },
+        {
+          "kind": "budget",
+          "personIndex": 0,
+          "excess": 9000
+        }
+      ],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "status": "conflict",
+      "executable": false
+    },
+    {
+      "name": "时段-全天",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [
+        "TY01",
+        "TY05"
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                3140,
+                4640
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            319,
+            335
+          ],
+          "timeLimit": 540,
+          "missing": 8
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            4800,
+            8800
+          ],
+          "limit": 60000,
+          "missing": 3
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 261,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "时段-两小时",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "11:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2272,
+                2272
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            96,
+            96
+          ],
+          "timeLimit": 120,
+          "missing": 4
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            4000,
+            8000
+          ],
+          "limit": 60000,
+          "missing": 1
+        }
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 261,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "status": "insufficient",
+      "executable": false
+    },
+    {
+      "name": "时段-矛盾",
+      "input": {
+        "city": "taiyuan",
+        "people": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "09:30"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "person-local-0",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6
+            ]
+          }
+        ]
+      },
+      "chosen": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            {
+              "id": "person-local-0",
+              "range": [
+                2272,
+                2272
+              ],
+              "limit": 6000
+            }
+          ],
+          "time": [
+            96,
+            96
+          ],
+          "timeLimit": 30,
+          "missing": 4
+        }
+      ],
+      "budgets": [
+        {
+          "id": "person-local-0",
+          "range": [
+            4000,
+            8000
+          ],
+          "limit": 60000,
+          "missing": 1
+        }
+      ],
+      "risks": [
+        {
+          "kind": "time",
+          "dayIndex": 0,
+          "excess": 66
+        }
+      ],
+      "search": {
+        "enumerated": 261,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "status": "conflict",
+      "executable": false
+    },
+    {
+      "name": "锁定后仅次日4公里",
+      "lock": {
+        "version": 1,
+        "activityId": "meal:2026-11-08:LUNCH2",
+        "date": "2026-11-08",
+        "pointId": "LUNCH2",
+        "poiId": "B0I6T5MXGG",
+        "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+        "name": "老太原菜馆(钟楼街店)",
+        "start": "12:30",
+        "end": "13:30",
+        "confirmed": true,
+        "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+        "status": "within_estimate",
+        "earliestKnownArrival": 556,
+        "arrivalEstimate": [
+          556,
+          560
+        ],
+        "conditionalWaitMinutes": [
+          190,
+          194
+        ],
+        "unknownBeforeLock": false
+      },
+      "chosen": [
+        "TY04",
+        "TY05",
+        "TY06",
+        "TY01"
+      ],
+      "risks": [],
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 3,
+        "stopped": "本轮道路工具最多32次，未继续查询"
+      }
+    }
+  ]
+}
