@@ -20,3 +20,19 @@ test('同服务有效缓存参与核查不再占用新请求限额，仍有8候�
 test('收尾真实偏好失败回归：博物院120低于资料150，合同传递区间且本地继续拒绝',async()=>{const t=setup({model:async p=>{const r=fixtureDynamicRole(p);if(p.role==='screen'){const x=JSON.parse(r.content);x.proposedPlan.days[0].items.unshift({type:'visit',candidateId:'TY01',durationMinutes:120,reason:'脱敏失败结构样本'});x.proposedPlan.days.forEach((d,i)=>d.items=d.items.filter((a,j)=>a.candidateId!=='TY01'||i===0&&j===0));r.content=JSON.stringify(x);}return r;}});await t.s.start({request:q});const s=await done(t.s);assert.equal(s.errorCode,'PLAN_SCHEMA');assert.deepEqual(s.nodes.map(n=>n.role),['coordinate','screen']);assert.equal(s.preview,null);const n=s.nodes[1],schema=dynamicRoleSchema(n.prompt.contract,n.input.candidates),visits=schema.properties.proposedPlan.properties.days.items.properties.items.items.oneOf;const museum=visits.find(v=>v.properties.candidateId?.enum[0]==='TY01');assert.equal(museum.properties.durationMinutes.minimum,150);assert.equal(museum.properties.durationMinutes.maximum,210);});
 
 test('批次道路余量低于单轮上限时保留完整候选继续审查，不请求第17条或丢弃已有核查',async()=>{let calls=0;const t=setup({reserveRun:async()=>({remainingRoadRequests:16}),getRoad:async(...a)=>{calls++;return syntheticDynamicRoad(...a);}});await t.s.start({request:q});const s=await done(t.s);assert.equal(s.status,'preview');assert.equal(s.nodes.at(-1).role,'audit');assert.ok(s.search.assessed>0&&s.search.assessed<8);assert.ok(s.search.stopped);assert.equal(calls,16);});
+
+test('跨窗口打开旧需求不取消其他窗口的真实预览；发起窗口修改仍失效',async()=>{const t=setup();await t.s.start({request:q,clientId:'window-a'});const before=await done(t.s);assert.equal(before.status,'preview');const different=structuredClone(q);different.members[0].budget=30;assert.equal(t.s.state(different).status,'invalidated');assert.equal(t.s.invalidate('window-b'),false);assert.equal(t.s.invalidate(null),false);assert.equal(t.s.state(q).status,'preview');assert.equal(t.s.state(q).id,before.id);assert.equal(t.s.invalidate('window-a'),true);assert.equal(t.s.state(q).status,'invalidated');assert.equal(t.s.state(q).preview,null);});
+
+test('跨窗口初始化不能中止正在启动或执行的旧任务，同窗口编辑能中止晚到输出',async()=>{let release;const gate=new Promise(r=>release=r);const t=setup({model:async p=>{await gate;return fixtureDynamicRole(p);}});await t.s.start({request:q,clientId:'window-a'});assert.equal(t.s.invalidate('window-b'),false);assert.equal(t.s.state(q).status,'running');assert.equal(t.s.invalidate('window-a'),true);release();await new Promise(r=>setTimeout(r,20));assert.equal(t.s.state(q).status,'invalidated');assert.equal(t.published.length,0);});
+
+
+test('历史预览只重取原选定道路，不重跑角色、不采用；条件改变在请求前拒绝',async()=>{
+ const t=setup();await t.s.start({request:q,clientId:'a'});const original=await done(t.s);assert.ok(Object.keys(original.roadPreferences).length>0);t.s.invalidate('a');const calls=t.calls.length;
+ const restored=await t.s.restore({request:q,clientId:'a'});assert.equal(restored.status,'preview');assert.equal(restored.replay,true);assert.equal(t.calls.length,calls);assert.equal(restored.preview.review.executable,false);
+ assert.ok(t.journal.every(j=>!('preview'in j)&&!('original'in j)));const other=structuredClone(q);other.members[0].budget=1;await assert.rejects(t.s.restore({request:other}),e=>e.code==='HISTORY_STALE');
+});
+
+test('历史恢复在途编辑阻止晚到道路覆盖原采用',async()=>{
+ const first=setup();await first.s.start({request:q});const history=await done(first.s);let release;const gate=new Promise(r=>release=r);const t=setup({history,getRoad:async(...args)=>{await gate;return syntheticDynamicRoad(...args);}});
+ const pending=t.s.restore({request:q,clientId:'a'});await new Promise(r=>setTimeout(r,5));t.s.invalidate('a');release();await assert.rejects(pending,e=>e.code==='CANCELLED');assert.equal(t.published.length,0);assert.equal(t.s.state(q).preview,null);
+});

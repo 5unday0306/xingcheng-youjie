@@ -1,3 +1,4 @@
+import {renderAgentProducts} from './agent-products.js';
 import {createWorkspace,sameRequest} from './workspace-shell.js';
 import {createReplanPanel08} from './replan08.js';
 import {createAgentPanel} from './agent-review.js';
@@ -20,6 +21,30 @@ export function createPlanPanel({getRequest,validate,validateDynamic=()=>true,ap
   let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null,agentPanel=null,replanPanel=null;
   let flowBusy=false,metaData=null,activeWorkflow=null;const agentStates={review:null,replan:null},agentBusy=new Set();
   const workspace=createWorkspace({getRequest,onAction:runPrimary,onMode:value=>{if(activeWorkflow===null||activeWorkflow===value){activeWorkflow=value;updateExperience();return;}activeWorkflow=value;const panel=value==='replan'?replanPanel?.agents:agentPanel;if(panel?.state()?.original)panel.show(panel.state().status==='accepted'?'preview':'original');else if(result){livePanel?.clearDisplay?.();result=null;paint();}updateExperience();}});
+  const historyButton=el('button','查看最近一次真实规划（历史）');historyButton.type='button';historyButton.id='latestPlanningHistory';workspace.action.after(historyButton);
+  historyButton.onclick=async()=>{
+    historyButton.disabled=true;
+    try{
+      const response=await fetch('/api/live/dynamic/history',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}),payload=await response.json();
+      if(!response.ok)throw Error(payload.message||'历史记录暂不可用');
+      const s=payload.state;if(!s)throw Error('尚无真实规划记录');
+      const dialog=el('dialog',undefined,'agentDrawer');dialog.id='latestPlanningHistoryDialog';dialog.setAttribute('aria-label','最近一次真实规划历史');
+      const close=el('button','关闭历史结果');close.type='button';close.onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());
+      dialog.append(close,el('h2','最近一次真实规划 · 历史回放'),el('p',(s.status==='accepted'?'这是历史采用记录。':'尚未采用。')+'此入口只读，不改变正在编辑的需求、不调用模型或地图。恢复预览需重新核查道路后再决定采用。'));
+      const names={TY01:'山西博物院',TY04:'迎泽公园',TY05:'钟楼街',TY06:'食品街'};
+      const audit=s.nodes?.findLast(n=>n.role==='audit'&&n.input?.program)?.input.program;
+      dialog.append(el('p','执行时间：'+s.createdAt+'；时间／步行目标'+(s.requestSnapshot?.adjustableGoals?'允许建议调整':'严格限制')+'，预算与锁定保持。'));
+      for(const [i,d] of (s.plan?.days||[]).entries()){
+        dialog.append(el('h3',d.date));for(const a of d.items)dialog.append(el('p',a.type==='meal'?'已选午餐（锁定时刻以本次角色资料为准）':(names[a.candidateId]||'有来源游览')+' · 停留估计'+a.durationMinutes+'分钟'));
+        const p=audit?.days?.[i];if(p){dialog.append(el('p','已计入时间：'+rangeText(p.time)+'分钟；总量含未知。'));for(const [j,m]of p.walking.entries())dialog.append(el('p',(s.requestSnapshot.members[j]?.name||'同行者'+(j+1))+'：步行估计'+rangeText(m.range,{scale:1000,digits:2})+'公里；原目标'+m.limit/1000+'公里，未知仍在。'));}
+      }
+      for(const role of ['coordinate','screen','plan','audit']){const node=s.nodes?.findLast(n=>n.role===role);const details=el('details');details.append(el('summary',({coordinate:'需求协调',screen:'方案筛选',plan:'行程规划',audit:'行程审查'})[role]+' · '+(node?.status==='completed'?'历史已完成':'未完成')),renderAgentProducts({state:{...s,replay:true},node,role,request:s.requestSnapshot,catalog:s.displayContext||{},onLocate:()=>{}}));dialog.append(details);}
+      const restore=el('button','恢复这份预览的地图与核查（不重新生成）');restore.type='button';restore.disabled=!capabilities?.canRestorePreview;
+      restore.onclick=async()=>{restore.disabled=true;try{await applyRequest(s.requestSnapshot);workspace.setMode('replan');await livePanel.prepareMap();await replanPanel.agents.restorePreview();dialog.close();workspace.setPane('activities');}catch(e){dialog.append(el('p','未恢复：'+e.message+'；原采用方案保留。'));}finally{restore.disabled=!capabilities?.canRestorePreview;}};
+      dialog.append(restore,el('p',capabilities?.canRestorePreview?'恢复仅重新取得历史选定路段，再由你决定是否采用；四角色不重跑。':'本轮SDK和道路额度已用尽，恢复按钮暂不可用。历史可直接查看；未自动续期或调用。'));
+      document.body.append(dialog);dialog.showModal();
+    }catch(e){workspace.status.textContent=e.message;}finally{historyButton.disabled=false;}
+  };
   function agentUpdate(source,value){const previous=agentStates[source]?.status;agentStates[source]=value;if(value?.status==='accepted'&&previous!=='accepted')replanPanel?.refresh();updateExperience();}
   function setAgentBusy(source,value){if(value)agentBusy.add(source);else agentBusy.delete(source);busy=agentBusy.size>0;button.disabled=busy||!capabilities?.canGenerate;updateExperience();}
   function stale(r){return r?.review.days.flatMap(d=>d.legs).some(l=>l.source==='高德Web服务响应'&&(!Number.isFinite(Date.parse(l.queriedAt))||Date.now()-Date.parse(l.queriedAt)>1800000));}
