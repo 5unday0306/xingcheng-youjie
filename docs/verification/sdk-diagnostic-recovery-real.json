@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-30T18:08:30.140Z",
+  "source": "真实SDK单次诊断恢复；模型道路未启动",
+  "stopped": {
+    "code": "SDK_FAILED",
+    "at": "2026-10-30T18:07:45.924Z",
+    "diagnostic": {
+      "stage": "map-ready",
+      "reason": "timeout",
+      "elapsedMs": 16447,
+      "records": [
+        {
+          "kind": "csp",
+          "directive": "script-src-elem",
+          "origin": "inline",
+          "path": "",
+          "resourceType": "script",
+          "status": 200,
+          "initiator": {
+            "origin": "https://webapi.amap.com",
+            "path": "/maps",
+            "line": 1,
+            "column": 536555
+          }
+        }
+      ]
+    }
+  },
+  "counts": {
+    "model": 107,
+    "route": 520,
+    "map": 69,
+    "location": 11
+  },
+  "resources": [
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "183c22ae-4372-4038-bb1d-8057ab5ca23a",
+      "at": "2026-10-30T18:07:29.470Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-30T18:07:30.035Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-30T18:07:30.059Z"
+    },
+    {
+      "kind": "map",
+      "status": "failed",
+      "at": "2026-10-30T18:07:45.917Z"
+    }
+  ]
+}
