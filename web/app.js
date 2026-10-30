@@ -259,6 +259,7 @@ function renderMembers() {
   $('memberCount').textContent = `${draft.members.length}位同行者`;
 }
 function render() {
+  $('adjustableGoals').checked=draft.adjustableGoals===true;
   for (const k of ['city','people','startDate','dayCount']) $(k).value = draft[k];
   renderDays();
   renderMembers();
@@ -307,7 +308,7 @@ function summaryContent(r) {
     const section = node('section', undefined, 'summaryMember');
     const content = node('div');
     content.append(node('h4', m.name), node('p', `需求原话：${m.preference}`, 'originalWords'), node('p', `个人全程预算上限：${m.budget}元`));
-    r.days.forEach((d, j) => content.append(node('p', `${d.date}：总步行上限${m.walking[j]}公里`, 'summaryWalking')));
+    r.days.forEach((d, j) => content.append(node('p', `${d.date}：${r.adjustableGoals?'步行目标（允许调整）':'总步行上限'}${m.walking[j]}公里`, 'summaryWalking')));
     section.append(avatar(index), content);
     members.append(section);
   });
@@ -382,6 +383,7 @@ for (const [id,city] of Object.entries(CITY_CONFIG)) $('city').append(new Option
 for (let i=1;i<=6;i++) $('people').append(new Option(`${i}人`,i));
 for (let i=1;i<=3;i++) $('dayCount').append(new Option(`${i}天`,i));
 $('city').onchange = () => {draft.city=$('city').value;edited();};
+$('adjustableGoals').onchange=()=>{draft.adjustableGoals=$('adjustableGoals').checked;edited();};
 $('startDate').oninput = () => {draft.startDate=$('startDate').value;renderDays();edited();};
 $('people').onchange = async () => {
   const n=Number($('people').value);
