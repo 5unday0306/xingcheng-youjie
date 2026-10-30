@@ -1,0 +1,8 @@
+{
+  "scope": "受控替身，非真实接口",
+  "error": "page.waitForFunction: Timeout 90000ms exceeded.",
+  "replan": "Cannot read properties of undefined (reading 'map')",
+  "pageErrors": [],
+  "fix": "缺失对比区间显示未知，避免渲染.map异常；等待锁定配置完成，并在配置期间禁用主操作",
+  "diagnostic": "完整调试文件仅本地私有"
+}

@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-30T12:40:53.944Z",
+  "assertions": 48,
+  "syntheticUpstream": 29,
+  "external": 0,
+  "errors": [],
+  "realBusinessCalls": 0,
+  "scope": "已有八点两餐无需人工准备；四角色首次生成、道路和列表联动、侧栏、接受拒绝、锁定重排、移动切换、刷新不调用"
+}

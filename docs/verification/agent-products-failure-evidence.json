@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-29T13:01:08.280Z",
+  "blockedRole": "plan",
+  "completed": [
+    "coordinate",
+    "screen"
+  ],
+  "notExecuted": [
+    "audit"
+  ],
+  "rawBytes": 2507,
+  "rawSha256": "10770fb38ffae8bb7f6c94be1e4eba7331fb4d3f53c6b021e4835a4181f936db",
+  "classification": "JSON_SYNTAX_ROOT_CLOSED_BEFORE_UNKNOWNS",
+  "parsePosition": 1031,
+  "empty": false,
+  "outputTokens": 704,
+  "configuredMaxTokens": 2000,
+  "truncationEvidence": "旧适配器仅接受finish_reason=stop后返回；原HTTP finish_reason没有单独记录。现有证据不支持截断，不能恢复未记录的原HTTP字段。",
+  "publicFixture": "tests/fixtures/agent-plan-root-closed.txt",
+  "fixtureRedaction": "全部字符串值脱敏，保留原有字段/标点结构；没有修补JSON",
+  "original": "仅docs/private原文保留"
+}

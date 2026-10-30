@@ -1,0 +1,436 @@
+{
+  "source": "真实DeepSeek/高德，本轮私有journal提取的脱敏元数据",
+  "baseline": {
+    "model": 60,
+    "location": 11,
+    "route": 282,
+    "map": 54,
+    "reservedCents": 1163
+  },
+  "final": {
+    "counts": {
+      "model": 72,
+      "location": 11,
+      "route": 338,
+      "map": 58
+    },
+    "reservedCents": 1359,
+    "stopped": null
+  },
+  "delta": {
+    "model": 12,
+    "location": 0,
+    "route": 56,
+    "map": 4,
+    "reservedCents": 196
+  },
+  "reservationNotBill": true,
+  "runs": [
+    {
+      "createdAt": "2026-10-29T13:22:39.032Z",
+      "status": "failed",
+      "reason": "输入超过保守上限",
+      "retryCount": 1,
+      "round": 2,
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": null
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": null
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "failed",
+          "reused": false,
+          "errorCode": "PROMPT_LIMIT",
+          "requestStatus": null,
+          "finishReason": null
+        }
+      ],
+      "journalSha256": "62c28168ddd250203be3fcfda3c6fac8414352451500d5ac7877ffd34898dfe9",
+      "privateJournal": "docs/private/generation-57d19628-1741-4bdb-9bc4-457dfaca0b28.json"
+    },
+    {
+      "createdAt": "2026-10-29T13:27:26.622Z",
+      "status": "failed",
+      "reason": "技术次数或费用预留额度耗尽，未发送请求",
+      "retryCount": 2,
+      "round": 2,
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": null
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": null
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "failed",
+          "reused": false,
+          "errorCode": "CALL_LIMIT",
+          "requestStatus": null,
+          "finishReason": null
+        }
+      ],
+      "journalSha256": "050582640e98a04b0d669fcff31e3eed52fa3c4b8037a152d1a12e59b25e2e99",
+      "privateJournal": "docs/private/generation-b36e897b-fc0b-4a16-a843-3859af9eb342.json"
+    },
+    {
+      "createdAt": "2026-10-29T13:31:20.412Z",
+      "status": "failed",
+      "reason": "输入超过保守上限",
+      "retryCount": 0,
+      "round": 2,
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "failed",
+          "reused": false,
+          "errorCode": "PROMPT_LIMIT",
+          "requestStatus": "not-dispatched",
+          "finishReason": null
+        }
+      ],
+      "journalSha256": "88cd080fa6dfc9fbd6f040c812b84e4c0b58778e5a59c4974352994e0835595e",
+      "privateJournal": "docs/private/generation-256af802-8504-420b-ac22-c63392fd1762.json"
+    },
+    {
+      "createdAt": "2026-10-29T13:33:41.528Z",
+      "status": "preview",
+      "reason": null,
+      "retryCount": 1,
+      "round": 2,
+      "nodes": [
+        {
+          "role": "coordinate",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "screen",
+          "status": "completed",
+          "reused": true,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "plan",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        },
+        {
+          "role": "audit",
+          "status": "completed",
+          "reused": false,
+          "errorCode": null,
+          "requestStatus": null,
+          "finishReason": "tool_calls"
+        }
+      ],
+      "journalSha256": "3f10e1998abc88a4d0fd004abb436aad0e078a2cd7b4c7deea748c53a47cbdf8",
+      "privateJournal": "docs/private/generation-7337f3e6-a536-473d-a764-8e05ec1e3a2b.json"
+    }
+  ],
+  "finalStatus": "preview",
+  "finalNodes": [
+    {
+      "role": "coordinate",
+      "status": "completed",
+      "reused": true,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    },
+    {
+      "role": "screen",
+      "status": "completed",
+      "reused": true,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    },
+    {
+      "role": "plan",
+      "status": "completed",
+      "reused": false,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    },
+    {
+      "role": "audit",
+      "status": "completed",
+      "reused": false,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    },
+    {
+      "role": "plan",
+      "status": "completed",
+      "reused": false,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    },
+    {
+      "role": "audit",
+      "status": "completed",
+      "reused": false,
+      "finishReason": "tool_calls",
+      "transport": "named-tool"
+    }
+  ],
+  "uiChecks": [
+    {
+      "role": "coordinate",
+      "technicalVisible": false,
+      "textLength": 1183
+    },
+    {
+      "role": "screen",
+      "technicalVisible": false,
+      "textLength": 2343
+    },
+    {
+      "role": "plan",
+      "technicalVisible": false,
+      "textLength": 4329
+    },
+    {
+      "role": "audit",
+      "technicalVisible": false,
+      "textLength": 5463
+    }
+  ],
+  "originalAdoptionPreserved": true,
+  "days": [
+    {
+      "date": "2026-11-07",
+      "walking": [
+        [
+          6151,
+          7851
+        ],
+        [
+          6151,
+          7851
+        ],
+        [
+          6151,
+          7851
+        ]
+      ],
+      "time": [
+        339,
+        339
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "walking": [
+        [
+          5491,
+          7291
+        ],
+        [
+          5491,
+          7291
+        ],
+        [
+          5491,
+          7291
+        ]
+      ],
+      "time": [
+        374,
+        374
+      ],
+      "lock": "12:30"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    {
+      "path": "docs/private/agent-products-real-final/audit-1440.png",
+      "sha256": "ff0a1e2462cb226d9a71dcad73bcde3d781dd46f285da98a8ca85612dd6236fe"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/audit-390.png",
+      "sha256": "27cb86144d71ed13e0b792af8d5896513e8d8b3e85afac625ccf5f70c6b8ba98"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/coordinate-1440.png",
+      "sha256": "ebf275ba80af57b7f7de0ce5e7c9c10d0ba8a293931c30f3c7f377b86dbd92ef"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/map-day2-1440.png",
+      "sha256": "b55d6d019a6d477beb6027c6acf503e3e1d265d019e6ec046e7dc9d961adbc3a"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/plan-1440.png",
+      "sha256": "809c73d7d2eaf0a17554d49d905e10c85441507ab0b14f05db9608d2f4f5831f"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/retained-screen-before.png",
+      "sha256": "1429cf01ce504e737126964906378f7e526c36278896879c7ff535735cddb32a"
+    },
+    {
+      "path": "docs/private/agent-products-real-final/screen-1440.png",
+      "sha256": "ad867e639655a53f734732044d334939d977834498ff333f32e076c5e47e361a"
+    }
+  ],
+  "scope": "最终协调/筛选复用真实产物，规划/审查两轮各独立请求，回交完成；未采用超限候选。真实地点检索和本轮真实锁定重排未执行。",
+  "readback": {
+    "at": "2026-10-29T13:40:28.658Z",
+    "external": 0,
+    "SDKLoaded": false,
+    "source": "当前服务真实产物历史回放，只读验证；没有模型/道路/SDK调用",
+    "checks": [
+      {
+        "role": "coordinate",
+        "noTechnical": true
+      },
+      {
+        "role": "screen",
+        "noTechnical": true
+      },
+      {
+        "role": "plan",
+        "noTechnical": true
+      },
+      {
+        "role": "audit",
+        "noTechnical": true
+      },
+      {
+        "stickyCloseReachable": true
+      }
+    ]
+  },
+  "readbackScreenshots": [
+    {
+      "path": "docs/private/agent-products-readback-final/audit-1440.png",
+      "sha256": "7f2769f0a50d5de92990f618ed796df26b1a35325cd93c7c94ff3df34c0122ee"
+    },
+    {
+      "path": "docs/private/agent-products-readback-final/audit-390.png",
+      "sha256": "8b159a3c999f372638699101c3a1c97d2c3fe2838ba26ebe2f018ef2cf3daafb"
+    },
+    {
+      "path": "docs/private/agent-products-readback-final/coordinate-1440.png",
+      "sha256": "8c6105335700fa1d45e3f36fb6192b2e9e572b55b3d98c229cdc381565886a36"
+    },
+    {
+      "path": "docs/private/agent-products-readback-final/plan-1440.png",
+      "sha256": "7efb81272413962796ef5e96e4836541174f8bed2c711468bd2ae3b104c0a920"
+    },
+    {
+      "path": "docs/private/agent-products-readback-final/screen-1440.png",
+      "sha256": "ef56f8f7eded0d2392161f1f14ca60908a480478476e443ee8916e727b972340"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-30T12:39:56.904Z",
+  "scope": "过期授权下只读历史产物，无SDK/模型/道路新调用",
+  "external": 0,
+  "before": {
+    "entries": 479,
+    "resources": 331,
+    "reservedCents": 1359
+  },
+  "after": {
+    "entries": 479,
+    "resources": 331,
+    "reservedCents": 1359
+  },
+  "unchanged": true,
+  "checks": [
+    {
+      "primaryDisabled": true
+    },
+    {
+      "role": "coordinate",
+      "history": true,
+      "noTechnical": true
+    },
+    {
+      "role": "screen",
+      "history": true,
+      "noTechnical": true
+    },
+    {
+      "role": "plan",
+      "history": true,
+      "noTechnical": true
+    },
+    {
+      "role": "audit",
+      "history": true,
+      "noTechnical": true
+    },
+    {
+      "noOverflow": true
+    }
+  ]
+}
