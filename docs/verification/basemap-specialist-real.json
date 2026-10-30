@@ -1,0 +1,317 @@
+{
+  "at": "2026-10-30T18:16:36.171Z",
+  "source": "真实底图专项，未生成候选",
+  "authorization": {
+    "issuedAt": "2026-10-30T18:14:41.596Z",
+    "expiresAt": "2026-10-30T18:44:41.596Z",
+    "before": {
+      "model": 107,
+      "route": 520,
+      "location": 11,
+      "map": 69
+    }
+  },
+  "counts": {
+    "model": 107,
+    "route": 520,
+    "location": 11,
+    "map": 70
+  },
+  "stop": null,
+  "resources": [
+    {
+      "kind": "frame-bootstrap",
+      "status": "claimed",
+      "entryId": "f9272e3b-7011-4c08-9538-9d1f1a9ee571",
+      "at": "2026-10-30T18:15:32.927Z"
+    },
+    {
+      "kind": "script",
+      "status": "loaded",
+      "at": "2026-10-30T18:15:33.609Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-30T18:15:33.626Z"
+    },
+    {
+      "kind": "resources",
+      "status": "snapshot",
+      "at": "2026-10-30T18:15:33.661Z",
+      "counts": {
+        "layout": {
+          "visible": true,
+          "width": 340,
+          "height": 399,
+          "viewportWidth": 356,
+          "viewportHeight": 439,
+          "pane": "map"
+        },
+        "stage": "map-create",
+        "reason": "initialization",
+        "elapsedMs": 0,
+        "records": [
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/map-frame-protocol.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/sdk-diagnostics.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/frame/bootstrap",
+            "resourceType": "fetch",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/amap-loader.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/map-view.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "https://webapi.amap.com",
+            "path": "/maps",
+            "resourceType": "script",
+            "status": 0,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "resources",
+      "status": "snapshot",
+      "at": "2026-10-30T18:15:33.833Z",
+      "counts": {
+        "layout": {
+          "visible": true,
+          "width": 340,
+          "height": 399,
+          "viewportWidth": 356,
+          "viewportHeight": 439,
+          "pane": "map"
+        },
+        "stage": "ready-event",
+        "reason": "initialization",
+        "elapsedMs": 910,
+        "records": [
+          {
+            "kind": "csp",
+            "directive": "script-src-elem",
+            "origin": "inline",
+            "path": "",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "https://webapi.amap.com",
+              "path": "/maps",
+              "line": 1,
+              "column": 536555
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/amap-loader.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/map-view.js",
+            "resourceType": "script",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "https://webapi.amap.com",
+            "path": "/maps",
+            "resourceType": "script",
+            "status": 0,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/frame/event",
+            "resourceType": "fetch",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "http://127.0.0.2:4184",
+            "path": "/frame/event",
+            "resourceType": "fetch",
+            "status": 200,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          },
+          {
+            "kind": "resource-result",
+            "directive": "unknown",
+            "origin": "https://webapi.amap.com",
+            "path": "/theme/v2.0/logo@2x.png",
+            "resourceType": "img",
+            "status": 0,
+            "initiator": {
+              "origin": "http://localhost",
+              "path": "/unknown",
+              "line": null,
+              "column": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "map",
+      "status": "ready",
+      "at": "2026-10-30T18:15:33.851Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "loaded",
+      "at": "2026-10-30T18:15:33.999Z",
+      "counts": {
+        "status": 200
+      }
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-30T18:15:35.118Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "requested",
+      "at": "2026-10-30T18:15:35.135Z"
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "loaded",
+      "at": "2026-10-30T18:15:35.324Z",
+      "counts": {
+        "status": 200
+      }
+    },
+    {
+      "kind": "sdk-init-proxy",
+      "status": "loaded",
+      "at": "2026-10-30T18:15:35.352Z",
+      "counts": {
+        "status": 200
+      }
+    }
+  ],
+  "adoptedId": "1258dde5-9af1-4543-80ff-31b36f67884d-restored-1793377422048",
+  "lock": {
+    "name": "老太原菜馆(钟楼街店)",
+    "start": "12:30",
+    "end": "13:30"
+  },
+  "checks": {
+    "visibleBasemap": true,
+    "zoomIn": true,
+    "zoomOut": true,
+    "narrow390Tabs": true,
+    "drag": "未验证：浏览器工具无法安全执行跨iframe拖动，未绕过限制"
+  },
+  "limitations": [
+    "未证明SDK每个CSP事件都无影响",
+    "只验证底图，不代表真实多人候选通过"
+  ]
+}
