@@ -26,7 +26,7 @@ export function createPlanPanel({getRequest,validate,validateDynamic=()=>true,ap
   function acceptable(r){return r?.readiness?r.readiness.canAccept:!!r&&!r.review.days.some(d=>d.lockCheck?.status==='conflict'||d.time.knownSubtotal[1]>d.time.limit||d.members.some(m=>m.walking.knownSubtotal[1]>m.walking.limit))&&!r.review.members.some(m=>m.budget.knownSubtotal[1]>m.budget.limit);}
   function updateExperience(){
     workspace.version(metaData?.meta,result);workspace.mapReady(livePanel?.mapReady?.());
-    if(capabilities?.readOnly){workspace.action.disabled=true;workspace.action.textContent='历史产物 · 只读';workspace.status.textContent='真实联调未启用或授权已到期；当前只读展示历史产物，不加载地图或发起新请求。';return;}
+    if(capabilities?.readOnly){workspace.action.disabled=true;workspace.action.textContent='历史产物 · 只读';workspace.status.textContent=capabilities.dynamicRunExhausted?'本轮真实验证次数已用尽。当前只读查看历史产物，离线动态演练可继续；未重置记录或自动续期。':'真实联调未启用或授权已到期；当前只读展示历史产物，不加载地图或发起新请求。';return;}
     const saved=metaData?.meta,selected=agentStates[workspace.mode],replan=workspace.mode==='replan';
     const mismatch=!capabilities?.dynamicPlanning&&replan&&saved?.lock&&!sameRequest(getRequest(),saved.request);
     workspace.action.disabled=flowBusy||agentBusy.size>0||!capabilities;
