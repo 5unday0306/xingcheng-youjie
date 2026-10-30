@@ -34,6 +34,7 @@ function updateDirty() {
 }
 let routeReturnHash='#routeView';
 function showView(view, focus = false, updateHash = true) {
+  if(view==='summary')view='route';
   if(['#replan08','#routeView'].includes(location.hash))routeReturnHash=location.hash;
   const focusId=++focusRevision;
   const editor=$('editDialog');
@@ -44,11 +45,11 @@ function showView(view, focus = false, updateHash = true) {
   $('workbench').dataset.view = view;
   $('routeView').hidden = currentDisplay !== 'route';
   $('summaryView').hidden = currentDisplay !== 'summary';
-  for (const [id, target] of [['navEdit','edit'],['navSummary','summary'],['navRoute','route']]) {
+  for (const [id, target] of [['navEdit','edit'],['navRoute','route']]) {
     $(id).setAttribute('aria-pressed', String(view === target));
   }
   $('tabRoute').setAttribute('aria-pressed', String(currentDisplay === 'route'));
-  $('tabSummary').setAttribute('aria-pressed', String(currentDisplay === 'summary'));
+
   if(updateHash)history.replaceState(null,'',view==='edit'?'#edit':view==='summary'?'#summaryView':routeReturnHash);
   $('navReplan').setAttribute('aria-pressed',String(location.hash==='#replan08'&&view==='route'));if(location.hash==='#replan08'&&view==='route')$('navRoute').setAttribute('aria-pressed','false');
   if (focus) {
@@ -316,6 +317,37 @@ function summaryContent(r) {
   dev.append(node('summary', '开发详情：结构化需求与稳定ID'), node('pre', JSON.stringify(r, null, 2)));
   $('summary').replaceChildren(intro, members);if(new URLSearchParams(location.search).get('developer')==='1')$('devRecords').append(dev);
 }
+let planningConfirmation=null,startingPlanning=false;
+async function requestPlanningConfirmation(){
+  if(planningConfirmation||startingPlanning)return;
+  const context=planPanel?.confirmationContext();
+  if(!context?.ready){$('checkStatus').textContent='正在读取规划能力，请稍后再试';return;}
+  if(context.busy)return;
+  if(!check({navigate:false,extraErrors:context.dynamic?dynamicScopeErrors(toRequest(draft),context.lock):[]}))return;
+  const captured=signature(),request=toRequest(draft),wasEditing=$('editDialog').open;
+  const dialog=node('dialog',undefined,'planningConfirmation');dialog.id='planningConfirmation';dialog.setAttribute('aria-labelledby','planningConfirmationTitle');
+  dialog.append(node('h2','确认本次旅行条件','confirmationTitle'));dialog.firstChild.id='planningConfirmationTitle';
+  dialog.append(node('p',`${CITY_CONFIG[request.city]?.fullName} · ${request.people}人 · ${request.days.length}天`));
+  for(const day of request.days)dialog.append(node('p',`${day.date}　${day.start}～${day.end}`));
+  for(const member of request.members){const row=node('section',undefined,'confirmationMember');row.append(node('strong',member.name),node('p',`个人全程预算 ${member.budget}元；`+member.walking.map((v,i)=>`第${i+1}天${v}公里`).join('、')));dialog.append(row);}
+  dialog.append(node('p',context.lock?`锁定：${context.lock.date} ${context.lock.start}～${context.lock.end} ${context.lock.name}（计划，非预约保证）`:'锁定安排：无'));
+  dialog.append(node('p',request.adjustableGoals?'允许建议调整时段与步行目标；采用前显示增量，预算与锁定保持。':'每日时段与步行上限严格限制，不自动放宽。'));
+  const words=node('details');words.append(node('summary','查看个人偏好原话'));for(const m of request.members)words.append(node('p',m.name+'：'+m.preference));dialog.append(words);
+  dialog.append(node('p',context.offline?'离线演练使用替身，不代表真实地图或接口结果。':'开始后运行真实规划；资料不足与冲突会保留，结果需你决定是否采用。','hint'));
+  const actions=node('div',undefined,'dialogActions'),back=node('button','返回修改'),start=node('button',context.offline?'运行离线演练':'开始规划','primary');back.type=start.type='button';back.id='planningBack';start.id='planningStart';actions.append(back,start);dialog.append(actions);
+  planningConfirmation=dialog;document.body.append(dialog);
+  const close=()=>{planningConfirmation=null;dialog.close();dialog.remove();};
+  back.onclick=()=>{close();showView('edit',true);};
+  dialog.oncancel=e=>{e.preventDefault();close();if(wasEditing)showView('edit',true);};
+  start.onclick=async()=>{
+    if(startingPlanning)return;
+    if(captured!==signature()){close();$('checkStatus').textContent='需求已变化，请重新确认';showView('edit',true);return;}
+    startingPlanning=true;start.disabled=true;back.disabled=true;close();
+    showView('route',true);
+    try{await planPanel.startConfirmedPlanning();}finally{startingPlanning=false;}
+  };
+  dialog.showModal();
+}
 function check({navigate=true,extraErrors=[]} = {}) {
   validationStarted = true;
   const r = toRequest(draft), errors = [...validateRequest(r),...extraErrors];
@@ -330,7 +362,7 @@ function check({navigate=true,extraErrors=[]} = {}) {
   $('checkStatus').textContent = '输入检查通过 · 仅结构与格式';
   $('summaryValidation').textContent='当前需求格式已检查；方案须单独核查，旅行可行性未验证。';
   summaryContent(r);
-  if (navigate) showView('summary',true);
+  // Validation never navigates or starts a business request.
   return true;
 }
 function restoreDraft(auto=false) {
@@ -406,8 +438,8 @@ $('dayCount').onchange = async () => {
 };
 $('brand').onclick = () => showView('edit',true);
 $('jumpMembers').onclick = () => { $('membersTitle').focus({preventScroll:true}); $('membersTitle').scrollIntoView({block:'start'}); };
-$('quickCheck').onclick = () => check();
-$('form').onsubmit = event => {event.preventDefault();check();};
+$('quickCheck').onclick = () => requestPlanningConfirmation();
+$('form').onsubmit = event => {event.preventDefault();requestPlanningConfirmation();};
 $('save').onclick = () => saveDraft();
 $('restore').onclick = async () => {
   if (await confirmAction({title:'恢复上次保存的需求？',text:'将替换当前未保存输入。取消或按Esc保留当前内容。',accept:'确认恢复',cancel:'保留当前输入'})) restoreDraft();
@@ -415,7 +447,7 @@ $('restore').onclick = async () => {
 $('replace').onclick = async () => {
   if (await confirmAction({title:'覆盖无法恢复的旧存档？',text:'旧存档将被当前有效需求替换，无法由本页面找回。确认后仍会先检查输入。',accept:'确认覆盖',cancel:'保留旧存档'})) saveDraft(true);
 };
-for(const [id,view] of [['navEdit','edit'],['navSummary','summary'],['navRoute','route'],['tabRoute','route'],['tabSummary','summary'],['backEdit','edit']]) $(id).onclick=()=>showView(view,true);
+for(const [id,view] of [['navEdit','edit'],['navRoute','route'],['tabRoute','route'],['backEdit','edit']]) $(id).onclick=()=>showView(view,true);
 $('budgetScope').textContent=BUDGET;
 $('gaps').replaceChildren(...GAPS.map(text=>node('li',text)));
 $('summary').append(node('p','先在编辑区检查需求，再查看逐人摘要。','summaryEmpty'));
@@ -425,12 +457,12 @@ showView('route',false,false);
 $('editTrip').onclick=()=>showView('edit',true);
 $('closeEditor').onclick=()=>{showView(currentDisplay);$('editTrip').focus();};
 $('editDialog').addEventListener('cancel',event=>{event.preventDefault();showView(currentDisplay);$('editTrip').focus();});
-planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),validateDynamic:lock=>check({navigate:false,extraErrors:dynamicScopeErrors(toRequest(draft),lock)}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
+planPanel=createPlanPanel({confirmPlanning:requestPlanningConfirmation,getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),validateDynamic:lock=>check({navigate:false,extraErrors:dynamicScopeErrors(toRequest(draft),lock)}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
 
 function routeHash(){
  const hash=location.hash;
  if(hash==='#edit'){showView('edit',false,false);return;}
- if(hash==='#summaryView'){showView('summary',false,false);return;}
+ if(hash==='#summaryView'){history.replaceState(null,'','#routeView');showView('route',false,false);return;}
  showView('route',false,false);
  const target=document.getElementById(hash==='#replan08'?'experienceWorkspace':hash.slice(1));
  if(target){for(let p=target.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;target.scrollIntoView({block:'start'});}

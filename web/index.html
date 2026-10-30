@@ -15,7 +15,7 @@
   </header>
   <nav class="viewNav" aria-label="工作台视图">
     <button id="navEdit" type="button" aria-pressed="true">编辑需求</button>
-    <button id="navSummary" type="button" aria-pressed="false">需求摘要</button>
+
     <button id="navRoute" type="button" aria-pressed="false">旅行安排</button>
     <button id="navReplan" type="button" aria-pressed="false">锁定与重排</button>
   </nav>
@@ -52,18 +52,18 @@
               <label>游玩天数<select id="dayCount"></select></label>
             </div>
             <p class="hint">按出发日期连续计算。当前只开放太原测试。</p>
-            <div id="days"></div><label class="hint"><input id="adjustableGoals" type="checkbox">允许AI调整每日时段与步行目标</label><p class="hint">打开后会优先兼顾游览与个人偏好，明确告知时间和步行变化；预算与锁定仍严格保留，未知资料不算达标。</p>
-            <details class="endpointDetails"><summary>每天从哪里出发、返回？</summary><p>山西博物院东门外公共集合点</p><p class="hint">太原市滨河西路北段13号（东门地址线索）。不是酒店，实际落点与通行待人工核对。</p></details>
+            <div id="days"></div><label class="hint"><input id="adjustableGoals" type="checkbox">允许AI调整每日时段与步行目标</label><p class="hint">采用前展示目标变化；预算与锁定不变。</p>
+            <details class="endpointDetails"><summary>每天从哪里出发、返回？</summary><p>山西博物院东门外公共集合点</p><p class="hint">复用已确认的公共测试落点，非官方入口核验。</p></details>
           </section>
           <section class="formSection" aria-labelledby="membersTitle">
             <div class="sectionHeading"><h2 id="membersTitle" tabindex="-1">同行者的需求</h2><span id="memberCount"></span></div>
-            <p class="hint">保留每个人的原话与限制，不填真实个人资料。</p>
+
             <div id="members"></div>
             <details class="budgetDetails"><summary>预算与步行怎样计算？</summary><p id="budgetScope" class="hint"></p><p class="hint">步行上限包含交通接驳和场馆内部步行。这里填写的是个人限制，不是已计算的实际费用或距离。</p></details>
           </section>
         </div>
         <div class="editorActions">
-          <button type="submit" class="primary" id="check">检查并确认需求</button>
+          <button type="submit" class="primary" id="check">确认需求并开始规划</button>
           <div class="secondaryActions"><button type="button" id="save">保存需求</button><button type="button" id="restore">恢复上次保存</button></div>
           <p id="storageStatus" role="status" aria-live="polite"></p>
           <button type="button" id="replace" class="dangerButton" hidden>处理无法恢复的旧存档</button>
@@ -72,8 +72,8 @@
     </section></dialog>
     <section class="display" aria-label="旅行需求与路线工作区">
       <div class="displayTabs" role="group" aria-label="展示内容">
-        <button type="button" id="tabRoute" aria-pressed="true">路线准备</button>
-        <button type="button" id="tabSummary" aria-pressed="false">需求摘要</button>
+        <button type="button" id="tabRoute" aria-pressed="true">地图与行程</button>
+
         <span id="checkStatus" role="status" aria-live="polite">当前需求尚未检查</span>
       </div>
       <div class="displayScroll" id="displayScroll">
@@ -88,7 +88,7 @@
             <div id="planResult" aria-live="polite"></div>
           </section>
           <div class="routeStage">
-            <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>先检查需求，再运行已启用的草案入口。地图仅显示已核实落点之间查询成功的路段。</p><button type="button" id="quickCheck" class="textAction">检查并确认需求</button></section>
+            <section class="routePending" aria-labelledby="pendingTitle"><span class="quietLabel">下一步</span><h3 id="pendingTitle">路线还未接入</h3><p>先检查需求，再运行已启用的草案入口。地图仅显示已核实落点之间查询成功的路段。</p><button type="button" id="quickCheck" class="textAction">确认需求并开始规划</button></section>
             <aside class="dayBrief"><h3 id="activeDayTitle">当天出行条件</h3><div id="activeDay"></div></aside>
           </div>
           <details class="gaps"><summary>规划之前，仍需核实的资料</summary><ul id="gaps"></ul></details>
@@ -99,7 +99,7 @@
           <div id="summary"></div>
         </section>
       </div>
-      <footer class="displayFooter"><span id="destinationName" hidden></span><span id="pilotStamp" hidden></span><span>仅保存于当前浏览器，不会自动保存修改。</span><span>固定测试需求起步</span></footer>
+      <footer class="displayFooter"><span id="destinationName" hidden></span><span id="pilotStamp" hidden></span><span>修改后请保存。</span></footer>
     </section>
   </main>
   <dialog id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText">
