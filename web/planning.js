@@ -21,8 +21,8 @@ function metric(title,result,unit,scale=1,advisory=false) {
 }
 export function createPlanPanel({confirmPlanning=()=>{},getRequest,validate,validateDynamic=()=>true,applyRequest}) {
   let result=null,selectedDay=0,busy=false,revision=0,capabilities=null,livePanel=null,runController=null,agentPanel=null,replanPanel=null;
-  let mapLoadFailed=false,flowBusy=false,metaData=null,activeWorkflow=null;const agentStates={review:null,replan:null},agentBusy=new Set();
-  const workspace=createWorkspace({getRequest,onAction:runPrimary,onMode:value=>{if(activeWorkflow===null||activeWorkflow===value){activeWorkflow=value;updateExperience();return;}activeWorkflow=value;const panel=value==='replan'?replanPanel?.agents:agentPanel;panel?.sync?.();if(panel?.state()?.original)panel.show(panel.state().status==='accepted'?'preview':'original');else if(result){livePanel?.clearDisplay?.();result=null;paint();}updateExperience();}});
+  let mapLoadFailed=false,flowBusy=false,metaData=null;const agentStates={review:null,replan:null},agentBusy=new Set();
+  const workspace=createWorkspace({getRequest,onAction:runPrimary,onMode:value=>{const panel=value==='replan'?replanPanel?.agents:agentPanel;panel?.sync?.({preferPreview:true});updateExperience();}});
   const historyButton=el('button','查看上次规划');historyButton.type='button';historyButton.id='latestPlanningHistory';workspace.action.after(historyButton);
   const historyDetails=el('details');historyDetails.append(el('summary','上次规划'),historyButton);workspace.basis.append(historyDetails);
   const adjustButton=el('button','调整行程','secondaryAction');adjustButton.id='adjustItinerary';adjustButton.type='button';workspace.action.after(adjustButton);adjustButton.onclick=()=>{workspace.setMode('replan');workspace.lock.open=true;workspace.status.textContent='固定不想改变的安排，调整其余活动。';};
