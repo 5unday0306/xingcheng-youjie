@@ -1,5 +1,9 @@
 const el=(t,s,c)=>{const n=document.createElement(t);if(s!==undefined)n.textContent=s;if(c)n.className=c;return n;};
 const range=(v,scale=1)=>Array.isArray(v)?v.map(x=>+(x/scale).toFixed(2)).filter((x,i,a)=>!i||x!==a[0]).join('～'):'未知';
+// Model prose is never a trusted source of monetary values. Keep raw output only in journals.
+export function modelNarrative(value){return String(value??'').replace(/[￥¥]?\s*\d[\d,.]*(?:\s*[～~—–-]\s*\d[\d,.]*)?\s*(?:元|人民币|分(?!钟))/g,'金额见程序核算');}
+const safeOutput=value=>typeof value==='string'?modelNarrative(value):Array.isArray(value)?value.map(safeOutput):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,safeOutput(v)])):value;
+export function formatMoney(cents){return Number.isFinite(cents)?new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(cents/100)+'元':'未知';}
 export function productNames(state,request,catalog={}){
  const map=new Map(),people=state?.requestSnapshot?.members||request.members||[];
  people.forEach((p,i)=>{map.set(p.id,p.name||'同行者'+(i+1));map.set('person-'+(i+1),p.name||'同行者'+(i+1));});
@@ -14,16 +18,17 @@ export function productNames(state,request,catalog={}){
  return {name:id=>map.get(id)||'相关活动',clean,people};
 }
 export function renderAgentProducts({state,node,role,request,catalog={},onLocate=()=>{}}){
- const root=el('div',undefined,'agentProducts'),n=productNames(state,request,catalog),out=node?.output,input=node?.input||{},result=state?.preview||state?.original;
+ const root=el('div',undefined,'agentProducts'),n=productNames(state,request,catalog),out=safeOutput(node?.output),input={...node?.input,...(node?.input?.upstream?{upstream:safeOutput(node.input.upstream)}:{})},result=state?.preview||state?.original;
  const section=(title)=>{const s=el('section');s.append(el('h3',title));root.append(s);return s;};
  const p=(s,text)=>s.append(el('p',n.clean(text)));
  const explain=(s,text)=>{if(!text)return;const value=n.clean(text);p(s,value.length>85?value.slice(0,85)+'…':value);if(value.length>85){const d=el('details');d.append(el('summary','查看完整解释'));p(d,value);s.append(d);}};
  const list=(s,items)=>{const ul=el('ul');for(const x of items)ul.append(el('li',n.clean(x)));s.append(ul);};
  const locate=(s,pointId,label='在地图查看')=>{if(!result?.review)return;const b=el('button',label);b.type='button';b.onclick=()=>onLocate(result,{from:pointId,to:pointId,routeId:result.review.days.flatMap(d=>d.legs).find(l=>l.toPointId===pointId||l.fromPointId===pointId)?.fromPointId+'>'+pointId});s.append(b);};
+ if(['plan','audit'].includes(role)&&result?.review?.members){const facts=section('费用 · 程序核算');for(const m of result.review.members){const b=m.budget;p(facts,(m.name||n.name(m.id))+'：已计入'+[...new Set(b.knownSubtotal.map(formatMoney))].join('～')+' / 预算'+formatMoney(b.limit)+'；完整费用仍待核实');}}
  const unknowns=()=>{if(out?.unknowns?.length){const d=el('details');d.append(el('summary','依据与待核实 · '+out.unknowns.length+'项'));list(d,out.unknowns);root.append(d);}};
  if(!node){p(root,state?.status==='failed'?'上游步骤未完成，本角色尚未执行。':'尚未执行，没有本角色产物。');return root;}
  const previousAudit=role==='audit'&&state?.status==='failed'&&state.blockedRole==='plan';
- const provenance=section(state?.simulated?'离线替身产物（非真实模型）':previousAudit?'此前已完成的审查产物':node.reusedFrom?'已复用上次完成产物':state?.replay?'历史执行产物':'本次执行产物');p(provenance,previousAudit?'后续规划失败，本次尚未再次审查；此处保留较早的实际产物。':node.reusedFrom?'条件与交接内容保持一致，本节点没有新增模型请求。':node.status==='running'?'正在使用上游结果执行，完成后展示产物。':'以下来自实际输入和已完成输出。');
+ const provenance=section(state?.simulated?'离线替身产物（非真实模型）':previousAudit?'此前已完成的审查产物':node.reusedFrom?'已复用上次完成产物':state?.replay?'上次规划产物':'本次执行产物');p(provenance,previousAudit?'后续规划失败，本次尚未再次审查；此处保留较早的实际产物。':node.reusedFrom?'条件与交接内容保持一致，本节点没有新增模型请求。':node.status==='running'?'正在使用上游结果执行，完成后展示产物。':'以下来自实际输入和已完成输出。');
  if(input.upstream?.output){const s=section('上游交接'),o=input.upstream.output;if(o.stays){list(s,o.stays.map(a=>a.date+' · '+n.name(a.candidateId)+' · '+a.durationMinutes+'分钟（估计）'));p(s,'以上安排进入程序核查；缩短停留不直接减少已取得的道路或内部步行。');}else if(o.optionId){p(s,'承接：'+o.optionId);if(o.mealIds)list(s,o.mealIds.map((id,i)=>'第'+(i+1)+'天午餐：'+n.name(id)));if(o.matches)p(s,'已接收'+o.matches.length+'位同行者的实际候选匹配。');}else explain(s,o.summary||o.preferenceSummary||o.reason||'使用上一角色已完成的产物');}
  if(role==='coordinate'){
   const s=section(request?.adjustableGoals?'逐人需求、可调整目标与硬约束':'逐人需求与硬约束');n.people.forEach((person,i)=>{const c=el('article',undefined,'productCard'),m=input.members?.[i]||input.requirements?.[i]||person;c.append(el('h4',person.name||'同行者'+(i+1)));p(c,'偏好：'+(m.preference||person.preference||'未填写'));p(c,'全程个人预算 '+(m.budget??person.budget)+'元');p(c,(request?.adjustableGoals?'逐日步行目标（允许调整）：':'逐日步行上限：')+(m.walking||person.walking||[]).map((v,j)=>'第'+(j+1)+'天 '+v+'公里').join(' / '));s.append(c);});

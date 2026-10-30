@@ -2,7 +2,8 @@
 import {readFile,writeFile,mkdir,access} from 'node:fs/promises';import {fileURLToPath} from 'node:url';
 import {loadCredentials,validateApproval,createLedger,readApproval} from '../lib/runtime05b.mjs';
 const root=new URL('../',import.meta.url),real=process.argv.includes('--real');
-if(!real){console.log('离线：npm start（普通准备）或 npm run start:offline-test（明确标注的固定替身）。无需密钥，没有真实调用。');process.exit(0);}
+if(process.argv.includes('--production')){const path=new URL('.env',root);try{await access(path);}catch{await writeFile(path,await readFile(new URL('.env.example',root)),{mode:0o600});}const {status}=await loadCredentials(path);console.log({production:true,configurationPresent:status,ready:Object.values(status).every(Boolean),next:'在本机补齐配置后 npm start；无接口调用，不修改旧授权与账本'});process.exit(Object.values(status).every(Boolean)?0:1);}
+if(!real){console.log('离线：npm run start:local-shell（普通准备）或 npm run start:offline-test（明确标注的固定替身）。无需密钥，没有真实调用。');process.exit(0);}
 if(!process.argv.includes('--confirm-authorized'))throw Error('请先确认账号用途/权限和必要调用授权，再显式使用 --real --confirm-authorized；此命令不代表替你创建/购买账号。');
 const envPath=new URL('.env',root);try{await access(envPath);}catch{await writeFile(envPath,await readFile(new URL('.env.example',root)),{mode:0o600});throw Error('已创建本地.env空模板，请在本机填写四项配置后重新运行；不要发送密钥到聊天。');}
 const {status}=await loadCredentials(envPath);if(!Object.values(status).every(Boolean))throw Error('四项配置未齐（Web服务、模型、JS Key、安全密钥）；未调用，请本机补齐。');

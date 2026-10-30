@@ -103,15 +103,10 @@ try {
   await openMember(0);
   await page.locator('#member-0-walk-1').fill('4');
   await page.locator('#member-1-walk-1').fill('5');
-  await member(0).getByRole('button',{name:'将本人第1天步行上限应用到其余天'}).click();
-  await confirmText('覆盖本人的其余天步行上限','确认应用');
-  await page.keyboard.press('Escape');
+  equal(await member(0).getByRole('button',{name:'将本人第1天步行上限应用到其余天'}).count(),0);
   equal(await page.locator('#member-0-walk-1').inputValue(),'4');
-  await member(0).getByRole('button',{name:'将本人第1天步行上限应用到其余天'}).click();
-  await page.locator('#acceptChange').click(); await openMember(0); await openMember(1);
-  equal(await page.locator('#member-0-walk-1').inputValue(),'6');
   equal(await page.locator('#member-1-walk-1').inputValue(),'5');
-  groups.push('explicit walking copy, differing-value warning, Escape and other-member isolation');
+  groups.push('independent walking values; no copy button');
 
   await page.locator('#people').selectOption('1'); await confirmText('减少同行人数','确认减少');
   await page.keyboard.press('Escape'); equal(await page.locator('#people').inputValue(),'3');

@@ -228,28 +228,6 @@ function renderMembers() {
     const walk = node('div',undefined,'grid');
     m.walking.forEach((v,j) => walk.append(field(`第${j+1}天步行上限（公里）`,v,'number',x => {m.walking[j]=x;memberHeadline(m,summary);},`member-${i}-walk-${j}`)));
     body.append(node('h4','每天步行限制','fieldGroupTitle'), walk);
-    if (draft.dayCount > 1) {
-      const copy = node('button','将本人第1天步行上限应用到其余天','copyWalking');
-      copy.type = 'button';
-      copy.onclick = async () => {
-        const first = m.walking[0];
-        if (!/^\d+(?:\.\d+)?$/.test(first.trim()) || !Number.isFinite(Number(first))) {
-          validationStarted = true;
-          paintErrors(validateRequest(toRequest(draft)));
-          focusField(`member-${i}-walk-0`);
-          return;
-        }
-        if (m.walking.slice(1).some(v => v !== first)) {
-          const confirmed = await confirmAction({title:'覆盖本人的其余天步行上限？',
-            text:`${m.name}的其余天将改为${first}公里。原值为${m.walking.slice(1).join('、')}公里，不影响其他同行者。`,accept:'确认应用',cancel:'保留原值'});
-          if (!confirmed) return;
-        }
-        m.walking = m.walking.map(() => first);
-        renderMembers();
-        edited();
-      };
-      body.append(copy);
-    }
     body.append(node('p','步行包含交通接驳与场馆内部步行；这是上限，不是实际距离。','hint'));
     const dev = node('details',undefined,'developerDetails');
     dev.append(node('summary','开发详情'),node('code',`稳定ID：${m.id}`));

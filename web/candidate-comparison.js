@@ -1,3 +1,4 @@
+import {modelNarrative,formatMoney} from './agent-products.js';
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const range=(v,scale=1)=>!Array.isArray(v)?'未知':v.map(x=>+(x/scale).toFixed(2)).filter((x,i,a)=>!i||x!==a[0]).join('～');
 export function renderCandidateComparison({state,names,onSelect,onLocate}){
@@ -21,11 +22,11 @@ export function renderCandidateComparison({state,names,onSelect,onLocate}){
   const details=el('details');details.append(el('summary','逐人影响、费用与取舍'));
   for(const [j,p] of (r.coverage||[]).entries()){
    const b=r.review.members[j]?.budget;details.append(el('p',p.name+' · 模型偏好覆盖 '+p.score+'/5（非满意度）'+(p.overlooked?' · 有高匹配候选未覆盖':'')));
-   if(b)details.append(el('p','全程已计入 '+range(b.knownSubtotal,100)+'元 / 预算'+b.limit/100+'元；'+b.missing.length+'项费用未知'));
-   for(const x of p.covered)details.append(el('p',names.name(x.candidateId)+'：'+names.clean(x.reason)));
+   if(b)details.append(el('p','全程已计入 '+[...new Set(b.knownSubtotal.map(formatMoney))].join('～')+' / 预算'+formatMoney(b.limit)+'；'+b.missing.length+'项费用未知'));
+   for(const x of p.covered)details.append(el('p',names.name(x.candidateId)+'：'+names.clean(modelNarrative(x.reason))));
    if(p.missed.length)details.append(el('p','本案未选的高匹配项：'+p.missed.map(x=>names.name(x.candidateId)).join('、')));
   }
-  details.append(el('p','审查：'+names.clean(r.negotiationAudit.reason)));
+  details.append(el('p','审查：'+names.clean(modelNarrative(r.negotiationAudit.reason))));
   for(const a of r.adjustments||[])details.append(el('p',`${a.date} ${a.personName}：原目标${a.originalTarget}${a.unit} → 已计入${range(a.estimatedRange)}${a.unit}，增加${a.excess}${a.unit}；未知仍在`));
   for(const issue of r.readiness.issues)details.append(el('p',names.clean(issue)));
   const sources=el('details');sources.append(el('summary','依据与待核实'));

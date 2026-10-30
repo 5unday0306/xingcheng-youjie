@@ -18,7 +18,7 @@ export function createPickPanel({root,capabilities,onReady=()=>{},onModeChange=(
   async function post(path,input={}) {const r=await fetch('/api/live/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(20000)}),b=await r.json();if(!r.ok){const error=Error(b.message);error.code=b.code;throw error;}return b;}
   const button=(text,id,fn)=>{const b=el('button',text);b.type='button';b.id=id;b.onclick=fn;return b;};
   const load=button('加载真实地图并开始选点','pickLoad',()=>enqueue(loadMap));
-  const inspect=button('检查隔离容器（不加载SDK）','pickInspectContainer',()=>{if(disposed||isolatedContainer)return;mapBox.hidden=false;isolatedContainer=attachMapContainer({container:mapBox,mapOrigin:capabilities.mapFrameOrigin,onStatus:text=>{status.textContent=text;renderControls();},onEnd:runId=>post('frame/end',{runId}),onReady:()=>{if(product){view=isolatedContainer;render();onMapReady();}},onPick:location=>{if(activeId)selected(activeId,location);},onDrag:(id,location)=>{activeId=id;selected(id,location);},onSelect:id=>{const card=document.querySelector(`[data-activity-row-id="${id}"]`)||controls[id]?.card;for(const row of document.querySelectorAll('[data-activity-row-id]'))row.dataset.active=String(row===card);card?.focus({preventScroll:true});card?.scrollIntoView({block:'nearest'});}});inspect.disabled=true;});
+  const inspect=button('检查隔离容器（不加载SDK）','pickInspectContainer',()=>{if(disposed||isolatedContainer)return;mapBox.hidden=false;isolatedContainer=attachMapContainer({container:mapBox,mapOrigin:capabilities.mapFrameOrigin,onStatus:text=>{status.textContent=text;renderControls();},onEnd:runId=>post('frame/end',{runId}),onReady:()=>{if(product){view=isolatedContainer;render();onMapReady();}},onPick:location=>{if(activeId)selected(activeId,location);},onDrag:(id,location)=>{activeId=id;selected(id,location);},onSelect:id=>{document.dispatchEvent(new CustomEvent('workspace:activity-focus',{detail:{id}}));const card=document.querySelector(`[data-activity-row-id="${id}"]`)||controls[id]?.card;for(const row of document.querySelectorAll('[data-activity-row-id]'))row.dataset.active=String(row===card);card?.focus({preventScroll:true});card?.scrollIntoView({block:'nearest'});}});inspect.disabled=true;});
   const mapBox=el('div');mapBox.id='pickMap';if(capabilities.mapFrameOrigin)mapBox.classList.add('isContainerOnly');mapBox.hidden=true;mapBox.setAttribute('aria-label','高德真实地图，太原初始视野；点击或拖动选择测试位置');
   const cards=el('div');cards.className='pickCards';const controls={};
   for(const id of Object.keys(names)){
@@ -87,6 +87,7 @@ export function createPickPanel({root,capabilities,onReady=()=>{},onModeChange=(
     async prepareMap(){
       await initialState;
       if(this.mapReady())return;
+      if(capabilities.production&&!disposed&&(failed||isolatedContainer?.state().ended)){clearInterval(heartbeat);isolatedContainer?.destroy();isolatedContainer=null;destroyMap();lease=null;failed=false;inspect.disabled=false;}
       if(failed||disposed)throw Error('地图会话已停止，请查看运行记录后显式恢复；不会自动重载');
       if(!capabilities.canPrepare)throw Error('真实地图配置或调用授权不可用，请补齐当前配置');
       if(capabilities.mapFrameOrigin){

@@ -7,7 +7,9 @@
     "node": ">=24 <25"
   },
   "scripts": {
-    "start": "node server.mjs",
+    "start": "node server.mjs --production",
+    "start:production": "node server.mjs --production",
+    "start:local-shell": "node server.mjs",
     "start:offline-test": "node server.mjs --offline-test",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",

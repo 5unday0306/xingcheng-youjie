@@ -1,9 +1,10 @@
+import {productionPolicy,createProductionLedger} from './lib/production-runtime.mjs';
 import {createDynamicOffline} from './lib/dynamic-offline.mjs';
 import {case06Research} from './lib/case06.mjs';
 import http from 'node:http';
-import {fileURLToPath} from 'node:url';
+import {fileURLToPath,pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
-import {readFile,writeFile,rename,readdir,stat} from 'node:fs/promises';
+import {readFile,writeFile,rename,readdir,stat,mkdir} from 'node:fs/promises';
 import {catalog} from './data/taiyuan.mjs';
 import {createPlanningService,PlanningError} from './lib/planning.mjs';
 import {loadCredentials,readApproval,createLedger,createHttpSender} from './lib/runtime05b.mjs';
@@ -70,34 +71,38 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
   return server;
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
-  const dynamicOffline=process.argv.includes('--dynamic-offline'),testMode=process.argv.includes('--offline-test')||dynamicOffline,realPrep=process.argv.includes('--real-preparation');
+  const dynamicOffline=process.argv.includes('--dynamic-offline'),testMode=process.argv.includes('--offline-test')||dynamicOffline,production=process.argv.includes('--production'),realPrep=process.argv.includes('--real-preparation')||production;
   if(testMode&&realPrep)throw Error('模式不能同时启用');
-  const task06=process.argv.includes('--case06');
+  const task06=process.argv.includes('--case06')||production;
   if(task06&&!realPrep)throw Error('任务06需使用正式受控联调模式');
   let live=null;
   if(realPrep){
+    const stateArg=process.argv.find(a=>a.startsWith('--state-dir='));
+    const runtimeRoot=stateArg?pathToFileURL(resolve(stateArg.slice(12))+'/'):new URL('./docs/private/',import.meta.url);
+    await mkdir(runtimeRoot,{recursive:true});
+    const privateFile=name=>new URL(name,runtimeRoot);
     const {credentials,status}=await loadCredentials(new URL('./.env',import.meta.url));
-    let approval=null;try{approval=await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url));}catch(e){console.log(e.message);}
-    const historyApproval=approval||await readApproval(new URL('./docs/private/05b-approval.json',import.meta.url),{allowExpired:true}).catch(()=>null);
-    const ledger=historyApproval?createLedger(fileURLToPath(new URL('./docs/private/05b-ledger.json',import.meta.url)),historyApproval):null;
+    let approval=null;try{if(!production)approval=await readApproval(privateFile('05b-approval.json'));}catch(e){console.log(e.message);}
+    const historyApproval=production?null:approval||await readApproval(privateFile('05b-approval.json'),{allowExpired:true}).catch(()=>null);
+    const ledger=production?createProductionLedger(fileURLToPath(privateFile('production-ledger.json'))):historyApproval?createLedger(fileURLToPath(privateFile('05b-ledger.json')),historyApproval):null;
     const picksName=task06?'06-picks':'05b-picks';
-    let case06=null;if(task06){const research=JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')),old=JSON.parse(await readFile(new URL('./docs/private/05b-picks.json',import.meta.url),'utf8').catch(e=>{if(e.code==='ENOENT')return '{"points":{}}';throw e;}));case06=case06Research(research,old.points);}
-    let initialPicks=null;try{initialPicks=JSON.parse(await readFile(new URL(`./docs/private/${picksName}.json`,import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
-    const savePicks=s=>{const next=savingPicks.then(async()=>{const path=new URL(`./docs/private/${picksName}.json`,import.meta.url),tmp=new URL(`./docs/private/${picksName}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
-    let initialCase06Draft=null;if(task06)try{initialCase06Draft=JSON.parse(await readFile(new URL('./docs/private/06-draft.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
-    const saveCase06Draft=async d=>{const path=new URL('./docs/private/06-draft.json',import.meta.url),tmp=new URL('./docs/private/06-draft.tmp',import.meta.url);await writeFile(tmp,JSON.stringify(d),{mode:0o600});await rename(tmp,path);};
+    let case06=null;if(task06){const research=JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')),old=JSON.parse(await readFile(privateFile('05b-picks.json'),'utf8').catch(e=>{if(e.code==='ENOENT')return '{"points":{}}';throw e;}));case06=case06Research(research,old.points);}
+    let initialPicks=null;try{initialPicks=JSON.parse(await readFile(privateFile(`${picksName}.json`),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}let savingPicks=Promise.resolve();
+    const savePicks=s=>{const next=savingPicks.then(async()=>{const path=privateFile(`${picksName}.json`),tmp=privateFile(`${picksName}.tmp`);await writeFile(tmp,JSON.stringify(s),{mode:0o600});await rename(tmp,path);});savingPicks=next.catch(()=>{});return next;};
+    let initialCase06Draft=null;if(task06)try{initialCase06Draft=JSON.parse(await readFile(privateFile('06-draft.json'),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+    const saveCase06Draft=async d=>{const path=privateFile('06-draft.json'),tmp=privateFile('06-draft.tmp');await writeFile(tmp,JSON.stringify(d),{mode:0o600});await rename(tmp,path);};
     let historicalReview=null;if(task06){const h=JSON.parse(await readFile(new URL('./docs/verification/task06-final-acceptance.json',import.meta.url),'utf8'));historicalReview={at:h.at,source:'docs/verification/task06-final-acceptance.json',scope:'历史任务06的预测/估计，不是本次新查询',days:h.days.map(d=>({date:d.date,walking:d.walking.map((m,i)=>({person:i+1,range:m.walking.knownSubtotal,limit:m.walking.limit,status:m.walking.status}))}))};}
     // Per-run journals contain exact role inputs/outputs, never credentials or raw geometry.
-    const saveAgentJournal=async journal=>{if(!journal)return;const path=new URL(`./docs/private/07-${journal.id}.json`,import.meta.url),tmp=new URL(`./docs/private/07-${journal.id}.tmp`,import.meta.url);await writeFile(tmp,JSON.stringify(journal,null,2),{mode:0o600});await rename(tmp,path);};
-    let initialReplan08=null;try{initialReplan08=JSON.parse(await readFile(new URL('./docs/private/08-state.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
-    const saveReplan08=async d=>{const p=new URL('./docs/private/08-state.json',import.meta.url),t=new URL('./docs/private/08-state.tmp',import.meta.url);await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
-    const saveReplanJournal=async d=>{if(!d)return;const p=new URL(`./docs/private/08-${d.id}.json`,import.meta.url),t=new URL(`./docs/private/08-${d.id}.tmp`,import.meta.url);await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
+    const saveAgentJournal=async journal=>{if(!journal)return;const path=privateFile(`07-${journal.id}.json`),tmp=privateFile(`07-${journal.id}.tmp`);await writeFile(tmp,JSON.stringify(journal,null,2),{mode:0o600});await rename(tmp,path);};
+    let initialReplan08=null;try{initialReplan08=JSON.parse(await readFile(privateFile('08-state.json'),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+    const saveReplan08=async d=>{const p=privateFile('08-state.json'),t=privateFile('08-state.tmp');await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
+    const saveReplanJournal=async d=>{if(!d)return;const p=privateFile(`08-${d.id}.json`),t=privateFile(`08-${d.id}.tmp`);await writeFile(t,JSON.stringify(d,null,2),{mode:0o600});await rename(t,p);};
     let historicalGeneration=null;
-    const generationFiles=(await readdir(new URL('./docs/private/',import.meta.url))).filter(f=>/^generation-[a-f0-9-]+\.json$/.test(f));
-    const candidates=await Promise.all(generationFiles.map(async f=>({f,mtime:(await stat(new URL('./docs/private/'+f,import.meta.url))).mtimeMs})));candidates.sort((a,b)=>b.mtime-a.mtime);
-    if(candidates[0]){const entry=candidates[0],journal=JSON.parse(await readFile(new URL('./docs/private/'+entry.f,import.meta.url),'utf8'));const dependencies=await Promise.all([picksName+'.json','08-state.json'].map(f=>stat(new URL('./docs/private/'+f,import.meta.url)).then(s=>s.mtimeMs).catch(()=>Infinity)));if(['failed','cancelled','preview','accepted','rejected'].includes(journal.status))historicalGeneration={...journal,contextVerified:dependencies.every(t=>t<=entry.mtime)};}
-    let historicalDynamic=null;const dynFiles=(await readdir(new URL('./docs/private/',import.meta.url))).filter(f=>/^dynamic-[a-f0-9-]+\.json$/.test(f));const dynEntries=await Promise.all(dynFiles.map(async f=>({f,mtime:(await stat(new URL('./docs/private/'+f,import.meta.url))).mtimeMs})));dynEntries.sort((a,b)=>b.mtime-a.mtime);if(dynEntries[0])historicalDynamic=JSON.parse(await readFile(new URL('./docs/private/'+dynEntries[0].f,import.meta.url),'utf8'));
-    live=createLivePlanning({credentials,configuration:status,approval:approval||historyApproval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,historicalGeneration,dynamicPlanning:task06,historicalDynamic,initialDynamicRunsUsed:ledger?(await ledger.summary()).dynamicRunsUsed:0,saveDynamicJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/dynamic-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},initialReplan08,saveReplan08,saveReplanJournal,saveGenerationJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/generation-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    const generationFiles=(await readdir(privateFile(''))).filter(f=>/^generation-[a-f0-9-]+\.json$/.test(f));
+    const candidates=await Promise.all(generationFiles.map(async f=>({f,mtime:(await stat(privateFile(f))).mtimeMs})));candidates.sort((a,b)=>b.mtime-a.mtime);
+    if(candidates[0]){const entry=candidates[0],journal=JSON.parse(await readFile(privateFile(entry.f),'utf8'));const dependencies=await Promise.all([picksName+'.json','08-state.json'].map(f=>stat(privateFile(f)).then(s=>s.mtimeMs).catch(()=>Infinity)));if(['failed','cancelled','preview','accepted','rejected'].includes(journal.status))historicalGeneration={...journal,contextVerified:dependencies.every(t=>t<=entry.mtime)};}
+    let historicalDynamic=null;const dynFiles=(await readdir(privateFile(''))).filter(f=>/^dynamic-[a-f0-9-]+\.json$/.test(f));const dynEntries=await Promise.all(dynFiles.map(async f=>({f,mtime:(await stat(privateFile(f))).mtimeMs})));dynEntries.sort((a,b)=>b.mtime-a.mtime);if(dynEntries[0])historicalDynamic=JSON.parse(await readFile(privateFile(dynEntries[0].f),'utf8'));
+    live=createLivePlanning({production,credentials,configuration:status,approval:production?productionPolicy():approval||historyApproval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,historicalGeneration,dynamicPlanning:task06,historicalDynamic,initialDynamicRunsUsed:ledger?(await ledger.summary()).dynamicRunsUsed:0,saveDynamicJournal:async d=>{if(d)await writeFile(privateFile(`dynamic-${d.id}.json`),JSON.stringify(d,null,2),{mode:0o600});},initialReplan08,saveReplan08,saveReplanJournal,saveGenerationJournal:async d=>{if(d)await writeFile(privateFile(`generation-${d.id}.json`),JSON.stringify(d,null,2),{mode:0o600});},send:createHttpSender(),initialStop:!production&&ledger?(await ledger.summary()).stopped?.code:null});
   }
   if(dynamicOffline)live=createDynamicOffline(JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')));
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
@@ -113,5 +118,5 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     frameOrigin='http://127.0.0.2:'+mapPort;
     process.on('SIGINT',()=>child.close());
   }
-  mainServer.listen(port,'127.0.0.1',()=>console.log(`行程有解：http://127.0.0.1:${port} ${testMode?'（离线替身测试）':realPrep?'（受控联调准备，点击前不联网）':'（普通模式，真实生成关闭）'}，Ctrl+C停止`));
+  mainServer.listen(port,'127.0.0.1',()=>console.log(`行程有解：http://127.0.0.1:${port} ${testMode?'（离线替身测试）':production?'（正式运行，用户操作才联网）':realPrep?'（受控联调准备，点击前不联网）':'（普通模式，真实生成关闭）'}，Ctrl+C停止`));
 }
