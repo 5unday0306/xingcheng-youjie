@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-30T15:40:38.616184+00:00",
+  "tool": "agent-session-batch-export finalize",
+  "selection": "用户已明确保留8c63、其余17份排除；沿用既有decisions.tsv，未代填新选择",
+  "kept": 1,
+  "privateFolder": "docs/private/final-closeout-delivery-session-2026-10-30",
+  "items": [
+    {
+      "sessionSuffix": "8c63",
+      "sha256": "392e2e4d22a2f7413e09623c8f08d75d712de5bbfc0ee98bca364b5590b7f65b",
+      "bytes": 103611789,
+      "actualEvents": 13896,
+      "manifestHashMatches": true,
+      "sourcePrefixMatches": true,
+      "sourceFullMatchesAtCheck": true,
+      "endsWithNewline": true
+    }
+  ],
+  "scope": "截至时点真实原始记录快照；此后事件需再次补档，索引不代全文，原文不进入Git"
+}

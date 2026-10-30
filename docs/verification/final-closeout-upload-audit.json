@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-30T15:43:20.743499+00:00",
+  "scope": "已有全量85提交/1231blob检查＋68ce351之后全部新增blob及本轮暂存；不打开.env或私有原文",
+  "historyCommitsNow": 86,
+  "incrementalBlobs": 42,
+  "stagedFiles": 26,
+  "resolved": [
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "tests/runtime05b.test.mjs",
+      "line": 52,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "已检查为合成测试配置/固定TEST占位，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    },
+    {
+      "scope": "incremental-history",
+      "path": "lib/runtime05b.mjs",
+      "line": 6,
+      "type": "literal-credential-assignment",
+      "severity": "review",
+      "resolution": "环境变量名称到内部字段映射，不是实际凭据"
+    }
+  ],
+  "unresolved": [],
+  "previousFullAudit": "只在docs/private/final-closeout-full-audit.json；已有CANARY诊断URL、@2x瓦片资源、字段映射、测试常量按既有复核记录处理，无新真实秘密发现",
+  "excluded": "原始聊天/模型原文/真实地图图片/未核许可文件/.tmp-pw/cmc/outputs及旧未跟踪材料均未纳入",
+  "limits": [
+    "启发式扫描不是绝对无泄露证明",
+    "截图已人工抽查，二进制未OCR全量识别",
+    "Git作者身份随既有历史保留"
+  ],
+  "privateIgnoredAndUntracked": true
+}

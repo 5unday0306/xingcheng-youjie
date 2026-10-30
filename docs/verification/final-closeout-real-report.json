@@ -1,0 +1,1221 @@
+{
+  "at": "2026-10-30T15:34:38.148341+00:00",
+  "source": "本轮真实DeepSeek/高德，角色与地图图像仅私有；不是替身结果",
+  "before": {
+    "model": 83,
+    "location": 11,
+    "route": 402,
+    "map": 62,
+    "reservedCents": 1553
+  },
+  "after": {
+    "model": 107,
+    "location": 11,
+    "route": 512,
+    "map": 66,
+    "reservedCents": 1923
+  },
+  "reservationIsNotActualCharge": true,
+  "completed": [
+    {
+      "case": "B",
+      "at": "2026-10-30T14:55:26.034Z",
+      "input": {
+        "people": 3,
+        "budgets": [
+          600,
+          600,
+          600
+        ],
+        "walking": [
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "adjustableGoals": false
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY05",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 195,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "adjustments": [],
+      "countsBefore": {
+        "counts": {
+          "model": 83,
+          "location": 11,
+          "route": 402,
+          "map": 62
+        },
+        "reservedCents": 1553
+      },
+      "countsAfter": {
+        "counts": {
+          "model": 87,
+          "location": 11,
+          "route": 443,
+          "map": 63
+        },
+        "reservedCents": 1639
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ]
+          ],
+          "minutes": [
+            234,
+            234
+          ],
+          "lock": null,
+          "legs": 5
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              4879,
+              5379
+            ],
+            [
+              4879,
+              5379
+            ],
+            [
+              4879,
+              5379
+            ]
+          ],
+          "minutes": [
+            370,
+            370
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 595,
+            "arrivalEstimate": [
+              595,
+              595
+            ],
+            "conditionalWaitMinutes": [
+              155,
+              155
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": 3
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "originalPreserved": true,
+      "rejectedOriginalPreserved": true,
+      "interaction": {
+        "daySwitch": true,
+        "listToMap": true,
+        "mapMarkerClicked": false,
+        "countsUnchanged": true
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null,
+        "cacheHits": 6
+      }
+    },
+    {
+      "case": "L",
+      "at": "2026-10-30T15:05:30.000Z",
+      "input": {
+        "people": 3,
+        "budgets": [
+          100,
+          600,
+          600
+        ],
+        "walking": [
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "adjustableGoals": false
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": []
+          },
+          {
+            "date": "2026-11-08",
+            "visits": []
+          }
+        ],
+        "emptyDays": [
+          "2026-11-07",
+          "2026-11-08"
+        ],
+        "visitMinutes": 0,
+        "status": "tradeoff",
+        "notice": "当天没有游览，仅保留午餐及往返；这是取舍预览，不是推荐完成。"
+      },
+      "adjustments": [],
+      "countsBefore": {
+        "counts": {
+          "model": 89,
+          "location": 11,
+          "route": 443,
+          "map": 63
+        },
+        "reservedCents": 1659
+      },
+      "countsAfter": {
+        "counts": {
+          "model": 93,
+          "location": 11,
+          "route": 443,
+          "map": 64
+        },
+        "reservedCents": 1704
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              1740,
+              1740
+            ],
+            [
+              1740,
+              1740
+            ],
+            [
+              1740,
+              1740
+            ]
+          ],
+          "minutes": [
+            84,
+            84
+          ],
+          "lock": null,
+          "legs": 2
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              9014,
+              9014
+            ],
+            [
+              9014,
+              9014
+            ],
+            [
+              9014,
+              9014
+            ]
+          ],
+          "minutes": [
+            331,
+            331
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 601,
+            "arrivalEstimate": [
+              601,
+              601
+            ],
+            "conditionalWaitMinutes": [
+              149,
+              149
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": 2
+        }
+      ],
+      "budgets": [
+        {
+          "status": "conflict",
+          "value": null,
+          "knownSubtotal": [
+            11200,
+            19000
+          ],
+          "limit": 10000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11200,
+            19000
+          ],
+          "limit": 60000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11200,
+            19000
+          ],
+          "limit": 60000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "originalPreserved": true,
+      "rejectedOriginalPreserved": true,
+      "interaction": null,
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null,
+        "cacheHits": 35
+      }
+    },
+    {
+      "case": "P",
+      "at": "2026-10-30T15:23:22.050Z",
+      "input": {
+        "people": 3,
+        "budgets": [
+          600,
+          600,
+          600
+        ],
+        "walking": [
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "adjustableGoals": false
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY05",
+                "minutes": 45
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": []
+          }
+        ],
+        "emptyDays": [
+          "2026-11-08"
+        ],
+        "visitMinutes": 45,
+        "status": "tradeoff",
+        "notice": "当天没有游览，仅保留午餐及往返；这是取舍预览，不是推荐完成。"
+      },
+      "adjustments": [],
+      "countsBefore": {
+        "counts": {
+          "model": 93,
+          "location": 11,
+          "route": 443,
+          "map": 64
+        },
+        "reservedCents": 1704
+      },
+      "countsAfter": {
+        "counts": {
+          "model": 97,
+          "location": 11,
+          "route": 483,
+          "map": 65
+        },
+        "reservedCents": 1789
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              4761,
+              5261
+            ],
+            [
+              4761,
+              5261
+            ],
+            [
+              4761,
+              5261
+            ]
+          ],
+          "minutes": [
+            228,
+            228
+          ],
+          "lock": null,
+          "legs": 3
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              6790,
+              6790
+            ],
+            [
+              6790,
+              6790
+            ],
+            [
+              6790,
+              6790
+            ]
+          ],
+          "minutes": [
+            323,
+            323
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 631,
+            "arrivalEstimate": [
+              631,
+              631
+            ],
+            "conditionalWaitMinutes": [
+              119,
+              119
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": 2
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11800,
+            19600
+          ],
+          "limit": 60000,
+          "missing": [
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11800,
+            19600
+          ],
+          "limit": 60000,
+          "missing": [
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11800,
+            19600
+          ],
+          "limit": 60000,
+          "missing": [
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "originalPreserved": true,
+      "rejectedOriginalPreserved": true,
+      "interaction": null,
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null,
+        "cacheHits": 4
+      }
+    },
+    {
+      "case": "N",
+      "at": "2026-10-30T15:23:22.050Z",
+      "input": {
+        "people": 2,
+        "budgets": [
+          600,
+          600
+        ],
+        "walking": [
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "adjustableGoals": false
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY05",
+                "minutes": 45
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": []
+          }
+        ],
+        "emptyDays": [
+          "2026-11-08"
+        ],
+        "visitMinutes": 45,
+        "status": "tradeoff",
+        "notice": "当天没有游览，仅保留午餐及往返；这是取舍预览，不是推荐完成。"
+      },
+      "adjustments": [],
+      "countsBefore": {
+        "counts": {
+          "model": 97,
+          "location": 11,
+          "route": 483,
+          "map": 65
+        },
+        "reservedCents": 1789
+      },
+      "countsAfter": {
+        "counts": {
+          "model": 101,
+          "location": 11,
+          "route": 488,
+          "map": 65
+        },
+        "reservedCents": 1834
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              4761,
+              5261
+            ],
+            [
+              4761,
+              5261
+            ]
+          ],
+          "minutes": [
+            228,
+            228
+          ],
+          "lock": null,
+          "legs": 3
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              6790,
+              6790
+            ],
+            [
+              6790,
+              6790
+            ]
+          ],
+          "minutes": [
+            323,
+            323
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 631,
+            "arrivalEstimate": [
+              631,
+              631
+            ],
+            "conditionalWaitMinutes": [
+              119,
+              119
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": 2
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11800,
+            19600
+          ],
+          "limit": 60000,
+          "missing": [
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11800,
+            19600
+          ],
+          "limit": 60000,
+          "missing": [
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "originalPreserved": true,
+      "rejectedOriginalPreserved": true,
+      "interaction": null,
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null,
+        "cacheHits": 30
+      }
+    },
+    {
+      "case": "W",
+      "at": "2026-10-30T15:31:52.165Z",
+      "input": {
+        "people": 3,
+        "budgets": [
+          600,
+          600,
+          600
+        ],
+        "walking": [
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            4
+          ]
+        ],
+        "adjustableGoals": true
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY05",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 195,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "adjustments": [
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 0,
+          "excess": 4249,
+          "date": "2026-11-08",
+          "personName": "同行者1",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            7749,
+            8249
+          ],
+          "suggestedTarget": 8249,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 1,
+          "excess": 4249,
+          "date": "2026-11-08",
+          "personName": "同行者2",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            7749,
+            8249
+          ],
+          "suggestedTarget": 8249,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 2,
+          "excess": 4249,
+          "date": "2026-11-08",
+          "personName": "同行者3",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            7749,
+            8249
+          ],
+          "suggestedTarget": 8249,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        }
+      ],
+      "countsBefore": {
+        "counts": {
+          "model": 103,
+          "location": 11,
+          "route": 491,
+          "map": 65
+        },
+        "reservedCents": 1857
+      },
+      "countsAfter": {
+        "counts": {
+          "model": 107,
+          "location": 11,
+          "route": 512,
+          "map": 66
+        },
+        "reservedCents": 1923
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "walking": [
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ],
+            [
+              2748,
+              3748
+            ]
+          ],
+          "minutes": [
+            234,
+            234
+          ],
+          "lock": null,
+          "legs": 5
+        },
+        {
+          "date": "2026-11-08",
+          "walking": [
+            [
+              7749,
+              8249
+            ],
+            [
+              7749,
+              8249
+            ],
+            [
+              7749,
+              8249
+            ]
+          ],
+          "minutes": [
+            376,
+            376
+          ],
+          "lock": {
+            "version": 1,
+            "activityId": "meal:2026-11-08:LUNCH2",
+            "date": "2026-11-08",
+            "pointId": "LUNCH2",
+            "poiId": "B0I6T5MXGG",
+            "pointHash": "29d164fef21185962af472151a835dd07152b96c6ddce7d707a420421d3d47c6",
+            "name": "老太原菜馆(钟楼街店)",
+            "start": "12:30",
+            "end": "13:30",
+            "confirmed": true,
+            "notice": "等待值仅基于已计入预测/估计；额外未知会减少等待或导致迟到，不能与未知排队简单叠加成保证",
+            "status": "within_estimate",
+            "earliestKnownArrival": 631,
+            "arrivalEstimate": [
+              631,
+              631
+            ],
+            "conditionalWaitMinutes": [
+              119,
+              119
+            ],
+            "unknownBeforeLock": false
+          },
+          "legs": 3
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11500,
+            19300
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "originalPreserved": true,
+      "rejectedOriginalPreserved": null,
+      "interaction": {
+        "focusedActivityRow": "d2-p1-ENDPOINT",
+        "daySwitch": true,
+        "listToMap": true,
+        "mapMarkerClicked": true,
+        "countsUnchanged": true
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 1,
+        "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查",
+        "cacheHits": 2
+      }
+    }
+  ],
+  "failures": [
+    {
+      "at": "2026-10-30T14:55:26.034Z",
+      "reason": "AGENT_SCHEMA:本步骤产物不符合动态规划合同，未传给下游",
+      "privateFolder": "docs/private/final-closeout-real-1793372057063"
+    },
+    {
+      "at": "2026-10-30T15:05:30.000Z",
+      "reason": "已停止：新授权与账号费用边界尚未确认，未调用；原采用方案保留。",
+      "privateFolder": "docs/private/final-closeout-real-1793372689153"
+    },
+    {
+      "at": "2026-10-30T15:23:22.050Z",
+      "reason": "CALL_LIMIT:技术次数或费用预留额度耗尽，未发送请求",
+      "privateFolder": "docs/private/final-closeout-real-1793373682308"
+    }
+  ],
+  "firstPreferenceFailure": {
+    "stage": "screen",
+    "jsonSyntaxValid": true,
+    "actualMuseumStay": 120,
+    "sourceMinimum": 150,
+    "downstreamExecuted": false,
+    "fix": "来源区间传入模型schema，本地仍拒绝越界，之后真实P完成"
+  },
+  "sdkFailure": {
+    "kind": "SDK_PROXY_FAILED",
+    "rootCause": "旧诊断未区分网络/HTTP/读取/JSON，不推断；新阶段诊断已补，恢复会话P/N加载完成"
+  },
+  "adoption": "不替用户接受；采用/恢复实际操作另见后续记录",
+  "comparability": "B/L与恢复P/N服务重启且实时道路发生变化；不能把最终活动差异全部归因于输入。逐人评分、预算和人数合同各自核对。W开启可调整目标并改4公里，是新的产品场景，不伪称严格单变量对照。",
+  "attachments": [
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372057063/B-desktop.png",
+      "sha256": "f7992e4d88e3fffab4f9dae2c8f8f1d4d9d3a4f953e5a74bed319f3a18b1677b"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372057063/B-state.json",
+      "sha256": "ec2e9cc7aabfd55e3d5526a6f1a5975874fd13c3277a29d191316c1a9ed95007"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372057063/P-state.json",
+      "sha256": "ac98014572e239d416d292e371bf797f62d33029f2b0fa55a9647b041b15e752"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372057063/report.json",
+      "sha256": "7ede71a2b28b6fb7c3a7dd1d7ae624eae27483faf741dff073a41e3b320ddd58"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372689153/L-desktop.png",
+      "sha256": "a6debbbcfa45c3bf8cac6436ce3bd0d0df431c1f8b13487cff509a6085036902"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372689153/L-state.json",
+      "sha256": "7c7a045214ec36fb7e8b86a5811a298c8d267c3e45d44433fa4748965a5732ee"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793372689153/report.json",
+      "sha256": "80bb22b171479cc43eb8a8e669685541b93ba31604a23299125bd7501a62b432"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/N-desktop.png",
+      "sha256": "3bdd2882dc2d051364982bedb1aa07bec9dac27a85413b17fff6ae09fe1151a2"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/N-state.json",
+      "sha256": "c9e51c807ed84b65336aed252f9247c01340d8052efd07d9405e0755e899fc93"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/P-desktop.png",
+      "sha256": "f531d8503178c352206f71f3b9e02be48f27dde2e0673b28ce06c1f7bce5c254"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/P-state.json",
+      "sha256": "d5b1023b3613bc5ada8f04b7830ef94fa59d506caade6a3b910a82f098326fe0"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/report.json",
+      "sha256": "fd787463464d39e0a87f55d42c75eaa400456b20baf8154e754a6eaa91a3f2ad"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793373682308/W-state.json",
+      "sha256": "3ff7540d82136a64a74c97676922579501b449a5697f317df589d0da5bdef46d"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793374264937/report.json",
+      "sha256": "8f6e018db69f2599d09b66f422e36ca6306ba8eca121cf78529faabd9c2d4a5b"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793374264937/W-390.png",
+      "sha256": "70398aebccac50d31e97ff1cf5d46e8dc426b9fc996ba82b39b54dbee4ffe308"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793374264937/W-desktop.png",
+      "sha256": "56ae778a6cb4c11da2fe5ffa0a39e69b64fb3c478e6c6332ed84f0340d30133f"
+    },
+    {
+      "privatePath": "docs/private/final-closeout-real-1793374264937/W-state.json",
+      "sha256": "f216b2fa8d085c18c0cca7ec5fa048ba8c3cf1e237081dc8be603ccc57744486"
+    }
+  ],
+  "publication": "不上传模型原文、原始地图、未脱敏聊天或.env"
+}

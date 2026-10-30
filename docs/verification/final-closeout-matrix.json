@@ -1,0 +1,1679 @@
+{
+  "at": "2026-10-30T15:35:47.391Z",
+  "source": "公开来源候选＋统一合成道路＋关键词角色替身；非真实调用",
+  "realCalls": 0,
+  "records": [
+    {
+      "name": "baseline",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-3",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "rankings": [
+        {
+          "candidateId": "TY01",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY04",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 5,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY05",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY06",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 5,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        }
+      ],
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY04",
+                "minutes": 45
+              },
+              {
+                "id": "TY05",
+                "minutes": 45
+              },
+              {
+                "id": "TY06",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 285,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 6,
+        "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查"
+      },
+      "risks": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "time": [
+            260,
+            268
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {}
+        },
+        {
+          "date": "2026-11-08",
+          "time": [
+            469,
+            485
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {
+            "start": "12:30",
+            "end": "13:30",
+            "status": "within_estimate"
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "id": "member-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-3",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "executable": false
+    },
+    {
+      "name": "preference",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "喜欢风景拍照，愿意舍弃展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-3",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "rankings": [
+        {
+          "candidateId": "TY01",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“喜欢风景拍照，愿意舍弃展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY04",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“喜欢风景拍照，愿意舍弃展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 5,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY05",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“喜欢风景拍照，愿意舍弃展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY06",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“喜欢风景拍照，愿意舍弃展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 5,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        }
+      ],
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY04",
+                "minutes": 45
+              },
+              {
+                "id": "TY05",
+                "minutes": 45
+              },
+              {
+                "id": "TY06",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 285,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 7,
+        "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查"
+      },
+      "risks": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "time": [
+            260,
+            268
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {}
+        },
+        {
+          "date": "2026-11-08",
+          "time": [
+            469,
+            485
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {
+            "start": "12:30",
+            "end": "13:30",
+            "status": "within_estimate"
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "id": "member-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-3",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "executable": false
+    },
+    {
+      "name": "budget",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 100,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-3",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "rankings": [
+        {
+          "candidateId": "TY01",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY04",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 5,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY05",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY06",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 5,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        }
+      ],
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "午餐有来源，营业与等位待核实"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "午餐有来源，营业与等位待核实"
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": []
+          },
+          {
+            "date": "2026-11-08",
+            "visits": []
+          }
+        ],
+        "emptyDays": [
+          "2026-11-07",
+          "2026-11-08"
+        ],
+        "visitMinutes": 0,
+        "status": "tradeoff",
+        "notice": "当天没有游览，仅保留午餐及往返；这是取舍预览，不是推荐完成。"
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 8,
+        "stopped": null
+      },
+      "risks": [
+        {
+          "kind": "budget",
+          "personIndex": 0,
+          "excess": 6000
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "time": [
+            96,
+            96
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2272,
+                2272
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2272,
+                2272
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2272,
+                2272
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {}
+        },
+        {
+          "date": "2026-11-08",
+          "time": [
+            288,
+            288
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2274,
+                2274
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {
+            "start": "12:30",
+            "end": "13:30",
+            "status": "within_estimate"
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "id": "member-1",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 10000,
+          "missing": 2
+        },
+        {
+          "id": "member-2",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 2
+        },
+        {
+          "id": "member-3",
+          "range": [
+            8000,
+            16000
+          ],
+          "limit": 60000,
+          "missing": 2
+        }
+      ],
+      "executable": false
+    },
+    {
+      "name": "people",
+      "input": {
+        "city": "taiyuan",
+        "people": 2,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "rankings": [
+        {
+          "candidateId": "TY01",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY04",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 5,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY05",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY06",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        }
+      ],
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY04",
+                "minutes": 45
+              },
+              {
+                "id": "TY05",
+                "minutes": 45
+              },
+              {
+                "id": "TY06",
+                "minutes": 45
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 285,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 7,
+        "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查"
+      },
+      "risks": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "time": [
+            260,
+            268
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2942,
+                3942
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {}
+        },
+        {
+          "date": "2026-11-08",
+          "time": [
+            469,
+            485
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2868,
+                5368
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {
+            "start": "12:30",
+            "end": "13:30",
+            "status": "within_estimate"
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "id": "member-1",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-2",
+          "range": [
+            12400,
+            23400
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "executable": false
+    },
+    {
+      "name": "walking",
+      "input": {
+        "city": "taiyuan",
+        "people": 3,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "start": "09:00",
+            "end": "18:00"
+          },
+          {
+            "date": "2026-11-08",
+            "start": "09:00",
+            "end": "18:00"
+          }
+        ],
+        "endpoint": {
+          "name": "山西博物院东门外公共集合点",
+          "address": "太原市滨河西路北段13号（东门地址线索）",
+          "verified": false
+        },
+        "members": [
+          {
+            "id": "member-1",
+            "name": "同行者1",
+            "preference": "历史展览",
+            "budget": 600,
+            "walking": [
+              6,
+              4
+            ]
+          },
+          {
+            "id": "member-2",
+            "name": "同行者2",
+            "preference": "风景拍照",
+            "budget": 600,
+            "walking": [
+              6,
+              4
+            ]
+          },
+          {
+            "id": "member-3",
+            "name": "同行者3",
+            "preference": "美食，少走路",
+            "budget": 600,
+            "walking": [
+              6,
+              4
+            ]
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "coordinate",
+          "status": "completed"
+        },
+        {
+          "role": "screen",
+          "status": "completed"
+        },
+        {
+          "role": "plan",
+          "status": "completed"
+        },
+        {
+          "role": "audit",
+          "status": "completed"
+        }
+      ],
+      "rankings": [
+        {
+          "candidateId": "TY01",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY04",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 5,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY05",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 5,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 1,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        },
+        {
+          "candidateId": "TY06",
+          "personScores": [
+            {
+              "personId": "person-1",
+              "score": 1,
+              "reason": "离线关键词匹配原话“历史展览”，不是模型语义判断"
+            },
+            {
+              "personId": "person-2",
+              "score": 1,
+              "reason": "离线关键词匹配原话“风景拍照”，不是模型语义判断"
+            },
+            {
+              "personId": "person-3",
+              "score": 5,
+              "reason": "离线关键词匹配原话“美食，少走路”，不是模型语义判断"
+            }
+          ],
+          "reason": "仅演练输入关联；候选位置来源沿用已记录资料，其他事实仍待核实"
+        }
+      ],
+      "plan": {
+        "version": 1,
+        "days": [
+          {
+            "date": "2026-11-07",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY04",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY05",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY06",
+                "durationMinutes": 45,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "items": [
+              {
+                "type": "meal",
+                "reason": "保留有来源午餐，营业与等位待核实"
+              },
+              {
+                "type": "visit",
+                "candidateId": "TY01",
+                "durationMinutes": 150,
+                "reason": "候选估计范围内停留；不得借缩短停留调低步行"
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "days": [
+          {
+            "date": "2026-11-07",
+            "visits": [
+              {
+                "id": "TY04",
+                "minutes": 45
+              },
+              {
+                "id": "TY05",
+                "minutes": 45
+              },
+              {
+                "id": "TY06",
+                "minutes": 45
+              }
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "visits": [
+              {
+                "id": "TY01",
+                "minutes": 150
+              }
+            ]
+          }
+        ],
+        "emptyDays": [],
+        "visitMinutes": 285,
+        "status": "touring",
+        "notice": "已核查游览候选；估计与未知仍保留。"
+      },
+      "search": {
+        "enumerated": 1457,
+        "assessmentLimit": 8,
+        "assessed": 3,
+        "stopped": "本轮新道路额度已到，未继续查询；保留已完整核查的候选供规划和审查"
+      },
+      "risks": [],
+      "days": [
+        {
+          "date": "2026-11-07",
+          "time": [
+            275,
+            295
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2866,
+                5366
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2866,
+                5366
+              ],
+              "limit": 6000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2866,
+                5366
+              ],
+              "limit": 6000
+            }
+          ],
+          "lock": {}
+        },
+        {
+          "date": "2026-11-08",
+          "time": [
+            460,
+            468
+          ],
+          "walk": [
+            {
+              "id": "member-1",
+              "range": [
+                2244,
+                3244
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "member-2",
+              "range": [
+                2244,
+                3244
+              ],
+              "limit": 4000
+            },
+            {
+              "id": "member-3",
+              "range": [
+                2244,
+                3244
+              ],
+              "limit": 4000
+            }
+          ],
+          "lock": {
+            "start": "12:30",
+            "end": "13:30",
+            "status": "within_estimate"
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "id": "member-1",
+          "range": [
+            12600,
+            23600
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-2",
+          "range": [
+            12600,
+            23600
+          ],
+          "limit": 60000,
+          "missing": 6
+        },
+        {
+          "id": "member-3",
+          "range": [
+            12600,
+            23600
+          ],
+          "limit": 60000,
+          "missing": 6
+        }
+      ],
+      "executable": false
+    }
+  ]
+}

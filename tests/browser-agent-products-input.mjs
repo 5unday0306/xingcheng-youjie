@@ -1,4 +1,4 @@
-const evidencePath=path=>path.replace('task05b-map-pick','agent-products-input-regression');
+const evidencePath=path=>path.replace('task05b-map-pick',process.env.INPUT_REGRESSION_PREFIX||'agent-products-input-regression');
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {writeFile} from 'node:fs/promises';
