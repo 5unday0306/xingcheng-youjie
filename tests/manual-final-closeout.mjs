@@ -8,7 +8,7 @@ await ctx.addInitScript(({key,value})=>{if(!localStorage.getItem(key))localStora
 const save=async()=>writeFile(folder+'/report.json',JSON.stringify({at:new Date().toISOString(),before,after:await ledger(),original,rows,stopped,errors},null,2));
 try{
  await page.goto(base);await page.locator('#primaryFlow:not([disabled])').waitFor();
- for(const scenario of (process.argv.includes('--recovery')?['P','N','W']:process.argv.includes('--remaining-after-diagnosis')?['L','N','W']:['B','P','L','N','W'])){
+ for(const scenario of (process.argv.includes('--finish-one')?['W']:process.argv.includes('--recovery')?['P','N','W']:process.argv.includes('--remaining-after-diagnosis')?['L','N','W']:['B','P','L','N','W'])){
   if(Date.now()-started>1500000)throw Error('BATCH_TIMEOUT');const d=defaultDraft();if(scenario==='P')d.members[0].preference='喜欢风景拍照，愿意舍弃展览';if(scenario==='L')d.members[0].budget='100';if(scenario==='N'){d.people=2;d.members.pop();}if(scenario==='W'){d.adjustableGoals=true;d.members.forEach(m=>m.walking[1]='4');}const request=toRequest(d);
   await page.evaluate(({key,value})=>localStorage.setItem(key,value),{key:STORAGE_KEY,value:encodeDraft(d)});await page.locator('#navEdit').click();await page.locator('#restore').click();await page.getByRole('button',{name:'确认恢复',exact:true}).click();await page.locator('#closeEditor').click();await page.locator('#navReplan').click();
   const previous=(await post('dynamic/state',{request})).state?.id,counts=await ledger();await page.locator('#primaryFlow').click();let s;
