@@ -15,7 +15,7 @@ export function createWorkspace({getRequest,onAction,onMode}){
  for(const [v,t] of [['review','旅行规划'],['replan','调整行程']]){const b=el('button',t);b.type='button';b.dataset.mode=v;b.onclick=()=>selectMode(v);modes.append(b);}agents.append(modes);
  grid.append(map,activities);panel.prepend(head,tabs,agents,grid);
  const disclosure=(id,title)=>{const d=el('details');d.id=id;d.append(el('summary',title));panel.append(d);return d;};
- const places=disclosure('placeSettings','开发模式 · 地点维护');const lock=disclosure('lockSettings','固定安排与调整条件');const basis=disclosure('basisDetails','依据与待核实');const records=disclosure('devRecords','开发与运行记录');records.hidden=new URLSearchParams(location.search).get('developer')!=='1';records.append(places);
+ const places=disclosure('placeSettings','开发模式 · 地点维护');const lock=disclosure('lockSettings','固定安排与调整条件');const basis=disclosure('basisDetails','依据与待核实');const notice=el('p','金额、步行和时间为已计入估计；开放、预约及未计入项目请在出行前核实。采用方案不代表全部可行。','hint');notice.id='planEvidenceNotice';basis.before(notice);const records=disclosure('devRecords','开发与运行记录');records.hidden=new URLSearchParams(location.search).get('developer')!=='1';records.append(places);
  for(const n of [document.getElementById('generationTitle')?.parentElement,document.getElementById('generationMode'),document.getElementById('generationStatus'),document.getElementById('offlineRun')])if(n)records.append(n);
  const candidates=document.getElementById('candidateList')?.closest('details');if(candidates)basis.append(candidates);
  for(const n of [document.querySelector('.gaps'),document.querySelector('.dayBrief')])if(n)basis.append(n);
@@ -30,7 +30,7 @@ export function createWorkspace({getRequest,onAction,onMode}){
     version.append(el('p',requestLabel(getRequest())));
     if(changed)version.append(el('p','原采用方案对应之前的需求，继续保留。'));
     if(meta?.lock)version.append(el('p',`已固定：${meta.lock.date} ${meta.lock.start}～${meta.lock.end} ${meta.lock.name}`,'lockBadge'));
-    if(result)version.append(el('p',result.label?.includes('已采用')?'已保存 · 估计与未知保留':(result.label||'方案')+' · 估计与未知保留','currentScheme'));
+    if(result)version.append(el('p',result.label?.includes('已采用')?'已保存':(result.label||'方案'),'currentScheme'));
     let debug=document.getElementById('requestVersionDetails');if(!debug){debug=el('details');debug.id='requestVersionDetails';records.append(debug);}debug.replaceChildren(el('summary','多套需求与版本对照'));for(const [t,r]of [['正在编辑',getRequest()],['当前采用',adopted?.request],['调整条件',meta?.request]])debug.append(el('p',t+'：'+requestLabel(r)));
   },
   mountPick(){const p=document.getElementById('pickPanel');if(!p)return;map.append(p);for(const child of [...p.children]){if(child.id==='pickMap'||child.classList.contains('mapTools')||child.classList.contains('mapLegend')||child.id==='activePickBar')continue;if(child.id==='pickRouteInfo'){basis.append(child);continue;}if(child.id==='case06Progress'||child.querySelector?.('#case06Choices')||child.classList.contains('pickCards')||child.tagName==='LABEL'||['pickMode','pickRoute'].includes(child.id)){places.append(child);continue;}records.append(child);}records.append(places);const text=places.querySelector('#case06Choices h3');if(text)text.textContent='已确认地点与两天午餐';},
