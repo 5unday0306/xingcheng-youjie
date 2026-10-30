@@ -1,0 +1,9 @@
+{
+  "stages": ["task07", "task08", "task09", "agent-products", "dynamic-input"],
+  "validHours": 2,
+  "maxRuns": 5,
+  "batchTimeoutMs": 1500000,
+  "additionalCaps": {"model":30,"route":64,"location":0,"map":2},
+  "perRun": {"model":6,"roadToolAttempts":32,"concurrency":1,"timeoutMs":720000,"automaticRetries":0},
+  "reference": "2026-10-30用户明确授权最终产品收尾五组有限真实验证：两小时，基准及偏好/预算/人数/步行单项对照，合计30模型/64新道路/2SDK/0地点，不自动重试，不充值或增加安全权限，真实采用由用户操作。"
+}
