@@ -1,0 +1,1096 @@
+{
+  "at": "2026-10-30T20:03:33.761Z",
+  "source": "正式模式、真实供应商、独立私有状态和新浏览器；不替换用户采用",
+  "checks": {
+    "confirmationNoCalls": true,
+    "roles": [
+      {
+        "role": "coordinate",
+        "status": "completed",
+        "ref": "99a64047d01047d167530d78f7f96b89046d4aafb0a93ffde400303c7c9d1dd5",
+        "upstreamRef": null
+      },
+      {
+        "role": "screen",
+        "status": "completed",
+        "ref": "116520cc30e757f4711f85043dd7eff7c068b7ca40ecf58428f5191e88be6d88",
+        "upstreamRef": "99a64047d01047d167530d78f7f96b89046d4aafb0a93ffde400303c7c9d1dd5"
+      },
+      {
+        "role": "plan",
+        "status": "completed",
+        "ref": "bcd3c025085c16a15cb4da8b5f74152d6a0ee113e77087542b8f6de97cdcaf23",
+        "upstreamRef": "116520cc30e757f4711f85043dd7eff7c068b7ca40ecf58428f5191e88be6d88"
+      },
+      {
+        "role": "audit",
+        "status": "completed",
+        "ref": "1be9e3b51637bf1499bf0b11b50b93b1f395e3e6786cec384373eb217d45bb69",
+        "upstreamRef": "bcd3c025085c16a15cb4da8b5f74152d6a0ee113e77087542b8f6de97cdcaf23"
+      }
+    ],
+    "basemap": true,
+    "allCandidateVersions": true,
+    "activityToMap": true,
+    "mapToActivity": true,
+    "noOverflow390": true,
+    "passiveNoCalls": true,
+    "viewDoesNotAdopt": true,
+    "refreshNoCalls": true,
+    "savedStructureAndLock": true,
+    "restartNoAuthRequired": true,
+    "handoffsMatch": true
+  },
+  "network": [
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/maps",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "http://127.0.0.2:4188",
+      "path": "http://127.0.0.2:4188/3237f5f5-fcf1-48b4-b02e-b4b2da5450e8",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "http://127.0.0.2:4188",
+      "path": "http://127.0.0.2:4188/3237f5f5-fcf1-48b4-b02e-b4b2da5450e8",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "https://webapi.amap.com",
+      "path": "/theme/v2.0/logo@2x.png",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web/init",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://jsapi-service.amap.com",
+      "path": "/mapsplugincdn",
+      "status": 200,
+      "type": "script"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/style/2.0.2.45/v1/pbf/1_0_s_migrate",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_1",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://jsapi.amap.com",
+      "path": "/web_map/get_tile",
+      "status": 200,
+      "type": "xhr"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3329_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data1.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data3.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3327_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data5.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3328_1186_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://jsapi-data4.amap.com",
+      "path": "/tile/26_10_11_00/v2/poi_region_road_transit/pbf/2/3329_1187_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_4",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_9",
+      "status": 200,
+      "type": "image"
+    },
+    {
+      "origin": "https://jsapi-data2.amap.com",
+      "path": "/tile/26_10_11_00/v2/building_region_road_transit/pbf/2/3327_1185_12",
+      "status": 200,
+      "type": "fetch"
+    },
+    {
+      "origin": "https://o4.amap.com",
+      "path": "/icon/2.0.2.45/v1/1_0_s/icons_64",
+      "status": 200,
+      "type": "image"
+    }
+  ],
+  "phases": [],
+  "error": null,
+  "before": {
+    "model": 4,
+    "location": 0,
+    "route": 37,
+    "map": 1
+  },
+  "candidateCount": 3,
+  "candidates": [
+    {
+      "index": 1,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "老太原山西菜馆",
+            "迎泽公园北侧测试位置",
+            "钟楼街测试落点",
+            "食品街测试落点",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:24.986Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:26.571Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:23.281Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:27.595Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:29.864Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4527,
+                7027
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认",
+                "day1-leg5道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4527,
+                7027
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认",
+                "day1-leg5道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                4527,
+                7027
+              ],
+              "limit": 6000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认",
+                "day1-leg5道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              351,
+              351
+            ],
+            "limit": 540,
+            "missing": [
+              "迎泽公园短环线等待未知",
+              "钟楼街等待未知",
+              "食品街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "老太原菜馆(钟楼街店)（锁定12:30～13:30）",
+            "博物院院门测试位置",
+            "博物院主馆参观入口测试位置",
+            "博物院院门测试位置",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:07.019Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:32.202Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:03.610Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:04.694Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:05.821Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1965,
+                2965
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1965,
+                2965
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1965,
+                2965
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              472,
+              472
+            ],
+            "limit": 540,
+            "missing": [
+              "山西博物院等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15600,
+            26400
+          ],
+          "limit": 60000,
+          "missing": [
+            "迎泽公园短环线门票未知",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15600,
+            26400
+          ],
+          "limit": 60000,
+          "missing": [
+            "迎泽公园短环线门票未知",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15600,
+            26400
+          ],
+          "limit": 60000,
+          "missing": [
+            "迎泽公园短环线门票未知",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "山西博物院门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": [
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 0,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者1",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 1,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者2",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 0,
+          "personIndex": 2,
+          "excess": 1027,
+          "date": "2026-11-07",
+          "personName": "同行者3",
+          "originalTarget": 6000,
+          "estimatedRange": [
+            4527,
+            7027
+          ],
+          "suggestedTarget": 7027,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "老太原山西菜馆",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:01.462Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:39.834Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1740,
+                1740
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1740,
+                1740
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                1740,
+                1740
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              84,
+              84
+            ],
+            "limit": 540,
+            "missing": [
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "老太原菜馆(钟楼街店)（锁定12:30～13:30）",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:07.019Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:38.762Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                922,
+                922
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                922,
+                922
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                922,
+                922
+              ],
+              "limit": 4000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              315,
+              315
+            ],
+            "limit": 540,
+            "missing": [
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11900,
+            19700
+          ],
+          "limit": 60000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11900,
+            19700
+          ],
+          "limit": 60000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            11900,
+            19700
+          ],
+          "limit": 60000,
+          "missing": [
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": []
+    },
+    {
+      "index": 3,
+      "days": [
+        {
+          "date": "2026-11-07",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "博物院院门测试位置",
+            "博物院主馆参观入口测试位置",
+            "博物院院门测试位置",
+            "老太原山西菜馆",
+            "迎泽公园北侧测试位置",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:40.904Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:03.610Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:04.694Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:43.171Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:26.571Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:36.591Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3865,
+                5565
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3865,
+                5565
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                3865,
+                5565
+              ],
+              "limit": 6000,
+              "missing": [
+                "餐厅内部步行未知",
+                "day1-leg1道路与内部步行去重未确认",
+                "day1-leg2道路与内部步行去重未确认",
+                "day1-leg3道路与内部步行去重未确认",
+                "day1-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              394,
+              394
+            ],
+            "limit": 540,
+            "missing": [
+              "山西博物院等待未知",
+              "迎泽公园短环线等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        },
+        {
+          "date": "2026-11-08",
+          "activities": [
+            "博物院东门外公共集合位置",
+            "钟楼街测试落点",
+            "老太原菜馆(钟楼街店)（锁定12:30～13:30）",
+            "食品街测试落点",
+            "博物院东门外公共集合位置"
+          ],
+          "legs": [
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:45.387Z"
+            },
+            {
+              "status": "available",
+              "mode": "walk",
+              "queriedAt": "2026-10-30T20:04:46.428Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:48.714Z"
+            },
+            {
+              "status": "available",
+              "mode": "transit",
+              "queriedAt": "2026-10-30T20:04:29.864Z"
+            }
+          ],
+          "walking": [
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2310,
+                4110
+              ],
+              "limit": 4000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2310,
+                4110
+              ],
+              "limit": 4000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            },
+            {
+              "status": "insufficient",
+              "value": null,
+              "knownSubtotal": [
+                2310,
+                4110
+              ],
+              "limit": 4000,
+              "missing": [
+                "街区内部步行重叠，去重边界未知",
+                "餐厅内部步行未知",
+                "day2-leg1道路与内部步行去重未确认",
+                "day2-leg2道路与内部步行去重未确认",
+                "day2-leg3道路与内部步行去重未确认",
+                "day2-leg4道路与内部步行去重未确认"
+              ]
+            }
+          ],
+          "time": {
+            "status": "insufficient",
+            "value": null,
+            "knownSubtotal": [
+              418,
+              418
+            ],
+            "limit": 540,
+            "missing": [
+              "钟楼街等待未知",
+              "食品街等待未知",
+              "餐厅等位与旅行日营业未知"
+            ]
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15300,
+            26100
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15300,
+            26100
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        },
+        {
+          "status": "insufficient",
+          "value": null,
+          "knownSubtotal": [
+            15300,
+            26100
+          ],
+          "limit": 60000,
+          "missing": [
+            "山西博物院门票未知",
+            "迎泽公园短环线门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）",
+            "钟楼街门票未知",
+            "食品街门票未知",
+            "其他餐饮总额未核实（逛吃不替代午餐）"
+          ]
+        }
+      ],
+      "readiness": {
+        "canAccept": true,
+        "issues": [],
+        "choices": []
+      },
+      "adjustments": [
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 0,
+          "excess": 110,
+          "date": "2026-11-08",
+          "personName": "同行者1",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            2310,
+            4110
+          ],
+          "suggestedTarget": 4110,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 1,
+          "excess": 110,
+          "date": "2026-11-08",
+          "personName": "同行者2",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            2310,
+            4110
+          ],
+          "suggestedTarget": 4110,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        },
+        {
+          "kind": "walking",
+          "dayIndex": 1,
+          "personIndex": 2,
+          "excess": 110,
+          "date": "2026-11-08",
+          "personName": "同行者3",
+          "originalTarget": 4000,
+          "estimatedRange": [
+            2310,
+            4110
+          ],
+          "suggestedTarget": 4110,
+          "unit": "米",
+          "notice": "仅按已计入估计提出目标调整，未知仍在；不会改变预算、锁定时刻或伪造到离时间"
+        }
+      ]
+    }
+  ],
+  "phase": "completed",
+  "after": {
+    "model": 8,
+    "location": 0,
+    "route": 74,
+    "map": 2
+  },
+  "currentUserStateUnchanged": true,
+  "currentUserAdoptedPreserved": true
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-30T20:03:40.790Z",
+  "source": "本地SDK首次不complete、手动恢复成功；非真实高德",
+  "assertions": 9,
+  "counts": {
+    "model": 0,
+    "location": 0,
+    "route": 0,
+    "map": 2
+  },
+  "errors": []
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-30T20:10:27.201Z",
+  "assertions": 77,
+  "source": "完整正式代码＋模型/道路HTTP与SDK替身；未读取凭据或真实账本",
+  "realCalls": 0,
+  "countsAfterPassiveReload": {
+    "model": 9,
+    "location": 0,
+    "route": 36,
+    "map": 1
+  },
+  "finalCounts": {
+    "model": 9,
+    "location": 0,
+    "route": 36,
+    "map": 2
+  },
+  "external": 0,
+  "errors": [],
+  "coverage": "多人协商候选切换零调用/不采用、角色详情无内部编号、生成、切日、地图列表双向定位、锁定/4公里、拒绝/接受（仅替身）、保存/导出、刷新无调用、无几何跨重启恢复"
+}

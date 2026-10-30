@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-30T20:00:38.499Z",
+  "source": "真实失败；原始完整输入输出仅私有保存",
+  "role": "audit",
+  "error": {
+    "code": "AGENT_SCHEMA",
+    "message": "本步骤产物不符合动态规划合同，未传给下游"
+  },
+  "candidateIds": [
+    "proposal-3",
+    "proposal-7",
+    "proposal-8"
+  ],
+  "returnedTargets": [
+    [
+      "proposal-3"
+    ],
+    [
+      "proposal-8"
+    ],
+    [
+      "proposal-3",
+      "proposal-8"
+    ]
+  ],
+  "cause": "审查可见已核查候选，但程序修改目标白名单漏了候选编号；修复仅加入本轮已核查候选ID"
+}
