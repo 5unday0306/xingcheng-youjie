@@ -27,3 +27,10 @@ export function installSdkDiagnostics(target=window) {
   const api={snapshot:()=>structuredClone(records),dispose(){target.removeEventListener('securitypolicyviolation',violation);target.removeEventListener('error',error,true);observer?.disconnect();}};
   target.__sdkDiagnostics=api;return api;
 }
+
+// Only enumerated phases/reasons and sanitized resource metadata cross the boundary.
+export function sdkFailureDiagnostic(input={}){
+ const stages=['bootstrap','modules','script','script-event','map-create','map-ready','ready-event'];
+ const reasons=['timeout','cancelled','resource','configuration','initialization'];
+ return {stage:stages.includes(input.stage)?input.stage:'bootstrap',reason:reasons.includes(input.reason)?input.reason:'initialization',elapsedMs:Math.min(120000,Math.max(0,Number.isFinite(input.elapsedMs)?Math.round(input.elapsedMs):0)),records:(Array.isArray(input.records)?input.records:[]).slice(-12).map(r=>diagnosticRecord({kind:r.kind,directive:r.directive,url:r.origin&&r.path?r.origin+r.path:r.origin,resourceType:r.resourceType,status:r.status,source:r.initiator?.origin&&r.initiator?.path?r.initiator.origin+r.initiator.path:r.initiator?.origin,line:r.initiator?.line,column:r.initiator?.column}))};
+}
