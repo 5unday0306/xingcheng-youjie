@@ -1,3 +1,4 @@
+import {createDynamicOffline} from './lib/dynamic-offline.mjs';
 import {case06Research} from './lib/case06.mjs';
 import http from 'node:http';
 import {fileURLToPath} from 'node:url';
@@ -11,7 +12,7 @@ import {offlinePlanner} from './lib/offline-fixture.mjs';
 import {localCsp,realMapCsp,isolatedWorkbenchCsp} from './lib/content-security-policy.mjs';
 import {createMapContainerServer} from './lib/map-container-server.mjs';
 import {createFrameMapSession} from './lib/frame-map-session.mjs';
-const files = new Map([['/agent-products.js',['agent-products.js','text/javascript']],['/workspace-shell.js',['workspace-shell.js','text/javascript']],['/export09.js',['export09.js','text/javascript']],['/replan08.js',['replan08.js','text/javascript']],['/agent-review.js',['agent-review.js','text/javascript']],['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/case06-controls.js',['case06-controls.js','text/javascript']],['/range-text.js',['range-text.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
+const files = new Map([['/dynamic-scope.js',['dynamic-scope.js','text/javascript']],['/agent-products.js',['agent-products.js','text/javascript']],['/workspace-shell.js',['workspace-shell.js','text/javascript']],['/export09.js',['export09.js','text/javascript']],['/replan08.js',['replan08.js','text/javascript']],['/agent-review.js',['agent-review.js','text/javascript']],['/', ['index.html','text/html']],['/index.html',['index.html','text/html']],['/app.js',['app.js','text/javascript']],['/planning.js',['planning.js','text/javascript']],['/core.js',['core.js','text/javascript']],['/styles.css',['styles.css','text/css']],['/map-view.js',['map-view.js','text/javascript']],['/live-panel.js',['live-panel.js','text/javascript']],['/case06-controls.js',['case06-controls.js','text/javascript']],['/range-text.js',['range-text.js','text/javascript']],['/pick-panel.js',['pick-panel.js','text/javascript']],['/amap-loader.js',['amap-loader.js','text/javascript']],['/sdk-diagnostics.js',['sdk-diagnostics.js','text/javascript']],['/isolated-map-container.js',['isolated-map-container.js','text/javascript']],['/map-frame-protocol.js',['map-frame-protocol.js','text/javascript']]]);
 function json(res,status,data) {res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data));}
 function readBody(req) {
   return new Promise((resolve,reject)=>{
@@ -34,7 +35,7 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
       if(!allowed.has(host)||req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==`http://${host}`))return json(res,403,{code:'ORIGIN',message:'只允许本机同源请求'});
       if(path.startsWith('/_AMapService')) {
         if(mapFrameOrigin)return json(res,403,{code:'ISOLATED_PROXY_PENDING',message:'独立地图代理尚未启用，不回退到主页面代理'});
-        if(!live||req.method!=='GET')return json(res,403,{code:'OFFLINE_ONLY',message:'安全代理未启用'});
+        if(!live||!live.proxy||req.method!=='GET')return json(res,403,{code:'OFFLINE_ONLY',message:'安全代理未启用'});
         try {const u=new URL(req.url,'http://localhost');const lease=/mapLease=([a-zA-Z0-9-]+)/.exec(req.headers.cookie||'')?.[1];u.searchParams.delete('lease');const reply=await live.proxy(path.slice('/_AMapService'.length),u.searchParams,lease);
           if(reply?.kind==='sdk-script'){res.writeHead(200,{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(reply.body);return;}
           return json(res,200,reply?.kind==='sdk-json'?reply.data:reply);}
@@ -54,7 +55,7 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
           }else result=await(path==='/api/plan'?planning.run(input,{signal:controller.signal}):live?live.action(path,input):Promise.reject(new PlanningError('OFFLINE_ONLY','真实调用未启用',403)));
           if(path==='/api/live/map-lease')res.setHeader('Set-Cookie',`mapLease=${result.lease}; HttpOnly; SameSite=Strict; Path=/_AMapService; Max-Age=600`);
           return json(res,200,result);}
-        catch(error) {return json(res,error instanceof PlanningError?error.status:500,{code:error instanceof PlanningError?error.code:'INTERNAL',message:error instanceof PlanningError?error.message:'本地处理失败，输入保留',...(error instanceof PlanningError&&error.diagnostic?{diagnostic:error.diagnostic}:{})});}
+        catch(error) {return json(res,error instanceof PlanningError?error.status:500,{code:error instanceof PlanningError?error.code:'INTERNAL',message:error instanceof PlanningError?error.message:'本地处理失败，输入保留',...(error.fields?{fields:error.fields}:{}),...(error instanceof PlanningError&&error.diagnostic?{diagnostic:error.diagnostic}:{})});}
       }
       return json(res,404,{code:'NOT_FOUND',message:'接口不存在'});
     }
@@ -62,14 +63,14 @@ export function createServer({planning=createPlanningService(),live=null,mapFram
     // Browser icon fallback is separate from map initialization and business APIs.
     if(path==='/favicon.ico'&&['GET','HEAD'].includes(req.method)){res.writeHead(204,{'Cache-Control':'no-store'});res.end();return;}
     if(!entry||!['GET','HEAD'].includes(req.method)){res.writeHead(404);res.end('Not found');return;}
-    try {const body=await readFile(new URL(`./web/${entry[0]}`,import.meta.url));res.writeHead(200,{'Content-Type':`${entry[1]}; charset=utf-8`,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':mapFrameOrigin?(frameOrigin?isolatedWorkbenchCsp(frameOrigin):localCsp):live?realMapCsp:localCsp});res.end(req.method==='HEAD'?undefined:body);}
+    try {const body=await readFile(new URL(`./web/${entry[0]}`,import.meta.url));res.writeHead(200,{'Content-Type':`${entry[1]}; charset=utf-8`,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':mapFrameOrigin?(frameOrigin?isolatedWorkbenchCsp(frameOrigin):localCsp):live?.capabilities().mode==='real-preparation'?realMapCsp:localCsp});res.end(req.method==='HEAD'?undefined:body);}
     catch {res.writeHead(500);res.end('无法读取页面文件');}
   });
   server.requestTimeout=15000;server.headersTimeout=10000;
   return server;
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
-  const testMode=process.argv.includes('--offline-test'),realPrep=process.argv.includes('--real-preparation');
+  const dynamicOffline=process.argv.includes('--dynamic-offline'),testMode=process.argv.includes('--offline-test')||dynamicOffline,realPrep=process.argv.includes('--real-preparation');
   if(testMode&&realPrep)throw Error('模式不能同时启用');
   const task06=process.argv.includes('--case06');
   if(task06&&!realPrep)throw Error('任务06需使用正式受控联调模式');
@@ -95,11 +96,13 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
     const generationFiles=(await readdir(new URL('./docs/private/',import.meta.url))).filter(f=>/^generation-[a-f0-9-]+\.json$/.test(f));
     const candidates=await Promise.all(generationFiles.map(async f=>({f,mtime:(await stat(new URL('./docs/private/'+f,import.meta.url))).mtimeMs})));candidates.sort((a,b)=>b.mtime-a.mtime);
     if(candidates[0]){const entry=candidates[0],journal=JSON.parse(await readFile(new URL('./docs/private/'+entry.f,import.meta.url),'utf8'));const dependencies=await Promise.all([picksName+'.json','08-state.json'].map(f=>stat(new URL('./docs/private/'+f,import.meta.url)).then(s=>s.mtimeMs).catch(()=>Infinity)));if(['failed','cancelled','preview','accepted','rejected'].includes(journal.status))historicalGeneration={...journal,contextVerified:dependencies.every(t=>t<=entry.mtime)};}
-    live=createLivePlanning({credentials,configuration:status,approval:approval||historyApproval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,historicalGeneration,initialReplan08,saveReplan08,saveReplanJournal,saveGenerationJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/generation-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
+    let historicalDynamic=null;const dynFiles=(await readdir(new URL('./docs/private/',import.meta.url))).filter(f=>/^dynamic-[a-f0-9-]+\.json$/.test(f));const dynEntries=await Promise.all(dynFiles.map(async f=>({f,mtime:(await stat(new URL('./docs/private/'+f,import.meta.url))).mtimeMs})));dynEntries.sort((a,b)=>b.mtime-a.mtime);if(dynEntries[0])historicalDynamic=JSON.parse(await readFile(new URL('./docs/private/'+dynEntries[0].f,import.meta.url),'utf8'));
+    live=createLivePlanning({credentials,configuration:status,approval:approval||historyApproval,ledger,initialPicks,savePicks,case06,initialCase06Draft,saveCase06Draft,saveAgentJournal,historicalReview,historicalGeneration,dynamicPlanning:task06,historicalDynamic,saveDynamicJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/dynamic-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},initialReplan08,saveReplan08,saveReplanJournal,saveGenerationJournal:async d=>{if(d)await writeFile(new URL(`./docs/private/generation-${d.id}.json`,import.meta.url),JSON.stringify(d,null,2),{mode:0o600});},send:createHttpSender(),initialStop:ledger?(await ledger.summary()).stopped?.code:null});
   }
+  if(dynamicOffline)live=createDynamicOffline(JSON.parse(await readFile(new URL('./docs/verification/task06-research.json',import.meta.url),'utf8')));
   const planning=live||createPlanningService(testMode?{mode:'offline-test',planner:offlinePlanner}:{});
   const portArg=process.argv.find(a=>a.startsWith('--port=')),mapArg=process.argv.find(a=>a.startsWith('--map-port='));
-  const port=portArg?Number(portArg.split('=')[1]):realPrep?4177:testMode?4174:4173,mapPort=mapArg?Number(mapArg.split('=')[1]):4184;
+  const port=portArg?Number(portArg.split('=')[1]):realPrep?4177:dynamicOffline?4176:testMode?4174:4173,mapPort=mapArg?Number(mapArg.split('=')[1]):4184;
   if(![port,mapPort].every(n=>Number.isInteger(n)&&n>=1024&&n<=65535)||port===mapPort||port===4190||mapPort===4190)throw Error('本机端口无效/重复或为浏览器保留端口4190；请选择4173/4174/4177或4187/4188');
   let frameOrigin=null;
   const mapSession=realPrep?createFrameMapSession({live}):null;

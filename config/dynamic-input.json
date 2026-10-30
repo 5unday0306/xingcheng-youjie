@@ -1,0 +1,8 @@
+{
+  "stages": ["task07", "task08", "task09", "agent-products", "dynamic-input"],
+  "validHours": 2,
+  "maxRuns": 3,
+  "additionalCaps": {"model":18,"route":96,"location":0,"map":3},
+  "perRun": {"model":6,"roadToolAttempts":32,"concurrency":1,"timeoutMs":720000,"automaticRetries":0},
+  "reference":"2026-10-30用户明确授权本轮太原动态规划真实验证：2小时、最多3组，每组最多6模型/32道路工具尝试；沿用账号安全边界，不充值购买、不清零旧历史。"
+}

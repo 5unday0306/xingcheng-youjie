@@ -1,3 +1,4 @@
+import {dynamicScopeErrors} from './dynamic-scope.js';
 import {installSdkDiagnostics} from './sdk-diagnostics.js';
 installSdkDiagnostics();
 import {
@@ -314,9 +315,9 @@ function summaryContent(r) {
   dev.append(node('summary', '开发详情：结构化需求与稳定ID'), node('pre', JSON.stringify(r, null, 2)));
   $('summary').replaceChildren(intro, members, dev);
 }
-function check({navigate=true} = {}) {
+function check({navigate=true,extraErrors=[]} = {}) {
   validationStarted = true;
-  const r = toRequest(draft), errors = validateRequest(r);
+  const r = toRequest(draft), errors = [...validateRequest(r),...extraErrors];
   paintErrors(errors);
   if (errors.length) {
     $('checkStatus').textContent = '输入检查未通过';
@@ -422,7 +423,7 @@ showView('route',false,false);
 $('editTrip').onclick=()=>showView('edit',true);
 $('closeEditor').onclick=()=>{showView(currentDisplay);$('editTrip').focus();};
 $('editDialog').addEventListener('cancel',event=>{event.preventDefault();showView(currentDisplay);$('editTrip').focus();});
-planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
+planPanel=createPlanPanel({getRequest:()=>toRequest(draft),validate:()=>check({navigate:false}),validateDynamic:lock=>check({navigate:false,extraErrors:dynamicScopeErrors(toRequest(draft),lock)}),applyRequest:async request=>{const next=fromRequest(request);save(localStorage,next);draft=next;savedSignature=signature();render();check({navigate:false});updateDirty();}});
 
 function routeHash(){
  const hash=location.hash;
