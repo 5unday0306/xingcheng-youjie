@@ -23,7 +23,7 @@ try{
  if(process.env.SDK_FAILURE_TEST==='1'){
   await page.setViewportSize({width:390,height:844});await page.goto(origins.parentOrigin);await page.locator('#primaryFlow:not([disabled])').waitFor();await page.locator('[data-pane=agents]').click();await page.locator('#primaryFlow').click();
   let summary;for(let i=0;i<50;i++){await new Promise(r=>setTimeout(r,500));summary=await ledger.summary();if(summary.stopped)break;}
-  eq(summary.stopped?.code,'SDK_FAILED');eq(summary.stopped.diagnostic.stage,'map-ready');eq(summary.stopped.diagnostic.reason,'timeout');eq(summary.counts.model,0);eq(summary.counts.route,0);eq(summary.counts.map,1);
+  eq(summary.stopped?.code,'SDK_FAILED');eq(summary.stopped.diagnostic.stage,'map-ready');eq(summary.stopped.diagnostic.reason,'timeout');eq(summary.stopped.diagnostic.layout.visible,true);eq(summary.stopped.diagnostic.layout.width>0,true);eq(summary.stopped.diagnostic.layout.height>0,true);eq(summary.stopped.diagnostic.layout.pane,'map');eq(summary.counts.model,0);eq(summary.counts.route,0);eq(summary.counts.map,1);
   await page.waitForTimeout(1000);eq((await ledger.summary()).counts.map,1);eq(errors.length,0);
   await writeFile('docs/verification/sdk-failure-browser.json',JSON.stringify({at:new Date().toISOString(),source:'本地SDK替身不发送complete；无真实请求',assertions,diagnostic:summary.stopped.diagnostic,counts:summary.counts,errors},null,2));console.log({assertions,source:'synthetic SDK timeout'});
  }else{

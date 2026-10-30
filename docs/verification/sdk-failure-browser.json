@@ -1,12 +1,105 @@
 {
-  "at": "2026-10-30T18:08:26.184Z",
+  "at": "2026-10-30T18:14:22.626Z",
   "source": "本地SDK替身不发送complete；无真实请求",
-  "assertions": 8,
+  "assertions": 12,
   "diagnostic": {
+    "layout": {
+      "visible": true,
+      "width": 322,
+      "height": 398,
+      "viewportWidth": 338,
+      "viewportHeight": 438,
+      "pane": "map"
+    },
     "stage": "map-ready",
     "reason": "timeout",
-    "elapsedMs": 15043,
-    "records": []
+    "elapsedMs": 15078,
+    "records": [
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "http://127.0.0.2:64750",
+        "path": "/frame/bootstrap",
+        "resourceType": "fetch",
+        "status": 200,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      },
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "http://127.0.0.2:64750",
+        "path": "/amap-loader.js",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      },
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "http://127.0.0.2:64750",
+        "path": "/map-view.js",
+        "resourceType": "script",
+        "status": 200,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      },
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "https://webapi.amap.com",
+        "path": "/maps",
+        "resourceType": "script",
+        "status": 0,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      },
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "http://127.0.0.2:64750",
+        "path": "/frame/event",
+        "resourceType": "fetch",
+        "status": 200,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      },
+      {
+        "kind": "resource-result",
+        "directive": "unknown",
+        "origin": "http://127.0.0.2:64750",
+        "path": "/frame/event",
+        "resourceType": "fetch",
+        "status": 200,
+        "initiator": {
+          "origin": "http://localhost",
+          "path": "/unknown",
+          "line": null,
+          "column": null
+        }
+      }
+    ]
   },
   "counts": {
     "model": 0,
