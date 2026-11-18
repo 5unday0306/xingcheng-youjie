@@ -1,0 +1,17 @@
+# Send only explicit runtime files to the Docker build. Never send .env or private evidence.
+**
+!package.json
+!package-lock.json
+!server.mjs
+!lib/
+!lib/**
+!web/
+!web/**
+!data/
+!data/**
+!deploy/
+!deploy/Dockerfile
+!docs/
+!docs/verification/
+!docs/verification/task06-research.json
+!docs/verification/task06-final-acceptance.json

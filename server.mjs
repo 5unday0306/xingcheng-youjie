@@ -1,3 +1,4 @@
+import {deploymentConfig,validatePublicOrigin} from './lib/deployment-config.mjs';
 import {productionPolicy,createProductionLedger} from './lib/production-runtime.mjs';
 import {createDynamicOffline} from './lib/dynamic-offline.mjs';
 import {case06Research} from './lib/case06.mjs';
@@ -27,13 +28,16 @@ function readBody(req) {
     req.on('aborted',()=>fail(new PlanningError('BODY_ERROR','请求已取消',400)));
   });
 }
-export function createServer({planning=createPlanningService(),live=null,mapFrameOrigin=null,mapFrameSession=null}={}) {
+export function createServer({planning=createPlanningService(),live=null,mapFrameOrigin=null,mapFrameSession=null,publicOrigin=null}={}) {
+  if(publicOrigin)validatePublicOrigin(publicOrigin);
   const server=http.createServer(async(req,res)=>{
     const path=req.url?.split('?')[0];
     const frameOrigin=typeof mapFrameOrigin==='function'?mapFrameOrigin():mapFrameOrigin;
     if(path?.startsWith('/api/')||path?.startsWith('/_AMapService')) {
       const host=req.headers.host,allowed=new Set([`127.0.0.1:${server.address()?.port}`,`localhost:${server.address()?.port}`]);
-      if(!allowed.has(host)||req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==`http://${host}`))return json(res,403,{code:'ORIGIN',message:'只允许本机同源请求'});
+      const expectedOrigin=publicOrigin||`http://${host}`;
+      const allowedHost=publicOrigin?host===new URL(publicOrigin).host:allowed.has(host);
+      if(!allowedHost||req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==expectedOrigin))return json(res,403,{code:'ORIGIN',message:'只允许配置的同源请求'});
       if(path.startsWith('/_AMapService')) {
         if(mapFrameOrigin)return json(res,403,{code:'ISOLATED_PROXY_PENDING',message:'独立地图代理尚未启用，不回退到主页面代理'});
         if(!live||!live.proxy||req.method!=='GET')return json(res,403,{code:'OFFLINE_ONLY',message:'安全代理未启用'});
@@ -75,10 +79,12 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   if(testMode&&realPrep)throw Error('模式不能同时启用');
   const task06=process.argv.includes('--case06')||production;
   if(task06&&!realPrep)throw Error('任务06需使用正式受控联调模式');
+  const deployment=production?deploymentConfig():null;
   let live=null;
   if(realPrep){
     const stateArg=process.argv.find(a=>a.startsWith('--state-dir='));
-    const runtimeRoot=stateArg?pathToFileURL(resolve(stateArg.slice(12))+'/'):new URL('./docs/private/',import.meta.url);
+    const stateDir=stateArg?.slice(12)||process.env.STATE_DIR;
+    const runtimeRoot=stateDir?pathToFileURL(resolve(stateDir)+'/'):new URL('./docs/private/',import.meta.url);
     await mkdir(runtimeRoot,{recursive:true});
     const privateFile=name=>new URL(name,runtimeRoot);
     const {credentials,status}=await loadCredentials(new URL('./.env',import.meta.url));
@@ -111,11 +117,11 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   if(![port,mapPort].every(n=>Number.isInteger(n)&&n>=1024&&n<=65535)||port===mapPort||port===4190||mapPort===4190)throw Error('本机端口无效/重复或为浏览器保留端口4190；请选择4173/4174/4177或4187/4188');
   let frameOrigin=null;
   const mapSession=realPrep?createFrameMapSession({live}):null;
-  const mainServer=createServer({planning,live,mapFrameOrigin:realPrep?()=>frameOrigin:null,mapFrameSession:mapSession});
+  const mainServer=createServer({planning,live,mapFrameOrigin:realPrep?()=>frameOrigin:null,mapFrameSession:mapSession,publicOrigin:deployment?.appOrigin});
   if(realPrep){
-    const child=createMapContainerServer({getOrigins:()=>({parentOrigin:'http://127.0.0.1:'+port,mapOrigin:frameOrigin}),mapSession});
+    const child=createMapContainerServer({getOrigins:()=>({parentOrigin:deployment?.appOrigin||'http://127.0.0.1:'+port,mapOrigin:frameOrigin}),mapSession});
     await new Promise((resolve,reject)=>{child.once('error',reject);child.listen(mapPort,'127.0.0.2',resolve);});
-    frameOrigin='http://127.0.0.2:'+mapPort;
+    frameOrigin=deployment?.mapOrigin||'http://127.0.0.2:'+mapPort;
     process.on('SIGINT',()=>child.close());
   }
   mainServer.listen(port,'127.0.0.1',()=>console.log(`行程有解：http://127.0.0.1:${port} ${testMode?'（离线替身测试）':production?'（正式运行，用户操作才联网）':realPrep?'（受控联调准备，点击前不联网）':'（普通模式，真实生成关闭）'}，Ctrl+C停止`));

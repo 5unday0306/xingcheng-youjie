@@ -1,0 +1,14 @@
+{
+ email {$ACME_EMAIL}
+ admin off
+}
+{$APP_DOMAIN} {
+ basic_auth {
+  {$REVIEW_USER} {$REVIEW_PASSWORD_HASH}
+ }
+ reverse_proxy 127.0.0.1:4177
+}
+{$MAP_DOMAIN} {
+ # Map bootstrap requires the short-lived run ID issued by the authenticated app.
+ reverse_proxy 127.0.0.2:4184
+}

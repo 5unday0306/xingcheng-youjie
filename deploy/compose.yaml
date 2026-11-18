@@ -1,0 +1,47 @@
+# Linux host networking keeps both Node listeners private to Caddy.
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      AMAP_WEB_SERVICE_KEY: ${AMAP_WEB_SERVICE_KEY:?Set AMAP_WEB_SERVICE_KEY}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:?Set DEEPSEEK_API_KEY}
+      AMAP_JS_KEY: ${AMAP_JS_KEY:?Set AMAP_JS_KEY}
+      AMAP_JS_SECURITY_CODE: ${AMAP_JS_SECURITY_CODE:?Set AMAP_JS_SECURITY_CODE}
+      APP_PUBLIC_ORIGIN: https://${APP_DOMAIN:?Set APP_DOMAIN}
+      MAP_PUBLIC_ORIGIN: https://${MAP_DOMAIN:?Set MAP_DOMAIN}
+    volumes:
+      - app_state:/app/state
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+  caddy:
+    image: caddy:2.10.2-alpine
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      APP_DOMAIN: ${APP_DOMAIN:?Set APP_DOMAIN}
+      MAP_DOMAIN: ${MAP_DOMAIN:?Set MAP_DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL}
+      REVIEW_USER: ${REVIEW_USER:?Set REVIEW_USER}
+      REVIEW_PASSWORD_HASH: ${REVIEW_PASSWORD_HASH:?Set REVIEW_PASSWORD_HASH}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+volumes:
+  app_state:
+  caddy_data:
+  caddy_config:
